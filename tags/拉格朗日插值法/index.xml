@@ -1,27 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>拉格朗日插值法 on TosakaUCW的博客</title>
-    <link>https://TosakaUCW.github.io/tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/</link>
-    <description>Recent content in 拉格朗日插值法 on TosakaUCW的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 23 Jan 2019 23:25:30 +0800</lastBuildDate>
-    
-	<atom:link href="https://TosakaUCW.github.io/tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>拉格朗日插值法</title>
-      <link>https://TosakaUCW.github.io/post/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/</link>
-      <pubDate>Wed, 23 Jan 2019 23:25:30 +0800</pubDate>
-      
-      <guid>https://TosakaUCW.github.io/post/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/</guid>
-      <description>&lt;p&gt;给定`n`个点`(x_i,y_i)`来确定一个多项式并将`k`代入求值&lt;/p&gt;
-&lt;p&gt;对于这个问题我们可以用高斯消元法以`\mathcal{O}(n^3)`的时间复杂度进行求解&lt;/p&gt;
-&lt;p&gt;但是有一种`\mathcal{O}(n^2)`的方法，名为拉格朗日插值法&lt;/p&gt;
-&lt;p&gt;$$ f(x)=\sum_{i=1}^{n}y_i\prod_{i \ne j}{\frac{x-x_j}{x_i-x_j}} $$&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>拉格朗日插值法 on TosakaUCW的博客</title><link>https://TosakaUCW.github.io/tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/</link><description>Recent content in 拉格朗日插值法 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Jan 2019 23:25:30 +0800</lastBuildDate><atom:link href="https://TosakaUCW.github.io/tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>拉格朗日插值法</title><link>https://TosakaUCW.github.io/post/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/</link><pubDate>Wed, 23 Jan 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCW.github.io/post/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E6%B3%95/</guid><description>&lt;p>给定`n`个点`(x_i,y_i)`来确定一个多项式并将`k`代入求值&lt;/p>
+&lt;p>对于这个问题我们可以用高斯消元法以`\mathcal{O}(n^3)`的时间复杂度进行求解&lt;/p>
+&lt;p>但是有一种`\mathcal{O}(n^2)`的方法，名为拉格朗日插值法&lt;/p>
+&lt;p>$$ f(x)=\sum_{i=1}^{n}y_i\prod_{i \ne j}{\frac{x-x_j}{x_i-x_j}} $$&lt;/p></description></item></channel></rss>

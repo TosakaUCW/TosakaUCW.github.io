@@ -1,29 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>线性基 on TosakaUCW的博客</title>
-    <link>https://TosakaUCW.github.io/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/</link>
-    <description>Recent content in 线性基 on TosakaUCW的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 03 Feb 2019 23:25:30 +0800</lastBuildDate>
-    
-	<atom:link href="https://TosakaUCW.github.io/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Luogu P4151 [WC2011]最大XOR和路径（线性基）</title>
-      <link>https://TosakaUCW.github.io/post/luogu_p4151/</link>
-      <pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate>
-      
-      <guid>https://TosakaUCW.github.io/post/luogu_p4151/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.luogu.org/problemnew/show/P4151&#34; target=&#34;_blank&#34;&gt;题目链接&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;admonition question&#34;&gt;
-  &lt;p class=&#34;admonition-title&#34;&gt;题目描述&lt;/p&gt;
-&lt;p&gt;给定一张无向带权图，有重边和自环&lt;/p&gt;
-&lt;p&gt;求从 1 走到 N 的路径最大异或和&lt;/p&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>线性基 on TosakaUCW的博客</title><link>https://TosakaUCW.github.io/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/</link><description>Recent content in 线性基 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Feb 2019 23:25:30 +0800</lastBuildDate><atom:link href="https://TosakaUCW.github.io/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P4151 [WC2011]最大XOR和路径（线性基）</title><link>https://TosakaUCW.github.io/post/luogu_p4151/</link><pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCW.github.io/post/luogu_p4151/</guid><description>&lt;p>&lt;a href="https://www.luogu.org/problemnew/show/P4151" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一张无向带权图，有重边和自环&lt;/p>
+&lt;p>求从 1 走到 N 的路径最大异或和&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,31 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>图论 on TosakaUCW的博客</title>
-    <link>https://TosakaUCW.github.io/tags/%E5%9B%BE%E8%AE%BA/</link>
-    <description>Recent content in 图论 on TosakaUCW的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 03 Feb 2019 23:25:30 +0800</lastBuildDate>
-    
-	<atom:link href="https://TosakaUCW.github.io/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Luogu P5002 专心OI - 找祖先（图论）</title>
-      <link>https://TosakaUCW.github.io/post/luogu_p5002/</link>
-      <pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate>
-      
-      <guid>https://TosakaUCW.github.io/post/luogu_p5002/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.luogu.org/problemnew/show/P5002&#34; target=&#34;_blank&#34;&gt;题目链接&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;admonition question&#34;&gt;
-  &lt;p class=&#34;admonition-title&#34;&gt;题目描述&lt;/p&gt;
-&lt;p&gt;给定 1 棵 N 个节点的树，并钦定 M 个点&lt;/p&gt;
-&lt;p&gt;对于被钦定的点 `u`，求有多少组点对 `(i,j)` 的 LCA 是 `u`&lt;/p&gt;
-&lt;p&gt;`N \leq 10^4`&lt;/p&gt;
-&lt;p&gt;`M \leq 5 \times 10^4`&lt;/p&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>图论 on TosakaUCW的博客</title><link>https://TosakaUCW.github.io/tags/%E5%9B%BE%E8%AE%BA/</link><description>Recent content in 图论 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Feb 2019 23:25:30 +0800</lastBuildDate><atom:link href="https://TosakaUCW.github.io/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P5002 专心OI - 找祖先（图论）</title><link>https://TosakaUCW.github.io/post/luogu_p5002/</link><pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCW.github.io/post/luogu_p5002/</guid><description>&lt;p>&lt;a href="https://www.luogu.org/problemnew/show/P5002" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定 1 棵 N 个节点的树，并钦定 M 个点&lt;/p>
+&lt;p>对于被钦定的点 `u`，求有多少组点对 `(i,j)` 的 LCA 是 `u`&lt;/p>
+&lt;p>`N \leq 10^4`&lt;/p>
+&lt;p>`M \leq 5 \times 10^4`&lt;/p>
+&lt;/div></description></item></channel></rss>
