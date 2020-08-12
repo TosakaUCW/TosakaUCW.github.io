@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线段树 on TosakaUCW的博客</title>
+    <link>https://TosakaUCW.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+    <description>Recent content in 线段树 on TosakaUCW的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Feb 2019 23:25:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://TosakaUCW.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CF620E New Year Tree（状压，线段树）</title>
+      <link>https://TosakaUCW.github.io/post/cf_620e/</link>
+      <pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate>
+      
+      <guid>https://TosakaUCW.github.io/post/cf_620e/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://codeforces.com/contest/620/problem/E&#34; target=&#34;_blank&#34;&gt;题目链接&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;admonition question&#34;&gt;
+  &lt;p class=&#34;admonition-title&#34;&gt;题目描述&lt;/p&gt;
+&lt;p&gt;给定一棵以1为根的有根树，有n个点&lt;/p&gt;
+&lt;p&gt;每个节点初始有一个颜色c[i]。&lt;/p&gt;
+&lt;p&gt;有两种操作：&lt;/p&gt;
+&lt;p&gt;1 v c 将以v为根的子树中所有点颜色更改为c&lt;/p&gt;
+&lt;p&gt;2 v 查询以v为根的子树中的节点有多少种不同的颜色&lt;/p&gt;
+&lt;p&gt;1 &amp;lt;= n, m &amp;lt;= 4e5&lt;/p&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

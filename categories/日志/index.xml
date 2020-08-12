@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日志 on TosakaUCW的博客</title>
+    <link>https://TosakaUCW.github.io/categories/%E6%97%A5%E5%BF%97/</link>
+    <description>Recent content in 日志 on TosakaUCW的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Nov 2019 23:25:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://TosakaUCW.github.io/categories/%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSP 2019 游记</title>
+      <link>https://TosakaUCW.github.io/post/csp_2019/</link>
+      <pubDate>Fri, 15 Nov 2019 23:25:30 +0800</pubDate>
+      
+      <guid>https://TosakaUCW.github.io/post/csp_2019/</guid>
+      <description>&lt;p&gt;算是退役了吧&lt;/p&gt;
+&lt;p&gt;学了几年了，没有啥成绩，文化课也不行，面对现实吧，未来会更美好的&lt;/p&gt;
+&lt;p&gt;（咕）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2019 ZJU 校赛 游记</title>
+      <link>https://TosakaUCW.github.io/post/zju_contest_2019/</link>
+      <pubDate>Sun, 14 Apr 2019 23:25:30 +0800</pubDate>
+      
+      <guid>https://TosakaUCW.github.io/post/zju_contest_2019/</guid>
+      <description>被文化课折磨中 期中考完回来更新 （咕咕咕）</description>
+    </item>
+    
+    <item>
+      <title>2019 HZNU 校赛 游记</title>
+      <link>https://TosakaUCW.github.io/post/hznu_contest_2019/</link>
+      <pubDate>Sun, 17 Mar 2019 23:25:30 +0800</pubDate>
+      
+      <guid>https://TosakaUCW.github.io/post/hznu_contest_2019/</guid>
+      <description>Day -1 复习了下数据结构和图论 Day 0 由于有了学车校赛的前车之鉴，知道了要带够足够的零食（能有效消磨时间和放松压力 在楼下便利店买了点水和零食上路了 签</description>
+    </item>
+    
+    <item>
+      <title>2018 学车 校赛 游记</title>
+      <link>https://TosakaUCW.github.io/post/hzxjhs_contest_2019/</link>
+      <pubDate>Sat, 08 Dec 2018 23:25:30 +0800</pubDate>
+      
+      <guid>https://TosakaUCW.github.io/post/hzxjhs_contest_2019/</guid>
+      <description>Day -1 第一次参加 ACM 赛制的比赛 有点小激动 复习了下数据结构 Day 0 起床看到窗外白雪飘飘 看来是杭州这个冬天的初雪 在家吃完午饭打车到了学车 到校门口后另外两</description>
+    </item>
+    
+    <item>
+      <title>hello, world</title>
+      <link>https://TosakaUCW.github.io/post/hello_world/</link>
+      <pubDate>Fri, 17 Aug 2018 23:25:30 +0800</pubDate>
+      
+      <guid>https://TosakaUCW.github.io/post/hello_world/</guid>
+      <description>hello, world 蒟蒻TosakUCW的博客算是勉强上线了 之前就有过这样的想法，但是因为懒一直没有做 后来搞了个 windows 下 IIS 搭的博客 (Hamakaze学长的主意)</description>
+    </item>
+    
+  </channel>
+</rss>
