@@ -25,7 +25,7 @@
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定 $n$ 个数的数列，从中选出 $k$ 个数，使选出的 $k$ 个数的乘积&lt;/p>
 &lt;p>十进制下末尾的 0 数量最多&lt;/p>
-&lt;/div></description></item><item><title>FHQ_Treap</title><link>https://TosakaUCW.github.io/post/fhq_treap/</link><pubDate>Thu, 13 Aug 2020 03:06:23 +0800</pubDate><guid>https://TosakaUCW.github.io/post/fhq_treap/</guid><description>&lt;p>FHQ yyds !&lt;/p>
+&lt;/div></description></item><item><title>FHQ Treap</title><link>https://TosakaUCW.github.io/post/fhq_treap/</link><pubDate>Thu, 13 Aug 2020 03:06:23 +0800</pubDate><guid>https://TosakaUCW.github.io/post/fhq_treap/</guid><description>&lt;p>FHQ yyds !&lt;/p>
 &lt;h2 id="fhq-treap">FHQ Treap&lt;/h2>
 &lt;p>极为简洁，无需各种勾八左旋右旋&lt;/p>
 &lt;p>FHQ Treap 就像普通 Treap 一样，每个节点除了 val 以外还有个随机权值 rnd，val 符合 BST 的特征，rnd 符合堆的特征&lt;/p>
