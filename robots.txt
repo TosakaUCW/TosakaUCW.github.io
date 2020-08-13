@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://tosakaucw.org/sitemap.xml
+Sitemap: https://TosakaUCw.github.io/sitemap.xml
