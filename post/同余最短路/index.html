@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Fira Code - TosakaUCW的博客</title>
+  <title>同余最短路 - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,13 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="TosakaUCW" /><meta name="description" content="consolas 曾是我最喜欢的英文字体 和 编程代码字体
-在接触 Fira Code 后：芜湖！这也太爽了，so beautiful！
+<meta name="author" content="TosakaUCW" /><meta name="description" content="题目描述
+对于等式
+$$\sum_{i=1}^{n}{a_{i} x_{i}}=B(B \in[l, r])$$
+求有多少 $B$ 可以使该等式存在非负整数解
+$1 \leq n \leq 12$
+$0 \leq a_i \leq 5 \times 10^{5}$
+$1 \leq l \leq r \leq 10^{12}$
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -28,7 +33,7 @@
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/fira_code/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,28 +46,46 @@
 
 
 
-<meta property="og:title" content="Fira Code" />
-<meta property="og:description" content="consolas 曾是我最喜欢的英文字体 和 编程代码字体
-在接触 Fira Code 后：芜湖！这也太爽了，so beautiful！
+<meta property="og:title" content="同余最短路" />
+<meta property="og:description" content="
+  题目描述
+对于等式
+$$\sum_{i=1}^{n}{a_{i} x_{i}}=B(B \in[l, r])$$
+求有多少 $B$ 可以使该等式存在非负整数解
+$1 \leq n \leq 12$
+$0 \leq a_i \leq 5 \times 10^{5}$
+$1 \leq l \leq r \leq 10^{12}$
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/fira_code/" />
-<meta property="article:published_time" content="2020-08-13T13:33:18+08:00" />
-<meta property="article:modified_time" content="2020-08-13T14:23:46+08:00" />
-<meta itemprop="name" content="Fira Code">
-<meta itemprop="description" content="consolas 曾是我最喜欢的英文字体 和 编程代码字体
-在接触 Fira Code 后：芜湖！这也太爽了，so beautiful！
+<meta property="og:url" content="https://TosakaUCw.github.io/post/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/" />
+<meta property="article:published_time" content="2020-08-18T19:13:57+08:00" />
+<meta property="article:modified_time" content="2020-08-29T08:18:40+08:00" />
+<meta itemprop="name" content="同余最短路">
+<meta itemprop="description" content="
+  题目描述
+对于等式
+$$\sum_{i=1}^{n}{a_{i} x_{i}}=B(B \in[l, r])$$
+求有多少 $B$ 可以使该等式存在非负整数解
+$1 \leq n \leq 12$
+$0 \leq a_i \leq 5 \times 10^{5}$
+$1 \leq l \leq r \leq 10^{12}$
 ">
-<meta itemprop="datePublished" content="2020-08-13T13:33:18&#43;08:00" />
-<meta itemprop="dateModified" content="2020-08-13T14:23:46&#43;08:00" />
-<meta itemprop="wordCount" content="223">
+<meta itemprop="datePublished" content="2020-08-18T19:13:57&#43;08:00" />
+<meta itemprop="dateModified" content="2020-08-29T08:18:40&#43;08:00" />
+<meta itemprop="wordCount" content="1038">
 
 
 
-<meta itemprop="keywords" content="字体," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Fira Code"/>
-<meta name="twitter:description" content="consolas 曾是我最喜欢的英文字体 和 编程代码字体
-在接触 Fira Code 后：芜湖！这也太爽了，so beautiful！
+<meta itemprop="keywords" content="最短路,剩余系," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="同余最短路"/>
+<meta name="twitter:description" content="
+  题目描述
+对于等式
+$$\sum_{i=1}^{n}{a_{i} x_{i}}=B(B \in[l, r])$$
+求有多少 $B$ 可以使该等式存在非负整数解
+$1 \leq n \leq 12$
+$0 \leq a_i \leq 5 \times 10^{5}$
+$1 \leq l \leq r \leq 10^{12}$
 "/>
 
 <!--[if lte IE 9]>
@@ -138,15 +161,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Fira Code</h1>
+      <h1 class="post-title">同余最短路</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-08-13 13:33:18 &#43;0800 &#43;0800"> 2020-08-13 </span>
+        <span class="post-time" title="2020-08-18 19:13:57 &#43;0800 &#43;0800"> 2020-08-18 </span>
         <div class="post-category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             </div>
-          <span class="more-meta"> 约 223 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 1038 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -159,12 +182,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#简介">简介</a></li>
-        <li><a href="#示例">示例</a></li>
-        <li><a href="#安装">安装</a>
+        <li><a href="#简要做法">简要做法</a>
           <ul>
-            <li><a href="#windows-系统安装-fira-code-字体">Windows 系统安装 Fira Code 字体</a></li>
-            <li><a href="#在-vscode-中使用-fira-code-并开启连字特性ligatures">在 vscode 中使用 Fira Code 并开启连字特性（ligatures）</a></li>
+            <li><a href="#dp">DP</a></li>
+            <li><a href="#最短路">最短路</a></li>
           </ul>
         </li>
       </ul>
@@ -174,29 +195,240 @@
   </div>
 </div>
     <div class="post-content">
-      <p>consolas 曾是我最喜欢的英文字体 和 编程代码字体</p>
-<p>在接触 Fira Code 后：芜湖！这也太爽了，so beautiful！</p>
-<p><img src="https://raw.githubusercontent.com/tonsky/FiraCode/e2ae5061fdb835829b26fa2312fc9ba74b7d42c4/extras/logo.svg" alt="Fira Code Logo"></p>
-<h2 id="简介">简介</h2>
-<p>Fira Code 是一款免费的等宽字体，支持连字特性（ligatures)</p>
-<p>Fira Code = Fira Mono + ligatures</p>
-<h2 id="示例">示例</h2>
-<details class="admonition note"><summary class="admonition-title">官方示例</summary>
-<p><img src="https://raw.githubusercontent.com/tonsky/FiraCode/master/extras/ligatures.png" alt="Fira Code Ligatures"></p>
-</details>
-<p>来看一看我在日常使用中的实际效果</p>
-<p>editor - vscode - Insiders +  theme - Monokai + font - Fira Code</p>
-<details class="admonition note"><summary class="admonition-title">tarjan 代码示例</summary>
-<p><img src="/images/Fira_Code_example.png" alt="tarjan"></p>
-</details>
-<h2 id="安装">安装</h2>
-<h3 id="windows-系统安装-fira-code-字体">Windows 系统安装 Fira Code 字体</h3>
-<p>Fira Code 是一款开源字体，代码在 github 上开源 <a href="https://github.com/tonsky/FiraCode" target="_blank">仓库地址</a></p>
-<p><a href="https://github.com/tonsky/FiraCode/releases" target="_blank">下载字体</a>，选择最新版 Fira_Code_vx.x.zip 下载解压后右键安装即可</p>
-<h3 id="在-vscode-中使用-fira-code-并开启连字特性ligatures">在 vscode 中使用 Fira Code 并开启连字特性（ligatures）</h3>
-<pre><code class="language-json">    &quot;editor.fontFamily&quot;: &quot;Fira Code&quot;, // 在 fontFamily 中添加 Fira Code
-    &quot;editor.fontLigatures&quot;: true // 开启 ligatures
+      <div class="admonition question">
+  <p class="admonition-title">题目描述</p>
+<p>对于等式</p>
+<p>$$\sum_{i=1}^{n}{a_{i} x_{i}}=B(B \in[l, r])$$</p>
+<p>求有多少 $B$ 可以使该等式存在非负整数解</p>
+<p>$1 \leq n \leq 12$</p>
+<p>$0 \leq a_i \leq 5 \times 10^{5}$</p>
+<p>$1 \leq l \leq r \leq 10^{12}$</p>
+</div>
+<h2 id="简要做法">简要做法</h2>
+<h3 id="dp">DP</h3>
+<p>很容易想到 完全背包，用 $f_{i}$ 表示 $B$ 的值能否为 $i$，那么转移方程为</p>
+<p>$$
+f_{j}=f_{j} \mid f_{j-a_{i} i_{i}}
+$$</p>
+<p>时间复杂度 $O(nr)$</p>
+<details class="admonition note"><summary class="admonition-title">洛谷 P5020 货币系统 O(nr)</summary>
+<pre><code class="language-cpp">#include &lt;memory.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+
+const int N = 1e2;
+const int M = 25e3;
+
+int n, m, ans;
+int a[N + 5];
+bool f[M + 5];
+
+int read()
+{
+    int x = 0, f = 1;
+    char ch = getchar();
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-' ? -1 : 1, ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + ch - 48, ch = getchar();
+    return x * f;
+}
+
+int main()
+{
+    for (int T = read(); T--;)
+    {
+        ans = 0, m = 0;
+        memset(f, false, sizeof f);
+        f[0] = true;
+        n = read();
+        for (int i = 1; i &lt;= n; i++)
+            a[i] = read(), m = std::max(m, a[i]);
+        std::sort(a + 1, a + 1 + n);
+        for (int i = 1; i &lt;= n; i++)
+            if (!f[a[i]])
+            {
+                ans++;
+                for (int j = a[i]; j &lt;= m; j++)
+                    f[j] |= f[j - a[i]];
+            }
+        printf(&quot;%d\n&quot;, ans);
+    }
+    return 0;
+}
 </code></pre>
+</details>
+<h3 id="最短路">最短路</h3>
+<p>任意取一个 $a_i$，设为 $w$</p>
+<p>如果存在 $\sum_{i=1}^{n}{a_{i} x_{i}}=t$</p>
+<p>必然存在 $\sum_{i=1}^{n}{a_{i} x_{i}}=t + k \times w$</p>
+<p>把 $[0,w-1]$ 中的每个正整数视为一个点，每个点有 $n-1$ 条出边，$i$ 号点的第 $j$ 条出边指向 $(i+a_j)\bmod w$ 号点，边权为 $a_j$</p>
+<p>那么 $dis_i$ 表示能够到达的最低的 $\bmod \ w = i$ 的数</p>
+<p>然后从 $0$ 号点出发跑单源最短路即可，因为建边方式比较特殊，所以 SPFA 不会被卡，跑起来挺快的</p>
+<details class="admonition note"><summary class="admonition-title">洛谷 P3403 跳楼机</summary>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;memory.h&gt;
+#include &lt;queue&gt;
+
+typedef long long ll;
+
+const ll N = 5e5 + 5;
+const ll M = 6e6 + 5;
+const ll INF = (1LL &lt;&lt; 63) - 1;
+
+ll n, h, w;
+ll a[N], dis[N];
+ll head[N], num_edge;
+bool inQ[N];
+
+struct Node
+{
+    ll next, to, dis;
+} edge[M];
+
+void add_edge(ll u, ll v, ll dis) { edge[++num_edge] = Node{head[u], v, dis}, head[u] = num_edge; }
+
+ll read()
+{
+    ll x = 0, f = 1;
+    char ch = getchar();
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-' ? -1 : 1, ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + ch - 48, ch = getchar();
+    return x * f;
+}
+
+void SPFA(ll s)
+{
+    memset(dis, 0x3f, sizeof dis);
+    std::queue&lt;ll&gt; Q;
+    dis[s] = 0, Q.push(s), inQ[s] = true;
+    while (!Q.empty())
+    {
+        ll u = Q.front();
+        Q.pop(), inQ[u] = false;
+        for (ll i = head[u]; i; i = edge[i].next)
+        {
+            ll v = edge[i].to, dist = edge[i].dis;
+            if (dis[v] &gt; dis[u] + dist)
+            {
+                dis[v] = dis[u] + dist;
+                if (!inQ[v])
+                    Q.push(v), inQ[v] = true;
+            }
+        }
+    }
+}
+
+ll query(ll x)
+{
+    ll res = 0;
+    for (ll i = 0; i &lt; w; i++)
+        if (dis[i] &lt;= x)
+            res += (x - dis[i]) / w + 1;
+    return res;
+}
+
+signed main()
+{
+    n = 3, h = read();
+    w = INF;
+    for (ll i = 1; i &lt;= n; i++)
+        a[i] = read(), w = std::min(w, a[i]);
+    for (ll i = 0; i &lt; w; i++)
+        for (ll j = 1; j &lt;= n; j++)
+            if (a[j] != w)
+                add_edge(i, (i + a[j]) % w, a[j]);
+    SPFA(0);
+    printf(&quot;%lld&quot;, query(h - 1));
+    return 0;
+}
+</code></pre>
+</details>
+<details class="admonition note"><summary class="admonition-title">洛谷 P2371 [国家集训队]墨墨的等式</summary>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;memory.h&gt;
+#include &lt;queue&gt;
+
+typedef long long ll;
+
+const ll N = 5e5 + 5;
+const ll M = 6e6 + 5;
+const ll INF = (1LL &lt;&lt; 63) - 1;
+
+ll n, l, r, w;
+ll a[N], dis[N];
+ll head[N], num_edge;
+bool inQ[N];
+
+struct Node
+{
+    ll next, to, dis;
+} edge[M];
+
+void add_edge(ll u, ll v, ll dis) { edge[++num_edge] = Node{head[u], v, dis}, head[u] = num_edge; }
+
+ll read()
+{
+    ll x = 0, f = 1;
+    char ch = getchar();
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-' ? -1 : 1, ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + ch - 48, ch = getchar();
+    return x * f;
+}
+
+void SPFA(ll s)
+{
+    memset(dis, 0x3f, sizeof dis);
+    std::queue&lt;ll&gt; Q;
+    dis[s] = 0, Q.push(s), inQ[s] = true;
+    while (!Q.empty())
+    {
+        ll u = Q.front();
+        Q.pop(), inQ[u] = false;
+        for (ll i = head[u]; i; i = edge[i].next)
+        {
+            ll v = edge[i].to, dist = edge[i].dis;
+            if (dis[v] &gt; dis[u] + dist)
+            {
+                dis[v] = dis[u] + dist;
+                if (!inQ[v])
+                    Q.push(v), inQ[v] = true;
+            }
+        }
+    }
+}
+
+ll query(ll x)
+{
+    ll res = 0;
+    for (ll i = 0; i &lt; w; i++)
+        if (dis[i] &lt;= x)
+            res += (x - dis[i]) / w + 1;
+    return res;
+}
+
+signed main()
+{
+    n = read(), l = read(), r = read();
+    w = INF;
+    for (ll i = 1; i &lt;= n; i++)
+        a[i] = read(), w = std::min(w, a[i]);
+    for (ll i = 0; i &lt; w; i++)
+        for (ll j = 1; j &lt;= n; j++)
+            if (a[j] != w)
+                add_edge(i, (i + a[j]) % w, a[j]);
+    SPFA(0);
+    printf(&quot;%lld&quot;, query(r) - query(l - 1));
+    return 0;
+}
+</code></pre>
+</details>
     </div>
 
     <div class="post-copyright">
@@ -207,9 +439,9 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-08-13 14:23:46 &#43;0800 &#43;0800">2020-08-13</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/d52b8493be332bffe1df3d08ce859a170fa6c009" title="add new post Fira_Code.md" target="_blank">(d52b849)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Fira_Code.md" target="_blank">更新历史</a>
+        <span title="2020-08-29 08:18:40 &#43;0800 &#43;0800">2020-08-29</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/b6d6d15339cabc05a607d1371243ea0f0cedb436" title="add 同余最短路.md" target="_blank">(b6d6d15)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/%e5%90%8c%e4%bd%99%e6%9c%80%e7%9f%ad%e8%b7%af.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -220,16 +452,17 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E5%AD%97%E4%BD%93/">字体</a>
+          <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a>
+          <a href="/tags/%E5%89%A9%E4%BD%99%E7%B3%BB/">剩余系</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+        <a class="prev" href="/post/cf_665_div_2/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">同余最短路</span>
+            <span class="prev-text nav-default">Codeforces Round #665 (Div. 2) 划水记录</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/luogu_p3047/">
-            <span class="next-text nav-default">Luogu P3047 [USACO12FEB]Nearby Cows G（换根 DP）</span>
+        <a class="next" href="/post/fira_code/">
+            <span class="next-text nav-default">Fira Code</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
