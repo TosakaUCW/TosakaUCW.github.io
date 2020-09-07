@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kruskal on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/kruskal/</link><description>Recent content in Kruskal on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Sep 2020 18:09:10 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/kruskal/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 160D Edges in MST（Kruskal，树链剖分）</title><link>https://TosakaUCw.github.io/post/cf_160d/</link><pubDate>Mon, 07 Sep 2020 18:09:10 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_160d/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/160/problem/D" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给出一张带权无向图，求对于这张图上的每一条边，其是必然存在于每一种最小生成树中，还是至少存在于一种最小生成树中，还是一定不会存在于最小生成树中&lt;/p>
+&lt;p>$2 \le n \le 10^5$&lt;/p>
+&lt;p>$n - 1 \le m \le min({10^5},\frac{n(n-1)}{2})$&lt;/p>
+&lt;/div></description></item></channel></rss>
