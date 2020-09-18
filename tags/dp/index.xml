@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/dp/</link><description>Recent content in DP on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 27 Jan 2019 23:25:30 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3672 小清新签到题（DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3672/</link><pubDate>Sun, 27 Jan 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3672/</guid><description>&lt;p>&lt;a href="https://www.luogu.org/problemnew/show/P3672" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/dp/</link><description>Recent content in DP on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 17 Sep 2020 21:06:09 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 372C Watching Fireworks is Fun（DP，单调队列）</title><link>https://TosakaUCw.github.io/post/cf_372c/</link><pubDate>Thu, 17 Sep 2020 21:06:09 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_372c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/372/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>一个城镇有 $n$ 个区域，从左到右编号为 $1$ 到 $n$，每个区域之间距离 $1$ 个单位距离。&lt;/p>
+&lt;p>节日中有 $m$ 个烟火要放，给定放的地点 $a_i$ 时间 $t_i$，如果你当时在区域$x$，那么你可以获得 $b_i - \vert a_i - x\vert$ 的开心值。&lt;/p>
+&lt;p>你每个单位时间可以移动不超过 $d$ 个单位距离。&lt;/p>
+&lt;p>你的初始位置是任意的（初始时刻为 $1$ ），求你通过移动能获取到的最大的开心值。&lt;/p>
+&lt;p>$1 \le n \le 150000$&lt;/p>
+&lt;p>$1 \le m \le 300$&lt;/p>
+&lt;/div></description></item><item><title>Luogu P3672 小清新签到题（DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3672/</link><pubDate>Sun, 27 Jan 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3672/</guid><description>&lt;p>&lt;a href="https://www.luogu.org/problemnew/show/P3672" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定自然数`n,k,x`，你要求出第`k`小的长度为`n`的逆序对对数为`x`的1 ~ n的排列&lt;/p>
