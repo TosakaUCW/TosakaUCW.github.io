@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/categories/%E7%AE%97%E6%B3%95/</link><description>Recent content in 算法 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 21:09:58 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>虚树</title><link>https://TosakaUCw.github.io/post/%E8%99%9A%E6%A0%91/</link><pubDate>Mon, 14 Sep 2020 21:09:58 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E8%99%9A%E6%A0%91/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P2495" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/categories/%E7%AE%97%E6%B3%95/</link><description>Recent content in 算法 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 20 Sep 2020 20:54:17 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>线段树优化建图</title><link>https://TosakaUCw.github.io/post/%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/</link><pubDate>Sun, 20 Sep 2020 20:54:17 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/786/problem/B" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>有 $n$ 个点和 $m$ 次操作，每一次操作为以下三种类型中的一种 ：&lt;/p>
+&lt;p>1 u v dis：连一条 $u \to v$ 的单向边，权值为 $dis$。&lt;/p>
+&lt;p>2 u l r dis：对于所有 $i \in [l,r]$ 连一条 $u \to i$ 的单向边，权值为 $dis$。&lt;/p>
+&lt;p>3 u l r dis：对于所有 $i \in [l,r]$ 连一条 $i \to u$ 的单向边，权值为 $dis$。&lt;/p>
+&lt;p>$1 \le n \le 10^5$&lt;/p>
+&lt;/div></description></item><item><title>虚树</title><link>https://TosakaUCw.github.io/post/%E8%99%9A%E6%A0%91/</link><pubDate>Mon, 14 Sep 2020 21:09:58 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E8%99%9A%E6%A0%91/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P2495" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵树，割断每一条边都有代价，每次询问会给定一些点，求用最少的代价使所有给定点都和1号节点不连通&lt;/p>
