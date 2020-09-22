@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3588 [POI2015]PUS（线段树优化建图，拓扑排序）</title><link>https://TosakaUCw.github.io/post/luogu_p3588/</link><pubDate>Mon, 21 Sep 2020 20:40:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3588/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3588" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P5025 [SNOI2017]炸弹（线段树优化建图，缩点）</title><link>https://TosakaUCw.github.io/post/luogu_p5025/</link><pubDate>Tue, 22 Sep 2020 18:26:21 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p5025/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P5025" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>在一条直线上有 $n$ 个炸弹，每个炸弹的坐标是 $x_i$，爆炸半径是 $r_i$，当一个炸弹爆炸时，如果另一个炸弹所在位置 $x_j$ 满足：$|x_j-x_i| \le r_i$ ，那么，该炸弹也会被引爆。&lt;/p>
+&lt;p>现在，请你帮忙计算一下，先把第 $i$ 个炸弹引爆，将引爆多少个炸弹呢？&lt;/p>
+&lt;p>答案对 $10^9 + 7$ 取模&lt;/p>
+&lt;p>$n \le 5 \times 10^5$&lt;/p>
+&lt;p>$-10^{18} \le x_i \le 10^{18}$&lt;/p>
+&lt;p>$0 \le r_i \le 2 \times 10^{18}$&lt;/p>
+&lt;/div></description></item><item><title>Luogu P3588 [POI2015]PUS（线段树优化建图，拓扑排序）</title><link>https://TosakaUCw.github.io/post/luogu_p3588/</link><pubDate>Mon, 21 Sep 2020 20:40:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3588/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3588" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给出一个部分未知的数列的长，以及数列已知的部分&lt;/p>
