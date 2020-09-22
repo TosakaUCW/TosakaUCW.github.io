@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>题解 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/</link><description>Recent content in 题解 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 22 Sep 2020 18:26:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P5025 [SNOI2017]炸弹（线段树优化建图，缩点）</title><link>https://TosakaUCw.github.io/post/luogu_p5025/</link><pubDate>Tue, 22 Sep 2020 18:26:21 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p5025/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P5025" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>题解 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/</link><description>Recent content in 题解 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 22 Sep 2020 19:18:13 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P4802 [CCO 2015]路短最（状态压缩，DP）</title><link>https://TosakaUCw.github.io/post/luogu_p4802/</link><pubDate>Tue, 22 Sep 2020 19:18:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p4802/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P4802" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次&lt;/p>
+&lt;p>$2 \le n \le 18$&lt;/p>
+&lt;/div></description></item><item><title>Luogu P5025 [SNOI2017]炸弹（线段树优化建图，缩点）</title><link>https://TosakaUCw.github.io/post/luogu_p5025/</link><pubDate>Tue, 22 Sep 2020 18:26:21 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p5025/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P5025" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>在一条直线上有 $n$ 个炸弹，每个炸弹的坐标是 $x_i$，爆炸半径是 $r_i$，当一个炸弹爆炸时，如果另一个炸弹所在位置 $x_j$ 满足：$|x_j-x_i| \le r_i$ ，那么，该炸弹也会被引爆。&lt;/p>
@@ -67,7 +72,7 @@
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>添加最少的有向边使给定的 DAG 强联通&lt;/p>
-&lt;/div></description></item><item><title>CF 837D Round Subset（数论，背包）</title><link>https://TosakaUCw.github.io/post/cf_837d/</link><pubDate>Thu, 13 Aug 2020 03:17:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_837d/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/837/problem/D" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;/div></description></item><item><title>CF 837D Round Subset（数论，背包 DP）</title><link>https://TosakaUCw.github.io/post/cf_837d/</link><pubDate>Thu, 13 Aug 2020 03:17:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_837d/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/837/problem/D" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定 $n$ 个数的数列，从中选出 $k$ 个数，使选出的 $k$ 个数的乘积&lt;/p>

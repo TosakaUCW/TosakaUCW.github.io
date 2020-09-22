@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Luogu P2634 [国家集训队]聪聪可可（树形 DP） - TosakaUCW的博客</title>
+  <title>Luogu P4802 [CCO 2015]路短最（状态压缩，DP） - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,7 +18,8 @@
 
 <meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
 题目描述
-给定一棵有边权的树和 k，求树上距离为 k 的倍数的点对数量
+给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次
+$2 \le n \le 18$
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -29,7 +30,7 @@
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p2634/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p4802/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -42,34 +43,37 @@
 
 
 
-<meta property="og:title" content="Luogu P2634 [国家集训队]聪聪可可（树形 DP）" />
+<meta property="og:title" content="Luogu P4802 [CCO 2015]路短最（状态压缩，DP）" />
 <meta property="og:description" content="题目链接
 
   题目描述
-给定一棵有边权的树和 k，求树上距离为 k 的倍数的点对数量
+给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次
+$2 \le n \le 18$
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p2634/" />
-<meta property="article:published_time" content="2020-08-13T03:25:54+08:00" />
-<meta property="article:modified_time" content="2020-09-22T19:37:49+08:00" />
-<meta itemprop="name" content="Luogu P2634 [国家集训队]聪聪可可（树形 DP）">
+<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p4802/" />
+<meta property="article:published_time" content="2020-09-22T19:18:13+08:00" />
+<meta property="article:modified_time" content="2020-09-22T19:35:04+08:00" />
+<meta itemprop="name" content="Luogu P4802 [CCO 2015]路短最（状态压缩，DP）">
 <meta itemprop="description" content="题目链接
 
   题目描述
-给定一棵有边权的树和 k，求树上距离为 k 的倍数的点对数量
+给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次
+$2 \le n \le 18$
 ">
-<meta itemprop="datePublished" content="2020-08-13T03:25:54&#43;08:00" />
-<meta itemprop="dateModified" content="2020-09-22T19:37:49&#43;08:00" />
-<meta itemprop="wordCount" content="366">
+<meta itemprop="datePublished" content="2020-09-22T19:18:13&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-22T19:35:04&#43;08:00" />
+<meta itemprop="wordCount" content="326">
 
 
 
-<meta itemprop="keywords" content="树形DP,DP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Luogu P2634 [国家集训队]聪聪可可（树形 DP）"/>
+<meta itemprop="keywords" content="状态压缩,DP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Luogu P4802 [CCO 2015]路短最（状态压缩，DP）"/>
 <meta name="twitter:description" content="题目链接
 
   题目描述
-给定一棵有边权的树和 k，求树上距离为 k 的倍数的点对数量
+给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次
+$2 \le n \le 18$
 "/>
 
 <!--[if lte IE 9]>
@@ -145,14 +149,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Luogu P2634 [国家集训队]聪聪可可（树形 DP）</h1>
+      <h1 class="post-title">Luogu P4802 [CCO 2015]路短最（状态压缩，DP）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-08-13 03:25:54 &#43;0800 &#43;0800"> 2020-08-13 </span>
+        <span class="post-time" title="2020-09-22 19:18:13 &#43;0800 &#43;0800"> 2020-09-22 </span>
         <div class="post-category">
             <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 366 字 </span>
+          <span class="more-meta"> 约 326 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -175,43 +179,29 @@
   </div>
 </div>
     <div class="post-content">
-      <p><a href="https://www.luogu.com.cn/problem/P2634" target="_blank">题目链接</a></p>
+      <p><a href="https://www.luogu.com.cn/problem/P4802" target="_blank">题目链接</a></p>
 <div class="admonition question">
   <p class="admonition-title">题目描述</p>
-<p>给定一棵有边权的树和 k，求树上距离为 k 的倍数的点对数量</p>
+<p>给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次</p>
+<p>$2 \le n \le 18$</p>
 </div>
 <h2 id="简要做法">简要做法</h2>
-<p>考虑树形 dp</p>
-<p>设 $f(u,j) $ 表示以 $u$ 为根的子树中到 $u$ 距离 $\bmod \ k == j$ 的点对数量</p>
-<p>那么</p>
-<p>$$f(u,j) = \sum_{v \in u.son} f(v,(j-dist_{u,v}) \bmod k)$$</p>
-<p>写成方便转移的形式</p>
-<p>$$f(u,[j+dist(u,v)] \bmod k) = \sum_{v \in u.son} f(v,j)$$</p>
-<p>dfs 时转移并统计答案即可</p>
-<p>这题就是 k = 3 的情况</p>
+<p>数据范围想到状压</p>
+<p>$f(i,j)$ 表示从起点走到点 $i$，状态为 $j$ 的最长路</p>
+<p>dp 即可</p>
 <h2 id="参考代码">参考代码</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &lt;algorithm&gt;
 #include &lt;memory.h&gt;
 
-typedef long long ll;
+const int N = 18 + 1;
 
-const ll N = 1e5 + 5;
+int n, m, ans;
+int dis[N][N], f[N][1 &lt;&lt; N];
 
-ll n, ans;
-ll head[N], num_edge;
-ll f[N][3], tmp[3];
-
-struct Node
+int read()
 {
-    ll next, to, dis;
-} edge[N &lt;&lt; 1];
-
-void add_edge(ll u, ll v, ll dis) { edge[++num_edge] = Node{head[u], v, dis % 3}, head[u] = num_edge; }
-
-ll read()
-{
-    ll x = 0, f = 1;
+    int x = 0, f = 1;
     char ch = getchar();
     while ('0' &gt; ch or ch &gt; '9')
         f = ch == '-' ? -1 : 1, ch = getchar();
@@ -220,30 +210,24 @@ ll read()
     return x * f;
 }
 
-void dfs(int u, int fa)
+int main()
 {
-    f[u][0] = 1;
-    for (int i = head[u]; i; i = edge[i].next)
-    {
-        int v = edge[i].to, dis = edge[i].dis;
-        if (v == fa)
-            continue;
-        dfs(v, u);
-        for (int j = 0; j &lt; 3; ++j)
-            ans += 2 * f[v][j] * f[u][(6 - dis - j) % 3];
-        for (int j = 0; j &lt; 3; ++j)
-            f[u][(j + dis) % 3] += f[v][j];
-    }
+    memset(f, 0xcf, sizeof f), memset(dis, 0xcf, sizeof dis);
+    n = read(), m = read();
+    for (int i = 1, u, v, w; i &lt;= m; i++)
+        u = read(), v = read(), w = read(), dis[u][v] = w;
+    for (int i = 1; i &lt; n; i++)
+        f[i][1 + (1 &lt;&lt; i)] = dis[0][i];
+    for (int i = 2; i &lt; (1 &lt;&lt; n); i++)
+        for (int j = 0; j &lt; n; j++)
+            if (i &amp; (1 &lt;&lt; j))
+                for (int k = 0; k &lt; n; k++)
+                    if (j != k and !(i &amp; (1 &lt;&lt; k)))
+                        f[k][i | (1 &lt;&lt; k)] = std::max(f[k][i | (1 &lt;&lt; k)], f[j][i] + dis[j][k]);
+    for (int i = (1 &lt;&lt; (n - 1)) + 1; i &lt; (1 &lt;&lt; n); i++)
+        ans = std::max(ans, f[n - 1][i]);
+    return printf(&quot;%d&quot;, ans), 0;
 }
-
-signed main()
-{
-    n = read();
-    for (ll i = 1, u, v, dis; i &lt; n; i++)
-        u = read(), v = read(), dis = read(), add_edge(u, v, dis), add_edge(v, u, dis);
-    dfs(1, 0), ans += n;
-    printf(&quot;%lld/%lld&quot;, ans / std::__gcd(ans, n * n), n * n / std::__gcd(ans, n * n));
-    return 0;
 </code></pre>
     </div>
 
@@ -255,9 +239,9 @@ signed main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-09-22 19:37:49 &#43;0800 &#43;0800">2020-09-22</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/fd8e730197e8a32fde250c1b304ad57ec16ad6cb" title="modify tag" target="_blank">(fd8e730)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P2634.md" target="_blank">更新历史</a>
+        <span title="2020-09-22 19:35:04 &#43;0800 &#43;0800">2020-09-22</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/4c99b09a8afc28d9c401759c6548d3a060874842" title="Luogu_P4802.md" target="_blank">(4c99b09)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P4802.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -268,17 +252,13 @@ signed main()
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E6%A0%91%E5%BD%A2dp/">树形DP</a>
+          <a href="/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/">状态压缩</a>
           <a href="/tags/dp/">DP</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/%E5%AD%97%E7%AC%A6%E4%B8%B2hash/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">字符串Hash</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/luogu_p3758/">
-            <span class="next-text nav-default">Luogu P3758 [TJOI2017]可乐（邻接矩阵，矩阵乘法）</span>
+        
+        <a class="next" href="/post/luogu_p5025/">
+            <span class="next-text nav-default">Luogu P5025 [SNOI2017]炸弹（线段树优化建图，缩点）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
