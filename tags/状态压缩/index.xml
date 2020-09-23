@@ -8,4 +8,13 @@
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一张图，点编号从 $0$ 到 $n - 1$，求一条起点为 $0$ 号点 终点为 $n - 1$ 号点的最短路，每个点只能经过一次&lt;/p>
 &lt;p>$2 \le n \le 18$&lt;/p>
+&lt;/div></description></item><item><title>CF 620E New Year Tree（状态压缩，线段树）</title><link>https://TosakaUCw.github.io/post/cf_620e/</link><pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_620e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/620/problem/E" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一棵以1为根的有根树，有n个点&lt;/p>
+&lt;p>每个节点初始有一个颜色c[i]。&lt;/p>
+&lt;p>有两种操作：&lt;/p>
+&lt;p>1 v c 将以v为根的子树中所有点颜色更改为c&lt;/p>
+&lt;p>2 v 查询以v为根的子树中的节点有多少种不同的颜色&lt;/p>
+&lt;p>1 &amp;lt;= n, m &amp;lt;= 4e5&lt;/p>
 &lt;/div></description></item></channel></rss>
