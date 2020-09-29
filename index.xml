@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3891 [GDOI2014]采集资源（DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3891/</link><pubDate>Mon, 28 Sep 2020 20:35:59 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3891/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3891" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3401 洛谷树（树链剖分）</title><link>https://TosakaUCw.github.io/post/luogu_p3401/</link><pubDate>Wed, 30 Sep 2020 07:05:05 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3401/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3401" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一棵树，带边权，2 种操作&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>查询两点间所有子路径的异或和的和&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>修改一条边的边权&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$1 \le n \le 3 \times 10^4$&lt;/p>
+&lt;p>所有边权小于等于 1023&lt;/p>
+&lt;/div></description></item><item><title>Luogu P3891 [GDOI2014]采集资源（DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3891/</link><pubDate>Mon, 28 Sep 2020 20:35:59 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3891/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3891" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>有 $n$ 种农民，每种农民有两个属性，造价和生产力&lt;/p>
