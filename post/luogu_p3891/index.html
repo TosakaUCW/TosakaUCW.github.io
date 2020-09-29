@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP） - TosakaUCW的博客</title>
+  <title>Luogu P3891 [GDOI2014]采集资源（DP） - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,8 +18,11 @@
 
 <meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
 题目描述
-给出 $n$ 个物品，体积为 $w_i$，现把其分成若干组，要求每组总体积$\le m$，问最小分组。
-$1 \le n \le 18$
+有 $n$ 种农民，每种农民有两个属性，造价和生产力
+初始有 $m$ 块钱，和 $0$ 个农民，求赚到 $t$ 快钱的最少天数
+$N \le 100$
+$M, T \le 1000$
+数据保证有解
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -30,7 +33,7 @@ $1 \le n \le 18$
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p3052/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p3891/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,37 +46,46 @@ $1 \le n \le 18$
 
 
 
-<meta property="og:title" content="Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）" />
+<meta property="og:title" content="Luogu P3891 [GDOI2014]采集资源（DP）" />
 <meta property="og:description" content="题目链接
 
   题目描述
-给出 $n$ 个物品，体积为 $w_i$，现把其分成若干组，要求每组总体积$\le m$，问最小分组。
-$1 \le n \le 18$
+有 $n$ 种农民，每种农民有两个属性，造价和生产力
+初始有 $m$ 块钱，和 $0$ 个农民，求赚到 $t$ 快钱的最少天数
+$N \le 100$
+$M, T \le 1000$
+数据保证有解
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p3052/" />
-<meta property="article:published_time" content="2020-09-24T20:17:56+08:00" />
-<meta property="article:modified_time" content="2020-09-24T20:26:40+08:00" />
-<meta itemprop="name" content="Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）">
+<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p3891/" />
+<meta property="article:published_time" content="2020-09-28T20:35:59+08:00" />
+<meta property="article:modified_time" content="2020-09-29T09:29:24+08:00" />
+<meta itemprop="name" content="Luogu P3891 [GDOI2014]采集资源（DP）">
 <meta itemprop="description" content="题目链接
 
   题目描述
-给出 $n$ 个物品，体积为 $w_i$，现把其分成若干组，要求每组总体积$\le m$，问最小分组。
-$1 \le n \le 18$
+有 $n$ 种农民，每种农民有两个属性，造价和生产力
+初始有 $m$ 块钱，和 $0$ 个农民，求赚到 $t$ 快钱的最少天数
+$N \le 100$
+$M, T \le 1000$
+数据保证有解
 ">
-<meta itemprop="datePublished" content="2020-09-24T20:17:56&#43;08:00" />
-<meta itemprop="dateModified" content="2020-09-24T20:26:40&#43;08:00" />
-<meta itemprop="wordCount" content="364">
+<meta itemprop="datePublished" content="2020-09-28T20:35:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-29T09:29:24&#43;08:00" />
+<meta itemprop="wordCount" content="501">
 
 
 
-<meta itemprop="keywords" content="状态压缩,DP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）"/>
+<meta itemprop="keywords" content="DP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Luogu P3891 [GDOI2014]采集资源（DP）"/>
 <meta name="twitter:description" content="题目链接
 
   题目描述
-给出 $n$ 个物品，体积为 $w_i$，现把其分成若干组，要求每组总体积$\le m$，问最小分组。
-$1 \le n \le 18$
+有 $n$ 种农民，每种农民有两个属性，造价和生产力
+初始有 $m$ 块钱，和 $0$ 个农民，求赚到 $t$ 快钱的最少天数
+$N \le 100$
+$M, T \le 1000$
+数据保证有解
 "/>
 
 <!--[if lte IE 9]>
@@ -149,14 +161,14 @@ $1 \le n \le 18$
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）</h1>
+      <h1 class="post-title">Luogu P3891 [GDOI2014]采集资源（DP）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-09-24 20:17:56 &#43;0800 &#43;0800"> 2020-09-24 </span>
+        <span class="post-time" title="2020-09-28 20:35:59 &#43;0800 &#43;0800"> 2020-09-28 </span>
         <div class="post-category">
             <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 364 字 </span>
+          <span class="more-meta"> 约 501 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -179,26 +191,35 @@ $1 \le n \le 18$
   </div>
 </div>
     <div class="post-content">
-      <p><a href="https://www.luogu.com.cn/problem/P3052" target="_blank">题目链接</a></p>
+      <p><a href="https://www.luogu.com.cn/problem/P3891" target="_blank">题目链接</a></p>
 <div class="admonition question">
   <p class="admonition-title">题目描述</p>
-<p>给出 $n$ 个物品，体积为 $w_i$，现把其分成若干组，要求每组总体积$\le m$，问最小分组。</p>
-<p>$1 \le n \le 18$</p>
+<p>有 $n$ 种农民，每种农民有两个属性，造价和生产力</p>
+<p>初始有 $m$ 块钱，和 $0$ 个农民，求赚到 $t$ 快钱的最少天数</p>
+<p>$N \le 100$</p>
+<p>$M, T \le 1000$</p>
+<p>数据保证有解</p>
 </div>
 <h2 id="简要做法">简要做法</h2>
-<p>定义 $f(k,i)$ 代表分了 $k$ 组，状态为 $i$，第 $k$ 组的总体积的最小值</p>
-<p>那么对于当前这个物品可以更新当前这一组（如果容量不爆的话），和新开一组</p>
-<p>统计答案时扫最小的 $i$ 使得 $f(i,target_status)$ 有解即可</p>
+<p>（这道题是从第 $0$ 天开始的</p>
+<p>首先，我们要预处理出 $f(x)$ 表示花费 $x$ 块钱，能买到的最大生产力</p>
+<p>这个东西用完全背包可以搞</p>
+<p>然后我们定义 $g(i,x)$ 表示 $i$ 时刻，拥有 $x$ 块钱时，最大的生产力</p>
+<p>那么对于 $i$ 时刻，我们拥有 $j$ 资源，我们花费了 $k$ 块钱造农民</p>
+<p>$i + 1$ 时刻，我们拥有的资源就是 $i$ 时刻剩余的资源 + 新造的农民生产的资源 + 原来就有的农民</p>
+<p>即 $w=(j-k)+f(k)+g(i,j)$</p>
+<p>那么 $i + 1$ 时刻所能拥有的最大生产力 $g(i+1,w)=max(g(i+1,w),f(k)+g(i,j))$</p>
+<p><del>这是什么神仙 DP</del></p>
 <h2 id="参考代码">参考代码</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &lt;algorithm&gt;
 #include &lt;memory.h&gt;
 
-const int N = 18 + 1;
-const int INF = 0x3f3f3f3f;
+const int N = 1e2 + 5;
+const int M = 1e3 + 5;
 
-int n, m, sta;
-int a[N], f[N][1 &lt;&lt; N];
+int n, m, t;
+int f[N], g[N][M], a[N], b[N];
 
 int read()
 {
@@ -213,28 +234,38 @@ int read()
 
 int main()
 {
-    memset(f, 0x3f, sizeof f);
-    n = read(), m = read(), sta = (1 &lt;&lt; n) - 1;
-    for (int i = 0; i &lt; n; i++)
-        f[1][1 &lt;&lt; i] = a[i] = read();
-    for (int k = 0; k &lt;= n; k++)
-        for (int i = 0; i &lt;= sta; i++)
-            if (f[k][i] != INF)
-                for (int j = 0; j &lt; n; j++)
-                {
-                    if (i &amp; (1 &lt;&lt; j))
-                        continue;
-                    if (f[k][i] + a[j] &lt;= m)
-                        f[k][i | (1 &lt;&lt; j)] = std::min(f[k][i | (1 &lt;&lt; j)], f[k][i] + a[j]);
-                    else
-                        f[k + 1][i | (1 &lt;&lt; j)] = std::min(f[k][i | (1 &lt;&lt; j)], a[j]);
-                }
-    for (int i = 0; i &lt;= n; i++)
-        if (f[i][sta] != INF)
+    n = read(), m = read(), t = read();
+    if (m &gt;= t)
+        return puts(&quot;0&quot;), 0;
+    for (int i = 1; i &lt;= n; i++)
+        a[i] = read(), b[i] = read();
+    memset(f, -1, sizeof f);
+    f[0] = 0;
+    for (int i = 1; i &lt;= n; i++)
+        for (int j = a[i]; j &lt;= 1000; j++)
+            if (f[j - a[i]] != -1)
+                f[j] = std::max(f[j], f[j - a[i]] + b[i]);
+    memset(g, -1, sizeof g);
+    g[0][m] = 0;
+    for (int i = 0; i &lt;= 1000; i++)
+    {
+        if (g[i][t] != -1)
+            return printf(&quot;%d&quot;, i), 0;
+        for (int j = 0; j &lt;= t; j++)
         {
-            printf(&quot;%d&quot;, i);
-            break;
+            if (g[i][j] == -1)
+                continue;
+            for (int k = 0; k &lt;= j; k++)
+            {
+                if (f[k] == -1)
+                    continue;
+                int w = j - k + f[k] + g[i][j];
+                if (w &gt;= t)
+                    return printf(&quot;%d&quot;, i + 1), 0;
+                g[i + 1][w] = std::max(g[i + 1][w], f[k] + g[i][j]);
+            }
         }
+    }
     return 0;
 }
 </code></pre>
@@ -248,9 +279,9 @@ int main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-09-24 20:26:40 &#43;0800 &#43;0800">2020-09-24</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/bef7e5020db671dca7ac25f63c03eb5aaeed2fdc" title="Luogu_P3052.md" target="_blank">(bef7e50)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P3052.md" target="_blank">更新历史</a>
+        <span title="2020-09-29 09:29:24 &#43;0800 &#43;0800">2020-09-29</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/bda90011ff19215ed7f0ee7021fcc46b3df81149" title="Luogu_P3891.md" target="_blank">(bda9001)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P3891.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -261,17 +292,12 @@ int main()
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/">状态压缩</a>
           <a href="/tags/dp/">DP</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/luogu_p3891/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Luogu P3891 [GDOI2014]采集资源（DP）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/luogu_p4329/">
-            <span class="next-text nav-default">Luogu P4329 [COCI2006-2007#1] Bond（状态压缩，DP）</span>
+        
+        <a class="next" href="/post/luogu_p3052/">
+            <span class="next-text nav-default">Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

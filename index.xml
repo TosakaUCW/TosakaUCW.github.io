@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3052/</link><pubDate>Thu, 24 Sep 2020 20:17:56 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3052/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3052" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3891 [GDOI2014]采集资源（DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3891/</link><pubDate>Mon, 28 Sep 2020 20:35:59 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3891/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3891" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>有 $n$ 种农民，每种农民有两个属性，造价和生产力&lt;/p>
+&lt;p>初始有 $m$ 块钱，和 $0$ 个农民，求赚到 $t$ 快钱的最少天数&lt;/p>
+&lt;p>$N \le 100$&lt;/p>
+&lt;p>$M, T \le 1000$&lt;/p>
+&lt;p>数据保证有解&lt;/p>
+&lt;/div></description></item><item><title>Luogu P3052 [USACO12MAR]Cows in a Skyscraper G（状态压缩，DP）</title><link>https://TosakaUCw.github.io/post/luogu_p3052/</link><pubDate>Thu, 24 Sep 2020 20:17:56 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3052/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3052" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给出 $n$ 个物品，体积为 $w_i$，现把其分成若干组，要求每组总体积$\le m$，问最小分组。&lt;/p>
