@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Luogu P2051 [AHOI2009]中国象棋（DP） - TosakaUCW的博客</title>
+  <title>HDU 4349 Xiao Ming&#39;s Hope（组合数学，卢卡斯定理） - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,8 +18,7 @@
 
 <meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
 题目描述
-给定一个 $n \times m$ 的棋盘，求放棋子使得每一行每一列棋子个数小于等于 $2$ 的方案总数
-$1 \le n,m \le 100$
+$O(1)$ 判断 $C(n,m)$ 的奇偶性
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -30,7 +29,7 @@ $1 \le n,m \le 100$
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p2051/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/hdu_4349/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,37 +42,34 @@ $1 \le n,m \le 100$
 
 
 
-<meta property="og:title" content="Luogu P2051 [AHOI2009]中国象棋（DP）" />
+<meta property="og:title" content="HDU 4349 Xiao Ming&#39;s Hope（组合数学，卢卡斯定理）" />
 <meta property="og:description" content="题目链接
 
   题目描述
-给定一个 $n \times m$ 的棋盘，求放棋子使得每一行每一列棋子个数小于等于 $2$ 的方案总数
-$1 \le n,m \le 100$
+$O(1)$ 判断 $C(n,m)$ 的奇偶性
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p2051/" />
-<meta property="article:published_time" content="2020-10-05T21:04:17+08:00" />
-<meta property="article:modified_time" content="2020-10-06T07:36:51+08:00" />
-<meta itemprop="name" content="Luogu P2051 [AHOI2009]中国象棋（DP）">
+<meta property="og:url" content="https://TosakaUCw.github.io/post/hdu_4349/" />
+<meta property="article:published_time" content="2020-10-10T13:08:13+08:00" />
+<meta property="article:modified_time" content="2020-10-15T20:50:10+08:00" />
+<meta itemprop="name" content="HDU 4349 Xiao Ming&#39;s Hope（组合数学，卢卡斯定理）">
 <meta itemprop="description" content="题目链接
 
   题目描述
-给定一个 $n \times m$ 的棋盘，求放棋子使得每一行每一列棋子个数小于等于 $2$ 的方案总数
-$1 \le n,m \le 100$
+$O(1)$ 判断 $C(n,m)$ 的奇偶性
 ">
-<meta itemprop="datePublished" content="2020-10-05T21:04:17&#43;08:00" />
-<meta itemprop="dateModified" content="2020-10-06T07:36:51&#43;08:00" />
-<meta itemprop="wordCount" content="496">
+<meta itemprop="datePublished" content="2020-10-10T13:08:13&#43;08:00" />
+<meta itemprop="dateModified" content="2020-10-15T20:50:10&#43;08:00" />
+<meta itemprop="wordCount" content="218">
 
 
 
-<meta itemprop="keywords" content="DP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Luogu P2051 [AHOI2009]中国象棋（DP）"/>
+<meta itemprop="keywords" content="组合数学,卢卡斯定理," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HDU 4349 Xiao Ming&#39;s Hope（组合数学，卢卡斯定理）"/>
 <meta name="twitter:description" content="题目链接
 
   题目描述
-给定一个 $n \times m$ 的棋盘，求放棋子使得每一行每一列棋子个数小于等于 $2$ 的方案总数
-$1 \le n,m \le 100$
+$O(1)$ 判断 $C(n,m)$ 的奇偶性
 "/>
 
 <!--[if lte IE 9]>
@@ -149,14 +145,14 @@ $1 \le n,m \le 100$
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Luogu P2051 [AHOI2009]中国象棋（DP）</h1>
+      <h1 class="post-title">HDU 4349 Xiao Ming&#39;s Hope（组合数学，卢卡斯定理）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-10-05 21:04:17 &#43;0800 &#43;0800"> 2020-10-05 </span>
+        <span class="post-time" title="2020-10-10 13:08:13 &#43;0800 &#43;0800"> 2020-10-10 </span>
         <div class="post-category">
             <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 496 字 </span>
+          <span class="more-meta"> 约 218 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -179,69 +175,37 @@ $1 \le n,m \le 100$
   </div>
 </div>
     <div class="post-content">
-      <p><a href="https://www.luogu.com.cn/problem/P2051" target="_blank">题目链接</a></p>
+      <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4349" target="_blank">题目链接</a></p>
 <div class="admonition question">
   <p class="admonition-title">题目描述</p>
-<p>给定一个 $n \times m$ 的棋盘，求放棋子使得每一行每一列棋子个数小于等于 $2$ 的方案总数</p>
-<p>$1 \le n,m \le 100$</p>
+<p>$O(1)$ 判断 $C(n,m)$ 的奇偶性</p>
 </div>
 <h2 id="简要做法">简要做法</h2>
-<p>状态比较关键，设 $f(i,j,k))$ 表示前 $i$ 行，有 $j$ 列存在一个棋子，有 $k$ 列存在二个棋子的方案数</p>
-<p>当这一行不放棋子，方案为 $f(i-1,j,k)$</p>
-<p>放在空列，放一个，方案为 $f(i-1,j-1,k) \times (m - (j - 1) - k)$</p>
-<p>放在空列，放两个，方案为 $f(i-1,j-2,k) \times C_{m-(j-2)-k}^2$</p>
-<p>放在已有一个的列，放一个，方案为 $f(i-1,j+1,k-1) \times (j+1)$</p>
-<p>放在已有一个的列，放两个，方案为 $f(i-1,j+2,k-2)\times C_{j+2}^2$</p>
-<p>在空列和已有一个的列各放一个，方案为 $f(i-1,j,k-1) \times j \times (m-j-(k-1))$</p>
+<p>Lucas 定理</p>
+<p>$C(n,m) \equiv C(n \bmod 2, m \bmod 2) * C(n / 2, m / 2) \quad (\bmod 2 \ )$</p>
+<p>如果是奇数</p>
+<p>$C(n \bmod 2, m \bmod 2) \equiv C(n / 2, m / 2) \equiv 1  \quad (\bmod 2 \ )$</p>
+<p>左边那东西就是要求 $n \bmod 2 = 1$</p>
+<p>右边那东西看起来不太显然，其实就是 $C(n &raquo; 1, m &raquo; 1) \equiv 1  \quad (\bmod 2 \ )$</p>
+<p>递归下去，结合左边那东西看就是二进制下 $n$ 的前 $\log_2m$ 位都得是 1</p>
+<p>也就是说当且仅当 n &amp; m = m 且 n != 0 时，C(n,m) 为奇数</p>
 <h2 id="参考代码">参考代码</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
-#include &lt;algorithm&gt;
 
-#define int long long
+int n;
 
-const int N = 2e2 + 5;
-const int magic = 4999987;
-const int P = 9999973;
-
-int n, m, ans;
-int fac[N], inv[N];
-int f[N][N][N];
-
-int read()
+int main()
 {
-    int x = 0, f = 1;
-    char ch = getchar();
-    while ('0' &gt; ch or ch &gt; '9')
-        f = ch == '-' ? -1 : 1, ch = getchar();
-    while ('0' &lt;= ch and ch &lt;= '9')
-        x = x * 10 + ch - 48, ch = getchar();
-    return x * f;
-}
-
-int C(int n) { return n * (n - 1) % P * magic % P; }
-
-signed main()
-{
-    n = read(), m = read(), f[0][0][0] = 1;
-    for (int i = 1; i &lt;= n; i++)
-        for (int j = 0; j &lt;= m; j++)
-            for (int k = 0; k + j &lt;= m; f[i][j][k++] %= P)
-            {
-                f[i][j][k] = f[i - 1][j][k];
-                if (k &gt;= 1)
-                    f[i][j][k] += f[i - 1][j + 1][k - 1] * (j + 1) % P,
-                        f[i][j][k] += f[i - 1][j][k - 1] * j * (m - j - k + 1) % P;
-                if (k &gt;= 2)
-                    f[i][j][k] += f[i - 1][j + 2][k - 2] * C(j + 2) % P;
-                if (j &gt;= 1)
-                    f[i][j][k] += f[i - 1][j - 1][k] * (m - j - k + 1) % P;
-                if (j &gt;= 2)
-                    f[i][j][k] += f[i - 1][j - 2][k] * C(m - j - k + 2) % P;
-            }
-    for (int i = 0; i &lt;= m; i++)
-        for (int j = 0; j &lt;= m; j++)
-            (ans += f[n][i][j]) %= P;
-    return printf(&quot;%lld&quot;, (ans + P) % P), 0;
+    while (~scanf(&quot;%d&quot;, &amp;n))
+    {
+        int k = 0, ans = 1;
+        while (n)
+            k += n % 2, n /= 2;
+        for (int i = 1; i &lt;= k; i++)
+            ans *= 2;
+        printf(&quot;%d\n&quot;, ans);
+    }
+    return 0;
 }
 </code></pre>
     </div>
@@ -254,9 +218,9 @@ signed main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-10-06 07:36:51 &#43;0800 &#43;0800">2020-10-06</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/6cc682853d6c475a46e4c78ebfbd7138c97f7a63" title="update" target="_blank">(6cc6828)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P2051.md" target="_blank">更新历史</a>
+        <span title="2020-10-15 20:50:10 &#43;0800 &#43;0800">2020-10-15</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/e3fee82c8aeaf28b947a66458bce1c65f9719338" title="add" target="_blank">(e3fee82)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/HDU_4349.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -267,16 +231,13 @@ signed main()
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/dp/">DP</a>
+          <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
+          <a href="/tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86/">卢卡斯定理</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/hdu_4349/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">HDU 4349 Xiao Ming&#39;s Hope（组合数学，卢卡斯定理）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/luogu_p6293/">
-            <span class="next-text nav-default">Luogu P6293 [eJOI2017]经验（树形 DP）</span>
+        
+        <a class="next" href="/post/luogu_p2051/">
+            <span class="next-text nav-default">Luogu P2051 [AHOI2009]中国象棋（DP）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
