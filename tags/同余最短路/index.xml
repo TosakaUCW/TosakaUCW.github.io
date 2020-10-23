@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>同余最短路 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/</link><description>Recent content in 同余最短路 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Oct 2020 19:29:45 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>HDU 6071 Lazy Running（同余最短路）</title><link>https://TosakaUCw.github.io/post/hdu_6071/</link><pubDate>Fri, 23 Oct 2020 19:29:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6071/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6071" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。&lt;/p>
+&lt;p>$K \le 10^{18}$&lt;/p>
+&lt;p>$d \le 3 \times 10^4$&lt;/p>
+&lt;/div></description></item></channel></rss>

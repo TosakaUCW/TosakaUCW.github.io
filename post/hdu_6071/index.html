@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>CSP 2020 游记（持续更新中） - TosakaUCW的博客</title>
+  <title>HDU 6071 Lazy Running（同余最短路） - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="TosakaUCW" /><meta name="description" content="本来想着过了初赛就不写游记，过了初赛再写游记（
-本来是初赛翻车没过了的，但是没想到啊没想到有推荐名额
+<meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
+题目描述
+给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。
+$K \le 10^{18}$
+$d \le 3 \times 10^4$
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -28,7 +31,7 @@
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/csp_2020/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/hdu_6071/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,26 +44,41 @@
 
 
 
-<meta property="og:title" content="CSP 2020 游记（持续更新中）" />
-<meta property="og:description" content="本来想着过了初赛就不写游记，过了初赛再写游记（
-本来是初赛翻车没过了的，但是没想到啊没想到有推荐名额" />
+<meta property="og:title" content="HDU 6071 Lazy Running（同余最短路）" />
+<meta property="og:description" content="题目链接
+
+  题目描述
+给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。
+$K \le 10^{18}$
+$d \le 3 \times 10^4$
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/csp_2020/" />
-<meta property="article:published_time" content="2020-10-23T12:54:20+08:00" />
-<meta property="article:modified_time" content="2020-10-23T19:34:23+08:00" />
-<meta itemprop="name" content="CSP 2020 游记（持续更新中）">
-<meta itemprop="description" content="本来想着过了初赛就不写游记，过了初赛再写游记（
-本来是初赛翻车没过了的，但是没想到啊没想到有推荐名额">
-<meta itemprop="datePublished" content="2020-10-23T12:54:20&#43;08:00" />
-<meta itemprop="dateModified" content="2020-10-23T19:34:23&#43;08:00" />
-<meta itemprop="wordCount" content="1115">
+<meta property="og:url" content="https://TosakaUCw.github.io/post/hdu_6071/" />
+<meta property="article:published_time" content="2020-10-23T19:29:45+08:00" />
+<meta property="article:modified_time" content="2020-10-23T19:35:01+08:00" />
+<meta itemprop="name" content="HDU 6071 Lazy Running（同余最短路）">
+<meta itemprop="description" content="题目链接
+
+  题目描述
+给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。
+$K \le 10^{18}$
+$d \le 3 \times 10^4$
+">
+<meta itemprop="datePublished" content="2020-10-23T19:29:45&#43;08:00" />
+<meta itemprop="dateModified" content="2020-10-23T19:35:01&#43;08:00" />
+<meta itemprop="wordCount" content="525">
 
 
 
-<meta itemprop="keywords" content="游记," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CSP 2020 游记（持续更新中）"/>
-<meta name="twitter:description" content="本来想着过了初赛就不写游记，过了初赛再写游记（
-本来是初赛翻车没过了的，但是没想到啊没想到有推荐名额"/>
+<meta itemprop="keywords" content="同余最短路," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HDU 6071 Lazy Running（同余最短路）"/>
+<meta name="twitter:description" content="题目链接
+
+  题目描述
+给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。
+$K \le 10^{18}$
+$d \le 3 \times 10^4$
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -135,15 +153,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">CSP 2020 游记（持续更新中）</h1>
+      <h1 class="post-title">HDU 6071 Lazy Running（同余最短路）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-10-23 12:54:20 &#43;0800 &#43;0800"> 2020-10-23 </span>
+        <span class="post-time" title="2020-10-23 19:29:45 &#43;0800 &#43;0800"> 2020-10-23 </span>
         <div class="post-category">
-            <a href="/categories/%E6%97%A5%E5%BF%97/"> 日志 </a>
+            <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 1115 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 525 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -156,69 +174,122 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#107">10.7</a></li>
-        <li><a href="#1010">10.10</a></li>
-        <li><a href="#1011">10.11</a></li>
+        <li><a href="#简要做法">简要做法</a></li>
+        <li><a href="#参考代码">参考代码</a></li>
       </ul>
     </li>
-    <li><a href="#1018">10.18</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>本来想着过了初赛就不写游记，过了初赛再写游记（</p>
-<p>本来是初赛翻车没过了的，但是没想到啊没想到有推荐名额</p>
-<h2 id="107">10.7</h2>
-<p><img src="http://a1.qpic.cn/psc?/V136sJUn4IddPF/8v1c6OdZLSE3kzDE6fnRyohM48jzrHXoGuLjTlXjXcjoe.O10mHs8NHG4FDXQDa0IzynBtTu3D6xqUFh*iYeYEyMppaI4Mb6z5cUjzZ2wSY!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=7wIzAu8CMwIRADc!&amp;tl=3&amp;vuin=2736275924&amp;tm=1603429200&amp;sce=60-2-2&amp;rf=viewer_311" alt=""></p>
-<p>早上从床上爬起来</p>
-<p>到食堂，淦，起的太晚学校食堂没早饭吃了</p>
-<p>到机房后听说初赛在自己学校举办</p>
-<p>主  场  作  战</p>
-<h2 id="1010">10.10</h2>
-<p>初赛前一天</p>
-<p><img src="https://i.loli.net/2020/10/23/bikPVny1FQrfxq6.png" alt="QQ截图20201023132710.png"></p>
-<p>雷普后辈的 Tosaka 是屑</p>
-<p>后来 zqr 和我说，因为今晚 FJ 要讲课，所以他得差不多九点才到酒店</p>
-<p>太晚了，不去了（雷普失败）</p>
-<p>听说 妈妈 和 妹妹 要给我送户口本顺便去学校隔壁的天街吃个饭</p>
-<p>带 傻勾 看妹妹，傻勾 还送了 妹妹 一包棒棒糖，妹妹：“嘻嘻，好好吃！”</p>
-<p>本来想着在学校都没吃辣，晚上吃火锅去，后来仔细一想，草万一今晚变成喷射战士就惨了（flag）</p>
-<p>后来去恰了铁板烧，scy 哥哥 /se 说他也在旁边，就把 scy 哥哥 /se 拉过来一起吃饭了</p>
-<p>恰完饭妹妹说要我给她抓娃娃，结果只用 6 个币（3 次）就帮她抓到了，娃娃机简直白给</p>
-<p>晚上回到机房，复习了下初赛的内容</p>
-<p>回寝前恰到了 傻勾 给俺叫的外卖，事奶茶，好好恰，外卖单上备注还有 傻勾 的祝福，太幸福了</p>
-<p>（结果晚上变成了喷射战士）</p>
-<p>回寝后，阿宾：“Tosaka 你今晚复习到几点？”</p>
-<p>我：“再看一会就睡了”</p>
-<p>躺在床上看了会，然后</p>
-<p>原神，启动.jpg</p>
-<p>（草）</p>
-<p>和 傻勾 一起听会歌睡了</p>
-<h2 id="1011">10.11</h2>
-<p>今天难得早起，去食堂恰了个早饭（竟然还抓到班长阿翔和一个女生在一起吃早饭，嘿嘿）</p>
-<p>到机房后发现明明我都早起了怎么还是最晚到啊</p>
-<p>我将其称之为 紫金港机房定理 第 114514 条 ： 无论按时到还是迟到，Tosaka 永远是机房里最晚到的（通校生除外</p>
-<p>在机房看会基础内容，差不多到点就下去面基了</p>
-<p>第一个遇见的就是 Dilemma，mz 哥哥 \se 竟然在颓隔膜，这就是真正的强者吗</p>
-<p>看到几个穿 江南实验 校服的学弟，上去询问 FJ 今天来了吗，结果今年 FJ 竟然没来，可惜</p>
-<p>学弟们似乎还对 我们叫 FJ 冯机 这件事情很诧异</p>
-<p>现在江南这几届越来越不行了啊，这种事都不知道，立刻把他们批判了一番</p>
-<p>然后遇到 Isonan（神 hy！） 和 龑哥，orz</p>
-<p>还碰到了好久没联系的 czy</p>
-<p>然后就和 CY fAKe ganmouren scy 集合了 /se</p>
-<p>众人皆巨我独菜 /fad</p>
-<p>进考场前还在教室门口遇到了 REM_001！</p>
-<p>进考场后：草，监考怎么是我英语老师，Mr.King，他似乎对着我微笑（我突然想起来我前不久还有英语作业没写，危</p>
-<p>选择题好水，程序阅读好难，程序填空各种眼瞎选错扣了 1919810 分</p>
-<p>考场上开始神游，状态好差</p>
-<p>对了下 uoj 群里 粉兔的答案，感觉凉凉，自闭</p>
-<p>出来后，和 fAKe 还有 scy 一起在学校旁边吃了顿饭，然后发现 ganmouren 也在同一家店，太巧了</p>
-<h1 id="1018">10.18</h1>
-<p>文化课生活，唔&hellip;&hellip;</p>
-<p>状态没调整过来太多作业不交，被班主任婊了一顿，在我们班一周只要有 5 项以上作业没交就得通校一周，所以喜提通校一周</p>
-<p>（真的好爽啊，每天可以感受家的温暖，还有妈妈做的夜宵，不用洗衣服，可以睡到舒服的床，可以打电动，我怀疑这不是惩罚是奖励</p>
-<p>（缺点就是因为住的比较远来回有点累，睡的稍微少点</p>
+      <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6071" target="_blank">题目链接</a></p>
+<div class="admonition question">
+  <p class="admonition-title">题目描述</p>
+<p>给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。</p>
+<p>$K \le 10^{18}$</p>
+<p>$d \le 3 \times 10^4$</p>
+</div>
+<h2 id="简要做法">简要做法</h2>
+<p>取 $w = min(d_{1,2}, d_{2,3})$，那么对于每一种方案，均可以通过往返跑 $w$ 这条边使得距离增加 $2w$</p>
+<p>也就是说，如果存在距离为 $k$ 的方案，那么必然存在距离为 $k + 2w$ 的方案</p>
+<p>设 $dis_{i,j}$ 表示从起点出发到达 $i$，距离模 $2w$ 为 $j$ 时的最短路</p>
+<p>根据 $dis_{2,j}$ 解不等式即可得到最优路线</p>
+<p>时间复杂度 $O(w log w)$</p>
+<h2 id="参考代码">参考代码</h2>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;memory.h&gt;
+#include &lt;queue&gt;
+
+#define int long long
+
+const int N = 8 + 5;
+const int K = 6e4 + 5;
+
+int k;
+int d[N], dis[N][K];
+int head[N], num_edge;
+
+struct Node
+{
+    int next, to, dis;
+} edge[N];
+struct node
+{
+    int cur, r, dis;
+    bool friend operator&lt;(node a, node b) { return a.dis &gt; b.dis; }
+};
+
+void add_edge(int u, int v, int dis)
+{
+    edge[++num_edge] = Node{head[u], v, dis}, head[u] = num_edge;
+}
+
+int read()
+{
+    int x = 0, f = 1;
+    char ch = getchar();
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-' ? -1 : 1, ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + ch - 48, ch = getchar();
+    return x * f;
+}
+
+void dijkstra()
+{
+    int w = 2 * std::min(d[1], d[2]);
+    memset(dis, 0x3f, sizeof dis);
+    std::priority_queue&lt;node&gt; Q;
+    Q.push(node{2, 0, 0});
+    dis[2][0] = 0;
+    while (!Q.empty())
+    {
+        node now = Q.top();
+        Q.pop();
+        int u = now.cur, r = now.r;
+        if (now.dis &gt; dis[u][r] or now.dis &gt;= k + w)
+            continue;
+        for (int i = head[u]; i; i = edge[i].next)
+        {
+            int v = edge[i].to, nr = (r + edge[i].dis) % w;
+            if (dis[v][nr] &gt; dis[u][r] + edge[i].dis)
+            {
+                dis[v][nr] = dis[u][r] + edge[i].dis;
+                Q.push(node{v, nr, dis[v][nr]});
+            }
+        }
+    }
+    int kmod = k % w, diff = w;
+    for (int i = 0; i &lt; w; ++i)
+        if (dis[2][i] &lt;= k)
+        {
+            if (i &gt;= kmod)
+                diff = std::min(diff, i - kmod);
+            else
+                diff = std::min(diff, w - (kmod - i));
+        }
+        else
+            diff = std::min(diff, dis[2][i] - k);
+    printf(&quot;%lld\n&quot;, k + diff);
+}
+
+signed main()
+{
+    for (int T = read(); T--; dijkstra())
+    {
+        k = read(), num_edge = 0;
+        memset(edge, 0, sizeof edge);
+        memset(head, 0, sizeof head);
+        for (int i = 1; i &lt;= 4; i++)
+            d[i] = read();
+        for (int i = 1; i &lt;= 4; i++)
+            add_edge(i, i % 4 + 1, d[i]), add_edge(i % 4 + 1, i, d[i]);
+    }
+    return 0;
+}
+</code></pre>
     </div>
 
     <div class="post-copyright">
@@ -229,9 +300,9 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-10-23 19:34:23 &#43;0800 &#43;0800">2020-10-23</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/5851ae8b55744653e9146267b7105e6ebb72963f" title="fix" target="_blank">(5851ae8)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/CSP_2020.md" target="_blank">更新历史</a>
+        <span title="2020-10-23 19:35:01 &#43;0800 &#43;0800">2020-10-23</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/8b7e15174041900e441da14641cb41959c0f5701" title="update" target="_blank">(8b7e151)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/HDU_6071.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -242,16 +313,12 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E6%B8%B8%E8%AE%B0/">游记</a>
+          <a href="/tags/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/">同余最短路</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/hdu_6071/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">HDU 6071 Lazy Running（同余最短路）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/">
-            <span class="next-text nav-default">乘法逆元</span>
+        
+        <a class="next" href="/post/csp_2020/">
+            <span class="next-text nav-default">CSP 2020 游记（持续更新中）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
