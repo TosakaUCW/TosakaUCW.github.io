@@ -11,7 +11,9 @@
 &lt;/li>
 &lt;/ol>
 &lt;p>$1\le n,m\le 10^5$&lt;/p>
-&lt;/div></description></item><item><title>HDU 6074 Phone Call（并查集）</title><link>https://TosakaUCw.github.io/post/hdu_6074/</link><pubDate>Sun, 25 Oct 2020 21:20:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6074/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;/div></description></item><item><title>Codeforces Round #679 (Div. 2) 划水记录</title><link>https://TosakaUCw.github.io/post/cf_679_div_2/</link><pubDate>Mon, 26 Oct 2020 07:59:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_679_div_2/</guid><description>&lt;p>[18:44] scy：“晚上七点 cf 打吗”&lt;/p>
+&lt;p>18:55 才看到消息，我草，赶紧打开 cf&lt;/p>
+&lt;p>竟然是 Chinese Friendly Round /cy&lt;/p></description></item><item><title>HDU 6074 Phone Call（并查集）</title><link>https://TosakaUCw.github.io/post/hdu_6074/</link><pubDate>Sun, 25 Oct 2020 21:20:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6074/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵 $n$ 个点的树以及 $m$ 条电话线路&lt;/p>

@@ -11,7 +11,9 @@
 &lt;/li>
 &lt;/ol>
 &lt;p>$1\le n,m\le 10^5$&lt;/p>
-&lt;/div></description></item><item><title>HDU 6074 Phone Call（并查集）</title><link>https://TosakaUCw.github.io/post/hdu_6074/</link><pubDate>Sun, 25 Oct 2020 21:20:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6074/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;/div></description></item><item><title>Codeforces Round #679 (Div. 2) 划水记录</title><link>https://TosakaUCw.github.io/post/cf_679_div_2/</link><pubDate>Mon, 26 Oct 2020 07:59:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_679_div_2/</guid><description>&lt;p>[18:44] scy：“晚上七点 cf 打吗”&lt;/p>
+&lt;p>18:55 才看到消息，我草，赶紧打开 cf&lt;/p>
+&lt;p>竟然是 Chinese Friendly Round /cy&lt;/p></description></item><item><title>HDU 6074 Phone Call（并查集）</title><link>https://TosakaUCw.github.io/post/hdu_6074/</link><pubDate>Sun, 25 Oct 2020 21:20:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6074/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵 $n$ 个点的树以及 $m$ 条电话线路&lt;/p>
@@ -284,7 +286,7 @@
 &lt;p>给定正整数$n$和$k$&lt;/p>
 &lt;p>求 $ans = \sum_{i = 1}^n k \bmod i$&lt;/p>
 &lt;p>要求 $\mathcal{O}(\sqrt{k})$ 时间复杂度&lt;/p>
-&lt;/div></description></item><item><title>链接</title><link>https://TosakaUCw.github.io/links/</link><pubDate>Wed, 05 Dec 2018 22:53:11 +0800</pubDate><guid>https://TosakaUCw.github.io/links/</guid><description>友情链接 Hamakaze Joyemang33 REM_001 fAKe ganmouren scy sxYuGao Robin memset0 markjuruo 一些网站 图床 几何 图论 函数 数列 在线汇编编译器 C++ LaTeX 公式大全 LaTeX 公式奆全 .tex 教程 OI Wiki Wolfram Alpha OIerDb OI 中转站 线稿上色</description></item><item><title>关于</title><link>https://TosakaUCw.github.io/about/</link><pubDate>Wed, 05 Dec 2018 13:40:21 +0800</pubDate><guid>https://TosakaUCw.github.io/about/</guid><description>Hi, TosakaUCW there! 👋 ZJ 高一现役 OIer 小学和初中毕业于杭州江南实验学校 高中现就读于杭州学军中学紫金港校区 🎯 Making my dream alive ⚒️ C / C++ / Python / Web ✏️ Chinese senior high school student 🌱 OIer, fighting for NOIp 👨</description></item><item><title>分块</title><link>https://TosakaUCw.github.io/post/%E5%88%86%E5%9D%97/</link><pubDate>Wed, 10 Oct 2018 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E5%88%86%E5%9D%97/</guid><description>&lt;p>分块，一种优美的暴力&lt;/p>
+&lt;/div></description></item><item><title>链接</title><link>https://TosakaUCw.github.io/links/</link><pubDate>Wed, 05 Dec 2018 22:53:11 +0800</pubDate><guid>https://TosakaUCw.github.io/links/</guid><description>友情链接 学长 Hamakaze Joyemang33 Dilemma DennyQi Isonan Claris DFSlover LinZhengMin Kananix 同学 REM_001 fAKe ganmouren scy CZY markjuruo 网友 sxYuGao Robin memset0 一些网站 图床 几何 图论 函数 数列 在线汇编编译器 C++ LaTeX 公式大全 LaTeX 公式奆全 .tex 教程 OI Wiki Wolfram Alpha OIerDb OI 中</description></item><item><title>关于</title><link>https://TosakaUCw.github.io/about/</link><pubDate>Wed, 05 Dec 2018 13:40:21 +0800</pubDate><guid>https://TosakaUCw.github.io/about/</guid><description>Hi, TosakaUCW there! 👋 ZJ 高一现役 OIer 小学和初中毕业于杭州江南实验学校 高中现就读于杭州学军中学紫金港校区 🎯 Making my dream alive ⚒️ C / C++ / Python / Web ✏️ Chinese senior high school student 🌱 OIer, fighting for NOIp 👨</description></item><item><title>分块</title><link>https://TosakaUCw.github.io/post/%E5%88%86%E5%9D%97/</link><pubDate>Wed, 10 Oct 2018 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E5%88%86%E5%9D%97/</guid><description>&lt;p>分块，一种优美的暴力&lt;/p>
 &lt;p>分块在时间上跟线段树差不多快，空间上优于线段树&lt;/p>
 &lt;p>分块还可以解决许多线段树不能解决的问题&lt;/p>
 &lt;p>而且因为分块是一种线性结构，所以分块算法更易理解&lt;/p>
