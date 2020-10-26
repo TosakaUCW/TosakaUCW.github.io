@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>线段树 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link><description>Recent content in 线段树 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 22 Sep 2020 18:26:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 620E New Year Tree（状态压缩，线段树）</title><link>https://TosakaUCw.github.io/post/cf_620e/</link><pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_620e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/620/problem/E" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>线段树 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link><description>Recent content in 线段树 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 26 Oct 2020 09:15:26 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 292E Copying Data（线段树）</title><link>https://TosakaUCw.github.io/post/cf_292e/</link><pubDate>Mon, 26 Oct 2020 09:15:26 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_292e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/problemset/problem/292/E" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>1 x y k&lt;/code>：令 $b_y\leftarrow a_x,b_{y+1}\leftarrow a_{x+1},\cdots,b_{y+k-1}\leftarrow a_{x+k-1}$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>2 x&lt;/code>：求 $b_x$&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$1\le n,m\le 10^5$&lt;/p>
+&lt;/div></description></item><item><title>CF 620E New Year Tree（状态压缩，线段树）</title><link>https://TosakaUCw.github.io/post/cf_620e/</link><pubDate>Sun, 03 Feb 2019 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_620e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/620/problem/E" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵以1为根的有根树，有n个点&lt;/p>

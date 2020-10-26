@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>并查集 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link><description>Recent content in 并查集 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 25 Oct 2020 21:20:13 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.xml" rel="self" type="application/rss+xml"/><item><title>HDU 6074 Phone Call（并查集）</title><link>https://TosakaUCw.github.io/post/hdu_6074/</link><pubDate>Sun, 25 Oct 2020 21:20:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6074/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一棵 $n$ 个点的树以及 $m$ 条电话线路&lt;/p>
+&lt;p>每条电话线路意为两条树链上的点两两之间可以通过 $w$ 的代价进行通话&lt;/p>
+&lt;p>求 $1$ 能直接或间接通话到的人数的最大值以及在此基础上的最小代价&lt;/p>
+&lt;p>$n,m \le 10^5$&lt;/p>
+&lt;/div></description></item></channel></rss>
