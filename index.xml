@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>HDU 5807 Keep In Touch（DP）</title><link>https://TosakaUCw.github.io/post/hdu_5807/</link><pubDate>Tue, 27 Oct 2020 18:26:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_5807/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=5807" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 1436E Complicated Computations（线段树）</title><link>https://TosakaUCw.github.io/post/cf_1436e/</link><pubDate>Wed, 28 Oct 2020 07:53:55 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1436e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1436/problem/E" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX&lt;/p>
+&lt;p>$1 \le n \le 10^5$&lt;/p>
+&lt;p>$1 \le a_i \le n$&lt;/p>
+&lt;/div></description></item><item><title>Luogu P1972 [SDOI2009] HH的项链（主席树）</title><link>https://TosakaUCw.github.io/post/luogu_p1972/</link><pubDate>Wed, 28 Oct 2020 07:52:28 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p1972/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P1972" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一个长为 $n$ 的数列，$m$ 次询问每个区间内不同颜色数量&lt;/p>
+&lt;p>$1 \le n,m,a_i \le 10^6$&lt;/p>
+&lt;/div></description></item><item><title>HDU 5807 Keep In Touch（DP）</title><link>https://TosakaUCw.github.io/post/hdu_5807/</link><pubDate>Tue, 27 Oct 2020 18:26:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_5807/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=5807" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点&lt;/p>
