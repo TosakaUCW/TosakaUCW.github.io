@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>题解 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/</link><description>Recent content in 题解 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 26 Oct 2020 09:15:26 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 292E Copying Data（线段树）</title><link>https://TosakaUCw.github.io/post/cf_292e/</link><pubDate>Mon, 26 Oct 2020 09:15:26 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_292e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/problemset/problem/292/E" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>题解 on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/</link><description>Recent content in 题解 on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Oct 2020 18:26:25 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/categories/%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>HDU 5807 Keep In Touch（DP）</title><link>https://TosakaUCw.github.io/post/hdu_5807/</link><pubDate>Tue, 27 Oct 2020 18:26:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_5807/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=5807" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点&lt;/p>
+&lt;p>每次三个人可以停止任务或者沿着边同时移动一步，求合法路线的方案数&lt;/p>
+&lt;p>$n \le 60$&lt;/p>
+&lt;p>$q \le 2.5 \times 10^5$&lt;/p>
+&lt;/div></description></item><item><title>CF 292E Copying Data（线段树）</title><link>https://TosakaUCw.github.io/post/cf_292e/</link><pubDate>Mon, 26 Oct 2020 09:15:26 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_292e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/problemset/problem/292/E" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：&lt;/p>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>CF 292E Copying Data（线段树） - TosakaUCW的博客</title>
+  <title>HDU 5807 Keep In Touch（DP） - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,10 +18,10 @@
 
 <meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
 题目描述
-给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：
-  1 x y k：令 $b_y\leftarrow a_x,b_{y&#43;1}\leftarrow a_{x&#43;1},\cdots,b_{y&#43;k-1}\leftarrow a_{x&#43;k-1}$
-  2 x：求 $b_x$
-  $1\le n,m\le 10^5$
+$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点
+每次三个人可以停止任务或者沿着边同时移动一步，求合法路线的方案数
+$n \le 60$
+$q \le 2.5 \times 10^5$
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/cf_292e/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/hdu_5807/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -45,61 +45,43 @@
 
 
 
-<meta property="og:title" content="CF 292E Copying Data（线段树）" />
+<meta property="og:title" content="HDU 5807 Keep In Touch（DP）" />
 <meta property="og:description" content="题目链接
 
   题目描述
-给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：
-
-
-1 x y k：令 $b_y\leftarrow a_x,b_{y&#43;1}\leftarrow a_{x&#43;1},\cdots,b_{y&#43;k-1}\leftarrow a_{x&#43;k-1}$
-
-
-2 x：求 $b_x$
-
-
-$1\le n,m\le 10^5$
+$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点
+每次三个人可以停止任务或者沿着边同时移动一步，求合法路线的方案数
+$n \le 60$
+$q \le 2.5 \times 10^5$
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/cf_292e/" />
-<meta property="article:published_time" content="2020-10-26T09:15:26+08:00" />
-<meta property="article:modified_time" content="2020-10-26T09:28:04+08:00" />
-<meta itemprop="name" content="CF 292E Copying Data（线段树）">
+<meta property="og:url" content="https://TosakaUCw.github.io/post/hdu_5807/" />
+<meta property="article:published_time" content="2020-10-27T18:26:25+08:00" />
+<meta property="article:modified_time" content="2020-10-28T07:53:08+08:00" />
+<meta itemprop="name" content="HDU 5807 Keep In Touch（DP）">
 <meta itemprop="description" content="题目链接
 
   题目描述
-给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：
-
-
-1 x y k：令 $b_y\leftarrow a_x,b_{y&#43;1}\leftarrow a_{x&#43;1},\cdots,b_{y&#43;k-1}\leftarrow a_{x&#43;k-1}$
-
-
-2 x：求 $b_x$
-
-
-$1\le n,m\le 10^5$
+$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点
+每次三个人可以停止任务或者沿着边同时移动一步，求合法路线的方案数
+$n \le 60$
+$q \le 2.5 \times 10^5$
 ">
-<meta itemprop="datePublished" content="2020-10-26T09:15:26&#43;08:00" />
-<meta itemprop="dateModified" content="2020-10-26T09:28:04&#43;08:00" />
-<meta itemprop="wordCount" content="494">
+<meta itemprop="datePublished" content="2020-10-27T18:26:25&#43;08:00" />
+<meta itemprop="dateModified" content="2020-10-28T07:53:08&#43;08:00" />
+<meta itemprop="wordCount" content="607">
 
 
 
-<meta itemprop="keywords" content="线段树," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CF 292E Copying Data（线段树）"/>
+<meta itemprop="keywords" content="DP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HDU 5807 Keep In Touch（DP）"/>
 <meta name="twitter:description" content="题目链接
 
   题目描述
-给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：
-
-
-1 x y k：令 $b_y\leftarrow a_x,b_{y&#43;1}\leftarrow a_{x&#43;1},\cdots,b_{y&#43;k-1}\leftarrow a_{x&#43;k-1}$
-
-
-2 x：求 $b_x$
-
-
-$1\le n,m\le 10^5$
+$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点
+每次三个人可以停止任务或者沿着边同时移动一步，求合法路线的方案数
+$n \le 60$
+$q \le 2.5 \times 10^5$
 "/>
 
 <!--[if lte IE 9]>
@@ -175,15 +157,15 @@ $1\le n,m\le 10^5$
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">CF 292E Copying Data（线段树）</h1>
+      <h1 class="post-title">HDU 5807 Keep In Touch（DP）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-10-26 09:15:26 &#43;0800 &#43;0800"> 2020-10-26 </span>
+        <span class="post-time" title="2020-10-27 18:26:25 &#43;0800 &#43;0800"> 2020-10-27 </span>
         <div class="post-category">
             <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 494 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 607 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -205,75 +187,39 @@ $1\le n,m\le 10^5$
   </div>
 </div>
     <div class="post-content">
-      <p><a href="https://codeforces.com/problemset/problem/292/E" target="_blank">题目链接</a></p>
+      <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5807" target="_blank">题目链接</a></p>
 <div class="admonition question">
   <p class="admonition-title">题目描述</p>
-<p>给定序列 $a$ 和序列 $b$，长度均为 $n$。$m$ 次操作。操作有两种：</p>
-<ol>
-<li>
-<p><code>1 x y k</code>：令 $b_y\leftarrow a_x,b_{y+1}\leftarrow a_{x+1},\cdots,b_{y+k-1}\leftarrow a_{x+k-1}$</p>
-</li>
-<li>
-<p><code>2 x</code>：求 $b_x$</p>
-</li>
-</ol>
-<p>$1\le n,m\le 10^5$</p>
+<p>$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点</p>
+<p>每次三个人可以停止任务或者沿着边同时移动一步，求合法路线的方案数</p>
+<p>$n \le 60$</p>
+<p>$q \le 2.5 \times 10^5$</p>
 </div>
 <h2 id="简要做法">简要做法</h2>
-<p>如果我们知道某一个位置最后一次是被哪一次操作覆盖的，那么就可以知道这个位置对应的值</p>
-<p>如果这个点的下标为 $x$，最后一次覆盖操作是 $k$，那么它的值就是 $a[query[k].x + x - query[k].y]$</p>
-<p>问题转化为区间覆盖，单点查询</p>
-<p>线段树即可</p>
+<p>设 $f(i,j,k)$ 表示三个人分别在 $(i,j,k)$ 时接着往下走的方案数</p>
+<p>枚举每个人的下一步位置进行转移</p>
+<p>状态数$O(n^3)$，每个状态的转移时间复杂度为 $O(n^3)$</p>
+<p>总时间复杂度 $O(n^6 + q)$</p>
+<p>拆解一步转移的过程：三个人同时选择下一步位置 -&gt; 第一个人先选，第二个人再选，第三个人最后选</p>
+<p>考虑加维，设 $f(i,j,k,now)$ 表示三个人分别在 $(i,j,k)$ 时，目前准备走 $now$ 这个人的方案数</p>
+<p>枚举 $now$ 这个人的下一步位置进行转移。</p>
+<p>三个人都走了一步后，再将不符合点权差值限制的状态排除</p>
+<p>状态数 $O(n^3)$，每个状态的转移时间复杂度为 $O(n)$</p>
+<p>总时间复杂度 $O(n^4 + q)$</p>
 <h2 id="参考代码">参考代码</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &lt;algorithm&gt;
 #include &lt;memory.h&gt;
+#include &lt;math.h&gt;
 
-const int N = 1e5 + 5;
+#define int long long
 
-int n, m;
-int a[N], b[N];
+const int N = 60 + 5;
+const int P = 998244353;
 
-struct Query
-{
-    int x, y, k;
-} q[N];
-
-struct Segment_Tree
-{
-#define ls (p &lt;&lt; 1)
-#define rs (p &lt;&lt; 1 | 1)
-#define mid ((l + r) &gt;&gt; 1)
-    int col[N &lt;&lt; 2], lazy[N &lt;&lt; 2];
-    void push_down(int p)
-    {
-        if (lazy[p])
-            col[ls] = col[rs] = lazy[ls] = lazy[rs] = lazy[p], lazy[p] = 0;
-    }
-    void modify(int p, int l, int r, int x, int y, int k)
-    {
-        if (l == x and r == y)
-        {
-            col[p] = lazy[p] = k;
-            return;
-        }
-        push_down(p);
-        if (x &lt;= mid)
-            modify(ls, l, mid, x, std::min(mid, y), k);
-        if (mid &lt; y)
-            modify(rs, mid + 1, r, std::max(mid + 1, x), y, k);
-    }
-    int query(int p, int l, int r, int x)
-    {
-        if (l == r)
-            return col[p];
-        push_down(p);
-        if (x &lt;= mid)
-            return query(ls, l, mid, x);
-        else
-            return query(rs, mid + 1, r, x);
-    }
-} T;
+int n, m, K, q;
+int w[N], f[N][N][N][3];
+bool G[N][N];
 
 int read()
 {
@@ -286,26 +232,35 @@ int read()
     return x * f;
 }
 
-int main()
+signed main()
 {
-    n = read(), m = read();
-    for (int i = 1; i &lt;= n; i++)
-        a[i] = read();
-    for (int i = 1; i &lt;= n; i++)
-        b[i] = read();
-    for (int i = 1; i &lt;= m; i++)
+    // freopen(&quot;agent.in&quot;, &quot;r&quot;, stdin), freopen(&quot;agent.out&quot;, &quot;w&quot;, stdout);
+    for (int T = read(); T--;)
     {
-        int opt = read();
-        if (opt == 1)
-        {
-            q[i].x = read(), q[i].y = read(), q[i].k = read();
-            T.modify(1, 1, n, q[i].y, q[i].y + q[i].k - 1, i);
-        }
-        else
-        {
-            int x = read(), k = T.query(1, 1, n, x);
-            printf(&quot;%d\n&quot;, !k ? b[x] : a[q[k].x + x - q[k].y]);
-        }
+        memset(G, 0, sizeof G), memset(f, 0, sizeof f);
+        n = read(), m = read(), K = read(), q = read();
+        for (int i = 1; i &lt;= n; i++)
+            w[i] = read();
+        for (int i = 1, u, v; i &lt;= m; i++)
+            u = read(), v = read(), G[u][v] = true;
+        for (int i = 1; i &lt;= n; i++)
+            for (int j = 1; j &lt;= n; j++)
+                for (int k = 1; k &lt;= n; k++)
+                    f[i][j][k][0] = (abs(w[i] - w[j]) &lt;= K and abs(w[i] - w[k]) &lt;= K and abs(w[j] - w[k]) &lt;= K);
+        for (int i = n; i &gt;= 1; i--)
+            for (int j = n; j &gt;= 1; j--)
+                for (int k = n; k &gt;= 1; k--)
+                    for (int l = 1; l &lt;= n; l++)
+                    {
+                        if (G[i][l] and f[i][j][k][0])
+                            (f[i][j][k][0] += f[l][j][k][1] % P) %= P;
+                        if (G[j][l])
+                            (f[i][j][k][1] += f[i][l][k][2] % P) %= P;
+                        if (G[k][l])
+                            (f[i][j][k][2] += f[i][j][l][0] % P) %= P;
+                    }
+        for (int x, y, z; q--;)
+            x = read(), y = read(), z = read(), printf(&quot;%lld\n&quot;, f[x][y][z][0] % P);
     }
     return 0;
 }
@@ -320,9 +275,9 @@ int main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-10-26 09:28:04 &#43;0800 &#43;0800">2020-10-26</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/72e593a3710776d2daab6c732b09e58c492fa7db" title="fix" target="_blank">(72e593a)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/CF_292E.md" target="_blank">更新历史</a>
+        <span title="2020-10-28 07:53:08 &#43;0800 &#43;0800">2020-10-28</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/77d6a0ede10375445709a41d5a264a65f765aceb" title="add" target="_blank">(77d6a0e)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/HDU_5807.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -333,16 +288,12 @@ int main()
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+          <a href="/tags/dp/">DP</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/hdu_5807/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">HDU 5807 Keep In Touch（DP）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/cf_679_div_2/">
-            <span class="next-text nav-default">Codeforces Round #679 (Div. 2) 划水记录</span>
+        
+        <a class="next" href="/post/cf_292e/">
+            <span class="next-text nav-default">CF 292E Copying Data（线段树）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
