@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>CF 1436E Complicated Computations（线段树） - TosakaUCW的博客</title>
+  <title>BZOJ 3653 谈笑风生（主席树） - TosakaUCW的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,9 +18,9 @@
 
 <meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
 题目描述
-给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX
-$1 \le n \le 10^5$
-$1 \le a_i \le n$
+给定一棵 $n$ 个节点的有根树，有 $q$ 组询问
+每次询问给出 $(a,k)$，求有多少个三元组 $(a,b,c)$，满足 $a,b$ 都是 $c$ 的祖先，并且 $a,b$ 之间的距离不超过 $k$
+$n,q \le 3 \times 10^5$
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -31,7 +31,7 @@ $1 \le a_i \le n$
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/cf_1436e/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/bzoj_3653/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,40 +44,40 @@ $1 \le a_i \le n$
 
 
 
-<meta property="og:title" content="CF 1436E Complicated Computations（线段树）" />
+<meta property="og:title" content="BZOJ 3653 谈笑风生（主席树）" />
 <meta property="og:description" content="题目链接
 
   题目描述
-给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX
-$1 \le n \le 10^5$
-$1 \le a_i \le n$
+给定一棵 $n$ 个节点的有根树，有 $q$ 组询问
+每次询问给出 $(a,k)$，求有多少个三元组 $(a,b,c)$，满足 $a,b$ 都是 $c$ 的祖先，并且 $a,b$ 之间的距离不超过 $k$
+$n,q \le 3 \times 10^5$
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/cf_1436e/" />
-<meta property="article:published_time" content="2020-10-28T07:53:55+08:00" />
-<meta property="article:modified_time" content="2020-10-28T08:53:34+08:00" />
-<meta itemprop="name" content="CF 1436E Complicated Computations（线段树）">
+<meta property="og:url" content="https://TosakaUCw.github.io/post/bzoj_3653/" />
+<meta property="article:published_time" content="2020-10-29T09:46:43+08:00" />
+<meta property="article:modified_time" content="2020-10-29T11:45:46+08:00" />
+<meta itemprop="name" content="BZOJ 3653 谈笑风生（主席树）">
 <meta itemprop="description" content="题目链接
 
   题目描述
-给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX
-$1 \le n \le 10^5$
-$1 \le a_i \le n$
+给定一棵 $n$ 个节点的有根树，有 $q$ 组询问
+每次询问给出 $(a,k)$，求有多少个三元组 $(a,b,c)$，满足 $a,b$ 都是 $c$ 的祖先，并且 $a,b$ 之间的距离不超过 $k$
+$n,q \le 3 \times 10^5$
 ">
-<meta itemprop="datePublished" content="2020-10-28T07:53:55&#43;08:00" />
-<meta itemprop="dateModified" content="2020-10-28T08:53:34&#43;08:00" />
-<meta itemprop="wordCount" content="469">
+<meta itemprop="datePublished" content="2020-10-29T09:46:43&#43;08:00" />
+<meta itemprop="dateModified" content="2020-10-29T11:45:46&#43;08:00" />
+<meta itemprop="wordCount" content="674">
 
 
 
-<meta itemprop="keywords" content="线段树," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CF 1436E Complicated Computations（线段树）"/>
+<meta itemprop="keywords" content="主席树," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="BZOJ 3653 谈笑风生（主席树）"/>
 <meta name="twitter:description" content="题目链接
 
   题目描述
-给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX
-$1 \le n \le 10^5$
-$1 \le a_i \le n$
+给定一棵 $n$ 个节点的有根树，有 $q$ 组询问
+每次询问给出 $(a,k)$，求有多少个三元组 $(a,b,c)$，满足 $a,b$ 都是 $c$ 的祖先，并且 $a,b$ 之间的距离不超过 $k$
+$n,q \le 3 \times 10^5$
 "/>
 
 <!--[if lte IE 9]>
@@ -153,15 +153,15 @@ $1 \le a_i \le n$
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">CF 1436E Complicated Computations（线段树）</h1>
+      <h1 class="post-title">BZOJ 3653 谈笑风生（主席树）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-10-28 07:53:55 &#43;0800 &#43;0800"> 2020-10-28 </span>
+        <span class="post-time" title="2020-10-29 09:46:43 &#43;0800 &#43;0800"> 2020-10-29 </span>
         <div class="post-category">
             <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 469 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 674 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -183,26 +183,51 @@ $1 \le a_i \le n$
   </div>
 </div>
     <div class="post-content">
-      <p><a href="https://codeforces.com/contest/1436/problem/E" target="_blank">题目链接</a></p>
+      <p><a href="https://darkbzoj.tk/problem/3653" target="_blank">题目链接</a></p>
 <div class="admonition question">
   <p class="admonition-title">题目描述</p>
-<p>给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX</p>
-<p>$1 \le n \le 10^5$</p>
-<p>$1 \le a_i \le n$</p>
+<p>给定一棵 $n$ 个节点的有根树，有 $q$ 组询问</p>
+<p>每次询问给出 $(a,k)$，求有多少个三元组 $(a,b,c)$，满足 $a,b$ 都是 $c$ 的祖先，并且 $a,b$ 之间的距离不超过 $k$</p>
+<p>$n,q \le 3 \times 10^5$</p>
 </div>
 <h2 id="简要做法">简要做法</h2>
-<p>做这道题之前可以先去看看 <a href="https://tosakaucw.github.io/post/luogu_p1972/" target="_blank">[SDOI2009] HH的项链</a></p>
-<p>枚举一个数 $x$，问题转化为判定 $x$ 是否是某个子数组的 MEX</p>
-<p>如果小于 $x$ 的数最后一次出现的位置都在 $x$ 的位置和 $x$ 上一次出现的位置 之间，那么这个数就有了</p>
+<p>满足 $a,b$ 都是 $c$ 的祖先，$a,b,c$ 肯定是在一条链上的</p>
+<p>分类讨论 $b$ 的位置</p>
+<ul>
+<li>
+<p>$b$ 在 $a$ 上方</p>
+<p>贡献为 $\sum_b{(size_a-1)}$</p>
+<p>$b$ 有 $min(depth_a,k)$ 种取法</p>
+<p>对于每个钦定的 $b$，$a$ 已经确定了，$c$ 可以在 $a$ 的子树内任选（不能和 $a$ 重合），那么有 $size_a - 1$ 中取法</p>
+<p>所以贡献为 $min(depth_a,k) \times (size_a - 1)$ 种</p>
+</li>
+<li>
+<p>$b$ 在 $a$ 下方</p>
+<p>总共 $\sum_b{(size_b-1)}$</p>
+<p>考虑统计有多少个 $b$，满足 $depth_b \in [depth_a+1,depth_a+k]$</p>
+<p>把 $dfn$ 和 $depth$ 看成 $x$ 和 $y$ 轴，那么就可以把树变换为一个个二维数点，主席树即可</p>
+</li>
+</ul>
 <h2 id="参考代码">参考代码</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &lt;algorithm&gt;
 #include &lt;memory.h&gt;
 
-const int N = 1e5 + 5;
-const int INF = 2147483647;
+#define int long long
 
-int n, a[N], vis[N], last[N];
+const int N = 3e5 + 5;
+const int M = N &lt;&lt; 1;
+
+int n, q;
+int head[N], num_edge, max_depth;
+int size[N], depth[N], dfn[N], idx[N];
+
+struct Node
+{
+    int next, to;
+} edge[M];
+
+void add_edge(int u, int v) { edge[++num_edge] = Node{head[u], v}, head[u] = num_edge; }
 
 int read()
 {
@@ -215,67 +240,59 @@ int read()
     return x * f;
 }
 
-struct Segment_Tree
+struct HJT_Tree
 {
-#define ls (p &lt;&lt; 1)
-#define rs (p &lt;&lt; 1 | 1)
 #define mid ((l + r) &gt;&gt; 1)
-    int min[N &lt;&lt; 2];
-    void push_up(int p) { min[p] = std::min(min[ls], min[rs]); }
-    void modify(int p, int l, int r, int pos, int val)
+    int nodecnt, rt[N &lt;&lt; 5], L[N &lt;&lt; 5], R[N &lt;&lt; 5], val[N &lt;&lt; 5];
+    void modify(int &amp;p, int pre, int l, int r, int pos, int x)
     {
-        if (l == r)
+        p = ++nodecnt;
+        L[p] = L[pre], R[p] = R[pre], val[p] = val[pre] + x;
+        if (l &lt; r)
         {
-            min[p] = val;
-            return;
+            if (pos &lt;= mid)
+                modify(L[p], L[pre], l, mid, pos, x);
+            else
+                modify(R[p], R[pre], mid + 1, r, pos, x);
         }
-        if (pos &lt;= mid)
-            modify(ls, l, mid, pos, val);
-        else
-            modify(rs, mid + 1, r, pos, val);
-        push_up(p);
     }
-    int query(int p, int l, int r, int x, int y)
+    int query(int u, int v, int l, int r, int x, int y)
     {
         if (l == x and r == y)
-            return min[p];
-        int res = INF;
+            return val[v] - val[u];
+        int res = 0;
         if (x &lt;= mid)
-            res = std::min(res, query(ls, l, mid, x, std::min(mid, y)));
+            res += query(L[u], L[v], l, mid, x, std::min(mid, y));
         if (mid &lt; y)
-            res = std::min(res, query(rs, mid + 1, r, std::max(mid + 1, x), y));
+            res += query(R[u], R[v], mid + 1, r, std::max(mid + 1, x), y);
         return res;
     }
 } T;
 
-int main()
+void dfs1(int u, int fa)
 {
-    n = read();
+    size[u] = 1, depth[u] = depth[fa] + 1, max_depth = std::max(max_depth, depth[u]), dfn[u] = ++dfn[0], idx[dfn[u]] = u;
+    for (int i = head[u], v; i; i = edge[i].next)
+        if ((v = edge[i].to) != fa)
+            dfs1(v, u), size[u] += size[v];
+}
+
+signed main()
+{
+    n = read(), q = read();
+    for (int i = 1, u, v; i &lt; n; i++)
+        u = read(), v = read(), add_edge(u, v), add_edge(v, u);
+    dfs1(1, 0);
     for (int i = 1; i &lt;= n; i++)
-        a[i] = read();
-    for (int i = 1; i &lt;= n; i++)
+        T.modify(T.rt[dfn[idx[i]]], T.rt[dfn[idx[i]] - 1], 1, max_depth, depth[idx[i]], size[idx[i]] - 1);
+    for (int res; q--; printf(&quot;%lld\n&quot;, res))
     {
-        if (a[i] != 1)
-            vis[1] = 1;
-        if (a[i] != 1)
-        {
-            int pos = T.query(1, 1, n, 1, a[i] - 1);
-            if (pos &gt; last[a[i]])
-                vis[a[i]] = 1;
-        }
-        last[a[i]] = i;
-        T.modify(1, 1, n, a[i], i);
+        int a = read(), k = read();
+        res = std::min(k, depth[a] - 1) * (size[a] - 1);
+        int l = dfn[a] - 1, r = dfn[a] + size[a] - 1;
+        res += T.query(T.rt[l], T.rt[r], 1, max_depth, depth[a] + 1, std::min(max_depth, depth[a] + k));
     }
-    for (int i = 2; i &lt;= n + 1; i++)
-    {
-        int pos = T.query(1, 1, n, 1, i - 1);
-        if (pos &gt; last[i])
-            vis[i] = 1;
-    }
-    int ans = 1;
-    while (vis[ans] and ans &lt;= n + 1)
-        ans++;
-    return printf(&quot;%d&quot;, ans), 0;
+    return 0;
 }
 </code></pre>
     </div>
@@ -288,9 +305,9 @@ int main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-10-28 08:53:34 &#43;0800 &#43;0800">2020-10-28</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/65d9fb5516d8bb241e4bd0f68c67d2b755406605" title="add" target="_blank">(65d9fb5)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/CF_1436E.md" target="_blank">更新历史</a>
+        <span title="2020-10-29 11:45:46 &#43;0800 &#43;0800">2020-10-29</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/900159639c1780af75072c6e299e57fac007c8ec" title="add" target="_blank">(9001596)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/BZOJ_3653.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -301,16 +318,12 @@ int main()
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+          <a href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/">主席树</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/bzoj_3653/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">BZOJ 3653 谈笑风生（主席树）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/luogu_p1972/">
-            <span class="next-text nav-default">Luogu P1972 [SDOI2009] HH的项链（主席树）</span>
+        
+        <a class="next" href="/post/cf_1436e/">
+            <span class="next-text nav-default">CF 1436E Complicated Computations（线段树）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

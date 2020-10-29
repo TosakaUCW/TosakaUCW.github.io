@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 1436E Complicated Computations（线段树）</title><link>https://TosakaUCw.github.io/post/cf_1436e/</link><pubDate>Wed, 28 Oct 2020 07:53:55 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1436e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1436/problem/E" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW的博客</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>BZOJ 3653 谈笑风生（主席树）</title><link>https://TosakaUCw.github.io/post/bzoj_3653/</link><pubDate>Thu, 29 Oct 2020 09:46:43 +0800</pubDate><guid>https://TosakaUCw.github.io/post/bzoj_3653/</guid><description>&lt;p>&lt;a href="https://darkbzoj.tk/problem/3653" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一棵 $n$ 个节点的有根树，有 $q$ 组询问&lt;/p>
+&lt;p>每次询问给出 $(a,k)$，求有多少个三元组 $(a,b,c)$，满足 $a,b$ 都是 $c$ 的祖先，并且 $a,b$ 之间的距离不超过 $k$&lt;/p>
+&lt;p>$n,q \le 3 \times 10^5$&lt;/p>
+&lt;/div></description></item><item><title>CF 1436E Complicated Computations（线段树）</title><link>https://TosakaUCw.github.io/post/cf_1436e/</link><pubDate>Wed, 28 Oct 2020 07:53:55 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1436e/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1436/problem/E" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一个长为 $n$ 的数列，求所有 子数组 的 MEX 的 MEX&lt;/p>
