@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 29 Oct 2020 09:46:43 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>BZOJ 3653 谈笑风生（主席树）</title><link>https://TosakaUCw.github.io/post/bzoj_3653/</link><pubDate>Thu, 29 Oct 2020 09:46:43 +0800</pubDate><guid>https://TosakaUCw.github.io/post/bzoj_3653/</guid><description>&lt;p>&lt;a href="https://darkbzoj.tk/problem/3653" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 29 Oct 2020 20:20:09 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Codeforces Round #162 (Div. 1) VP 记录</title><link>https://TosakaUCw.github.io/post/cf_162_div_1/</link><pubDate>Thu, 29 Oct 2020 20:20:09 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_162_div_1/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/264" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;p>无内鬼，整点 VP&lt;/p></description></item><item><title>BZOJ 3653 谈笑风生（主席树）</title><link>https://TosakaUCw.github.io/post/bzoj_3653/</link><pubDate>Thu, 29 Oct 2020 09:46:43 +0800</pubDate><guid>https://TosakaUCw.github.io/post/bzoj_3653/</guid><description>&lt;p>&lt;a href="https://darkbzoj.tk/problem/3653" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵 $n$ 个节点的有根树，有 $q$ 组询问&lt;/p>
@@ -35,7 +36,8 @@
 &lt;/li>
 &lt;/ol>
 &lt;p>$1\le n,m\le 10^5$&lt;/p>
-&lt;/div></description></item><item><title>Codeforces Round #679 (Div. 2) 划水记录</title><link>https://TosakaUCw.github.io/post/cf_679_div_2/</link><pubDate>Mon, 26 Oct 2020 07:59:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_679_div_2/</guid><description>&lt;p>[18:44] scy：“晚上七点 cf 打吗”&lt;/p>
+&lt;/div></description></item><item><title>Codeforces Round #679 (Div. 2) 划水记录</title><link>https://TosakaUCw.github.io/post/cf_679_div_2/</link><pubDate>Mon, 26 Oct 2020 07:59:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_679_div_2/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1435" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;p>[18:44] scy：“晚上七点 cf 打吗”&lt;/p>
 &lt;p>18:55 才看到消息，我草，赶紧打开 cf&lt;/p>
 &lt;p>竟然是 Chinese Friendly Round /cy&lt;/p></description></item><item><title>HDU 6074 Phone Call（并查集）</title><link>https://TosakaUCw.github.io/post/hdu_6074/</link><pubDate>Sun, 25 Oct 2020 21:20:13 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6074/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
@@ -180,8 +182,10 @@
 &lt;p>$N \le 3 \times 10^3$&lt;/p>
 &lt;p>$M \le 2 \times 10^4$&lt;/p>
 &lt;p>$K \le 1 \times 10^5$&lt;/p>
-&lt;/div></description></item><item><title>Codeforces Round #665 (Div. 2) 划水记录</title><link>https://TosakaUCw.github.io/post/cf_665_div_2/</link><pubDate>Sat, 29 Aug 2020 08:19:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_665_div_2/</guid><description>&lt;p>暑假最后一场 CF，我将直冲 newbie，更下一层楼&lt;/p>
-&lt;p>弱智题被卡一万年，果然人傻不适合打 CF&lt;/p></description></item><item><title>Codeforces Global Round 10 划水记录</title><link>https://TosakaUCw.github.io/post/cf_gr_10/</link><pubDate>Fri, 28 Aug 2020 08:19:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_gr_10/</guid><description>&lt;p>&lt;strong>草，weak pretest，我日他大坝&lt;/strong>&lt;/p>
+&lt;/div></description></item><item><title>Codeforces Round #665 (Div. 2) 划水记录</title><link>https://TosakaUCw.github.io/post/cf_665_div_2/</link><pubDate>Sat, 29 Aug 2020 08:19:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_665_div_2/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1401" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;p>暑假最后一场 CF，我将直冲 newbie，更下一层楼&lt;/p>
+&lt;p>弱智题被卡一万年，果然人傻不适合打 CF&lt;/p></description></item><item><title>Codeforces Global Round 10 划水记录</title><link>https://TosakaUCw.github.io/post/cf_gr_10/</link><pubDate>Fri, 28 Aug 2020 08:19:42 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_gr_10/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1392" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;p>&lt;strong>草，weak pretest，我日他大坝&lt;/strong>&lt;/p>
 &lt;div align=center>
 &lt;p>&lt;img src="https://i.loli.net/2020/09/02/lbP4LAITBzm7Uit.png" alt="">&lt;/p>
 &lt;/div></description></item><item><title>同余最短路</title><link>https://TosakaUCw.github.io/post/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/</link><pubDate>Tue, 18 Aug 2020 19:13:57 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E5%90%8C%E4%BD%99%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid><description>&lt;div class="admonition question">
