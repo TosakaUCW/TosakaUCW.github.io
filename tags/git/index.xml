@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on TosakaUCW</title><link>https://TosakaUCw.github.io/tags/git/</link><description>Recent content in Git on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Nov 2020 08:32:26 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git Bash 中文乱码</title><link>https://TosakaUCw.github.io/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link><pubDate>Mon, 02 Nov 2020 08:32:26 +0800</pubDate><guid>https://TosakaUCw.github.io/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid><description>&lt;p>在使用 Git 对中文文件进行操作时，经常出现乱码&lt;/p>
+&lt;pre>&lt;code>$ git status
+Refresh index: 100% (545/545), done.
+ddOn branch master
+Changes not staged for commit:
+(use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+(use &amp;quot;git restore &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+modified: Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
+modified: &amp;quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;h2 id="原因">原因&lt;/h2>
+&lt;ol>
+&lt;li>Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8&lt;/li>
+&lt;li>Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容&lt;/li>
+&lt;li>不同的命令行工具（终端）对环境变量的处理方式不同&lt;/li>
+&lt;/ol></description></item></channel></rss>
