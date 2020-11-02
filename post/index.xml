@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 29 Oct 2020 20:20:09 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Codeforces Round #162 (Div. 1) VP 记录</title><link>https://TosakaUCw.github.io/post/cf_162_div_1/</link><pubDate>Thu, 29 Oct 2020 20:20:09 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_162_div_1/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/264" target="_blank">题目链接&lt;/a>&lt;/p>
-&lt;p>无内鬼，整点 VP&lt;/p></description></item><item><title>BZOJ 3653 谈笑风生（主席树）</title><link>https://TosakaUCw.github.io/post/bzoj_3653/</link><pubDate>Thu, 29 Oct 2020 09:46:43 +0800</pubDate><guid>https://TosakaUCw.github.io/post/bzoj_3653/</guid><description>&lt;p>&lt;a href="https://darkbzoj.tk/problem/3653" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Oct 2020 12:53:47 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 759C Nikita and stack（线段树）</title><link>https://TosakaUCw.github.io/post/cf_759c/</link><pubDate>Sat, 31 Oct 2020 12:53:47 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_759c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/759/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定 $m$ 个栈操作 &lt;code>push(x)&lt;/code> 或 &lt;code>pop()&lt;/code>，每个操作有个执行时间 $t_i$&lt;/p>
+&lt;p>对于每个 $0 \le i \le m$，输出 $[1, i]$ 的栈操作按时间顺序执行后的栈顶元素&lt;/p>
+&lt;p>$ 1 \le m \le 10^5$&lt;/p>
+&lt;/div></description></item><item><title>CF 264C Choosing Balls（DP）</title><link>https://TosakaUCw.github.io/post/cf_264c/</link><pubDate>Sat, 31 Oct 2020 12:47:24 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_264c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/264/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>有一个序列，每个元素有一个颜色 $c_i$ 和权值 $v_i$，你需要从中选出一些元素，不改变相对顺序的组成一个新序列，使得整个序列的总分最高。&lt;/p>
+&lt;p>新序列的分数是这样计算的：&lt;/p>
+&lt;p>对于每个你选出的元素：&lt;/p>
+&lt;p>如果这个元素和新序列中上一个元素颜色相同，就在总分里加上 $v_i \cdot a$，否则加上 $v_i \cdot b$&lt;/p>
+&lt;p>$n \times q \le 5 \times 10^7$&lt;/p>
+&lt;/div></description></item><item><title>CF 264B Good Sequences（DP，数论）</title><link>https://TosakaUCw.github.io/post/cf_264b/</link><pubDate>Sat, 31 Oct 2020 12:46:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_264b/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/264/problem/B" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一个严格上升的子序列，求其相邻元素不互质的最长上升子序列长度&lt;/p>
+&lt;p>$n,a_i \le 10^5$&lt;/p>
+&lt;/div></description></item><item><title>BZOJ 3653 谈笑风生（主席树）</title><link>https://TosakaUCw.github.io/post/bzoj_3653/</link><pubDate>Thu, 29 Oct 2020 09:46:43 +0800</pubDate><guid>https://TosakaUCw.github.io/post/bzoj_3653/</guid><description>&lt;p>&lt;a href="https://darkbzoj.tk/problem/3653" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵 $n$ 个节点的有根树，有 $q$ 组询问&lt;/p>

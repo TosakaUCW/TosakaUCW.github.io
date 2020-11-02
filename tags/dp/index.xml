@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on TosakaUCW的博客</title><link>https://TosakaUCw.github.io/tags/dp/</link><description>Recent content in DP on TosakaUCW的博客</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Oct 2020 18:26:25 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>HDU 5807 Keep In Touch（DP）</title><link>https://TosakaUCw.github.io/post/hdu_5807/</link><pubDate>Tue, 27 Oct 2020 18:26:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_5807/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=5807" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on TosakaUCW</title><link>https://TosakaUCw.github.io/tags/dp/</link><description>Recent content in DP on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Oct 2020 12:47:24 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 264C Choosing Balls（DP）</title><link>https://TosakaUCw.github.io/post/cf_264c/</link><pubDate>Sat, 31 Oct 2020 12:47:24 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_264c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/264/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>有一个序列，每个元素有一个颜色 $c_i$ 和权值 $v_i$，你需要从中选出一些元素，不改变相对顺序的组成一个新序列，使得整个序列的总分最高。&lt;/p>
+&lt;p>新序列的分数是这样计算的：&lt;/p>
+&lt;p>对于每个你选出的元素：&lt;/p>
+&lt;p>如果这个元素和新序列中上一个元素颜色相同，就在总分里加上 $v_i \cdot a$，否则加上 $v_i \cdot b$&lt;/p>
+&lt;p>$n \times q \le 5 \times 10^7$&lt;/p>
+&lt;/div></description></item><item><title>CF 264B Good Sequences（DP，数论）</title><link>https://TosakaUCw.github.io/post/cf_264b/</link><pubDate>Sat, 31 Oct 2020 12:46:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_264b/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/264/problem/B" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一个严格上升的子序列，求其相邻元素不互质的最长上升子序列长度&lt;/p>
+&lt;p>$n,a_i \le 10^5$&lt;/p>
+&lt;/div></description></item><item><title>HDU 5807 Keep In Touch（DP）</title><link>https://TosakaUCw.github.io/post/hdu_5807/</link><pubDate>Tue, 27 Oct 2020 18:26:25 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_5807/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=5807" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>$n$ 个点的DAG，三个人要求位于三个两两点权差值不超过 $K$ 的点&lt;/p>
