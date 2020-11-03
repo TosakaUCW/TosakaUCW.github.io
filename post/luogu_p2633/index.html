@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Git Bash 中文乱码 - TosakaUCW</title>
+  <title>Luogu P2633 Count on a tree（主席树，树剖） - TosakaUCW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="TosakaUCW" /><meta name="description" content="在使用 Git 对中文文件进行操作时，经常出现乱码
-$ git status Refresh index: 100% (545/545), done. ddOn branch master Changes not staged for commit: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git restore &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) modified: Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp modified: &amp;quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&amp;quot;  原因  Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8 Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容 不同的命令行工具（终端）对环境变量的处理方式不同 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
+<meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
+题目描述
+给定一棵树，多次询问两点简单路径上第 $k$ 小的数
+$1 \le n,m \le 10^5$
+" /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
 <meta name="baidu-site-verification" content="ulNPVrouLu" />
@@ -27,7 +30,7 @@ $ git status Refresh index: 100% (545/545), done. ddOn branch master Changes not
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p2633/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,67 +43,37 @@ $ git status Refresh index: 100% (545/545), done. ddOn branch master Changes not
 
 
 
-<meta property="og:title" content="Git Bash 中文乱码" />
-<meta property="og:description" content="在使用 Git 对中文文件进行操作时，经常出现乱码
-$ git status
-Refresh index: 100% (545/545), done.
-ddOn branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-        modified:   Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
-        modified:   &quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&quot;
+<meta property="og:title" content="Luogu P2633 Count on a tree（主席树，树剖）" />
+<meta property="og:description" content="题目链接
 
-原因
-
-Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8
-Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容
-不同的命令行工具（终端）对环境变量的处理方式不同
+  题目描述
+给定一棵树，多次询问两点简单路径上第 $k$ 小的数
+$1 \le n,m \le 10^5$
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" />
-<meta property="article:published_time" content="2020-11-02T08:32:26+08:00" />
-<meta property="article:modified_time" content="2020-11-02T09:12:44+08:00" />
-<meta itemprop="name" content="Git Bash 中文乱码">
-<meta itemprop="description" content="在使用 Git 对中文文件进行操作时，经常出现乱码
-$ git status
-Refresh index: 100% (545/545), done.
-ddOn branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-        modified:   Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
-        modified:   &quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&quot;
+<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p2633/" />
+<meta property="article:published_time" content="2020-11-03T08:42:11+08:00" />
+<meta property="article:modified_time" content="2020-11-03T08:49:55+08:00" />
+<meta itemprop="name" content="Luogu P2633 Count on a tree（主席树，树剖）">
+<meta itemprop="description" content="题目链接
 
-原因
-
-Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8
-Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容
-不同的命令行工具（终端）对环境变量的处理方式不同
+  题目描述
+给定一棵树，多次询问两点简单路径上第 $k$ 小的数
+$1 \le n,m \le 10^5$
 ">
-<meta itemprop="datePublished" content="2020-11-02T08:32:26&#43;08:00" />
-<meta itemprop="dateModified" content="2020-11-02T09:12:44&#43;08:00" />
-<meta itemprop="wordCount" content="507">
+<meta itemprop="datePublished" content="2020-11-03T08:42:11&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-03T08:49:55&#43;08:00" />
+<meta itemprop="wordCount" content="600">
 
 
 
-<meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Git Bash 中文乱码"/>
-<meta name="twitter:description" content="在使用 Git 对中文文件进行操作时，经常出现乱码
-$ git status
-Refresh index: 100% (545/545), done.
-ddOn branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-        modified:   Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
-        modified:   &quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&quot;
+<meta itemprop="keywords" content="主席树,树剖," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Luogu P2633 Count on a tree（主席树，树剖）"/>
+<meta name="twitter:description" content="题目链接
 
-原因
-
-Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8
-Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容
-不同的命令行工具（终端）对环境变量的处理方式不同
+  题目描述
+给定一棵树，多次询问两点简单路径上第 $k$ 小的数
+$1 \le n,m \le 10^5$
 "/>
 
 <!--[if lte IE 9]>
@@ -176,14 +149,14 @@ Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Git Bash 中文乱码</h1>
+      <h1 class="post-title">Luogu P2633 Count on a tree（主席树，树剖）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2020-11-02 08:32:26 &#43;0800 &#43;0800"> 2020-11-02 </span>
+        <span class="post-time" title="2020-11-03 08:42:11 &#43;0800 &#43;0800"> 2020-11-03 </span>
         <div class="post-category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 507 字 </span>
+          <span class="more-meta"> 约 600 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -197,16 +170,8 @@ Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows
   <ul>
     <li>
       <ul>
-        <li><a href="#原因">原因</a></li>
-        <li><a href="#解决方案">解决方案</a>
-          <ul>
-            <li><a href="#设置-git-支持-utf-8-编码">设置 Git 支持 UTF-8 编码</a></li>
-            <li><a href="#设置-gui-显示中文">设置 GUI 显示中文</a></li>
-            <li><a href="#针对其他命令行工具">针对其他命令行工具</a></li>
-          </ul>
-        </li>
-        <li><a href="#最终效果">最终效果</a></li>
-        <li><a href="#参考资料">参考资料</a></li>
+        <li><a href="#简要做法">简要做法</a></li>
+        <li><a href="#参考代码">参考代码</a></li>
       </ul>
     </li>
   </ul>
@@ -214,50 +179,118 @@ Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows
   </div>
 </div>
     <div class="post-content">
-      <p>在使用 Git 对中文文件进行操作时，经常出现乱码</p>
-<pre><code>$ git status
-Refresh index: 100% (545/545), done.
-ddOn branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-        modified:   Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
-        modified:   &quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&quot;
+      <p><a href="https://www.luogu.com.cn/problem/P2633" target="_blank">题目链接</a></p>
+<div class="admonition question">
+  <p class="admonition-title">题目描述</p>
+<p>给定一棵树，多次询问两点简单路径上第 $k$ 小的数</p>
+<p>$1 \le n,m \le 10^5$</p>
+</div>
+<h2 id="简要做法">简要做法</h2>
+<p>差分主席树，u 点的主席树 + v 点的主席树 - lca 的主席树 - fa(lca) 的主席树</p>
+<h2 id="参考代码">参考代码</h2>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;memory.h&gt;
+
+const int N = 1e5 + 5;
+const int M = N &lt;&lt; 1;
+
+int n, q;
+int tmp[N], val[N], m;
+int depth[N], fa[N], size[N], son[N], top[N];
+int head[N], num_edge;
+
+struct Node
+{
+    int next, to;
+} edge[M];
+
+void add_edge(int u, int v) { edge[++num_edge] = Node{head[u], v}, head[u] = num_edge; }
+
+int read()
+{
+    int x = 0, f = 1;
+    char ch = getchar();
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-' ? -1 : 1, ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + ch - 48, ch = getchar();
+    return x * f;
+}
+
+struct HJT_Tree
+{
+#define mid ((l + r) &gt;&gt; 1)
+#define get(x) (x == 0 ? 0 : sum[x])
+    int rt[N], L[N &lt;&lt; 5], R[N &lt;&lt; 5], sum[N &lt;&lt; 5], nodecnt;
+    int modify(int pre, int pos, int l = 1, int r = m)
+    {
+        int p = ++nodecnt;
+        L[p] = L[pre], R[p] = R[pre], sum[p] = sum[pre];
+        if (l == r)
+            return sum[p]++, p;
+        if (pos &lt;= mid)
+            L[p] = modify(L[pre], pos, l, mid);
+        else
+            R[p] = modify(R[pre], pos, mid + 1, r);
+        return sum[p] = get(L[p]) + get(R[p]), p;
+    }
+    int query(int k, int a, int b, int c, int d, int l = 1, int r = m)
+    {
+        if (l == r)
+            return l;
+        int x = get(L[a]) + get(L[b]) - get(L[c]) - get(L[d]);
+        if (x &gt;= k)
+            return query(k, L[a], L[b], L[c], L[d], l, mid);
+        else
+            return query(k - x, R[a], R[b], R[c], R[d], mid + 1, r);
+    }
+} T;
+
+int rank(int x) { return std::lower_bound(tmp + 1, tmp + 1 + m, x) - tmp; }
+
+void dfs1(int u, int fa)
+{
+    T.rt[u] = T.modify(T.rt[fa], rank(val[u])), depth[u] = depth[fa] + 1, size[u] = 1, ::fa[u] = fa;
+    for (int i = head[u], v; i; i = edge[i].next)
+        if ((v = edge[i].to) != fa)
+            dfs1(v, u), size[u] += size[v], son[u] = size[v] &gt; size[son[u]] ? v : son[u];
+}
+
+void dfs2(int u)
+{
+    top[u] = u == son[fa[u]] ? top[fa[u]] : u;
+    if (son[u])
+        dfs2(son[u]);
+    for (int i = head[u], v; i; i = edge[i].next)
+        if ((v = edge[i].to) != fa[u] and v != son[u])
+            dfs2(v);
+}
+
+int lca(int x, int y)
+{
+    for (; top[x] != top[y]; x = fa[top[x]])
+        if (depth[top[x]] &lt; depth[top[y]])
+            std::swap(x, y);
+    return depth[x] &lt; depth[y] ? x : y;
+}
+
+int getans(int u, int v, int x, int k) { return tmp[T.query(k, T.rt[u], T.rt[v], T.rt[x], T.rt[fa[x]])]; }
+
+int main()
+{
+    n = read(), q = read();
+    for (int i = 1; i &lt;= n; i++)
+        val[i] = tmp[i] = read();
+    for (int i = 1, u, v; i &lt; n; i++)
+        u = read(), v = read(), add_edge(u, v), add_edge(v, u);
+    std::sort(tmp + 1, tmp + 1 + n), m = std::unique(tmp + 1, tmp + 1 + n) - tmp - 1;
+    dfs1(1, 0), dfs2(1);
+    for (int lastans = 0, u, v, k; q--;)
+        u = read() ^ lastans, v = read(), k = read(), printf(&quot;%d\n&quot;, lastans = getans(u, v, lca(u, v), k));
+    return 0;
+}
 </code></pre>
-<h2 id="原因">原因</h2>
-<ol>
-<li>Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8</li>
-<li>Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容</li>
-<li>不同的命令行工具（终端）对环境变量的处理方式不同</li>
-</ol>
-<h2 id="解决方案">解决方案</h2>
-<p>解决方案是统一使用 UTF-8 编码</p>
-<h3 id="设置-git-支持-utf-8-编码">设置 Git 支持 UTF-8 编码</h3>
-<pre><code>git config --global core.quotepath false # 不对0x80以上的字符进行quote，解决git status/commit时中文文件名乱码
-git config --global i18n.commitencoding utf-8 # 提交信息编码
-git config --global i18n.logoutputencoding utf-8 # 输出log编码
-git config --global svn.pathnameencoding GB2312 # 支持中文路径
-export LESSCHARSET=utf-8 # git log 默认使用less分页，所以需要bash对less命令进行utf-8编码
-</code></pre>
-<h3 id="设置-gui-显示中文">设置 GUI 显示中文</h3>
-<pre><code>git config --global gui.encoding utf-8 # 图形界面编码
-</code></pre>
-<h3 id="针对其他命令行工具">针对其他命令行工具</h3>
-<p>在系统环境变量中添加 <code>LESSCHARSET</code> 变量，并赋值为 <code>utf-8</code></p>
-<p>可解决 Windows 其他命令行工具如 Powershell , cmd 和 cmder 的中文乱码问题</p>
-<h2 id="最终效果">最终效果</h2>
-<pre><code>$ git status
-On branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-        modified:   Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
-        modified:   Luogu/[Luogu P1972] [SDOI2009]HH的项链.cpp
-</code></pre>
-<h2 id="参考资料">参考资料</h2>
-<p><a href="https://gist.github.com/nightire/5069597" target="_blank">nightire/解决 Git 在 windows 下中文乱码的问题.md</a></p>
-<p><a href="https://devopshub.cn/2018/01/07/g4e-faq-4-git-encoding-error/" target="_blank">g4e常见问题#4 解决Git在Windows上的中文乱码问题</a></p>
-<p><a href="https://knightwupz.github.io/post/pipelines/git-bash%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/" target="_blank">Git bash中文显示问题</a></p>
     </div>
 
     <div class="post-copyright">
@@ -268,9 +301,9 @@ Changes not staged for commit:
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-11-02 09:12:44 &#43;0800 &#43;0800">2020-11-02</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/5ff204b027e18a115f0b907407b5f96eabdaa9d6" title="2020/11/2" target="_blank">(5ff204b)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Git-Bash-%e4%b8%ad%e6%96%87%e4%b9%b1%e7%a0%81.md" target="_blank">更新历史</a>
+        <span title="2020-11-03 08:49:55 &#43;0800 &#43;0800">2020-11-03</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/5a2ff67aa4076df6d94638b867b1b1f83017d47c" title="2020/11/3" target="_blank">(5a2ff67)</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P2633.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -281,16 +314,13 @@ Changes not staged for commit:
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/git/">Git</a>
+          <a href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/">主席树</a>
+          <a href="/tags/%E6%A0%91%E5%89%96/">树剖</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/luogu_p2633/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Luogu P2633 Count on a tree（主席树，树剖）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/cf_759c/">
-            <span class="next-text nav-default">CF 759C Nikita and stack（线段树）</span>
+        
+        <a class="next" href="/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">
+            <span class="next-text nav-default">Git Bash 中文乱码</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
