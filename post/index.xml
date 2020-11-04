@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 04 Nov 2020 10:10:20 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>HDU 6231 Kth number（二分，双指针）</title><link>https://TosakaUCw.github.io/post/hdu_6231/</link><pubDate>Wed, 04 Nov 2020 10:10:20 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6231/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=2665" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 05 Nov 2020 07:13:57 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 966C Big Secret（数论，贪心）</title><link>https://TosakaUCw.github.io/post/cf_966c/</link><pubDate>Thu, 05 Nov 2020 07:13:57 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_966c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/966/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一个长为 $n$ 的数列 $b_i$，要求构造一个长为 $n$ 的数列 $a_i$&lt;/p>
+&lt;p>$b_1 = a_1$&lt;/p>
+&lt;p>$b_i = a_i \oplus a_{i - 1}$&lt;/p>
+&lt;p>要求 $a_i$ 严格单调递增&lt;/p>
+&lt;p>$1 \le n \le 10^5$&lt;/p>
+&lt;p>$1 \le b_i \le 2^{60}$&lt;/p>
+&lt;/div></description></item><item><title>HDU 6231 Kth number（二分，双指针）</title><link>https://TosakaUCw.github.io/post/hdu_6231/</link><pubDate>Wed, 04 Nov 2020 10:10:20 +0800</pubDate><guid>https://TosakaUCw.github.io/post/hdu_6231/</guid><description>&lt;p>&lt;a href="http://acm.hdu.edu.cn/showproblem.php?pid=2665" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一个长度为 $n$ 的数组 $A$，给定 $m,k$，问在由这个数组的所有的区间第 $k$ 小组成的 $B$ 数组中，第 $m$ 大元素是多少&lt;/p>
