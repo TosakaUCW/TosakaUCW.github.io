@@ -45,12 +45,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://TosakaUCw.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2hash/" />
 <meta property="article:published_time" content="2020-08-13T03:28:13+08:00" />
-<meta property="article:modified_time" content="2020-08-13T03:49:54+08:00" />
+<meta property="article:modified_time" content="2020-11-20T18:33:00+08:00" />
 <meta itemprop="name" content="字符串Hash">
 <meta itemprop="description" content="摸你赛的时候傻逼了打了个暴力 std::unordered_map，没打快速子串 hash">
 <meta itemprop="datePublished" content="2020-08-13T03:28:13&#43;08:00" />
-<meta itemprop="dateModified" content="2020-08-13T03:49:54&#43;08:00" />
-<meta itemprop="wordCount" content="253">
+<meta itemprop="dateModified" content="2020-11-20T18:33:00&#43;08:00" />
+<meta itemprop="wordCount" content="280">
 
 
 
@@ -138,7 +138,7 @@
         <div class="post-category">
             <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             </div>
-          <span class="more-meta"> 约 253 字 </span>
+          <span class="more-meta"> 约 280 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,7 +152,12 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#bkdr-hash">BKDR Hash</a></li>
+        <li><a href="#bkdr-hash">BKDR Hash</a>
+          <ul>
+            <li><a href="#子串-hash">子串 hash</a></li>
+            <li><a href="#子串拼接">子串拼接</a></li>
+          </ul>
+        </li>
         <li><a href="#参考代码">参考代码</a></li>
       </ul>
     </li>
@@ -163,12 +168,14 @@
     <div class="post-content">
       <p>摸你赛的时候傻逼了打了个暴力 std::unordered_map，没打快速子串 hash</p>
 <h2 id="bkdr-hash">BKDR Hash</h2>
-<p>\begin{aligned}
-hash(l,r) &amp;= \sum_{i=l}^{r} str(i) \times base^{r-l} \<br>
-&amp;=\sum_{i=1}^{r}str(i)\times base^{r-i}-\sum_{i=1}^{l-1}str(i)\times base^{l-1-i} \times base^{r-l+1} \<br>
-&amp;=hash(1,r)-hash(1,l-1)\times base^{r-l+1}
-\end{aligned}</p>
+<h3 id="子串-hash">子串 hash</h3>
+<p>$hash(l,r) = \sum_{i=l}^{r}{str_i} base^{r-i}$</p>
+<p>$hash(l,r) = (\sum_{i=1}^{r}{str_i} base^{r-i}) - (\sum_{i=1}^{i-1}{str_i} base^{l-1-i}) \times base^{r-l+1}$</p>
+<p>$hash(l,r) = hash(1,r) - hash(1,l-1) \times base^{r-l+1}$</p>
 <p>$O(n)$ 维护 $base^n$ 次方和 hash 前缀和即可 $O(1)$ 查询</p>
+<h3 id="子串拼接">子串拼接</h3>
+<p>将 $[l1,r1]$ 和 $[l2,r2]$ 拼接在一起后的 $hash(l,r)$</p>
+<p>$hash(l,r)=hash(l_1,r_1) \times base^{r_2-l_2+1}  + hash(l_2,r_2)$</p>
 <p>注意根据 BKDR hash 的算法进行变形，比如 O(1) 求子串拼接 hash ，删除字符 hash 等</p>
 <p>代码使用unsigned long long 自然溢出(相当于$\bmod 2^{64}$)，看情况使用多模数 hash</p>
 <h2 id="参考代码">参考代码</h2>
@@ -208,8 +215,8 @@ int main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2020-08-13 03:49:54 &#43;0800 &#43;0800">2020-08-13</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/a3a1d74f6b1d4558387376717f127a4b4c13a741" title="add blog and fixed the 404-problem of links.md" target="_blank">(a3a1d74)</a>
+        <span title="2020-11-20 18:33:00 &#43;0800 &#43;0800">2020-11-20</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/e0734b5c4ef479e1101c6d57b9bb8cb3252ced4a" title="2020/11/20" target="_blank">(e0734b5)</a>
         ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/%e5%ad%97%e7%ac%a6%e4%b8%b2Hash.md" target="_blank">更新历史</a>
     </span>
   </p>
