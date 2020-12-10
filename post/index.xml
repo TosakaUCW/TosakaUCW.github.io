@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 05 Nov 2020 07:13:57 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 966C Big Secret（数论，贪心）</title><link>https://TosakaUCw.github.io/post/cf_966c/</link><pubDate>Thu, 05 Nov 2020 07:13:57 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_966c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/966/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 10 Dec 2020 19:16:45 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3538 [POI2012]OKR-A Horrible Poem（Hash，数论）</title><link>https://TosakaUCw.github.io/post/luogu_p3538/</link><pubDate>Thu, 10 Dec 2020 19:16:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3538/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3538" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定字符串 $S$，多次询问子串 $[L, R]$ 的最短循环节长度&lt;/p>
+&lt;p>$n \le 5 \times 10^5$&lt;/p>
+&lt;p>$q \le 2 \times 10^6$&lt;/p>
+&lt;/div></description></item><item><title>CF 1188C Array Beauty（DP）</title><link>https://TosakaUCw.github.io/post/cf_1188c/</link><pubDate>Thu, 03 Dec 2020 07:53:55 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1188c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1188/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给出一个序列 $a[1&amp;hellip;n]$ 和 $k$&lt;/p>
+&lt;p>求 $a$ 所有长度为 $k$ 的子序列的价值和&lt;/p>
+&lt;p>定义一个序列 $b[1&amp;hellip;k]$ 的价值为 $min(abs(b_i-b_j))$，即最接近的两个数的差&lt;/p>
+&lt;p>$1 \le k,n \le 10^4$&lt;/p>
+&lt;/div></description></item><item><title>CSP 2020 游记</title><link>https://TosakaUCw.github.io/post/csp_2020/</link><pubDate>Thu, 05 Nov 2020 23:25:30 +0800</pubDate><guid>https://TosakaUCw.github.io/post/csp_2020/</guid><description>&lt;p>（咕）&lt;/p></description></item><item><title>CF 966C Big Secret（数论，贪心）</title><link>https://TosakaUCw.github.io/post/cf_966c/</link><pubDate>Thu, 05 Nov 2020 07:13:57 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_966c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/966/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一个长为 $n$ 的数列 $b_i$，要求构造一个长为 $n$ 的数列 $a_i$&lt;/p>
@@ -105,8 +118,7 @@ modified: &amp;quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351
 &lt;p>给定 4 个点的环，求从 2 出发回到 2 的最短的长度至少为 K 的路径长度。&lt;/p>
 &lt;p>$K \le 10^{18}$&lt;/p>
 &lt;p>$d \le 3 \times 10^4$&lt;/p>
-&lt;/div></description></item><item><title>CSP 2020 游记（持续更新中）</title><link>https://TosakaUCw.github.io/post/csp_2020/</link><pubDate>Fri, 23 Oct 2020 12:54:20 +0800</pubDate><guid>https://TosakaUCw.github.io/post/csp_2020/</guid><description>&lt;p>本来想着过了初赛就不写游记，过了初赛再写游记（&lt;/p>
-&lt;p>本来是初赛翻车没过了的，但是没想到啊没想到有推荐名额&lt;/p></description></item><item><title>乘法逆元</title><link>https://TosakaUCw.github.io/post/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</link><pubDate>Fri, 23 Oct 2020 11:05:36 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</guid><description>&lt;p>忘了&lt;/p></description></item><item><title>Luogu P6852 Mex（思维）</title><link>https://TosakaUCw.github.io/post/luogu_p6852/</link><pubDate>Fri, 23 Oct 2020 08:27:17 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p6852/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P6852" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;/div></description></item><item><title>乘法逆元</title><link>https://TosakaUCw.github.io/post/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</link><pubDate>Fri, 23 Oct 2020 11:05:36 +0800</pubDate><guid>https://TosakaUCw.github.io/post/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</guid><description>&lt;p>忘了&lt;/p></description></item><item><title>Luogu P6852 Mex（思维）</title><link>https://TosakaUCw.github.io/post/luogu_p6852/</link><pubDate>Fri, 23 Oct 2020 08:27:17 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p6852/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P6852" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定 $n$ 和 $m$ 条 区间 mex 信息&lt;/p>
