@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 10 Dec 2020 19:16:45 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P3538 [POI2012]OKR-A Horrible Poem（Hash，数论）</title><link>https://TosakaUCw.github.io/post/luogu_p3538/</link><pubDate>Thu, 10 Dec 2020 19:16:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3538/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3538" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TosakaUCW</title><link>https://TosakaUCw.github.io/post/</link><description>Recent content in Posts on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 10 Dec 2020 19:29:46 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 1310D Tourism（随机化）</title><link>https://TosakaUCw.github.io/post/cf_1310d/</link><pubDate>Thu, 10 Dec 2020 19:29:46 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1310d/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1310/problem/D" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给定一个完全图，路径带权且 $dis(i,j)$ 不一定等于 $dis(i,j)$
+​
+边数为 $k$ 不存在奇环且起点和终点都是 $1$ 的最小路径&lt;/p>
+&lt;p>$n \le 80$&lt;/p>
+&lt;p>$k \le 10$&lt;/p>
+&lt;/div></description></item><item><title>Luogu P3538 [POI2012]OKR-A Horrible Poem（Hash，数论）</title><link>https://TosakaUCw.github.io/post/luogu_p3538/</link><pubDate>Thu, 10 Dec 2020 19:16:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p3538/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P3538" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定字符串 $S$，多次询问子串 $[L, R]$ 的最短循环节长度&lt;/p>
