@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 1310D Tourism（随机化）</title><link>https://TosakaUCw.github.io/post/cf_1310d/</link><pubDate>Thu, 10 Dec 2020 19:29:46 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1310d/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1310/problem/D" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TosakaUCW</title><link>https://TosakaUCw.github.io/</link><description>Recent content on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Feb 2020 17:43:21 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P2812 [JSOI2011]分特产(二项式反演，DP）</title><link>https://TosakaUCw.github.io/post/luogu_p5505/</link><pubDate>Mon, 15 Mar 2021 20:39:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p5505/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P2812" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。&lt;/p>
+&lt;p>现在要将这些物品分给这些人，使得每个人至少分到一个物品，求方案数模 $10^9 + 7$&lt;/p>
+&lt;p>$n,m,a_i \le 10^3$&lt;/p>
+&lt;/div></description></item><item><title>CF 1310D Tourism（随机化）</title><link>https://TosakaUCw.github.io/post/cf_1310d/</link><pubDate>Thu, 10 Dec 2020 19:29:46 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_1310d/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/1310/problem/D" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一个完全图，路径带权且 $dis(i,j)$ 不一定等于 $dis(i,j)$
