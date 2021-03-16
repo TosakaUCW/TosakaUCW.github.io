@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Luogu P5505 [JSOI2011]分特产(二项式反演，DP） - TosakaUCW</title>
+  <title>Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP） - TosakaUCW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,9 +18,9 @@
 
 <meta name="author" content="TosakaUCW" /><meta name="description" content="题目链接
 题目描述
-有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。
-现在要将这些物品分给这些人，使得每个人至少分到一个物品，求方案数模 $10^9 &#43; 7$
-$n,m,a_i \le 10^3$
+给定一棵 $n=2m$ 个节点的树，有 $m$ 个白点，$m$ 个黑点
+把黑白点两两配对，对于 $k\in[0,n]$，求出恰好有 $k$ 对点有祖孙关系的方案数
+$n \le 5*10^3$
 " /><meta name="keywords" content="TosakaUCW, blog, OI" />
 
 
@@ -31,7 +31,7 @@ $n,m,a_i \le 10^3$
 <meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
-<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p5505/" />
+<link rel="canonical" href="https://TosakaUCw.github.io/post/luogu_p6478/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,40 +44,40 @@ $n,m,a_i \le 10^3$
 
 
 
-<meta property="og:title" content="Luogu P5505 [JSOI2011]分特产(二项式反演，DP）" />
+<meta property="og:title" content="Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP）" />
 <meta property="og:description" content="题目链接
 
   题目描述
-有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。
-现在要将这些物品分给这些人，使得每个人至少分到一个物品，求方案数模 $10^9 &#43; 7$
-$n,m,a_i \le 10^3$
+给定一棵 $n=2m$ 个节点的树，有 $m$ 个白点，$m$ 个黑点
+把黑白点两两配对，对于 $k\in[0,n]$，求出恰好有 $k$ 对点有祖孙关系的方案数
+$n \le 5*10^3$
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p5505/" />
-<meta property="article:published_time" content="2021-03-15T20:39:45+08:00" />
+<meta property="og:url" content="https://TosakaUCw.github.io/post/luogu_p6478/" />
+<meta property="article:published_time" content="2021-03-16T18:19:45+08:00" />
 <meta property="article:modified_time" content="2021-03-16T18:46:04+08:00" />
-<meta itemprop="name" content="Luogu P5505 [JSOI2011]分特产(二项式反演，DP）">
+<meta itemprop="name" content="Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP）">
 <meta itemprop="description" content="题目链接
 
   题目描述
-有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。
-现在要将这些物品分给这些人，使得每个人至少分到一个物品，求方案数模 $10^9 &#43; 7$
-$n,m,a_i \le 10^3$
+给定一棵 $n=2m$ 个节点的树，有 $m$ 个白点，$m$ 个黑点
+把黑白点两两配对，对于 $k\in[0,n]$，求出恰好有 $k$ 对点有祖孙关系的方案数
+$n \le 5*10^3$
 ">
-<meta itemprop="datePublished" content="2021-03-15T20:39:45&#43;08:00" />
+<meta itemprop="datePublished" content="2021-03-16T18:19:45&#43;08:00" />
 <meta itemprop="dateModified" content="2021-03-16T18:46:04&#43;08:00" />
-<meta itemprop="wordCount" content="424">
+<meta itemprop="wordCount" content="690">
 
 
 
-<meta itemprop="keywords" content="二项式反演,DP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Luogu P5505 [JSOI2011]分特产(二项式反演，DP）"/>
+<meta itemprop="keywords" content="二项式反演,DP,树形DP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP）"/>
 <meta name="twitter:description" content="题目链接
 
   题目描述
-有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。
-现在要将这些物品分给这些人，使得每个人至少分到一个物品，求方案数模 $10^9 &#43; 7$
-$n,m,a_i \le 10^3$
+给定一棵 $n=2m$ 个节点的树，有 $m$ 个白点，$m$ 个黑点
+把黑白点两两配对，对于 $k\in[0,n]$，求出恰好有 $k$ 对点有祖孙关系的方案数
+$n \le 5*10^3$
 "/>
 
 <!--[if lte IE 9]>
@@ -153,15 +153,15 @@ $n,m,a_i \le 10^3$
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Luogu P5505 [JSOI2011]分特产(二项式反演，DP）</h1>
+      <h1 class="post-title">Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP）</h1>
 
       <div class="post-meta">
-        <span class="post-time" title="2021-03-15 20:39:45 &#43;0800 &#43;0800"> 2021-03-15 </span>
+        <span class="post-time" title="2021-03-16 18:19:45 &#43;0800 &#43;0800"> 2021-03-16 </span>
         <div class="post-category">
             <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
             </div>
-          <span class="more-meta"> 约 424 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 690 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -183,19 +183,22 @@ $n,m,a_i \le 10^3$
   </div>
 </div>
     <div class="post-content">
-      <p><a href="https://www.luogu.com.cn/problem/P5505" target="_blank">题目链接</a></p>
+      <p><a href="https://www.luogu.com.cn/problem/P6478" target="_blank">题目链接</a></p>
 <div class="admonition question">
   <p class="admonition-title">题目描述</p>
-<p>有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。</p>
-<p>现在要将这些物品分给这些人，使得每个人至少分到一个物品，求方案数模 $10^9 + 7$</p>
-<p>$n,m,a_i \le 10^3$</p>
+<p>给定一棵 $n=2m$ 个节点的树，有 $m$ 个白点，$m$ 个黑点</p>
+<p>把黑白点两两配对，对于 $k\in[0,n]$，求出恰好有 $k$ 对点有祖孙关系的方案数</p>
+<p>$n \le 5*10^3$</p>
 </div>
 <h2 id="简要做法">简要做法</h2>
-<p>每个人至少分到一个物品 $=$ 恰好 $0$ 个人没有分到物品</p>
-<p>$f(i)$ 钦定，$g(i)$ 恰好</p>
-<p>$$f(k) = \sum_{i=k}^{n}{i\choose k}g(i) = {n\choose k}\prod_{i=1}^{m}{{n-k+a_i-1}\choose{a_i-1}}$$</p>
-<p>$$g(k)=\sum_{i=k}^{n}(-1)^{i-k}{i\choose k}f(i) = \sum_{i=k}^{n}(-1)^{i-k}{i\choose k}{n\choose i}\prod_{j=1}^{m}{{n-i+a_j-1}\choose{a_j-1}}$$</p>
-<p>$$ans = g(0) = \sum_{i=0}^{n}(-1)^{i}{n\choose i}\prod_{j=1}^{m}{{n-i+a_j-1}\choose{a_j-1}}$$</p>
+<p>$f(i)$ 恰好，$g(i)$ 钦定</p>
+<p>$$g(k)=\sum_{i=k}^{m}{i \choose k}f(i)$$</p>
+<p>$$f(k) = \sum_{i = k} ^ {m} (-1) ^ {i - k} {i \choose k} g(i)$$</p>
+<p>树形 DP 求 $g(i)$</p>
+<p>$dp(u,i)$ 表示 $u$ 的子树内，选出恰好 $i$ 组有祖孙关系的点对的方案数</p>
+<p>假若不选择 $u$，合并子节点即可</p>
+<p>假若选择 $u$，则 $dp(u,i+1) += dp(u,i) \times 颜色不同且未配对的点的数量$</p>
+<p>$g(k) = dp(1,k) \times (m-k)!$</p>
 <h2 id="参考代码">参考代码</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &lt;algorithm&gt;
@@ -212,12 +215,22 @@ int read(int x = 0, int f = 0, char ch = getchar())
     return f ? -x : x;
 }
 
-const int N = 2e3 + 5;
-const int P = 1e9 + 7;
+const int N = 5e3 + 5;
+const int M = N &lt;&lt; 1;
+const int P = 998244353;
 
-int n, m, ans;
+int n, ans;
 int a[N];
-int fac[N], inv[N], f[N], g[N];
+int head[N], num_edge;
+int fac[N], inv[N];
+int f[N][N], g[N], siz1[N], siz2[N];
+
+struct Node
+{
+    int next, to;
+} edge[M];
+
+void add_edge(int u, int v) { edge[++num_edge] = Node{head[u], v}, head[u] = num_edge; }
 
 int pow(int x, int k, int res = 1)
 {
@@ -229,28 +242,51 @@ int pow(int x, int k, int res = 1)
 
 int C(int i, int j) { return fac[i] * inv[j] % P * inv[i - j] % P; }
 
+void dfs(int u, int fa)
+{
+    siz1[u] = f[u][0] = 1, siz2[u] = a[u];
+    for (int i = head[u], v; i; i = edge[i].next)
+        if ((v = edge[i].to) != fa)
+        {
+            dfs(v, u);
+            for (int i = 0; i &lt;= siz1[u] + siz1[v]; i++)
+                g[i] = 0;
+            for (int i = 0; i &lt;= std::min(siz1[u], n / 2); i++)
+                for (int j = 0; j &lt;= std::min(siz1[v], n / 2 - i); j++)
+                    (g[i + j] += f[u][i] * f[v][j] % P) %= P;
+            for (int i = 0; i &lt;= siz1[u] + siz1[v]; i++)
+                f[u][i] = g[i];
+            siz1[u] += siz1[v], siz2[u] += siz2[v];
+        }
+    for (int i = std::min(siz2[u], siz1[u] - siz2[u]); i; i--)
+        if (a[u])
+            (f[u][i] += f[u][i - 1] * (siz1[u] - siz2[u] - (i - 1)) % P) %= P;
+        else
+            (f[u][i] += f[u][i - 1] * (siz2[u] - (i - 1)) % P) %= P;
+}
+
 signed main()
 {
-    n = read(), m = read();
-    for (int i = 1; i &lt;= m; i++)
-        a[i] = read();
-    fac[0] = 1;
-    for (int i = 1; i &lt; N; i++)
+    n = read(), fac[0] = 1;
+    for (int i = 1; i &lt;= n; i++)
+        scanf(&quot;%1lld&quot;, &amp;a[i]);
+    for (int i = 1; i &lt;= n; i++)
         fac[i] = fac[i - 1] * i % P;
-    inv[N - 1] = pow(fac[N - 1], P - 2);
-    for (int i = N - 1; i &gt;= 1; i--)
+    inv[n] = pow(fac[n], P - 2);
+    for (int i = n; i &gt;= 1; i--)
         inv[i - 1] = inv[i] * i % P;
-    for (int i = 0; i &lt; n; i++)
-    {
-        int x = C(n, i);
-        for (int j = 1; j &lt;= m; j++)
-            (x *= C(n - i + a[j] - 1, a[j])) %= P;
-        if (i &amp; 1)
-            ans = (ans - x + P) % P;
-        else
-            ans = (ans + x) % P;
-    }
-    return printf(&quot;%lld&quot;, ans), 0;
+    for (int i = 1, u, v; i &lt; n; i++)
+        u = read(), v = read(), add_edge(u, v), add_edge(v, u);
+    dfs(1, 0);
+    for (int i = 0; i &lt;= n / 2; i++)
+        (f[1][i] *= fac[n / 2 - i]) %= P;
+    for (int i = 0; i &lt;= n / 2; printf(&quot;%lld\n&quot;, ans), ans = 0, i++)
+        for (int j = i; j &lt;= n / 2; j++)
+            if ((j - i) &amp; 1)
+                (ans += -C(j, i) * f[1][j] % P + P) %= P;
+            else
+                (ans += C(j, i) * f[1][j] % P) %= P;
+    return 0;
 }
 </code></pre>
     </div>
@@ -265,7 +301,7 @@ signed main()
     <span class="item-content">
         <span title="2021-03-16 18:46:04 &#43;0800 &#43;0800">2021-03-16</span>
         <a href="https://github.com/TosakaUCW/hugo_blog/commit/25a0520c9a1d1cfa5df67ffea500cb70ffbae39a" title="2021/3/16" target="_blank">(25a0520)</a>
-        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P5505.md" target="_blank">更新历史</a>
+        ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/Luogu_P6478.md" target="_blank">更新历史</a>
     </span>
   </p>
   
@@ -278,15 +314,12 @@ signed main()
       <div class="post-tags">
           <a href="/tags/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/">二项式反演</a>
           <a href="/tags/dp/">DP</a>
+          <a href="/tags/%E6%A0%91%E5%BD%A2dp/">树形DP</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/luogu_p6478/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/cf_1310d/">
-            <span class="next-text nav-default">CF 1310D Tourism（随机化）</span>
+        
+        <a class="next" href="/post/luogu_p5505/">
+            <span class="next-text nav-default">Luogu P5505 [JSOI2011]分特产(二项式反演，DP）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
