@@ -124,6 +124,44 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">Git Bash 中文乱码</a></h1>
+    <div class="post-meta">
+      <span class="post-time" title="2020-11-02 08:32:26 &#43;0800 &#43;0800"> 2020-11-02 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+          </div>
+        <span class="more-meta"> 约 507 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>在使用 Git 对中文文件进行操作时，经常出现乱码</p>
+<pre><code>$ git status
+Refresh index: 100% (545/545), done.
+ddOn branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   Codeforces/[Codeforces 1119B] Alyona and a Narrow Fridge.cpp
+        modified:   &quot;Luogu/[Luogu P1972] [SDOI2009]HH\347\232\204\351\241\271\351\223\276.cpp&quot;
+</code></pre>
+<h2 id="原因">原因</h2>
+<ol>
+<li>Windows 默认使用 GB2312 来处理文件名和内容，但 Git 默认使用 UTF-8</li>
+<li>Git 命令在输出 log 的时候会使用 less 这个工具，默认和 Windows 的编码格式不兼容</li>
+<li>不同的命令行工具（终端）对环境变量的处理方式不同</li>
+</ol>
+    </div>
+    <div class="read-more">
+      <a href="/post/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/cf_759c/">CF 759C Nikita and stack（线段树）</a></h1>
     <div class="post-meta">
       <span class="post-time" title="2020-10-31 12:53:47 &#43;0800 &#43;0800"> 2020-10-31 </span>
@@ -384,36 +422,6 @@
     </div>
     <div class="read-more">
       <a href="/post/cf_679_div_2/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/hdu_6074/">HDU 6074 Phone Call（并查集）</a></h1>
-    <div class="post-meta">
-      <span class="post-time" title="2020-10-25 21:20:13 &#43;0800 &#43;0800"> 2020-10-25 </span>
-      <div class="post-category">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/"> 题解 </a>
-          </div>
-        <span class="more-meta"> 约 781 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6074" target="_blank">题目链接</a></p>
-<div class="admonition question">
-  <p class="admonition-title">题目描述</p>
-<p>给定一棵 $n$ 个点的树以及 $m$ 条电话线路</p>
-<p>每条电话线路意为两条树链上的点两两之间可以通过 $w$ 的代价进行通话</p>
-<p>求 $1$ 能直接或间接通话到的人数的最大值以及在此基础上的最小代价</p>
-<p>$n,m \le 10^5$</p>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/post/hdu_6074/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
