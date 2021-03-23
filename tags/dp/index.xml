@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on TosakaUCW</title><link>https://TosakaUCw.github.io/tags/dp/</link><description>Recent content in DP on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 18 Mar 2021 10:47:44 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 997C Sky Full of Stars(二项式反演，DP）</title><link>https://TosakaUCw.github.io/post/cf_997c/</link><pubDate>Thu, 18 Mar 2021 10:47:44 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_997c/</guid><description>&lt;p>&lt;a href="http://codeforces.com/problemset/problem/997/C" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on TosakaUCW</title><link>https://TosakaUCw.github.io/tags/dp/</link><description>Recent content in DP on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 18 Mar 2021 10:47:44 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 997C Sky Full of Stars（二项式反演，DP）</title><link>https://TosakaUCw.github.io/post/cf_997c/</link><pubDate>Thu, 18 Mar 2021 10:47:44 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_997c/</guid><description>&lt;p>&lt;a href="http://codeforces.com/problemset/problem/997/C" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>有一个 $n \times n$ 的正方形网格，用红色，绿色，蓝色三种颜色染色，求有多少种染色方案使得至少一行或一列是同一种颜色。&lt;/p>
 &lt;p>结果对 $998244353$ 取模&lt;/p>
 &lt;p>$n \leq 1e6$&lt;/p>
-&lt;/div></description></item><item><title>Luogu P6478 [NOI Online #2 提高组] 游戏(二项式反演，树形DP）</title><link>https://TosakaUCw.github.io/post/luogu_p6478/</link><pubDate>Tue, 16 Mar 2021 18:19:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p6478/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P6478" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;/div></description></item><item><title>Luogu P6478 [NOI Online #2 提高组] 游戏（二项式反演，树形DP）</title><link>https://TosakaUCw.github.io/post/luogu_p6478/</link><pubDate>Tue, 16 Mar 2021 18:19:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p6478/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P6478" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定一棵 $n=2m$ 个节点的树，有 $m$ 个白点，$m$ 个黑点&lt;/p>
 &lt;p>把黑白点两两配对，对于 $k\in[0,n]$，求出恰好有 $k$ 对点有祖孙关系的方案数&lt;/p>
 &lt;p>$n \le 5*10^3$&lt;/p>
-&lt;/div></description></item><item><title>Luogu P5505 [JSOI2011]分特产(二项式反演，DP）</title><link>https://TosakaUCw.github.io/post/luogu_p5505/</link><pubDate>Mon, 15 Mar 2021 20:39:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p5505/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P5505" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;/div></description></item><item><title>Luogu P5505 [JSOI2011]分特产（二项式反演，DP）</title><link>https://TosakaUCw.github.io/post/luogu_p5505/</link><pubDate>Mon, 15 Mar 2021 20:39:45 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p5505/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P5505" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>有 $n$ 个人和 $m$ 种物品，第 $i$ 种物品有 $a_i$ 个，同种物品之间没有区别。&lt;/p>

@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>线段树 on TosakaUCW</title><link>https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link><description>Recent content in 线段树 on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Oct 2020 12:53:47 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml"/><item><title>CF 759C Nikita and stack（线段树）</title><link>https://TosakaUCw.github.io/post/cf_759c/</link><pubDate>Sat, 31 Oct 2020 12:53:47 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_759c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/759/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>线段树 on TosakaUCW</title><link>https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link><description>Recent content in 线段树 on TosakaUCW</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 23 Mar 2021 10:50:37 +0800</lastBuildDate><atom:link href="https://TosakaUCw.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml"/><item><title>Luogu P2824 [HEOI2016/TJOI2016]排序（线段树，二分答案）</title><link>https://TosakaUCw.github.io/post/luogu_p2824/</link><pubDate>Tue, 23 Mar 2021 10:50:37 +0800</pubDate><guid>https://TosakaUCw.github.io/post/luogu_p2824/</guid><description>&lt;p>&lt;a href="https://www.luogu.com.cn/problem/P2824" target="_blank">题目链接&lt;/a>&lt;/p>
+&lt;div class="admonition question">
+&lt;p class="admonition-title">题目描述&lt;/p>
+&lt;p>给出一个 $1$ 到 $n$ 的排列，现在对这个排列序列进行 $m$ 次局部排序，排序分为两种：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>0 L R&lt;/code> 表示将区间 $[L, R]$ 的数字升序排序&lt;/li>
+&lt;li>&lt;code>1 L R&lt;/code> 表示将区间 $[L, R]$ 的数字降序排序&lt;/li>
+&lt;/ul>
+&lt;p>注意，这里是对下标在区间 $[L, R]$ 内的数排序&lt;/p>
+&lt;p>最后询问第 $q$ 位置上的数字&lt;/p>
+&lt;p>$ n, m \leq 10^5$&lt;/p>
+&lt;/div></description></item><item><title>CF 759C Nikita and stack（线段树）</title><link>https://TosakaUCw.github.io/post/cf_759c/</link><pubDate>Sat, 31 Oct 2020 12:53:47 +0800</pubDate><guid>https://TosakaUCw.github.io/post/cf_759c/</guid><description>&lt;p>&lt;a href="https://codeforces.com/contest/759/problem/C" target="_blank">题目链接&lt;/a>&lt;/p>
 &lt;div class="admonition question">
 &lt;p class="admonition-title">题目描述&lt;/p>
 &lt;p>给定 $m$ 个栈操作 &lt;code>push(x)&lt;/code> 或 &lt;code>pop()&lt;/code>，每个操作有个执行时间 $t_i$&lt;/p>
