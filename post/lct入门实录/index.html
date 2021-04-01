@@ -57,7 +57,7 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://TosakaUCw.github.io/post/lct%E5%85%A5%E9%97%A8%E5%AE%9E%E5%BD%95/" />
 <meta property="article:published_time" content="2021-03-31T20:20:05+08:00" />
-<meta property="article:modified_time" content="2021-03-31T21:06:40+08:00" />
+<meta property="article:modified_time" content="2021-04-01T18:25:14+08:00" />
 <meta itemprop="name" content="LCT 入门实录">
 <meta itemprop="description" content="菜鸡做题实录
 参考文献
@@ -67,8 +67,8 @@ FlashHu
 ZZD
 Yang Zhe《SPOJ375 QTREE 解法的一些研究》">
 <meta itemprop="datePublished" content="2021-03-31T20:20:05&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-31T21:06:40&#43;08:00" />
-<meta itemprop="wordCount" content="1376">
+<meta itemprop="dateModified" content="2021-04-01T18:25:14&#43;08:00" />
+<meta itemprop="wordCount" content="1940">
 
 
 
@@ -162,8 +162,8 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》"/>
         <div class="post-category">
             <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             </div>
-          <span class="more-meta"> 约 1376 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 1940 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
     </header>
@@ -178,9 +178,14 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》"/>
       <ul>
         <li>
           <ul>
-            <li><a href="#bzoj-1180-otoci">[BZOJ 1180] OTOCI</a></li>
-            <li><a href="#luogu-p3690-模板link-cut-tree-动态树">[Luogu P3690] 【模板】Link Cut Tree （动态树）</a></li>
-            <li><a href="#luogu-p3203-hnoi2010弹飞绵羊">[Luogu P3203] [HNOI2010]弹飞绵羊</a></li>
+            <li>
+              <ul>
+                <li><a href="#bzoj-1180-otoci">[BZOJ 1180] OTOCI</a></li>
+                <li><a href="#luogu-p3690-模板link-cut-tree-动态树">[Luogu P3690] 【模板】Link Cut Tree （动态树）</a></li>
+                <li><a href="#luogu-p3203-hnoi2010弹飞绵羊">[Luogu P3203] [HNOI2010]弹飞绵羊</a></li>
+                <li><a href="#luogu-p1501-国家集训队tree-ii">[Luogu P1501] [国家集训队]Tree II</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -197,7 +202,7 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》"/>
 <p><a href="https://www.cnblogs.com/flashhu/p/9498517.html" target="_blank">FlashHu</a></p>
 <p><a href="https://www.cnblogs.com/zhouzhendong/p/LCT.html" target="_blank">ZZD</a></p>
 <p>Yang Zhe《SPOJ375 QTREE 解法的一些研究》</p>
-<h3 id="bzoj-1180-otoci">[BZOJ 1180] OTOCI</h3>
+<h4 id="bzoj-1180-otoci">[BZOJ 1180] OTOCI</h4>
 <p>迫真板子题，也就图一乐</p>
 <details class="admonition note"><summary class="admonition-title">参考代码</summary>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
@@ -308,7 +313,7 @@ int main()
 }
 </code></pre>
 </details>
-<h3 id="luogu-p3690-模板link-cut-tree-动态树">[Luogu P3690] 【模板】Link Cut Tree （动态树）</h3>
+<h4 id="luogu-p3690-模板link-cut-tree-动态树">[Luogu P3690] 【模板】Link Cut Tree （动态树）</h4>
 <p>真·板子，注意 cut 写法</p>
 <details class="admonition note"><summary class="admonition-title">参考代码</summary>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
@@ -419,7 +424,7 @@ int main()
 }
 </code></pre>
 </details>
-<h3 id="luogu-p3203-hnoi2010弹飞绵羊">[Luogu P3203] [HNOI2010]弹飞绵羊</h3>
+<h4 id="luogu-p3203-hnoi2010弹飞绵羊">[Luogu P3203] [HNOI2010]弹飞绵羊</h4>
 <p>学习一个精简 LCT</p>
 <p>只会往后弹，意味着没有环，显然是森林</p>
 <p>对于没有弹飞的点对，拉条单向边</p>
@@ -511,6 +516,135 @@ int main()
 }
 </code></pre>
 </details>
+<h4 id="luogu-p1501-国家集训队tree-ii">[Luogu P1501] [国家集训队]Tree II</h4>
+<p>和线段树模板题 2 类似，先乘后加，码码码</p>
+<details class="admonition note"><summary class="admonition-title">参考代码</summary>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+
+#define int long long
+using std::swap;
+
+int read(int x = 0, int f = 0, char ch = getchar())
+{
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-', ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + (ch ^ 48), ch = getchar();
+    return f ? -x : x;
+}
+
+const int N = 1e5 + 5;
+const int P = 51061;
+
+int n, q;
+int ch[N][2], f[N], siz[N], val[N], sum[N], rev[N], add[N], mul[N];
+#define ls ch[p][0]
+#define rs ch[p][1]
+#define get(x) (ch[f[x]][1] == x)
+#define isRoot(x) (ch[f[x]][0] != x and ch[f[x]][1] != x)
+void pushUp(int p)
+{
+    siz[p] = siz[ls] + siz[rs] + 1,
+    sum[p] = (sum[ls] + sum[rs] + val[p]) % P;
+}
+void MUL(int p, int c)
+{
+    sum[p] = sum[p] * c % P, val[p] = val[p] * c % P,
+    mul[p] = mul[p] * c % P, add[p] = add[p] * c % P;
+}
+void ADD(int p, int c)
+{
+    sum[p] = (sum[p] + c * siz[p] % P) % P,
+    val[p] = (val[p] + c) % P, add[p] = (add[p] + c) % P;
+}
+void pushDown(int p)
+{
+    if (mul[p] != 1)
+        MUL(ls, mul[p]), MUL(rs, mul[p]), mul[p] = 1;
+    if (add[p])
+        ADD(ls, add[p]), ADD(rs, add[p]), add[p] = 0;
+    if (rev[p])
+    {
+        swap(ch[ls][0], ch[ls][1]), swap(ch[rs][0], ch[rs][1]);
+        rev[ls] ^= 1, rev[rs] ^= 1, rev[p] ^= 1;
+    }
+}
+void Update(int x)
+{
+    if (!isRoot(x))
+        Update(f[x]);
+    pushDown(x);
+}
+void Rotate(int x)
+{
+    int y = f[x], z = f[y], k = get(x);
+    if (!isRoot(y))
+        ch[z][ch[z][1] == y] = x;
+    ch[y][k] = ch[x][!k], f[ch[y][k]] = y;
+    ch[x][!k] = y, f[y] = x, f[x] = z;
+    pushUp(y), pushUp(x);
+}
+void Splay(int x)
+{
+    Update(x);
+    for (int fa; fa = f[x], !isRoot(x); Rotate(x))
+        if (!isRoot(fa))
+            Rotate(get(x) == get(fa) ? fa : x);
+}
+int Access(int x, int p = 0)
+{
+    for (p = 0; x; p = x, x = f[x])
+        Splay(x), ch[x][1] = p, pushUp(x);
+    return p;
+}
+void makeRoot(int p) { p = Access(p), swap(ch[p][0], ch[p][1]), rev[p] ^= 1; }
+void Link(int x, int p) { makeRoot(x), Splay(x), f[x] = p; }
+void Split(int x, int p) { makeRoot(x), Access(p), Splay(p); }
+void Cut(int x, int p)
+{
+    Split(x, p);
+    if (ls == x and !ch[x][1])
+        ls = f[x] = 0;
+}
+int Find(int p)
+{
+    Access(p), Splay(p);
+    while (ls)
+        pushDown(p), p = ls;
+    Splay(p);
+    return p;
+}
+
+signed main()
+{
+#ifndef ONLINE_JUDGE
+    freopen(&quot;x.in&quot;, &quot;r&quot;, stdin), freopen(&quot;x.out&quot;, &quot;w&quot;, stdout);
+#endif // !ONLINE_JUDGE
+    n = read(), q = read();
+    for (int i = 1; i &lt;= n; i++)
+        val[i] = siz[i] = mul[i] = 1;
+    for (int i = 1, u, v; i &lt; n; i++)
+        if (Find(u = read()) != Find(v = read()))
+            Link(u, v);
+    for (int u, v, c; q--;)
+    {
+        char opt;
+        std::cin &gt;&gt; opt &gt;&gt; u &gt;&gt; v;
+        if (opt == '+')
+            Split(u, v), ADD(v, read());
+        if (opt == '-')
+            Cut(u, v), u = read(), v = read(), Link(u, v);
+        if (opt == '*')
+            Split(u, v), MUL(v, read());
+        if (opt == '/')
+            Split(u, v), printf(&quot;%lld\n&quot;, sum[v]);
+    }
+    return 0;
+}
+</code></pre>
+</details>
     </div>
 
     <div class="post-copyright">
@@ -521,8 +655,8 @@ int main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2021-03-31 21:06:40 &#43;0800 &#43;0800">2021-03-31</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/c514b0507dcb5bbcf6339a1bdd36298f06b41d7f" title="20210330" target="_blank">(c514b05)</a>
+        <span title="2021-04-01 18:25:14 &#43;0800 &#43;0800">2021-04-01</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/1822930a8886baef3ed5a70ec6fd9761d871c419" title="20210330" target="_blank">(1822930)</a>
         ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/LCT%e5%85%a5%e9%97%a8%e5%ae%9e%e5%bd%95.md" target="_blank">更新历史</a>
     </span>
   </p>
