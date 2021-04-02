@@ -57,7 +57,7 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://TosakaUCw.github.io/post/lct%E5%85%A5%E9%97%A8%E5%AE%9E%E5%BD%95/" />
 <meta property="article:published_time" content="2021-03-31T20:20:05+08:00" />
-<meta property="article:modified_time" content="2021-04-01T18:28:35+08:00" />
+<meta property="article:modified_time" content="2021-04-02T11:02:58+08:00" />
 <meta itemprop="name" content="LCT 入门实录">
 <meta itemprop="description" content="菜鸡做题实录
 参考文献
@@ -67,8 +67,8 @@ FlashHu
 ZZD
 Yang Zhe《SPOJ375 QTREE 解法的一些研究》">
 <meta itemprop="datePublished" content="2021-03-31T20:20:05&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-01T18:28:35&#43;08:00" />
-<meta itemprop="wordCount" content="1940">
+<meta itemprop="dateModified" content="2021-04-02T11:02:58&#43;08:00" />
+<meta itemprop="wordCount" content="2571">
 
 
 
@@ -162,8 +162,8 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》"/>
         <div class="post-category">
             <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             </div>
-          <span class="more-meta"> 约 1940 字 </span>
-          <span class="more-meta"> 预计阅读 4 分钟 </span>
+          <span class="more-meta"> 约 2571 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
     </header>
@@ -182,6 +182,7 @@ Yang Zhe《SPOJ375 QTREE 解法的一些研究》"/>
             <li><a href="#luogu-p3690-模板link-cut-tree-动态树">[Luogu P3690] 【模板】Link Cut Tree （动态树）</a></li>
             <li><a href="#luogu-p3203-hnoi2010弹飞绵羊">[Luogu P3203] [HNOI2010]弹飞绵羊</a></li>
             <li><a href="#luogu-p1501-国家集训队tree-ii">[Luogu P1501] [国家集训队]Tree II</a></li>
+            <li><a href="#luogu-p4332-shoi2014三叉神经树">[Luogu P4332] [SHOI2014]三叉神经树</a></li>
           </ul>
         </li>
       </ul>
@@ -641,6 +642,135 @@ signed main()
 }
 </code></pre>
 </details>
+<h3 id="luogu-p4332-shoi2014三叉神经树">[Luogu P4332] [SHOI2014]三叉神经树</h3>
+<p>容易发现每次改变的从修改点往上走的一条链，关键在于寻找到链的起点</p>
+<p>黑色 = 1，白色 = 0</p>
+<p>$sum_u$ 表示 $u$ 的儿子中，黑点的个数</p>
+<p>容易发现，对于修改点 $u$</p>
+<ul>
+<li>若 $0 \leftarrow 1$，则 $u$ 上方只有连续的 $sum = 1$ 的点改变颜色</li>
+<li>若 $1 \leftarrow 0$，则 $u$ 上方只有连续的 $sum = 2$ 的点改变颜色</li>
+</ul>
+<p>考虑对于点 $u$，维护子树内最深的 $sum \neq 1$ 和 $sum \neq 2$ 的点的位置</p>
+<details class="admonition note"><summary class="admonition-title">参考代码</summary>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+
+using std::swap;
+
+int read(int x = 0, int f = 0, char ch = getchar())
+{
+    while ('0' &gt; ch or ch &gt; '9')
+        f = ch == '-', ch = getchar();
+    while ('0' &lt;= ch and ch &lt;= '9')
+        x = x * 10 + (ch ^ 48), ch = getchar();
+    return f ? -x : x;
+}
+
+const int N = 15e5 + 5;
+const int M = N * 6;
+
+int n;
+int ch[N][2], id[N][2], f[N], add[N], val[N], sum[N];
+
+#define ls ch[p][0]
+#define rs ch[p][1]
+#define get(x) (ch[f[x]][1] == x)
+#define isRoot(x) (ch[f[x]][0] != x and ch[f[x]][1] != x)
+void pushUp(int p)
+{
+    id[p][1] = id[rs][1], id[p][2] = id[rs][2];
+    if (!id[p][1])
+        id[p][1] = sum[p] != 1 ? p : id[ls][1];
+    if (!id[p][2])
+        id[p][2] = sum[p] != 2 ? p : id[ls][2];
+}
+void ADD(int p, int c) { sum[p] += c, val[p] = sum[p] &gt; 1, swap(id[p][1], id[p][2]), add[p] += c; }
+void pushDown(int p)
+{
+    if (add[p])
+        ADD(ls, add[p]), ADD(rs, add[p]), add[p] = 0;
+}
+void Update(int p)
+{
+    if (!isRoot(p))
+        Update(f[p]);
+    pushDown(p);
+}
+void Rotate(int x)
+{
+    int y = f[x], z = f[y], k = get(x);
+    if (!isRoot(y))
+        ch[z][ch[z][1] == y] = x;
+    ch[y][k] = ch[x][!k], f[ch[y][k]] = y;
+    ch[x][!k] = y, f[y] = x, f[x] = z;
+    pushUp(y), pushUp(x);
+}
+void Splay(int x)
+{
+    Update(x);
+    for (int fa; fa = f[x], !isRoot(x); Rotate(x))
+        if (!isRoot(fa))
+            Rotate(get(x) == get(fa) ? fa : x);
+}
+int Access(int x, int p = 0)
+{
+    for (p = 0; x; p = x, x = f[x])
+        Splay(x), ch[x][1] = p, pushUp(x);
+    return p;
+}
+
+int head[N], num_edge;
+struct Node
+{
+    int next, to;
+} edge[M];
+void add_edge(int u, int v) { edge[++num_edge] = Node{head[u], v}, head[u] = num_edge; }
+
+void dfs(int u, int fa)
+{
+    sum[u] = 0;
+    for (int i = head[u], v; i; i = edge[i].next)
+        if ((v = edge[i].to) != fa)
+            dfs(v, u), sum[u] += val[v];
+    if (u &lt;= n)
+        val[u] = sum[u] &gt; 1;
+}
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen(&quot;x.in&quot;, &quot;r&quot;, stdin);
+#endif // !ONLINE_JUDGE
+    n = read();
+    for (int i = 1; i &lt;= n; i++)
+        for (int j = 1, x; j &lt;= 3; j++)
+            f[x = read()] = i, add_edge(x, i), add_edge(i, x);
+    for (int i = n + 1; i &lt;= n * 3 + 1; i++)
+        val[i] = read();
+    dfs(1, 0);
+    int ans = val[1], last, tag, x, w;
+    for (int q = read(); q--;)
+    {
+        x = f[last = read()];
+        tag = val[last] ? -1 : 1;
+        Access(x), Splay(x);
+        w = id[x][val[last] ? 2 : 1];
+        if (w)
+        {
+            Splay(w), ADD(ch[w][1], tag);
+            pushUp(ch[w][1]);
+            sum[w] += tag, val[w] = sum[w] &gt; 1;
+            pushUp(w);
+        }
+        else
+            ans ^= 1, ADD(x, tag), pushUp(x);
+        val[last] ^= 1, printf(&quot;%d\n&quot;, ans);
+    }
+    return 0;
+}
+</code></pre>
+</details>
     </div>
 
     <div class="post-copyright">
@@ -651,8 +781,8 @@ signed main()
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        <span title="2021-04-01 18:28:35 &#43;0800 &#43;0800">2021-04-01</span>
-        <a href="https://github.com/TosakaUCW/hugo_blog/commit/29c02827832d9b139a1d1fcf79a2db2c6885fc52" title="20210330" target="_blank">(29c0282)</a>
+        <span title="2021-04-02 11:02:58 &#43;0800 &#43;0800">2021-04-02</span>
+        <a href="https://github.com/TosakaUCW/hugo_blog/commit/1b3d88d5ad007bf9749ece51de710aba942ff6ff" title="20210402" target="_blank">(1b3d88d)</a>
         ，<a href="https://github.com/TosakaUCW/hugo_blog/commits/master/content/post/LCT%e5%85%a5%e9%97%a8%e5%ae%9e%e5%bd%95.md" target="_blank">更新历史</a>
     </span>
   </p>
