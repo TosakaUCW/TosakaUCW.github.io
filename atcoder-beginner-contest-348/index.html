@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>AtCoder Beginner Contest 348 - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Toyota Programming Contest 2024#4（AtCoder Beginner Contest 348） 年轻人的第一场 abc 2024&amp;#x2F;04&amp;#x2F;06 打的，2024&amp;#x2F;06&amp;#x2F;20 补了下题解 比赛链接    Problems AC    A. Penalty Kick ○   B. Farthest Point ○   C. Color"><meta property="og:type" content="blog"><meta property="og:title" content="AtCoder Beginner Contest 348"><meta property="og:url" content="https://tosakaucw.github.io/atcoder-beginner-contest-348/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="Toyota Programming Contest 2024#4（AtCoder Beginner Contest 348） 年轻人的第一场 abc 2024&amp;#x2F;04&amp;#x2F;06 打的，2024&amp;#x2F;06&amp;#x2F;20 补了下题解 比赛链接    Problems AC    A. Penalty Kick ○   B. Farthest Point ○   C. Color"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2024-04-06T05:06:10.000Z"><meta property="article:modified_time" content="2024-06-20T08:44:45.205Z"><meta property="article:author" content="TosakaUCW"><meta property="article:tag" content="AtCoder"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/atcoder-beginner-contest-348/"},"headline":"AtCoder Beginner Contest 348","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2024-04-06T05:06:10.000Z","dateModified":"2024-06-20T08:44:45.205Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"Toyota Programming Contest 2024#4（AtCoder Beginner Contest 348） 年轻人的第一场 abc 2024&#x2F;04&#x2F;06 打的，2024&#x2F;06&#x2F;20 补了下题解 比赛链接    Problems AC    A. Penalty Kick ○   B. Farthest Point ○   C. Color"}</script><link rel="canonical" href="https://tosakaucw.github.io/atcoder-beginner-contest-348/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-04-06T05:06:10.000Z" title="2024/4/6 13:06:10">2024-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-06-20T08:44:45.205Z" title="2024/6/20 16:44:45">2024-06-20</time></span><span class="level-item"><a class="link-muted" href="/categories/Contest-Notes/">Contest Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">AtCoder Beginner Contest 348</h1><div class="content"><p>Toyota Programming Contest 2024#4（AtCoder Beginner Contest 348）</p>
+<p>年轻人的第一场 abc</p>
+<p>2024&#x2F;04&#x2F;06 打的，2024&#x2F;06&#x2F;20 补了下题解</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348">比赛链接</a></p>
+<table>
+<thead>
+<tr>
+<th>Problems</th>
+<th>AC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. Penalty Kick</td>
+<td>○</td>
+</tr>
+<tr>
+<td>B. Farthest Point</td>
+<td>○</td>
+</tr>
+<tr>
+<td>C. Colorful Beans</td>
+<td>○</td>
+</tr>
+<tr>
+<td>D. Medicines on Grid</td>
+<td>○</td>
+</tr>
+<tr>
+<td>E. Minimize Sum of Distances</td>
+<td>○</td>
+</tr>
+<tr>
+<td>F. Oddly Similar</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>G. Max (Sum - Max)</td>
+<td>⊕</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/52059319">A - Penalty Kick</a></p>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/52065767">B - Farthest Point</a></p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/52073660">C - Colorful Beans</a></p>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><blockquote>
+<p>二维网格，起点终点，有障碍物，有一些格子有药，药的作用是将体力值变为 c[i][j]，可以选择用不用<br>初始起点，体力值为 0，问能否走到终点。</p>
+</blockquote>
+<p>&lt;censored&gt;就一个点 WA 有点搞心态</p>
+<p>采用类似 SPFA 的写法</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/52171890">D - Medicines on Grid</a></p>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/52103652">E - Minimize Sum of Distances</a></p>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><blockquote>
+<p>有 n 个长 m 的序列，问有多少对序列“相似”<br>假如两个序列相似，说明有奇数个位置相同<br>n &lt;&#x3D; 2e3</p>
+</blockquote>
+<p>朴素做法是 O(n^2m)，（吸氧能跑过 at 的机子）</p>
+<p>这种 bool 数组想办法搞搞 bitset 优化</p>
+<p>$cnt[j][k]$ 是一个大小为 n 的 bitset，假如 a[i][j] &#x3D; k，则 cnt[j][k][i] &#x3D; 1</p>
+<p>枚举每一行，把每一列的情况 xor 在一起，统计一下 xor 结果中 1 的个数</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/52709698">F - Oddly Similar</a></p>
+<h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><blockquote>
+<p>您有两个整数序列 $A$ 和 $B$ ，长度为 $N$ 。对于 $k &#x3D; 1, 2, \ldots, N$ ，解决以下问题：</p>
+<ul>
+<li>考虑在 $1$ 和 $N$ 之间选择 $k$ 个不同的整数（含）。让 $S$ 成为所选整数的集合。找出 $\displaystyle (\sum_{i \in S} A_i) - \max_{i \in S} B_i$ 的最大值。</li>
+</ul>
+</blockquote>
+<p>赛后听说是 2023 CCPC 网络赛的原题 <a target="_blank" rel="noopener" href="https://qoj.ac/problem/7523">QOJ # 7523. Partially Free Meal</a></p>
+<p><a target="_blank" rel="noopener" href="https://qoj.ac/download.php?type=attachments&id=1358&r=1#page=6.00">Tutorial</a></p>
+<p>首先考虑 $k$ 固定时的答案。将所有盘子按照 $b$ 从小到大排序，枚举第 $x (k \le x \le n)$ 个盘子作为 $\max_{i \in S} B_i$，那么剩下要选的 $k - 1$ 个盘子就是 前 $x - 1$ 个盘子中最大的 $k - 1$ 个。给定 $k$ 和 $x$，可以通过可持久线段树在 $O(log n)$ 的时间内求出对应方案的值 $w(k, x)$。</p>
+<p>接下来精彩的一步是证明决策单调性：随着 $k$ 增大，最优情况下的 $B_{max}$ 是非严格单调递增的。</p>
+<p>感性理解一下，当你选的数越来越多，你的 $B_{max}$ 会不得不越来越大。因为假如 k’ &#x3D; k + 1, 那么假如 $B_{max}$ 变小了。意味着你放弃了那个最大的，改选了一个小一点的数。那这样的话他在 k 的时候应该就不是最优的了。</p>
+<p>令 $f(k)$ 表示使 $k$ 取到最优解的 $x$。对于两个不同的决策 $x, y (x &lt; y)$，若 $w(k, x) \leq w(k, y)$，那么增大 $k$ 之后由于 $y$ 的可选择范围严格包含了 $x$ 的可选择范围，因此 $y$ 新选的 $a$ 值一定不小于 $x$ 所选的，即 $w(k′, x) \leq w(k′, y)$ 对于 $k \leq k′ \leq n$ 恒成立。由此可得 $f (1) \leq f (2) \leq f (3) \leq \ldots \leq f(n)$，最优决策具有单调性，可以分治求解，共需计算 $O(n log n)$ 个 $w(k, x)$ 的值。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc348/submissions/54730247">Code</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>AtCoder Beginner Contest 348</p><p><a href="https://tosakaucw.github.io/atcoder-beginner-contest-348/">https://tosakaucw.github.io/atcoder-beginner-contest-348/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-04-06</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-06-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/AtCoder/">AtCoder</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/psy2033-ch06-lecture-notes/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">PSY2033 Ch06 Lecture Notes</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/psy2033-ch05-lecture-notes/"><span class="level-item">PSY2033 Ch05 Lecture Notes</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/atcoder-beginner-contest-348/';
+            this.page.identifier = 'atcoder-beginner-contest-348/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#A"><span class="level-left"><span class="level-item">A</span></span></a></li><li><a class="level is-mobile" href="#B"><span class="level-left"><span class="level-item">B</span></span></a></li><li><a class="level is-mobile" href="#C"><span class="level-left"><span class="level-item">C</span></span></a></li><li><a class="level is-mobile" href="#D"><span class="level-left"><span class="level-item">D</span></span></a></li><li><a class="level is-mobile" href="#E"><span class="level-left"><span class="level-item">E</span></span></a></li><li><a class="level is-mobile" href="#F"><span class="level-left"><span class="level-item">F</span></span></a></li><li><a class="level is-mobile" href="#G"><span class="level-left"><span class="level-item">G</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2024 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

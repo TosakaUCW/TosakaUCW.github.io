@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>VP 2024 ICPC 武汉邀请赛 - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="VP Date 2024&amp;#x2F;5&amp;#x2F;17 比赛链接    Problems AC    A. Shaking Trees    B. Countless Me ○   C. TreeBag and LIS    D. ICPC ⊕   E. Boomerang ⊕   F. Custom-Made Clothes ○   G. Pack    H. Wings of Crystals"><meta property="og:type" content="blog"><meta property="og:title" content="VP 2024 ICPC 武汉邀请赛"><meta property="og:url" content="https://tosakaucw.github.io/vp-2024-icpc-%E6%AD%A6%E6%B1%89%E9%82%80%E8%AF%B7%E8%B5%9B/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="VP Date 2024&amp;#x2F;5&amp;#x2F;17 比赛链接    Problems AC    A. Shaking Trees    B. Countless Me ○   C. TreeBag and LIS    D. ICPC ⊕   E. Boomerang ⊕   F. Custom-Made Clothes ○   G. Pack    H. Wings of Crystals"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2024-06-20T08:34:52.000Z"><meta property="article:modified_time" content="2024-06-23T12:22:04.659Z"><meta property="article:author" content="TosakaUCW"><meta property="article:tag" content="XCPC"><meta property="article:tag" content="VP"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/vp-2024-icpc-%E6%AD%A6%E6%B1%89%E9%82%80%E8%AF%B7%E8%B5%9B/"},"headline":"VP 2024 ICPC 武汉邀请赛","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2024-06-20T08:34:52.000Z","dateModified":"2024-06-23T12:22:04.659Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"VP Date 2024&#x2F;5&#x2F;17 比赛链接    Problems AC    A. Shaking Trees    B. Countless Me ○   C. TreeBag and LIS    D. ICPC ⊕   E. Boomerang ⊕   F. Custom-Made Clothes ○   G. Pack    H. Wings of Crystals"}</script><link rel="canonical" href="https://tosakaucw.github.io/vp-2024-icpc-%E6%AD%A6%E6%B1%89%E9%82%80%E8%AF%B7%E8%B5%9B/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-06-20T08:34:52.000Z" title="2024/6/20 16:34:52">2024-06-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-06-23T12:22:04.659Z" title="2024/6/23 20:22:04">2024-06-23</time></span><span class="level-item"><a class="link-muted" href="/categories/Contest-Notes/">Contest Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">VP 2024 ICPC 武汉邀请赛</h1><div class="content"><p>VP Date 2024&#x2F;5&#x2F;17</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/105143">比赛链接</a></p>
+<table>
+<thead>
+<tr>
+<th>Problems</th>
+<th>AC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. Shaking Trees</td>
+<td></td>
+</tr>
+<tr>
+<td>B. Countless Me</td>
+<td>○</td>
+</tr>
+<tr>
+<td>C. TreeBag and LIS</td>
+<td></td>
+</tr>
+<tr>
+<td>D. ICPC</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>E. Boomerang</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>F. Custom-Made Clothes</td>
+<td>○</td>
+</tr>
+<tr>
+<td>G. Pack</td>
+<td></td>
+</tr>
+<tr>
+<td>H. Wings of Crystals</td>
+<td></td>
+</tr>
+<tr>
+<td>I. Cyclic Apple Strings</td>
+<td>○</td>
+</tr>
+<tr>
+<td>J. Gensokyo Autobahn</td>
+<td></td>
+</tr>
+<tr>
+<td>K. Party Games</td>
+<td>○</td>
+</tr>
+<tr>
+<td>L. Magic Fairies</td>
+<td></td>
+</tr>
+<tr>
+<td>M. Merge</td>
+<td>⊕</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p><a href="">Code</a></p>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><blockquote>
+<p>给定一个长度为 $n$ 的非负整数数组 $a_i$</p>
+<p>可以进行如下操作至多 $n$ 次：</p>
+<ul>
+<li>选择 $i, j, x$ ，令 $a_i \leftarrow a_i+x, a_j \leftarrow a_j-x$</li>
+</ul>
+<p>最小化操作后 $a_1\left|a_2\right| \ldots \mid a_n$ 的值。</p>
+</blockquote>
+<p>很好的思维题。这个操作是不会改变序列的 sum 的。那么在 sum 不变的情况下我们是否能随意分配每个数的值呢？感性理解一下，显然是可以的。那么就是一个从高位向低位的贪心了</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/105143/submission/266591976">Code</a></p>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><blockquote>
+<p>在 $n$ 个排成一列的格子中, 第 $i$ 格子上都有一个数 $a_i$ 。对所有 $1 \leqslant s \leqslant n, 1 \leqslant t \leqslant 2 n$ 求出从第 $s$ 个格子出发，每次移动至任意一个相邻的格子，移动 $\mathrm{t}$ 次后到达过的格子上数的和的最大值。</p>
+</blockquote>
+<p>显然的是最优的走法下改变方向至多一次</p>
+<p>g[i][j] 表示从 $i$ 点出发，向右移动不超过 $j$ 次的和的最大值</p>
+<p>f[i][j] 表示从 $i$ 点出发，先向左走，然后向右走，加起来移动不超过 $j$ 次的和的最大值</p>
+<p>假设向左走了 $x$ 步折返</p>
+<p>$$f[i][j] &#x3D; \max_{x &#x3D; 0}^{i - 1}\left{g[i - x][j - x]\right}$$</p>
+<p>将 $i$ 换成 $i + 1$，$j$ 换成 $j + 1$</p>
+<p>$$f[i + 1][j + 1] &#x3D; \max_{x &#x3D; 0}^{i}\left{g[i + 1 - x][j + 1 - x]\right}$$</p>
+<p>将 $x$ 换成 $x + 1$</p>
+<p>$$f[i + 1][j + 1] &#x3D; \max_{x &#x3D; -1}^{i - 1}\left{g[i - x][j - x]\right}$$</p>
+<p>代换</p>
+<p>$$f[i + 1][j + 1] &#x3D; \max\left{f[i][j], g[i + 1][j + 1]\right}$$</p>
+<p>于是我们可以得到</p>
+<p>$$f[i][j] &#x3D; \max\left{f[i - 1][j - 1], g[i][j]\right}$$</p>
+<p>从而我们可以 $O(n^2)$ 枚举状态，$O(1)$ 转移</p>
+<p>对于另一个方向，翻转数组再做一遍 dp 即可</p>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><blockquote>
+<p>给定一个 $n$ 个节点的树，根节点为 $r$, 设 $V(r, t)&#x3D;{v \mid \operatorname{dis}(r, v) \leqslant t}$, 其中 $\operatorname{dis}(u, v)$ 表示树上两点 $u$ 和 $v$ 间的唯一简单路径的边数。</p>
+<p>再给定一个 $t_0$，对每个 $k$，你需要选择一个点 $r_0$，定义 $$V^{\prime}\left(r_0, t\right)&#x3D;\left{v \mid \operatorname{dis}\left(r_0, v\right) \leqslant k\left(t-t_0\right)\right}$$ 。</p>
+<p>找到一个最小的 $t$, 使得 $V(r, t) \subseteq V^{\prime}\left(r_0, t\right)$ 。</p>
+</blockquote>
+<p>首先你可以注意到，对于每个可能是答案的 $t$，选择子树 $V(r, t)$ 的直径中点作为 $r^{\prime}$ 应当是最优的。</p>
+<p>这意味着，我们需要动态地维护每个时刻的树直径。这里有一个经典的 trick：假如当前树的直径端点是 $(u, v)$，当新加入一个节点时，新直径的端点只有可能是 $(u, v)$, $(u, x)$, $(v, x)$ 三者其一。</p>
+<p>假设我们维护出了时刻 $t$ 子树 $V(r, t)$ 的直径长度 $d$。这个时刻合法需要满足 $(d + 1) &#x2F; 2 \le k * (t - t_0)$。考虑到 $t$ 是有单调性的，所以对于每个 k 二分这个 t 就行了</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/105143/submission/266934792">Code</a></p>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><blockquote>
+<p>有一个 $n \times n$ 的正整数方阵 $$a_{i, j}\left(1 \leq a_{i, j} \leq n \times n\right)$$, 其满足:</p>
+<ul>
+<li>若 $i&gt;1$, 则 $$a_{i, j} \geq a_{i-1, j}$$</li>
+<li>若 $j&gt;1$, 则 $$a_{i, j} \geq a_{i, j-1}$$</li>
+</ul>
+<p>我只知道方阵的大小 $n$, 但不知道其中的元素内容, 但是我可以询问方阵的某个位置 $a_{i, j}$ 是否不大于某个整数 $x$ 。</p>
+<p>我需要使用不超过 50000 次询问找出 $$\left{a_{i, j}\right}$$ 中的第 $k$ 大值。</p>
+</blockquote>
+<p>对于一个数 mid，小于等于他的数在左上角的某一块区域，并且有一条折线分割</p>
+<p>二分答案，O(n) check 有多少个数小于等于他</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/105143/submission/266912278">Code</a></p>
+<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/105143/submission/261328584">Code</a></p>
+<h2 id="K"><a href="#K" class="headerlink" title="K"></a>K</h2><p>找规律题</p>
+<h2 id="M"><a href="#M" class="headerlink" title="M"></a>M</h2><blockquote>
+<p>给定由 n 个数组成的序列，每次操作可以合并大小相差为 1 的数字并得到他们的和，求任意次操作后剩下的数的最大字典序</p>
+</blockquote>
+<p>考虑到两个数相差为 1 的话意味着奇偶性不同，那么每次合并的都是一个奇数与一个偶数，并得到一个奇数。</p>
+<p>设 $x$ 为当前序列的最大偶数，我们只需要不断判断能否产生 $2x + 1$ 或 $2x - 1$ 即可。</p>
+<p>如果要产生 $2x \pm 1$，则需要判断能否产生 $x \pm 1$，不难发现这是一个递归的过程，且最多 log 次。</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/105143/submission/266947513">Code</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>VP 2024 ICPC 武汉邀请赛</p><p><a href="https://tosakaucw.github.io/vp-2024-icpc-武汉邀请赛/">https://tosakaucw.github.io/vp-2024-icpc-武汉邀请赛/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-06-20</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-06-23</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/XCPC/">XCPC</a><a class="link-muted mr-2" rel="tag" href="/tags/VP/">VP</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/codeforces-round-954-div-3/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Codeforces Round 954 (Div. 3)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/codeforces-round-953-div-2/"><span class="level-item">Codeforces Round 953 (Div. 2)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/vp-2024-icpc-%E6%AD%A6%E6%B1%89%E9%82%80%E8%AF%B7%E8%B5%9B/';
+            this.page.identifier = 'vp-2024-icpc-武汉邀请赛/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#A"><span class="level-left"><span class="level-item">A</span></span></a></li><li><a class="level is-mobile" href="#B"><span class="level-left"><span class="level-item">B</span></span></a></li><li><a class="level is-mobile" href="#D"><span class="level-left"><span class="level-item">D</span></span></a></li><li><a class="level is-mobile" href="#E"><span class="level-left"><span class="level-item">E</span></span></a></li><li><a class="level is-mobile" href="#F"><span class="level-left"><span class="level-item">F</span></span></a></li><li><a class="level is-mobile" href="#I"><span class="level-left"><span class="level-item">I</span></span></a></li><li><a class="level is-mobile" href="#K"><span class="level-left"><span class="level-item">K</span></span></a></li><li><a class="level is-mobile" href="#M"><span class="level-left"><span class="level-item">M</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2024 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

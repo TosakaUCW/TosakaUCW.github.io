@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Singular Value Decomposition - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="SVD，全称为奇异值分解（Singular Value Decomposition），是一种在数值线性代数中广泛使用的矩阵分解技术。SVD 将一个矩阵分解成三个特定的矩阵的乘积，可以用于许多应用领域，包括信号处理、统计分析、图像处理和推荐系统等。"><meta property="og:type" content="blog"><meta property="og:title" content="Singular Value Decomposition"><meta property="og:url" content="https://tosakaucw.github.io/singular-value-decomposition/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="SVD，全称为奇异值分解（Singular Value Decomposition），是一种在数值线性代数中广泛使用的矩阵分解技术。SVD 将一个矩阵分解成三个特定的矩阵的乘积，可以用于许多应用领域，包括信号处理、统计分析、图像处理和推荐系统等。"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2024-06-10T02:37:25.000Z"><meta property="article:modified_time" content="2024-06-10T06:07:00.487Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/singular-value-decomposition/"},"headline":"Singular Value Decomposition","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2024-06-10T02:37:25.000Z","dateModified":"2024-06-10T06:07:00.487Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"SVD，全称为奇异值分解（Singular Value Decomposition），是一种在数值线性代数中广泛使用的矩阵分解技术。SVD 将一个矩阵分解成三个特定的矩阵的乘积，可以用于许多应用领域，包括信号处理、统计分析、图像处理和推荐系统等。"}</script><link rel="canonical" href="https://tosakaucw.github.io/singular-value-decomposition/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-06-10T02:37:25.000Z" title="2024/6/10 10:37:25">2024-06-10</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-06-10T06:07:00.487Z" title="2024/6/10 14:07:00">2024-06-10</time></span></div></div><h1 class="title is-3 is-size-4-mobile">Singular Value Decomposition</h1><div class="content"><p>SVD，全称为奇异值分解（Singular Value Decomposition），是一种在数值线性代数中广泛使用的矩阵分解技术。SVD 将一个矩阵分解成三个特定的矩阵的乘积，可以用于许多应用领域，包括信号处理、统计分析、图像处理和推荐系统等。</p>
+<span id="more"></span>
+
+<h2 id="Review-Eigendecomposition"><a href="#Review-Eigendecomposition" class="headerlink" title="Review: Eigendecomposition"></a>Review: Eigendecomposition</h2><p>我们首先回顾下特征值和特征向量的定义如下：</p>
+<p>$$A x&#x3D;\lambda x$$</p>
+<p>其中 $\mathrm{A}$ 是一个 $n \times n$ 的实对称矩阵, $x$ 是一个 $n$ 维向量, 则我们说 $\lambda$ 是矩阵 $\mathrm{A}$ 的一个特征值, 而 $x$ 是矩阵 $\mathrm{A}$ 的特征值 $\lambda$ 所对应的特征向量。</p>
+<p>求出特征值和特征向量有什么好处呢? 就是我们可以将矩阵A特征分解。如果我们求出了矩阵A的 $n$ 个特征值 $\lambda_1 \leq \lambda_2 \leq \ldots \leq \lambda_n$ ，以及这 $n$ 个特征值所对应的特征向量 ${w_1, w_2, \ldots w_n}$, ，如果这 $n$ 个特征向量线性无关，那么矩阵A就可以用下式的特征分解表示：</p>
+<p>$$A&#x3D;W \Sigma W^{-1}$$</p>
+<p>其中 $\mathrm{W}$ 是这 $n$ 个特征向量所张成的 $n \times n$ 维矩阵, 而 $\Sigma$ 为这 $\mathrm{n}$ 个特征值为主对角线的 $n \times n$ 维矩阵。</p>
+<p>一般我们会把 $\mathrm{W}$ 的这 $n$ 个特征向量标准化，即满足 $\left|w_i\right|_2&#x3D;1$ ，或者说 $w_i^T w_i&#x3D;1$, 此时 $\mathrm{W}$ 的 $n$ 个特征向量为标准正交基，满足 $W{ }^T W&#x3D;I$, 即 $W^T&#x3D;W^{-1}$, 也就是说 $\mathrm{W}$ 为酉矩阵。</p>
+<p>这样我们的特征分解表达式可以写成</p>
+<p>$$A&#x3D;W \Sigma W^T$$</p>
+<p>注意到要进行特征分解, 矩阵A必须为方阵。那么如果A不是方阵, 即行和列不相同时, 我们还可以对矩阵进行分解吗? 答案是可以, 此时我们的SVD登场了。</p>
+<h2 id="SVD-Definition"><a href="#SVD-Definition" class="headerlink" title="SVD: Definition"></a>SVD: Definition</h2><p>SVD也是对矩阵进行分解，但是和特征分解不同，SVD并不要求要分解的矩阵为方阵。假设我们的矩阵A是一个$m \times n$的矩阵，那么我们定义矩阵A的SVD为：</p>
+<p>$$A&#x3D;\mathrm{U} \Sigma \mathrm{V}^{-1}$$</p>
+<p>其中$\mathrm{U}$是一个$m \times m$的矩阵，$\Sigma$是一个$m \times n$的矩阵，除了主对角线上的元素以外全为0，主对角线上的每个元素都称为奇异值，V是一个$n \times n$的矩阵。$\mathrm{U}$和$\mathrm{V}$都是酉矩阵，即满足$\mathrm{U}^{T}\mathrm{U} &#x3D; I, \mathrm{V}^{T}\mathrm{V} &#x3D; I$。</p>
+<h3 id="求解矩阵-mathrm-V"><a href="#求解矩阵-mathrm-V" class="headerlink" title="求解矩阵 $\mathrm{V}$"></a>求解矩阵 $\mathrm{V}$</h3><p>如果我们将A的转置和A做矩阵乘法，那么会得到$n \times n$的一个方阵$(A^TA)$。既然是方阵，那么我们就可以进行特征分解，得到的特征值和特征向量满足下式：</p>
+<p>$$(A^TA)v_i &#x3D; \lambda_i v_i$$</p>
+<p>这样我们就可以得到矩阵$(A^TA)$的n个特征值和对应的n个特征向量$v$了。将$(A^TA)$的所有特征向量张成一个$n \times n$的矩阵$\mathrm{V}$，就是我们 SVD 公式里面的$\mathrm{V}$矩阵了。一般我们将 $\mathrm{V}$ 中的每个特征向量叫做 $\mathrm{A}$ 的右奇异向量。</p>
+<h3 id="求解矩阵-mathrm-U"><a href="#求解矩阵-mathrm-U" class="headerlink" title="求解矩阵 $\mathrm{U}$"></a>求解矩阵 $\mathrm{U}$</h3><p>同理，对 $(AA^T)$ 如此操作，可以得到 $m \times m$ 的矩阵 $\mathrm{U}$。一般我们将 $\mathrm{U}$ 中的每个特征向量叫做 $\mathrm{A}$ 的左奇异向量。</p>
+<h3 id="求解-Sigma"><a href="#求解-Sigma" class="headerlink" title="求解 $\Sigma$"></a>求解 $\Sigma$</h3><p>$$<br>A&#x3D;U\Sigma V^T \Rightarrow AV&#x3D;U\Sigma V^TV \Rightarrow AV&#x3D;U\Sigma \Rightarrow  Av_i &#x3D; \sigma_i u_i  \Rightarrow  \sigma_i &#x3D;  Av_i &#x2F; u_i<br>$$</p>
+<h3 id="解法的证明"><a href="#解法的证明" class="headerlink" title="解法的证明"></a>解法的证明</h3><p>上面还有一个问题没有讲，就是我们说$(A^TA)$的特征向量组成的就是我们 SVD 中的 $\mathrm{V}$ 矩阵，而$(AA^T)$的特征向量组成的就是我们 SVD 中的 $\mathrm{U}$ 矩阵，这有什么根据吗？这个其实很容易证明，我们以 $\mathrm{V}$ 矩阵的证明为例。</p>
+<p>$$<br>A&#x3D;U\Sigma V^T \Rightarrow A^T&#x3D;V\Sigma^T U^T \Rightarrow A^TA &#x3D; V\Sigma^T U^TU\Sigma V^T &#x3D; V\Sigma^2V^T<br>$$</p>
+<p>可以看出 $(A^TA)$的特征向量组成的就是我们 SVD 中的 $\mathrm{V}$ 矩阵。同理，$(AA^T)$的特征向量组成的就是我们 SVD 中的 $\mathrm{U}$ 矩阵。</p>
+<p>进一步我们还可以看出我们的特征值矩阵等于奇异值矩阵的平方，也就是说特征值和奇异值满足如下关系：</p>
+<p>$$<br>\sigma_i &#x3D; \sqrt{\lambda_i}<br>$$</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>对于奇异值,它跟我们特征分解中的特征值类似，在奇异值矩阵中也是按照从大到小排列，而且奇异值的减少特别的快，在很多情况下，前10%甚至1%的奇异值的和就占了全部的奇异值之和的99%以上的比例。也就是说，我们也可以用最大的k个的奇异值和对应的左右奇异向量来近似描述矩阵。也就是说：</p>
+<p>$$<br>A_{m \times n} &#x3D; U_{m \times m}\Sigma_{m \times n} V^T_{n \times n} \approx U_{m \times k}\Sigma_{k \times k} V^T_{k \times n}<br>$$</p>
+<p>其中k要比n小很多。由于这个重要的性质，SVD可以用于PCA降维，来做数据压缩和去噪。</p>
+<h2 id="在-PCA-中的应用"><a href="#在-PCA-中的应用" class="headerlink" title="在 PCA 中的应用"></a>在 PCA 中的应用</h2><p><strong>PCA和白化（Whitening）</strong>是一种预处理形式。在这种处理中，先对数据进行零中心化处理，然后计算协方差矩阵，它展示了数据中的相关性结构。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 假设输入数据矩阵X的尺寸为[N x D]</span></span><br><span class="line">X -= np.mean(X, axis = <span class="number">0</span>) <span class="comment"># 对数据进行零中心化(重要)</span></span><br><span class="line">cov = np.dot(X.T, X) / X.shape[<span class="number">0</span>] <span class="comment"># 得到数据的协方差矩阵</span></span><br></pre></td></tr></table></figure>
+
+<p>数据协方差矩阵的第(i, j)个元素是数据第i个和第j个维度的协方差。具体来说，该矩阵的对角线上的元素是方差。还有，协方差矩阵是对称和半正定的。我们可以对数据协方差矩阵进行SVD（奇异值分解）运算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U,S,V = np.linalg.svd(cov)</span><br></pre></td></tr></table></figure>
+
+<p>U的列是特征向量，S是装有奇异值的1维数组（S中元素是特征值的算术平方根）。为了去除数据相关性，将已经零中心化处理过的原始数据投影到特征基准上：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Xrot = np.dot(X,U) <span class="comment"># 对数据去相关性</span></span><br></pre></td></tr></table></figure>
+
+<p>注意U的列是标准正交向量的集合（范式为1，列之间标准正交），所以可以把它们看做标准正交基向量。因此，投影对应x中的数据的一个旋转，旋转产生的结果就是新的特征向量。如果计算Xrot的协方差矩阵，将会看到它是对角对称的。np.linalg.svd的一个良好性质是在它的返回值U中，特征向量是按照特征值的大小排列的。我们可以利用这个性质来对数据降维，只要使用前面的小部分特征向量，丢弃掉那些包含的数据没有方差的维度。 这个操作也被称为主成分分析（ Principal Component Analysis 简称PCA）降维：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Xrot_reduced = np.dot(X, U[:,:<span class="number">100</span>]) <span class="comment"># Xrot_reduced 变成 [N x 100]</span></span><br></pre></td></tr></table></figure>
+
+<p>经过上面的操作，将原始的数据集的大小由[N x D]降到了[N x 100]，留下了数据中包含最大方差的100个维度。通常使用PCA降维过的数据训练线性分类器和神经网络会达到非常好的性能效果，同时还能节省时间和存储器空间。</p>
+<p>最后一个在实践中会看见的变换是白化（whitening）。白化操作的输入是特征基准上的数据，然后对每个维度除以其特征值来对数值范围进行归一化。该变换的几何解释是：如果数据服从多变量的高斯分布，那么经过白化后，数据的分布将会是一个均值为零，且协方差相等的矩阵。该操作的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对数据进行白化操作:</span></span><br><span class="line"><span class="comment"># 除以特征值 </span></span><br><span class="line">Xwhite = Xrot / np.sqrt(S + <span class="number">1e-5</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/6251584.html">奇异值分解(SVD)原理与在降维中的应用 – 刘建平Pinard</a></li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Singular Value Decomposition</p><p><a href="https://tosakaucw.github.io/singular-value-decomposition/">https://tosakaucw.github.io/singular-value-decomposition/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/codeforces-global-round-26/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Codeforces Global Round 26</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/%E5%B8%B8%E8%A7%81%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0/"><span class="level-item">常见距离算法小记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/singular-value-decomposition/';
+            this.page.identifier = 'singular-value-decomposition/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Review-Eigendecomposition"><span class="level-left"><span class="level-item">Review: Eigendecomposition</span></span></a></li><li><a class="level is-mobile" href="#SVD-Definition"><span class="level-left"><span class="level-item">SVD: Definition</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#求解矩阵-mathrm-V"><span class="level-left"><span class="level-item">求解矩阵 $\mathrm{V}$</span></span></a></li><li><a class="level is-mobile" href="#求解矩阵-mathrm-U"><span class="level-left"><span class="level-item">求解矩阵 $\mathrm{U}$</span></span></a></li><li><a class="level is-mobile" href="#求解-Sigma"><span class="level-left"><span class="level-item">求解 $\Sigma$</span></span></a></li><li><a class="level is-mobile" href="#解法的证明"><span class="level-left"><span class="level-item">解法的证明</span></span></a></li></ul></li><li><a class="level is-mobile" href="#性质"><span class="level-left"><span class="level-item">性质</span></span></a></li><li><a class="level is-mobile" href="#在-PCA-中的应用"><span class="level-left"><span class="level-item">在 PCA 中的应用</span></span></a></li><li><a class="level is-mobile" href="#References"><span class="level-left"><span class="level-item">References</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2024 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
