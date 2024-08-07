@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>2024“钉耙编程”中国大学生算法设计超级联赛（6） - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Problems AC    7494.	造花（简单版） ○   7495.	造花（困难版） 待补   7496.	飞车狂飙 ○   7497.	不醒人室 ○   7498.	交通管控 ⊕   7499.	解方程 格基归约，弃疗   7500.	树上 MEX 问题 ⊕   7501.	树形 DNA 待补   7502.	数字加减 大模拟，弃疗   7503.	Rikka 与子集 IV 多项式"><meta property="og:type" content="blog"><meta property="og:title" content="2024“钉耙编程”中国大学生算法设计超级联赛（6）"><meta property="og:url" content="https://tosakaucw.github.io/2024%E2%80%9C%E9%92%89%E8%80%99%E7%BC%96%E7%A8%8B%E2%80%9D%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E8%B6%85%E7%BA%A7%E8%81%94%E8%B5%9B%EF%BC%886%EF%BC%89/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="Problems AC    7494.	造花（简单版） ○   7495.	造花（困难版） 待补   7496.	飞车狂飙 ○   7497.	不醒人室 ○   7498.	交通管控 ⊕   7499.	解方程 格基归约，弃疗   7500.	树上 MEX 问题 ⊕   7501.	树形 DNA 待补   7502.	数字加减 大模拟，弃疗   7503.	Rikka 与子集 IV 多项式"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2024-08-07T04:38:30.000Z"><meta property="article:modified_time" content="2024-08-07T21:36:11.777Z"><meta property="article:author" content="TosakaUCW"><meta property="article:tag" content="Codeforces"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/2024%E2%80%9C%E9%92%89%E8%80%99%E7%BC%96%E7%A8%8B%E2%80%9D%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E8%B6%85%E7%BA%A7%E8%81%94%E8%B5%9B%EF%BC%886%EF%BC%89/"},"headline":"2024“钉耙编程”中国大学生算法设计超级联赛（6）","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2024-08-07T04:38:30.000Z","dateModified":"2024-08-07T21:36:11.777Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"Problems AC    7494.\t造花（简单版） ○   7495.\t造花（困难版） 待补   7496.\t飞车狂飙 ○   7497.\t不醒人室 ○   7498.\t交通管控 ⊕   7499.\t解方程 格基归约，弃疗   7500.\t树上 MEX 问题 ⊕   7501.\t树形 DNA 待补   7502.\t数字加减 大模拟，弃疗   7503.\tRikka 与子集 IV 多项式"}</script><link rel="canonical" href="https://tosakaucw.github.io/2024%E2%80%9C%E9%92%89%E8%80%99%E7%BC%96%E7%A8%8B%E2%80%9D%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E8%B6%85%E7%BA%A7%E8%81%94%E8%B5%9B%EF%BC%886%EF%BC%89/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2024-08-07T04:38:30.000Z" title="2024-08-07T04:38:30.000Z">2024-08-07</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-08-07T21:36:11.777Z" title="2024-08-07T21:36:11.777Z">2024-08-08</time></span><span class="level-item"><a class="link-muted" href="/categories/Contest-Notes/">Contest Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">2024“钉耙编程”中国大学生算法设计超级联赛（6）</h1><div class="content"><table>
+<thead>
+<tr>
+<th>Problems</th>
+<th>AC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>7494.	造花（简单版）</td>
+<td>○</td>
+</tr>
+<tr>
+<td>7495.	造花（困难版）</td>
+<td>待补</td>
+</tr>
+<tr>
+<td>7496.	飞车狂飙</td>
+<td>○</td>
+</tr>
+<tr>
+<td>7497.	不醒人室</td>
+<td>○</td>
+</tr>
+<tr>
+<td>7498.	交通管控</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>7499.	解方程</td>
+<td>格基归约，弃疗</td>
+</tr>
+<tr>
+<td>7500.	树上 MEX 问题</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>7501.	树形 DNA</td>
+<td>待补</td>
+</tr>
+<tr>
+<td>7502.	数字加减</td>
+<td>大模拟，弃疗</td>
+</tr>
+<tr>
+<td>7503.	Rikka 与子集 IV</td>
+<td>多项式，弃疗</td>
+</tr>
+<tr>
+<td>7504.	天天爱跑步</td>
+<td>待补</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+<h2 id="1001-造花（简单版）"><a href="#1001-造花（简单版）" class="headerlink" title="1001 造花（简单版）"></a>1001 造花（简单版）</h2><h2 id="1007-树上-MEX-问题"><a href="#1007-树上-MEX-问题" class="headerlink" title="1007 树上 MEX 问题"></a>1007 树上 MEX 问题</h2><p>MEX，数数</p>
+<blockquote>
+<p>给定一棵 n 个点的树，每个点有点权，点权是 0 到 n - 1 的排列，求所有连通块(连通导出子图)的 MEX 之和。</p>
+<p>$1 \le n \le 10^5$</p>
+</blockquote>
+<p>好题，学到了</p>
+<p>直接的统计答案是 枚举 i，对 i * 恰好 mex &#x3D; i 的子图数量 求和。这样的话答案是很难算的。</p>
+<p>众所周知在这类问题上有个常见的 trick 是在 钦定 和 恰好之间转换。</p>
+<p>假如我们钦定[0, i - 1] 这 i 个点选的话，剩下随意，那么 mex 只能是 &gt;&#x3D; i 的。这个数量我们其实是更方便求一点的。</p>
+<p>换言之，假设我们求出了 mex &gt;&#x3D; i 的子图数量 $num_i$ 。那么恰好 mex &#x3D; i 的子图数量就是 $num_i - num_{i + 1}$</p>
+<p>$$<br>ans &#x3D; \sum_{i &#x3D; 1}^{n}{i \times (num_i - num_{i + 1})}<br>&#x3D; \sum_{i &#x3D; 1}^{n}{i \times num_i} - \sum_{i &#x3D; 2}^{n + 1}{(i - 1) \times num_i}<br>&#x3D; num_1 + \sum_{i &#x3D; 2}^{n}{num_i} - n \times num_{n + 1}<br>&#x3D; \sum_{i &#x3D; 1}^{n}{num_i}<br>$$</p>
+<p>接下来考虑如何计数 $num_i$。</p>
+<p>跑一个 $dp_u &#x3D; \prod_{v \in son(u)} (dp_v + 1)$ 表示 u 这个点必选，u 和 u 的子树能构成的联通子图数量。</p>
+<p>将 0 作为树的 rt。那么 [0, i] 这些点以及路径上的其他点都是必选的，我们把这看成一个集合 S。剩下的点都是可选可不选。$num_i$ 就等于所有和 S 这坨东西直接相连且不在 S 里面的点的 (dp_v + 1) 的乘积</p>
+<p>那么在 S 集合新加进来一个点的时候，只需要不断往上跳，大力维护：原来是可选可不选的 (dp_v + 1)，现在是必须要选的 (dp_v)。</p>
+<p>因为每个点最多只会被加入到 S 一次，所以是对的。</p>
+<h2 id="1011-天天爱跑步"><a href="#1011-天天爱跑步" class="headerlink" title="1011 天天爱跑步"></a>1011 天天爱跑步</h2><p>基环树</p>
+<blockquote>
+<p>给一棵基环树，对每个点 i 求过 i 的最长简单路径。</p>
+<p>$1 \le n \le 10^5$</p>
+</blockquote>
+<p>假如不是基环树，是一棵树，那么答案是好求的，一个点无非是两条往下或者一条往下一条往上的拼起来，这个东西是很好 dp 的。</p>
+<p>如果是基环树，一个环挂着很多树。一个点 i 往下走的最长路径是 $mxd_i$，那么每个 i 就是要找个 j 配对，构成一个 $mxd_i + mxd_j + 环上路径$</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>2024“钉耙编程”中国大学生算法设计超级联赛（6）</p><p><a href="https://tosakaucw.github.io/2024“钉耙编程”中国大学生算法设计超级联赛（6）/">https://tosakaucw.github.io/2024“钉耙编程”中国大学生算法设计超级联赛（6）/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-08-07</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-08-08</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Codeforces/">Codeforces</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/codeforces-round-963-div-2/"><span class="level-item">Codeforces Round 963 (Div. 2)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/2024%E2%80%9C%E9%92%89%E8%80%99%E7%BC%96%E7%A8%8B%E2%80%9D%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E8%B6%85%E7%BA%A7%E8%81%94%E8%B5%9B%EF%BC%886%EF%BC%89/';
+            this.page.identifier = '2024“钉耙编程”中国大学生算法设计超级联赛（6）/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#1001-造花（简单版）"><span class="level-left"><span class="level-item">1001 造花（简单版）</span></span></a></li><li><a class="level is-mobile" href="#1007-树上-MEX-问题"><span class="level-left"><span class="level-item">1007 树上 MEX 问题</span></span></a></li><li><a class="level is-mobile" href="#1011-天天爱跑步"><span class="level-left"><span class="level-item">1011 天天爱跑步</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2024 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
