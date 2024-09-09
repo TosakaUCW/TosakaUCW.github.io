@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Codeforces Round 968 (Div. 2) - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="比赛链接    Problems AC    A. Turtle and Good Strings ○   B. Turtle and Piggy Are Playing a Game 2 ○   C. Turtle and Good Pairs ○   D1. Turtle and a MEX Problem (Easy Version) ○   D2. Turtle and a MEX Pro"><meta property="og:type" content="blog"><meta property="og:title" content="Codeforces Round 968 (Div. 2)"><meta property="og:url" content="https://tosakaucw.github.io/codeforces-round-968-div-2/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="比赛链接    Problems AC    A. Turtle and Good Strings ○   B. Turtle and Piggy Are Playing a Game 2 ○   C. Turtle and Good Pairs ○   D1. Turtle and a MEX Problem (Easy Version) ○   D2. Turtle and a MEX Pro"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2024-08-30T18:40:29.000Z"><meta property="article:modified_time" content="2024-09-03T05:10:08.008Z"><meta property="article:author" content="TosakaUCW"><meta property="article:tag" content="Codeforces"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/codeforces-round-968-div-2/"},"headline":"Codeforces Round 968 (Div. 2)","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2024-08-30T18:40:29.000Z","dateModified":"2024-09-03T05:10:08.008Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"比赛链接    Problems AC    A. Turtle and Good Strings ○   B. Turtle and Piggy Are Playing a Game 2 ○   C. Turtle and Good Pairs ○   D1. Turtle and a MEX Problem (Easy Version) ○   D2. Turtle and a MEX Pro"}</script><link rel="canonical" href="https://tosakaucw.github.io/codeforces-round-968-div-2/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2024-08-30T18:40:29.000Z" title="2024-08-30T18:40:29.000Z">2024-08-31</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-09-03T05:10:08.008Z" title="2024-09-03T05:10:08.008Z">2024-09-03</time></span><span class="level-item"><a class="link-muted" href="/categories/Contest-Notes/">Contest Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Codeforces Round 968 (Div. 2)</h1><div class="content"><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2003">比赛链接</a></p>
+<table>
+<thead>
+<tr>
+<th>Problems</th>
+<th>AC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. Turtle and Good Strings</td>
+<td>○</td>
+</tr>
+<tr>
+<td>B. Turtle and Piggy Are Playing a Game 2</td>
+<td>○</td>
+</tr>
+<tr>
+<td>C. Turtle and Good Pairs</td>
+<td>○</td>
+</tr>
+<tr>
+<td>D1. Turtle and a MEX Problem (Easy Version)</td>
+<td>○</td>
+</tr>
+<tr>
+<td>D2. Turtle and a MEX Problem (Hard Version)</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>E1. Turtle and Inversions (Easy Version)</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>E2. Turtle and Inversions (Hard Version)</td>
+<td>⊕</td>
+</tr>
+<tr>
+<td>F. Turtle and Three Sequences</td>
+<td></td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><blockquote>
+<p>题意： $(i, j)$ 是好的当且仅当 $i&lt;j$ 且存在 $k \in[i, j)$, 满足 $s_k \neq s_{k+1}$ 且 $s_i \neq s_k \vee s_j \neq s_{k+1}$ 。将 $s$ 重新排序, 最大化好的数对个数。</p>
+</blockquote>
+<p>把字符串分为若干极长连续颜色段 $\left[l_i, r_i\right]$ （如 $a a a b b c c&#x3D;[a a a][b b][c c]$）。</p>
+<p>容易发现 $(i, j)$ 是好的的充要条件为 $i, j$ 所在颜色段不相邻。</p>
+<p>令 $a_i&#x3D;r_i-l_i+1$ ，那么好的数对个数等于 $\frac{n(n-1)}{2}-\sum a_i a_{i+1}$ 。</p>
+<p>目标转化为最小化 $\sum a_i a_{i+1}$ 。</p>
+<p>当字符集大小不为 1 时，可以证明 $\sum a_i a_{i+1} \geq n-1$ 并且这个下界是可以达到的。</p>
+<blockquote>
+<p>如果存在 $a_k&#x3D;1$ :<br>$$<br>\sum_{i&#x3D;1}^{m-1} a_i a_{i+1} \geq \sum_{i&#x3D;1}^{k-1} a_i+\sum_{i&#x3D;k}^{m-1} a_{i+1} &#x3D; n-a_k &#x3D; n - 1<br>$$</p>
+<p>如果 $\forall a_k \geq 2, a_i a_{i+1} \geq a_i+a_{i+1}$ :<br>$$<br>\sum_{i&#x3D;1}^{m-1} a_i a_{i+1} \geq \sum_{i&#x3D;1}^{m-1} a_i+\sum_{i&#x3D;2}^m a_i&gt;n<br>$$</p>
+</blockquote>
+<p>我们让前面所有 $a_i&#x3D;1$ ，最后一个连续段放多出来的相同字母（如 $a a a b b c c&#x3D;a b a b a c c$ ），显然有 $\sum a_i a_{i+1}&#x3D;n-1$ 。</p>
+<p>时间复杂度 $O(26 n)$ 。</p>
+<h2 id="D1"><a href="#D1" class="headerlink" title="D1"></a>D1</h2><blockquote>
+<p>题意：给定 $n$ 个序列 $\left[a_i\right], f(x)$ 定义为 $x$ 经过若干次操作（可能不操作）达到的最大值。</p>
+<p>一次操作定义为: 选定一个序列 $\left[a_i\right], x \leftarrow \operatorname{mex}\left(x \cup\left[a_i\right]\right)$ 。</p>
+<p>在简单版中, 一个序列可以被重复选择。</p>
+<p>给定 $m \leq 10^9$, 求 $\sum_{x&#x3D;0}^m f(x)$ 。</p>
+</blockquote>
+<p>定义 $u_i&#x3D;\operatorname{mex}\left[a_i\right], v_i&#x3D;\operatorname{mex}\left(\left[a_i\right] \cup u_i\right) 。$</p>
+<p>我们发现不管是什么 $x$, 不管对 $\left[a_i\right]$ 操作几次, 能够达到且一定能达到的只有 $v_i$ 和 $u_i$ 。</p>
+<p>因此 $f(x)&#x3D;\max \left(x, \max v_i\right)$。</p>
+<h2 id="D2"><a href="#D2" class="headerlink" title="D2"></a>D2</h2><p>多了的限制是每个序列只能用一次。</p>
+<p>这意味着假如你在 $u_i$，向 $v_i$ 走了以后就不能回头。</p>
+<p>考虑一次操作，相当于是在图上走一条边 $(x, y)$，并断掉 $y$ 的一个出边</p>
+<p>在图上倒着 dp 可以求出每个点能到达的最大点的坐标 $f$。</p>
+<p>考虑如何统计答案：</p>
+<p>对于一个 $x$，他至少是 $f_x$ 和 $\max{u_i}$</p>
+<p>对于一个 $i$，如果出边数量 $ &gt; 1$，那么 $\forall x$ 可以走到 $f_i$</p>
+<p>记 $k &#x3D; \max{v_i}$，小于等于 k 的枚举；对于大于 k 的 $x$，一定不会再操作了， i.e. $f(x) &#x3D; x$。</p>
+<h2 id="E1"><a href="#E1" class="headerlink" title="E1"></a>E1</h2><p>nb 题</p>
+<blockquote>
+<p>题意：给定 $m$ 个限制 $\left[l_i, r_i\right]$, 表示存在 $k \in\left[l_i, r_i\right]$, 记 $a_i&#x3D;\max _{j&#x3D;l}^k p_j, b_i&#x3D;\min _{j&#x3D;k+1}^r p_j$, 使得 $\max a_i&lt;\min b_i$ 。</p>
+<p>求长度为 $n \leq 5 \times 10^3$ 的符合限制的排列的最大逆序对数。简单版保证限制互不相交。</p>
+</blockquote>
+<p>把所有数分为两类：小数 ($0$) 和大数 ($1$) ，满足 $\max{0} &lt; \min{1}$。</p>
+<p>条件 $i$ 被满足当且仅当 $[l, r]$ 内所有 $0$ 都在 $1$ 前面, 且 $0$,$1$ 都至少出现一次。</p>
+<p>如果最后的排列有 $x$ 个 $0$, $y$ 个 $1$ , 贪心的使所有 $0$ 从大到小排, $1$ 从大到小排。</p>
+<p>设有 $z$ 个逆序对形如 $(1,0)$, 称之 $10$ 对, 那么最后的总逆序对数等于 $\frac{x(x-1)}{2}+\frac{y(y-1)}{2}+z$ 。</p>
+<p>设 $f(i, j)$ 表示填完前 $i$ 个数，其中 $j$ 个是 $1$ 的最大 $10$ 对数。</p>
+<ul>
+<li>如果 $i$ 是某个限制的右端点, 枚举 $[l, r]$ 之间有多少个 $1$ 。</li>
+<li>否则讨论 $i$ 填 $0$ 还是 $1$ 。</li>
+</ul>
+<p>最后答案是 $\max f(n, i)+\frac{i(i-1)}{2}+\frac{(n-i)(n-i-1)}{2}$ 。</p>
+<p>暴力转移看似是 $n^2$ 的, 但由于区间不相交, 第一种转移也是均摊 $O(n)$ 的。时间复杂度 $O\left(n^2\right)$ 。</p>
+<h2 id="E2"><a href="#E2" class="headerlink" title="E2"></a>E2</h2><p>和 E1 相比多了区间相交的情况。</p>
+<p>考虑对于一对相交的区间 $\left[l_1, r_1\right],\left[l_2, r_2\right]$ （不妨设 $l_1 \leq l_2$ ）， $\left[l_1, l_2-1\right]$ 一定全是 $0 ，\left[r_1+1, r_2\right]$ 一定全是 1。</p>
+<p>然后可以删掉 $\left[l_1, r_1\right],\left[l_2, r_2\right]$，添加一个新区间 $\left[l_2, r_1\right]$ ，并记下有哪些数一定是 0，哪些数一定是 1 。</p>
+<p>这样处理完后区间一定互不相交，就变成了E1。</p>
+<p>时间复杂度：每个测试用例 $O\left(n^2+m \log m\right)$ 。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Codeforces Round 968 (Div. 2)</p><p><a href="https://tosakaucw.github.io/codeforces-round-968-div-2/">https://tosakaucw.github.io/codeforces-round-968-div-2/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-08-31</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-09-03</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Codeforces/">Codeforces</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/codeforces-round-969-div-2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Codeforces Round 969 (Div. 2)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2024-%E6%9D%AD%E7%94%B5%E5%A4%9A%E6%A0%A1-10/"><span class="level-item">2024 杭电多校 10</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/codeforces-round-968-div-2/';
+            this.page.identifier = 'codeforces-round-968-div-2/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#C"><span class="level-left"><span class="level-item">C</span></span></a></li><li><a class="level is-mobile" href="#D1"><span class="level-left"><span class="level-item">D1</span></span></a></li><li><a class="level is-mobile" href="#D2"><span class="level-left"><span class="level-item">D2</span></span></a></li><li><a class="level is-mobile" href="#E1"><span class="level-left"><span class="level-item">E1</span></span></a></li><li><a class="level is-mobile" href="#E2"><span class="level-left"><span class="level-item">E2</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2024 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
