@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Operating Systems - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Operating Systems"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-operating-systems/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"><meta property="article:published_time" content="2025-02-26T02:41:35.000Z"><meta property="article:modified_time" content="2025-03-24T09:11:34.245Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-operating-systems/"},"headline":"Lecture Notes: Operating Systems","image":["https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"],"datePublished":"2025-02-26T02:41:35.000Z","dateModified":"2025-03-24T09:11:34.245Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-operating-systems/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-02-26T02:41:35.000Z" title="2025-02-26T02:41:35.000Z">2025-02-26</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-03-24T09:11:34.245Z" title="2025-03-24T09:11:34.245Z">2025-03-24</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Operating Systems</h1><div class="content"><p>COMP3033 Operating Systems</p>
+<p>Dr. Sunny Seon Phil JEONG</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="Chapter-2-Operating-System-Structures"><a href="#Chapter-2-Operating-System-Structures" class="headerlink" title="Chapter 2: Operating-System Structures"></a>Chapter 2: Operating-System Structures</h2><h3 id="1-Operating-System-Services"><a href="#1-Operating-System-Services" class="headerlink" title="1. Operating System Services"></a><strong>1. Operating System Services</strong></h3><p>Operating systems provide services to users and programs, categorized as:</p>
+<ul>
+<li><p><strong>User Services</strong>:</p>
+<ul>
+<li><strong>User Interface (UI)</strong>: <strong>CLI</strong> (Command-Line Interface), <strong>GUI</strong> (Graphical User Interface), Touchscreen, batch processing (批处理)</li>
+<li><strong>Program Execution</strong><ul>
+<li><strong>Load</strong> a program into memory</li>
+<li><strong>Run</strong> a program, <strong>and</strong> then end execution.</li>
+</ul>
+</li>
+<li><strong>I&#x2F;O Operations</strong>: Read&#x2F;write files, input&#x2F;output handling</li>
+<li><strong>File-System Manipulation</strong>: Create, delete, read&#x2F;write files</li>
+<li><strong>Communications</strong>: Process communication &amp; networking</li>
+<li><strong>Error Detection</strong>: Handling software&#x2F;hardware errors</li>
+</ul>
+</li>
+<li><p><strong>System Efficiency Services</strong>:</p>
+<ul>
+<li><strong>Resource Allocation</strong>: CPU, memory, I&#x2F;O management</li>
+<li><strong>Logging</strong>: Tracking user resource usage</li>
+<li><strong>Protection &amp; Security</strong>: <ul>
+<li><strong>Protection</strong>: Ensure that all access to system resources is controlled</li>
+<li><strong>Security</strong>: Avoid attack from outside the system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-Operating-System-Interface"><a href="#2-Operating-System-Interface" class="headerlink" title="2. Operating System Interface"></a><strong>2. Operating System Interface</strong></h3><ul>
+<li>CLI<ul>
+<li>CLI (Command Line Interface) or <strong>command interpreter</strong> allows direct command entry</li>
+<li>Commands are<ul>
+<li>sometimes implemented in <strong>kernel</strong><ul>
+<li>commands built-in</li>
+</ul>
+</li>
+<li>sometimes by <strong>systems program</strong><ul>
+<li>names of programs</li>
+<li><strong>+Advantage</strong>: adding new features doesn’t require modification of interpreter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Shell (vs. Kernel)<ul>
+<li>Multiple flavors of interpreters implemented</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUI<ul>
+<li>User-friendly</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-System-Calls，-API，C-Libraries"><a href="#3-System-Calls，-API，C-Libraries" class="headerlink" title="3. System Calls， API，C Libraries"></a><strong>3. System Calls， API，C Libraries</strong></h3><ul>
+<li><strong>System Calls</strong>: Interface for processes to request OS services.<ul>
+<li>Examples: <code>read()</code>, <code>write()</code>, <code>fork()</code>, <code>exec()</code> on Unix&#x2F;Linux</li>
+</ul>
+</li>
+<li><strong>API (Application Programming Interface)</strong>:<ul>
+<li>specifies a set of functions that are available to an application programmer.</li>
+<li>Three most common APIs (libraries):<ul>
+<li><strong>Win32 API</strong> (Windows)</li>
+<li><strong>POSIX API</strong> (Linux, UNIX, macOS)<ul>
+<li>Portable Operating System Interface</li>
+</ul>
+</li>
+<li><strong>Java API</strong> (JVM-based applications)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>API and System Call</strong></p>
+<ul>
+<li>调用者只需遵循 API<ul>
+<li>无需了解系统调用的实现方式</li>
+<li>大多数操作系统接口细节都通过 API 隐藏在程序员面前</li>
+</ul>
+</li>
+<li>The <strong>system call interface</strong> invokes the intended system call in OS kernel and returns status of the system call and any return values</li>
+<li>Each system call has a number (as index)</li>
+<li>System-call interface maintains a table: indexed according to these numbers</li>
+</ul>
+<p><strong>System Call Parameter Passing Methods</strong>:</p>
+<ul>
+<li><code>Registers</code>: Fastest, but limited number.<ul>
+<li>将参数直接存放在 CPU 寄存器中，传递给系统调用。</li>
+<li><strong>优点</strong>：<ul>
+<li>传输速度快，因为寄存器在 CPU 中。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>寄存器数量有限，无法传递大量数据。</li>
+<li>不适用于传递结构体或数组等复杂数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Memory Table</code>: Stores parameters in memory and passes address.<ul>
+<li>将参数保存在内存中的某个位置，并传递该内存地址给系统调用。</li>
+<li><strong>优点</strong>：<ul>
+<li>适合传递大量数据，如结构体、数组等。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>需要额外的内存管理。</li>
+<li>可能涉及内存拷贝，增加开销。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Stack</code>: Push&#x2F;pop parameters from the stack.<ul>
+<li><strong>方式</strong>：参数通过 <strong>stack</strong> 进行传递，调用函数时将参数压入栈中。</li>
+<li><strong>优点</strong>：<ul>
+<li>易于实现，符合函数调用约定。</li>
+<li>支持变长参数。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>栈传递的效率不如寄存器传递。</li>
+<li>如果参数数量过多，可能导致栈溢出。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Standard C Library vs System Call</strong></p>
+<ul>
+<li>Advantages of using Standard C Library<ul>
+<li>It is <strong>simpler</strong> to call a function in a standard C library rather than to make a system call</li>
+<li><strong>Portability</strong></li>
+</ul>
+</li>
+<li>Advantages of using system calls<ul>
+<li>more powerful</li>
+<li>a little bit faster</li>
+</ul>
+</li>
+</ul>
+<p><strong>Standard C Library vs C POSIX Library</strong>: subset ⊏ superset</p>
+<hr>
+<ul>
+<li>Programs<ul>
+<li>kernel</li>
+<li>system program</li>
+<li>application program</li>
+</ul>
+</li>
+<li>How can apps be used in multi-operating systems？<ul>
+<li>interpreted language, like Python, Ruby, and interpreter available on multiple operating systems</li>
+<li>Written in a language that includes a VM containing the running app (like Java)</li>
+<li>Written in a standard language (like C), compiled separately on each operating system to run on each OS</li>
+<li>Application Binary Interface (ABI)<ul>
+<li>about how different <strong>components of binary code can interface for a given operating system</strong> on a given architecture in low-level details<br>二进制代码的不同组件如何在低级细节中与给定体系结构上的给定操作系统进行交互</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-Operating-System-Structure"><a href="#4-Operating-System-Structure" class="headerlink" title="4. Operating System Structure"></a><strong>4. Operating System Structure</strong></h3><h4 id="4-1-OS-Architectures"><a href="#4-1-OS-Architectures" class="headerlink" title="4.1 OS Architectures"></a><strong>4.1 OS Architectures</strong></h4><ol>
+<li><strong>Monolithic（庞大而单一）- Traditional UNIX</strong><ul>
+<li>The traditional <code>UNIX OS</code> follows a <code>monolithic kernel</code> structure.</li>
+<li><strong>Single large kernel handling everything.</strong> 一个单一的大型进程 ，管理大多数操作系统服务，包括文件系统、CPU 调度和内存管理。</li>
+<li><strong>Fast but complex.</strong></li>
+<li>The UNIX OS consists of two separable parts<ul>
+<li>Systems programs</li>
+<li>The kernel</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Monolithic Plus Modular - Linux System Structure</strong><ul>
+<li>Advantages for monolithic design<ul>
+<li>High speed</li>
+<li>High efficiency</li>
+</ul>
+</li>
+<li>Advantages for modular design<ul>
+<li>changes in one component affect only that component, and no others</li>
+<li>Modules can be modified easily.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Layered Approach</strong><ul>
+<li>Divides OS into hierarchical layers.</li>
+<li><strong>Easy to manage but slower.</strong></li>
+<li><strong>Advantage</strong><ul>
+<li>Simplicity of construction and debugging.</li>
+</ul>
+</li>
+<li><strong>Disadvantages</strong><ul>
+<li>Hard to define each layer.</li>
+<li>Poor performance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Microkernel (e.g., Mach)</strong><ul>
+<li>e.g., Mach – Mac OS X kernel (Darwin) partly based on Mach</li>
+<li><strong>Moves</strong> as much components from the <strong>kernel</strong> into <strong>user space</strong></li>
+<li><strong>More secure but has communication overhead.</strong></li>
+</ul>
+</li>
+<li><strong>Modules</strong><ul>
+<li>loadable kernel modules (best practice)</li>
+<li>Uses <strong>object-oriented</strong> approach</li>
+</ul>
+</li>
+<li><strong>Hybrid Systems</strong><ul>
+<li>Combines different architectures (e.g., Windows, macOS).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Chapter-3-Process"><a href="#Chapter-3-Process" class="headerlink" title="Chapter 3: Process"></a>Chapter 3: Process</h2><h3 id="1-Process-Concept"><a href="#1-Process-Concept" class="headerlink" title="1. Process Concept"></a><strong>1. Process Concept</strong></h3><p><code>Process</code></p>
+<ul>
+<li>a program in execution in memory</li>
+<li>execution must progress in <code>sequential</code> fashion</li>
+</ul>
+<p>Process 组成</p>
+<ul>
+<li>the program code (also called <code>text section</code>)</li>
+<li><code>stack</code> (函数调用参数、返回地址、局部变量)</li>
+<li><code>data section</code> (全局变量、静态变量)</li>
+<li><code>heap</code> (动态分配的内存 malloc &#x2F; new)</li>
+<li><code>program counter</code>, <code>processor registers</code> (include all current data of the program inside the CPU)</li>
+</ul>
+<p>Process State</p>
+<ul>
+<li><code>New</code>: The process is being created</li>
+<li><code>Running</code>: Instructions are being executed by CPU</li>
+<li><code>Waiting</code>: The process is waiting for some event to occur</li>
+<li><code>Ready</code>: The process is waiting to be assigned to a processor</li>
+<li><code>Terminated</code>: The process has finished execution<div style="text-align: center;">
+<img src="/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg" width="50%" height="50%" alt="Process State">
+</div></li>
+</ul>
+<hr>
+<h3 id="2-Process-Scheduling"><a href="#2-Process-Scheduling" class="headerlink" title="2. Process Scheduling"></a><strong>2. Process Scheduling</strong></h3><p><strong>Process Control Block (PCB)</strong> (also called task control block)</p>
+<ul>
+<li>操作系统管理进程的关键数据结构</li>
+<li>A PCB is a <code>kernel data structure</code><ul>
+<li>invisble to Process itself, changed only by the kernel</li>
+</ul>
+</li>
+<li>Each process has a <strong>corresponding unique</strong> PCB in the kernel.</li>
+<li>包含<ul>
+<li><strong>Process state</strong> – running, waiting, etc.</li>
+<li><strong>Program counter (PC)</strong> – location of instruction to next execute</li>
+<li><strong>CPU registers</strong> – contents of all process-centric registers</li>
+<li><strong>CPU scheduling information</strong> - 调度信息（优先级、队列信息）</li>
+<li><strong>Memory-management information</strong> – 内存管理信息（地址空间）</li>
+<li><strong>Accounting information</strong> – CPU used, clock time elapsed since start, time limits</li>
+<li><strong>I&#x2F;O status information</strong> – I&#x2F;O devices allocated to process, list of open files</li>
+</ul>
+</li>
+</ul>
+<p><strong>Process Scheduling</strong></p>
+<ul>
+<li><strong>Process scheduler</strong> (kernal 里的 algorithm)<ul>
+<li>Maintains <code>scheduling queues</code> of processes</li>
+<li><code>Ready queue</code>: 等待 CPU 执行的进程。</li>
+<li><code>Wait queues</code>: 等待 I&#x2F;O 事件的进程。</li>
+<li>上下文切换 <code>Context Switch</code>:<ul>
+<li>当 CPU 切换进程时，需要保存和恢复 PCB。</li>
+<li>上下文切换是额外开销，依赖硬件支持。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-Operations-on-Processes"><a href="#3-Operations-on-Processes" class="headerlink" title="3. Operations on Processes"></a><strong>3. Operations on Processes</strong></h3><p><strong>Process Creation</strong></p>
+<ul>
+<li>父进程（Parent Process） 通过 <code>fork()</code> 创建子进程（Child Process）</li>
+<li>父子进程资源共享方式：<ul>
+<li>完全共享（共享所有资源）</li>
+<li>部分共享（共享部分资源）</li>
+<li>完全独立（无资源共享）</li>
+</ul>
+</li>
+<li>进程执行方式：<ul>
+<li>并行执行（父子进程同时运行）</li>
+<li>顺序执行（父进程等待子进程完成）</li>
+</ul>
+</li>
+</ul>
+<p><strong>Process Termination</strong></p>
+<ul>
+<li>进程调用 exit() 终止自身。</li>
+<li>父进程调用 wait() 终止子进程。</li>
+<li>父进程可以使用 abort() 终止子进程（如子进程占用过多资源）。</li>
+<li>孤儿进程（<code>Orphan Process</code>）：父进程终止，但子进程仍在运行。</li>
+<li>僵尸进程（<code>Zombie Process</code>）：<ul>
+<li>子进程已终止，但 PCB 仍保留，等待父进程读取状态。</li>
+<li><code>Reaping</code> (回收)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-Inter-process-Communication-IPC"><a href="#4-Inter-process-Communication-IPC" class="headerlink" title="4. Inter-process Communication (IPC)"></a><strong>4. Inter-process Communication (IPC)</strong></h3><ul>
+<li>Advantages&#x2F;Reasons of process cooperation<ul>
+<li>Information sharing</li>
+<li>Computation speed-up</li>
+<li>Modularity</li>
+<li>Convenience</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Added complexity</li>
+<li><code>Deadlocks</code> (死锁) possible</li>
+<li><code>Starvation</code> (饥饿) possible</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IPC 方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>共享内存（<code>Shared Memory</code>）</strong></td>
+<td>进程直接共享内存，需要同步控制</td>
+</tr>
+<tr>
+<td><strong>消息传递（<code>Message Passing</code>）</strong></td>
+<td>通过 <code>send()</code> 和 <code>receive()</code> 传递消息</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="Shared-Memory"><a href="#Shared-Memory" class="headerlink" title="Shared Memory"></a><strong>Shared Memory</strong></h4><p>Major issues:  Synchronization (同步) (Discussed in Chapters 6 &amp; 7)</p>
+<ul>
+<li><strong>Producer-Consumer Problem</strong>: Paradigm (范例) for cooperating processes<ul>
+<li><strong>无界缓冲区</strong>（<code>Unbounded Buffe</code>r）：无限存储，不会阻塞生产者。</li>
+<li><strong>有界缓冲区</strong>（<code>Bounded Buffer</code>）：存储大小固定，生产者可能阻塞。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="Message-Passing"><a href="#Message-Passing" class="headerlink" title="Message Passing"></a><strong>Message Passing</strong></h4><p><strong>1. 直接通信（Direct Communication）</strong><br>进程必须显式指定对方：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">send(P, message);</span><br><span class="line">receive(Q, message);</span><br></pre></td></tr></table></figure>
+<p><strong>2. 间接通信（Indirect Communication）</strong><br>通过 邮箱（Mailbox） 进行消息交换：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">send(mailbox, message);</span><br><span class="line">receive(mailbox, message);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Message passing may be either <code>blocking</code> (synchronous) or <code>non-blocking</code> (asynchronous)</strong></p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>发送者</th>
+<th>接收者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>同步（阻塞）</strong></td>
+<td>等待接收方处理</td>
+<td>等待消息</td>
+</tr>
+<tr>
+<td><strong>异步（非阻塞）</strong></td>
+<td>立即返回</td>
+<td>立即返回</td>
+</tr>
+</tbody></table>
+<p>If both send and receive are <strong>blocking</strong>, this case is called <code>rendezvous</code> （会合）</p>
+<hr>
+<h5 id="Pipe"><a href="#Pipe" class="headerlink" title="Pipe"></a><strong>Pipe</strong></h5><ul>
+<li><strong>匿名管道</strong>（<code>Ordinary Pipes</code>）：<code>unidirectional 单向</code>，<code>Require parent-child relationship</code> 父子进程通信。</li>
+<li><strong>命名管道</strong>（<code>Named Pipes</code>）：<code>bidirectional 双向</code>，无需父子关系。</li>
+</ul>
+<p>匿名管道示例:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> fd[<span class="number">2</span>];</span><br><span class="line">pipe(fd);</span><br><span class="line"><span class="type">pid_t</span> pid = fork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (pid == <span class="number">0</span>) &#123;  <span class="comment">// 子进程</span></span><br><span class="line">    close(fd[<span class="number">1</span>]);</span><br><span class="line">    read(fd[<span class="number">0</span>], buffer, <span class="keyword">sizeof</span>(buffer));</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;  <span class="comment">// 父进程</span></span><br><span class="line">    close(fd[<span class="number">0</span>]);</span><br><span class="line">    write(fd[<span class="number">1</span>], <span class="string">&quot;Hello&quot;</span>, <span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-Communication-in-Client-Server-Systems"><a href="#5-Communication-in-Client-Server-Systems" class="headerlink" title="5. Communication in Client-Server Systems"></a><strong>5. Communication in Client-Server Systems</strong></h3><p>本节介绍 Sockets 和 RPC，他们都属于 IPC 中的 Message Passing</p>
+<h4 id="Sockets"><a href="#Sockets" class="headerlink" title="Sockets"></a><strong>Sockets</strong></h4><ul>
+<li>用于网络通信（Client-Server）。</li>
+<li>套接字 &#x3D; IP 地址 + 端口号。</li>
+</ul>
+<p>服务器端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ServerSocket</span> <span class="variable">server</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">6013</span>);</span><br><span class="line"><span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> server.accept();</span><br><span class="line"><span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintWriter</span>(client.getOutputStream(), <span class="literal">true</span>);</span><br><span class="line">out.println(<span class="string">&quot;Hello Client!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">6013</span>);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(socket.getInputStream()));</span><br><span class="line">System.out.println(in.readLine());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="Remote-Procedure-Calls"><a href="#Remote-Procedure-Calls" class="headerlink" title="Remote Procedure Calls"></a><strong>Remote Procedure Calls</strong></h4><ul>
+<li>封装进程间通信，使其看起来像本地函数调用。</li>
+<li>基于底层消息传递（通常使用 Socket 进行通信）：<ul>
+<li>客户端调用 RPC，将请求参数封装成消息，发送给远程服务器。</li>
+<li>服务器解包消息，执行相应函数，将结果打包返回。</li>
+</ul>
+</li>
+<li>数据传输<ul>
+<li>序列化&#x2F;反序列化（Marshalling &amp; Unmarshalling）：将数据转换为可传输的格式（如 JSON、XML）。</li>
+<li>使用 TCP 或 UDP 进行底层传输。</li>
+</ul>
+</li>
+<li>Example<ul>
+<li><pre><code class="c">// 客户端调用 RPC 函数
+result = rpc_call(&quot;add&quot;, 5, 10);  // 实际上底层是 send()/recv()
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Chapter-4-Threads-Concurrency"><a href="#Chapter-4-Threads-Concurrency" class="headerlink" title="Chapter 4: Threads &amp; Concurrency"></a>Chapter 4: Threads &amp; Concurrency</h2><h3 id="1-Process-vs-Thread"><a href="#1-Process-vs-Thread" class="headerlink" title="1. Process vs. Thread"></a><strong>1. Process vs. Thread</strong></h3><ul>
+<li>What is thread? <ul>
+<li>A thread is <strong>a single sequence stream within a process.</strong></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>对比项</strong></th>
+<th><strong>进程（Process）</strong></th>
+<th><strong>线程（Thread）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>创建开销</strong></td>
+<td>高（需要分配独立资源）</td>
+<td>低（共享进程资源）</td>
+</tr>
+<tr>
+<td><strong>内存空间</strong></td>
+<td>每个进程有独立的地址空间</td>
+<td>同一进程内多个线程共享地址空间</td>
+</tr>
+<tr>
+<td><strong>调度与管理</strong></td>
+<td>由操作系统负责</td>
+<td>由操作系统或用户负责</td>
+</tr>
+<tr>
+<td><strong>资源共享</strong></td>
+<td>不共享资源</td>
+<td>共享进程内的资源</td>
+</tr>
+<tr>
+<td><strong>上下文切换</strong></td>
+<td>较慢</td>
+<td>快</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-Concurrency-vs-Parallelism"><a href="#2-Concurrency-vs-Parallelism" class="headerlink" title="2. Concurrency vs. Parallelism"></a><strong>2. Concurrency vs. Parallelism</strong></h3><ul>
+<li><code>Concurrency</code> is a property of a program where two or more tasks can be in <code>progress simultaneously</code>.<ul>
+<li><strong>并发</strong>是指多个任务的进展，这些任务并不一定同时执行，通常在单核系统中，通过时间片轮转来模拟同时执行。</li>
+</ul>
+</li>
+<li><code>Parallelism</code> is a run-time property where two or more tasks are being <code>executed simultaneously</code>.<ul>
+<li><strong>并行</strong>是指多个任务同时执行，通常需要多核处理器支持，每个核心执行一个任务。</li>
+<li><strong>并行</strong>是并发的一种实现方式，<strong>并行意味着并发，但并发不一定意味着并行</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="多核编程（Multicore-Programming）"><a href="#多核编程（Multicore-Programming）" class="headerlink" title="多核编程（Multicore Programming）"></a><strong>多核编程（Multicore Programming）</strong></h4><ul>
+<li><strong>多核编程挑战</strong>：任务划分、负载均衡、数据拆分、数据依赖、调试困难等。</li>
+<li><strong>并行性（Parallelism）</strong>：多个任务同时执行，需要多个处理器或核心支持。</li>
+<li><strong>并发性（Concurrency）</strong>：多个任务的进度同时进行，单处理器通过上下文切换提供并发。</li>
+</ul>
+<h5 id="数据并行（Data-Parallelism）："><a href="#数据并行（Data-Parallelism）：" class="headerlink" title="数据并行（Data Parallelism）："></a><strong>数据并行（Data Parallelism）</strong>：</h5><ul>
+<li>数据的子集分布在多个核心上，执行相同的操作。<ul>
+<li>示例：图像处理时，每个核心处理图像的一部分。</li>
+</ul>
+</li>
+</ul>
+<h5 id="任务并行（Task-Parallelism）："><a href="#任务并行（Task-Parallelism）：" class="headerlink" title="任务并行（Task Parallelism）："></a><strong>任务并行（Task Parallelism）</strong>：</h5><ul>
+<li>将不同任务分配给不同的核心，执行不同的操作。<ul>
+<li>示例：声音处理时，任务分配到不同的核心处理不同的音频处理（滤波、回声等）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-Thread-Libraries"><a href="#3-Thread-Libraries" class="headerlink" title="3. Thread Libraries"></a><strong>3. Thread Libraries</strong></h3><ul>
+<li><code>Thread Libraries 线程库</code>为程序员提供了创建与管理线程的 API。<ul>
+<li><code>POSIX Pthreads</code>：最常用的线程库，支持用户级和内核级线程。</li>
+<li>Windows threads：Windows 操作系统的线程库。</li>
+<li>Java threads：Java 提供的线程模型。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-Implicit-Threading"><a href="#4-Implicit-Threading" class="headerlink" title="4. Implicit Threading"></a><strong>4. Implicit Threading</strong></h3><hr>
+<h3 id="5-Threading-Issues"><a href="#5-Threading-Issues" class="headerlink" title="5. Threading Issues"></a><strong>5. Threading Issues</strong></h3><hr>
+<h2 id="Chapter-5-CPU-Scheduling"><a href="#Chapter-5-CPU-Scheduling" class="headerlink" title="Chapter 5: CPU Scheduling"></a>Chapter 5: CPU Scheduling</h2><h3 id="1-Basic-Concepts"><a href="#1-Basic-Concepts" class="headerlink" title="1. Basic Concepts"></a><strong>1. Basic Concepts</strong></h3><ul>
+<li>Purpose of multiprogramming: maximum CPU utilization</li>
+<li><code>CPU–I/O Burst Cycle</code><ul>
+<li>进程的执行周期通常包括 CPU 执行和 I&#x2F;O 等待，每个进程在 CPU 执行和 I&#x2F;O 等待之间交替进行。</li>
+</ul>
+</li>
+</ul>
+<p><strong>CPU Scheduler</strong></p>
+<ul>
+<li><code>CPU Scheduler</code> 负责从 <code>ready queue</code> 中选择一个进程，并将 CPU 分配给该进程。</li>
+<li><strong>调度决策</strong>发生的时机：<ul>
+<li>进程从 <code>running</code> 转换到 <code>waiting</code>（<strong>non-preemptive 自愿离开CPU</strong> 非抢占性调度）。</li>
+<li>进程从 <code>running</code> 转换到 <code>ready</code>（<strong>preemptive</strong> 抢占性调度）。</li>
+<li>进程从 <code>waiting</code> 转换到 <code>ready</code> (<strong>preemptive</strong>)。</li>
+<li>进程 <code>terminates</code>（<strong>non-preemptive</strong> 非抢占性调度）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>抢占式与非抢占式调度</strong></p>
+<ul>
+<li>抢占式调度（Preemptive）：<ul>
+<li>CPU 可以被其他进程抢占。</li>
+<li>提高响应时间，适用于交互式环境。</li>
+<li>可能引发 <code>race conditions</code> 数据竞争问题（需要线程同步）。</li>
+</ul>
+</li>
+<li>非抢占式调度（Non-preemptive）：<ul>
+<li>进程执行完成或者主动放弃 CPU。</li>
+<li>没有数据竞争问题，但可能导致低优先级进程长时间得不到 CPU。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-Scheduling-Criteria"><a href="#2-Scheduling-Criteria" class="headerlink" title="2. Scheduling Criteria"></a><strong>2. Scheduling Criteria</strong></h3><ul>
+<li><strong>CPU utilization</strong>：尽量让 CPU 始终处于忙碌状态。</li>
+<li><strong>Throughput 吞吐量</strong>：每单位时间完成的进程数。</li>
+<li><strong>Response time 响应时间</strong>：从提交请求到第一次响应的时间（适用于时间共享系统）。</li>
+<li><strong>Waiting time 等待时间</strong>：进程在就绪队列中等待的总时间。</li>
+<li><strong>Turnaround time 周转时间</strong>：从进程开始到结束所经历的总时间（包括等待时间和执行时间）。<ul>
+<li>Turnaround time &#x3D; Waiting time + time for all CPU bursts</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-Scheduling-Algorithms"><a href="#3-Scheduling-Algorithms" class="headerlink" title="3. Scheduling Algorithms"></a><strong>3. Scheduling Algorithms</strong></h3><ol>
+<li><strong>First-Come, First-Served (FCFS)</strong></li>
+</ol>
+<ul>
+<li>原理：按进程到达的顺序分配 CPU。</li>
+<li>缺点：可能导致 <strong>长进程</strong> 阻塞 <strong>短进程</strong>，产生 <code>Convey effect 护送效应</code>。</li>
+</ul>
+<ol start="2">
+<li><strong>Shortest-Job-First (SJF)</strong></li>
+</ol>
+<ul>
+<li>原理：选择 预计 CPU 时间最短 的进程执行。</li>
+<li>优点：最小化平均等待时间。</li>
+<li>缺点：<code>难以预测下一次 CPU 时间</code>，且可能导致 饥饿现象。</li>
+<li><strong>Determining Length of Next CPU Burst</strong><ul>
+<li>通过 过去的 CPU 运行时间 来预测 下一个运行时间，即：</li>
+<li>$\tau_{n+1} &#x3D; \alpha t_n + (1 - \alpha) \tau_n$</li>
+<li>$\tau_n$ 是第 n 次的预测 CPU 运行时间</li>
+<li>$t_n$ 是实际的第 n 次 CPU 运行时间</li>
+<li>$\alpha$ 是平滑因子，通常设置为 0.5</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>Priority Scheduling (PS)</strong></li>
+</ol>
+<ul>
+<li>原理：根据进程的优先级分配 CPU，优先级高的进程优先执行。<ul>
+<li>A priority number (integer) may be associated with each process</li>
+<li>The CPU is allocated to the process with the highest priority (<code>smallest integer = highest priority</code>)</li>
+</ul>
+</li>
+<li>缺点：低优先级进程可能永远得不到执行（<code>Starvation</code>）。</li>
+<li>解决方法：<strong>Aging 老化</strong>，逐步提高低优先级进程的优先级。</li>
+<li><code>SJF is priority scheduling</code> where priority is the inverse of predicted next CPU burst time</li>
+</ul>
+<ol start="4">
+<li><strong>Round-Robin (RR)</strong></li>
+</ol>
+<ul>
+<li>原理：<ul>
+<li>Each process gets a small unit of CPU time (<code>time quantum</code> 定额 q), usually 10-100 milliseconds.</li>
+<li>After <code>q</code> has elapsed, the process is preempted by <code>a clock interrupt</code> and <code>added to the end of the ready queue</code>.</li>
+</ul>
+</li>
+<li>优点：适用于 时间共享系统，响应较快。</li>
+<li>缺点：时间片过小导致频繁 context switch，过大则退化为 FCFS。</li>
+</ul>
+<ol start="5">
+<li><strong>Multilevel Queue Scheduling (MQS)</strong></li>
+</ol>
+<ul>
+<li>原理：将进程分为多个队列，每个队列采用不同的调度算法。<ul>
+<li><strong>foreground</strong> 前台队列（交互式进程）：使用 RR 算法。</li>
+<li><strong>background</strong> 后台队列（批处理进程）：使用 FCFS 算法。</li>
+</ul>
+</li>
+<li>缺点：可能导致 <strong>低优先级队列的进程饥饿</strong>。</li>
+</ul>
+<ol start="6">
+<li><strong>Multilevel Feedback Queue Scheduling (MFQS)</strong></li>
+</ol>
+<ul>
+<li>原理：进程可以在不同队列间移动，避免饥饿现象。<ul>
+<li><strong>新进程</strong>先进入最高优先级队列。</li>
+<li><strong>时间片未完成</strong>的进程被移至较低优先级队列。(aging, prevent starvation)</li>
+</ul>
+</li>
+<li>优点：灵活，适应性强。</li>
+<li>the most general CPU scheduling algorithm</li>
+</ul>
+<hr>
+<h3 id="4-Thread-Scheduling"><a href="#4-Thread-Scheduling" class="headerlink" title="4. Thread Scheduling"></a><strong>4. Thread Scheduling</strong></h3><p><strong>线程调度模型</strong></p>
+<ul>
+<li><p><strong>用户级线程（User-Level Threads）</strong>：</p>
+<ul>
+<li>线程管理由 <strong>thread library</strong> 完成，不依赖 kernal。</li>
+<li>适用于不支持线程管理的操作系统。</li>
+<li>process-contention scope (PCS)</li>
+<li>优点：不需要系统调用，线程创建和切换速度快。</li>
+<li>缺点：无法利用多核系统，线程竞争和调度需要用户自己处理。</li>
+</ul>
+</li>
+<li><p><strong>内核级线程（Kernel-Level Threads）</strong>：</p>
+<ul>
+<li>由 <strong>kernal</strong> 管理。</li>
+<li>system-contention scope (SCS)</li>
+<li>每个线程由操作系统调度，支持多核并行。</li>
+<li>优点：能够利用多核架构，操作系统能自动调度线程。</li>
+<li>缺点：每个线程管理都需要进行系统调用，开销较大。</li>
+</ul>
+</li>
+<li><p><strong>多对一、多对多模型（Many-to-One, Many-to-Many）</strong>：</p>
+<ul>
+<li><strong>多对一（Many-to-One）</strong>：多个用户级线程映射到一个内核线程上。</li>
+<li><strong>多对多（Many-to-Many）</strong>：多个用户级线程映射到多个内核线程上。</li>
+<li><strong>一对一（One-to-One）</strong>：每个用户级线程都有一个对应的内核线程，常见于 Windows 和 Linux。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-Multi-Processor-Scheduling"><a href="#5-Multi-Processor-Scheduling" class="headerlink" title="5. Multi-Processor Scheduling"></a><strong>5. Multi-Processor Scheduling</strong></h3><ul>
+<li><strong>多处理器调度</strong>更加复杂，尤其在 <strong>Symmetric multiprocessing (SMP) 对称多处理</strong> 系统中，每个处理器都有自己的 <strong>就绪队列</strong> 和 <strong>线程调度</strong>。</li>
+</ul>
+<h4 id="SMP（对称多处理）-调度策略："><a href="#SMP（对称多处理）-调度策略：" class="headerlink" title="SMP（对称多处理） 调度策略："></a><strong>SMP（对称多处理）</strong> 调度策略：</h4><ol>
+<li><p><strong>共同就绪队列（Common Ready Queue）</strong>：</p>
+<ul>
+<li>所有线程都在一个共享的就绪队列中，操作系统负责选择哪个线程分配到哪个 CPU 上。</li>
+<li>优点：所有线程共享一个队列，避免了资源的浪费。</li>
+</ul>
+</li>
+<li><p><strong>私有就绪队列（Private Ready Queue）</strong>：</p>
+<ul>
+<li>每个处理器有自己的私有队列，操作系统通过调度算法在不同的队列之间分配任务。</li>
+<li>优点：避免了调度时的冲突，提高了效率。</li>
+</ul>
+</li>
+</ol>
+<h4 id="负载均衡（Load-Balancing）："><a href="#负载均衡（Load-Balancing）：" class="headerlink" title="负载均衡（Load Balancing）："></a><strong>负载均衡（Load Balancing）</strong>：</h4><ul>
+<li><strong>推迁移（Push Migration）</strong>：检查各处理器的负载，将任务从负载过重的处理器迁移到空闲的处理器。</li>
+<li><strong>拉迁移（Pull Migration）</strong>：空闲的处理器主动拉取等待队列中的任务。</li>
+</ul>
+<hr>
+<h3 id="6-Real-Time-CPU-Scheduling"><a href="#6-Real-Time-CPU-Scheduling" class="headerlink" title="6. Real-Time CPU Scheduling"></a><strong>6. Real-Time CPU Scheduling</strong></h3><h4 id="实时系统调度："><a href="#实时系统调度：" class="headerlink" title="实时系统调度："></a><strong>实时系统调度</strong>：</h4><ul>
+<li><strong>软实时系统（Soft Real-Time Systems）</strong>：高优先级的实时任务优先执行，但不能保证任务会被准时执行。(<strong>best try only</strong>)</li>
+<li><strong>硬实时系统（Hard Real-Time Systems）</strong>：任务必须在规定的时间内完成，否则会导致系统错误。</li>
+</ul>
+<h4 id="实时调度标准："><a href="#实时调度标准：" class="headerlink" title="实时调度标准："></a><strong>实时调度标准</strong>：</h4><ol>
+<li><strong>Event Latency 响应时间</strong>：从事件发生到处理完成所经历的时间。</li>
+<li><strong>调度延迟</strong>：<ul>
+<li><code>Interrupt latency 中断延迟</code>：从中断到 interrupt service routine (ISR) 开始执行的时间。</li>
+<li><code>Dispatch Latency 调度延迟</code>：从当前进程被挂起到新的进程开始执行的时间。</li>
+</ul>
+</li>
+</ol>
+<h4 id="实时调度算法："><a href="#实时调度算法：" class="headerlink" title="实时调度算法："></a><strong>实时调度算法</strong>：</h4><ul>
+<li><strong>速率单调调度（Rate-Monotonic Scheduling, RMS）</strong>：任务的优先级与其周期的倒数成正比，周期越短优先级越高。</li>
+<li><strong>最早截止时间调度（Earliest Deadline First, EDF）</strong>：优先级与任务的截止时间成正比，截止时间越早优先级越高。</li>
+</ul>
+<hr>
+<h3 id="7-Operating-Systems-Examples"><a href="#7-Operating-Systems-Examples" class="headerlink" title="7. Operating Systems Examples"></a><strong>7. Operating Systems Examples</strong></h3><hr>
+<h2 id="Midterm-Hints"><a href="#Midterm-Hints" class="headerlink" title="Midterm Hints"></a>Midterm Hints</h2><p>Section A</p>
+<ol>
+<li>ch1, p13 Interrupt-Driven</li>
+<li>ch1, p26 Caching</li>
+<li>ch1, p31 Dual-mode (user &amp; kernal)</li>
+<li>ch2, p34 Monolithic - Traditional UNIX</li>
+<li>ch3, p14 Context Switch</li>
+<li>ch3, p59 Named pipes</li>
+<li>ch5, p12, p14 SJF, Determining Length of Next CPU Burst</li>
+<li>ch5, p26, p28 MQS, MFQS</li>
+<li>ch3, p9 Process Control Block</li>
+<li>ch3, p21, p22 Process Creation</li>
+</ol>
+<p>Section B</p>
+<ol>
+<li>ch2</li>
+<li>ch3, p34-37 Zombie and Orphan Process</li>
+<li>ch3, p39 IPC Models(Shared memory &amp; Message Passing)</li>
+<li>ch4, p11-12 Data and Task Parallelism</li>
+<li>ch2, p20 Syscall 传参</li>
+</ol>
+<p>Section C</p>
+<ol>
+<li>ch5, p10-20 Scheduling Algorithms(FCFS, SJF, RR)</li>
+<li>ch3, p22-30 fork()</li>
+<li>ch4, p26-30 pthreads.h</li>
+</ol>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Operating Systems</p><p><a href="https://tosakaucw.github.io/lecture-notes-operating-systems/">https://tosakaucw.github.io/lecture-notes-operating-systems/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-02-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-03-24</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/codeforces-round-1008-div-2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Codeforces Round 1008 (Div. 2)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/nwerc-2024/"><span class="level-item">NWERC 2024</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/lecture-notes-operating-systems/';
+            this.page.identifier = 'lecture-notes-operating-systems/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Chapter-2-Operating-System-Structures"><span class="level-left"><span class="level-item">Chapter 2: Operating-System Structures</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Operating-System-Services"><span class="level-left"><span class="level-item">1. Operating System Services</span></span></a></li><li><a class="level is-mobile" href="#2-Operating-System-Interface"><span class="level-left"><span class="level-item">2. Operating System Interface</span></span></a></li><li><a class="level is-mobile" href="#3-System-Calls，-API，C-Libraries"><span class="level-left"><span class="level-item">3. System Calls， API，C Libraries</span></span></a></li><li><a class="level is-mobile" href="#4-Operating-System-Structure"><span class="level-left"><span class="level-item">4. Operating System Structure</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#4-1-OS-Architectures"><span class="level-left"><span class="level-item">4.1 OS Architectures</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Chapter-3-Process"><span class="level-left"><span class="level-item">Chapter 3: Process</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Process-Concept"><span class="level-left"><span class="level-item">1. Process Concept</span></span></a></li><li><a class="level is-mobile" href="#2-Process-Scheduling"><span class="level-left"><span class="level-item">2. Process Scheduling</span></span></a></li><li><a class="level is-mobile" href="#3-Operations-on-Processes"><span class="level-left"><span class="level-item">3. Operations on Processes</span></span></a></li><li><a class="level is-mobile" href="#4-Inter-process-Communication-IPC"><span class="level-left"><span class="level-item">4. Inter-process Communication (IPC)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Shared-Memory"><span class="level-left"><span class="level-item">Shared Memory</span></span></a></li><li><a class="level is-mobile" href="#Message-Passing"><span class="level-left"><span class="level-item">Message Passing</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Pipe"><span class="level-left"><span class="level-item">Pipe</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#5-Communication-in-Client-Server-Systems"><span class="level-left"><span class="level-item">5. Communication in Client-Server Systems</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Sockets"><span class="level-left"><span class="level-item">Sockets</span></span></a></li><li><a class="level is-mobile" href="#Remote-Procedure-Calls"><span class="level-left"><span class="level-item">Remote Procedure Calls</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Chapter-4-Threads-Concurrency"><span class="level-left"><span class="level-item">Chapter 4: Threads &amp; Concurrency</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Process-vs-Thread"><span class="level-left"><span class="level-item">1. Process vs. Thread</span></span></a></li><li><a class="level is-mobile" href="#2-Concurrency-vs-Parallelism"><span class="level-left"><span class="level-item">2. Concurrency vs. Parallelism</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#多核编程（Multicore-Programming）"><span class="level-left"><span class="level-item">多核编程（Multicore Programming）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#数据并行（Data-Parallelism）："><span class="level-left"><span class="level-item">数据并行（Data Parallelism）：</span></span></a></li><li><a class="level is-mobile" href="#任务并行（Task-Parallelism）："><span class="level-left"><span class="level-item">任务并行（Task Parallelism）：</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#3-Thread-Libraries"><span class="level-left"><span class="level-item">3. Thread Libraries</span></span></a></li><li><a class="level is-mobile" href="#4-Implicit-Threading"><span class="level-left"><span class="level-item">4. Implicit Threading</span></span></a></li><li><a class="level is-mobile" href="#5-Threading-Issues"><span class="level-left"><span class="level-item">5. Threading Issues</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-5-CPU-Scheduling"><span class="level-left"><span class="level-item">Chapter 5: CPU Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Basic-Concepts"><span class="level-left"><span class="level-item">1. Basic Concepts</span></span></a></li><li><a class="level is-mobile" href="#2-Scheduling-Criteria"><span class="level-left"><span class="level-item">2. Scheduling Criteria</span></span></a></li><li><a class="level is-mobile" href="#3-Scheduling-Algorithms"><span class="level-left"><span class="level-item">3. Scheduling Algorithms</span></span></a></li><li><a class="level is-mobile" href="#4-Thread-Scheduling"><span class="level-left"><span class="level-item">4. Thread Scheduling</span></span></a></li><li><a class="level is-mobile" href="#5-Multi-Processor-Scheduling"><span class="level-left"><span class="level-item">5. Multi-Processor Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SMP（对称多处理）-调度策略："><span class="level-left"><span class="level-item">SMP（对称多处理） 调度策略：</span></span></a></li><li><a class="level is-mobile" href="#负载均衡（Load-Balancing）："><span class="level-left"><span class="level-item">负载均衡（Load Balancing）：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Real-Time-CPU-Scheduling"><span class="level-left"><span class="level-item">6. Real-Time CPU Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#实时系统调度："><span class="level-left"><span class="level-item">实时系统调度：</span></span></a></li><li><a class="level is-mobile" href="#实时调度标准："><span class="level-left"><span class="level-item">实时调度标准：</span></span></a></li><li><a class="level is-mobile" href="#实时调度算法："><span class="level-left"><span class="level-item">实时调度算法：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#7-Operating-Systems-Examples"><span class="level-left"><span class="level-item">7. Operating Systems Examples</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Midterm-Hints"><span class="level-left"><span class="level-item">Midterm Hints</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

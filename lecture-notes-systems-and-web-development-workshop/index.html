@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Systems and Web Development Workshop - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="其实是个 cheatsheet，从来没去听过课 COMP1033 Systems and Web Development Workshop Dr. Xiao DONG"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Systems and Web Development Workshop"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-systems-and-web-development-workshop/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="其实是个 cheatsheet，从来没去听过课 COMP1033 Systems and Web Development Workshop Dr. Xiao DONG"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2025-03-20T10:46:25.000Z"><meta property="article:modified_time" content="2025-03-24T10:38:52.087Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-systems-and-web-development-workshop/"},"headline":"Lecture Notes: Systems and Web Development Workshop","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2025-03-20T10:46:25.000Z","dateModified":"2025-03-24T10:38:52.087Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"其实是个 cheatsheet，从来没去听过课 COMP1033 Systems and Web Development Workshop Dr. Xiao DONG"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-systems-and-web-development-workshop/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-03-20T10:46:25.000Z" title="2025-03-20T10:46:25.000Z">2025-03-20</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-03-24T10:38:52.087Z" title="2025-03-24T10:38:52.087Z">2025-03-24</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Systems and Web Development Workshop</h1><div class="content"><p>其实是个 cheatsheet，从来没去听过课</p>
+<p>COMP1033 Systems and Web Development Workshop</p>
+<p>Dr. Xiao DONG</p>
+<span id="more"></span>
+
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a><strong>HTML</strong></h2><h3 id="Structure-of-an-HTML-Document"><a href="#Structure-of-an-HTML-Document" class="headerlink" title="Structure of an HTML Document"></a><strong>Structure of an HTML Document</strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Page Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to My Website<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Common-HTML-Tags"><a href="#Common-HTML-Tags" class="headerlink" title="Common HTML Tags"></a><strong>Common HTML Tags</strong></h3><table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code></td>
+<td>Headings (h1 is the largest, h6 is the smallest)</td>
+</tr>
+<tr>
+<td><code>&lt;p&gt;</code></td>
+<td>Paragraph</td>
+</tr>
+<tr>
+<td><code>&lt;a href=&quot;URL&quot;&gt;</code></td>
+<td>Hyperlink</td>
+</tr>
+<tr>
+<td><code>&lt;img src=&quot;image.jpg&quot; alt=&quot;description&quot;&gt;</code></td>
+<td>Image</td>
+</tr>
+<tr>
+<td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></td>
+<td>Lists (unordered &amp; ordered)</td>
+</tr>
+<tr>
+<td><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code></td>
+<td>Table structure</td>
+</tr>
+<tr>
+<td><code>&lt;div&gt;</code></td>
+<td>Container for grouping elements</td>
+</tr>
+<tr>
+<td><code>&lt;span&gt;</code></td>
+<td>Inline container for styling</td>
+</tr>
+</tbody></table>
+<h3 id="Forms-and-Inputs"><a href="#Forms-and-Inputs" class="headerlink" title="Forms and Inputs"></a><strong>Forms and Inputs</strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;submit.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;email&quot;</span>&gt;</span>Email:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;email&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;password&quot;</span>&gt;</span>Password:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Form-Input-Types"><a href="#Form-Input-Types" class="headerlink" title="Form Input Types"></a><strong>Form Input Types</strong></h3><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>text</code></td>
+<td>Single-line text field</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password field</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Email input</td>
+</tr>
+<tr>
+<td><code>checkbox</code></td>
+<td>Checkbox selection</td>
+</tr>
+<tr>
+<td><code>radio</code></td>
+<td>Radio button</td>
+</tr>
+<tr>
+<td><code>submit</code></td>
+<td>Submit button</td>
+</tr>
+<tr>
+<td><code>reset</code></td>
+<td>Reset button</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a><strong>CSS</strong></h2><h3 id="Ways-to-Apply-CSS"><a href="#Ways-to-Apply-CSS" class="headerlink" title="Ways to Apply CSS"></a><strong>Ways to Apply CSS</strong></h3><ol>
+<li><strong>Inline CSS</strong> (applied directly in an HTML element)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>This is red text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>Internal CSS</strong> (inside <code>&lt;style&gt;</code> in the <code>&lt;head&gt;</code>)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>External CSS</strong> (in a <code>.css</code> file)<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Selectors"><a href="#Selectors" class="headerlink" title="Selectors"></a><strong>Selectors</strong></h3><table>
+<thead>
+<tr>
+<th>Selector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>Selects all elements</td>
+</tr>
+<tr>
+<td><code>element</code></td>
+<td>Selects all <code>&lt;p&gt;</code> or <code>&lt;h1&gt;</code> tags</td>
+</tr>
+<tr>
+<td><code>#id</code></td>
+<td>Selects an element with a specific ID</td>
+</tr>
+<tr>
+<td><code>.class</code></td>
+<td>Selects all elements with a class</td>
+</tr>
+<tr>
+<td><code>element, element</code></td>
+<td>Selects multiple elements</td>
+</tr>
+<tr>
+<td><code>element &gt; element</code></td>
+<td>Selects direct children</td>
+</tr>
+</tbody></table>
+<h3 id="Box-Model"><a href="#Box-Model" class="headerlink" title="Box Model"></a><strong>Box Model</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid black;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Text-Styling"><a href="#Text-Styling" class="headerlink" title="Text Styling"></a><strong>Text Styling</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: red; <span class="attribute">text-align</span>: center; <span class="attribute">text-transform</span>: uppercase; &#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; <span class="attribute">line-height</span>: <span class="number">1.5</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Positioning"><a href="#Positioning" class="headerlink" title="Positioning"></a><strong>Positioning</strong></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>static</code></td>
+<td>Default positioning</td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td>Relative to normal position</td>
+</tr>
+<tr>
+<td><code>absolute</code></td>
+<td>Positioned relative to the nearest positioned ancestor</td>
+</tr>
+<tr>
+<td><code>fixed</code></td>
+<td>Fixed relative to the viewport</td>
+</tr>
+<tr>
+<td><code>sticky</code></td>
+<td>Sticks to a position when scrolling</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS-Flexbox"><a href="#CSS-Flexbox" class="headerlink" title="CSS Flexbox"></a><strong>CSS Flexbox</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS-Grid"><a href="#CSS-Grid" class="headerlink" title="CSS Grid"></a><strong>CSS Grid</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="1-Introduction-Basics"><a href="#1-Introduction-Basics" class="headerlink" title="1. Introduction &amp; Basics"></a><strong>1. Introduction &amp; Basics</strong></h3><ul>
+<li>JavaScript is a programming language used to add interactivity to web pages.</li>
+<li>Invented by <strong>Brendan Eich</strong> in 1995, standardized as <strong>ECMAScript (ES6)</strong>.</li>
+<li>JavaScript runs <strong>client-side</strong> (browser) and <strong>server-side</strong> (Node.js).</li>
+</ul>
+<h4 id="Ways-to-Include-JavaScript"><a href="#Ways-to-Include-JavaScript" class="headerlink" title="Ways to Include JavaScript"></a><strong>Ways to Include JavaScript</strong></h4><ul>
+<li><strong>Inline:</strong> <code>&lt;button onclick=&quot;myFunction()&quot;&gt;Click me&lt;/button&gt;</code></li>
+<li><strong>Internal:</strong> Inside <code>&lt;script&gt;</code> tags in an HTML file.</li>
+<li><strong>External:</strong> <code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<hr>
+<h3 id="2-JavaScript-Output-Methods"><a href="#2-JavaScript-Output-Methods" class="headerlink" title="2. JavaScript Output Methods"></a><strong>2. JavaScript Output Methods</strong></h3><ol>
+<li><code>document.write(&quot;Hello World&quot;);</code> – Only for testing; overwrites content.</li>
+<li><code>document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello World&quot;;</code> – Best practice.</li>
+<li><code>console.log(&quot;Debugging message&quot;);</code> – Logs to developer console.</li>
+<li><code>alert(&quot;This is an alert!&quot;);</code> – Popup alert box.</li>
+</ol>
+<hr>
+<h3 id="3-Variables-Data-Types"><a href="#3-Variables-Data-Types" class="headerlink" title="3. Variables &amp; Data Types"></a><strong>3. Variables &amp; Data Types</strong></h3><h4 id="Declaring-Variables"><a href="#Declaring-Variables" class="headerlink" title="Declaring Variables"></a><strong>Declaring Variables</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;John&quot;</span>;   <span class="comment">// Old way (Global)</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">25</span>;        <span class="comment">// Modern, Block-scoped</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PI</span> = <span class="number">3.14</span>;     <span class="comment">// Constant, cannot be reassigned</span></span><br></pre></td></tr></table></figure>
+<h4 id="Data-Types"><a href="#Data-Types" class="headerlink" title="Data Types"></a><strong>Data Types</strong></h4><ul>
+<li><strong>Numbers:</strong> <code>let num = 10;</code></li>
+<li><strong>Strings:</strong> <code>let text = &quot;Hello&quot;;</code></li>
+<li><strong>Booleans:</strong> <code>let isTrue = true;</code></li>
+<li><strong>Arrays:</strong> <code>let colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</code></li>
+<li><strong>Objects:</strong> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123; <span class="attr">firstName</span>: <span class="string">&quot;John&quot;</span>, <span class="attr">lastName</span>: <span class="string">&quot;Doe&quot;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;;</span><br></pre></td></tr></table></figure></li>
+<li><strong>Null &amp; Undefined:</strong> <code>let x = null; let y;</code></li>
+</ul>
+<hr>
+<h3 id="4-Operators"><a href="#4-Operators" class="headerlink" title="4. Operators"></a><strong>4. Operators</strong></h3><h4 id="Arithmetic-Operators"><a href="#Arithmetic-Operators" class="headerlink" title="Arithmetic Operators"></a><strong>Arithmetic Operators</strong></h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>+</code></td>
+<td>Addition</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Division</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulus (Remainder)</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Exponentiation (Power)</td>
+</tr>
+</tbody></table>
+<h4 id="Comparison-Operators"><a href="#Comparison-Operators" class="headerlink" title="Comparison Operators"></a><strong>Comparison Operators</strong></h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>==</code></td>
+<td>Equal (checks value only)</td>
+</tr>
+<tr>
+<td><code>===</code></td>
+<td>Strict equal (checks value &amp; type)</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not equal</td>
+</tr>
+<tr>
+<td><code>!==</code></td>
+<td>Strict not equal</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or equal to</td>
+</tr>
+</tbody></table>
+<h4 id="Logical-Operators"><a href="#Logical-Operators" class="headerlink" title="Logical Operators"></a><strong>Logical Operators</strong></h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;&amp;</code></td>
+<td>Logical AND</td>
+</tr>
+<tr>
+<td>&#96;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Logical NOT</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="5-Conditional-Statements"><a href="#5-Conditional-Statements" class="headerlink" title="5. Conditional Statements"></a><strong>5. Conditional Statements</strong></h3><h4 id="If-Else"><a href="#If-Else" class="headerlink" title="If-Else"></a><strong>If-Else</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;You are an adult&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;You are a minor&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Else-If"><a href="#Else-If" class="headerlink" title="Else-If"></a><strong>Else-If</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">21</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;You can drink &amp; drive (not together!)&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;You can drive but not drink&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;You can&#x27;t drink or drive&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Switch-Statement"><a href="#Switch-Statement" class="headerlink" title="Switch Statement"></a><strong>Switch Statement</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> day = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">switch</span> (day) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>: <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Monday&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>: <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Tuesday&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>: <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Wednesday&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">    <span class="attr">default</span>: <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Invalid day&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-Loops"><a href="#6-Loops" class="headerlink" title="6. Loops"></a><strong>6. Loops</strong></h3><h4 id="For-Loop"><a href="#For-Loop" class="headerlink" title="For Loop"></a><strong>For Loop</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Iteration &quot;</span> + i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="For-In-Loop-Objects"><a href="#For-In-Loop-Objects" class="headerlink" title="For-In Loop (Objects)"></a><strong>For-In Loop (Objects)</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> person) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key + <span class="string">&quot;: &quot;</span> + person[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="For-Of-Loop-Arrays"><a href="#For-Of-Loop-Arrays" class="headerlink" title="For-Of Loop (Arrays)"></a><strong>For-Of Loop (Arrays)</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> color <span class="keyword">of</span> colors) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="While-Loop"><a href="#While-Loop" class="headerlink" title="While Loop"></a><strong>While Loop</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Number: &quot;</span> + i);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Do-While-Loop"><a href="#Do-While-Loop" class="headerlink" title="Do-While Loop"></a><strong>Do-While Loop</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Executed once before checking condition&quot;</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="7-Functions"><a href="#7-Functions" class="headerlink" title="7. Functions"></a><strong>7. Functions</strong></h3><h4 id="Function-Declaration"><a href="#Function-Declaration" class="headerlink" title="Function Declaration"></a><strong>Function Declaration</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span> + name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Alice&quot;</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="Function-Expression"><a href="#Function-Expression" class="headerlink" title="Function Expression"></a><strong>Function Expression</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="keyword">function</span>(<span class="params">x, y</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">5</span>, <span class="number">3</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="Arrow-Function-ES6"><a href="#Arrow-Function-ES6" class="headerlink" title="Arrow Function (ES6)"></a><strong>Arrow Function (ES6)</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">multiply</span> = (<span class="params">x, y</span>) =&gt; x * y;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">multiply</span>(<span class="number">3</span>, <span class="number">4</span>));</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="8-Events"><a href="#8-Events" class="headerlink" title="8. Events"></a><strong>8. Events</strong></h3><ul>
+<li>JavaScript can react to events such as button clicks, form submissions, etc.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myBtn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;Button Clicked!&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="9-DOM-Manipulation"><a href="#9-DOM-Manipulation" class="headerlink" title="9. DOM Manipulation"></a><strong>9. DOM Manipulation</strong></h3><h4 id="Selecting-Elements"><a href="#Selecting-Elements" class="headerlink" title="Selecting Elements"></a><strong>Selecting Elements</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;id&quot;</span>);      <span class="comment">// By ID</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&quot;class&quot;</span>); <span class="comment">// By Class</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;p&quot;</span>); <span class="comment">// By Tag</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.class&quot;</span>);   <span class="comment">// First Match</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.class&quot;</span>);<span class="comment">// All Matches</span></span><br></pre></td></tr></table></figure>
+<h4 id="Changing-Content"><a href="#Changing-Content" class="headerlink" title="Changing Content"></a><strong>Changing Content</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;New Content&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">style</span>.<span class="property">color</span> = <span class="string">&quot;red&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&quot;newClass&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="Creating-Elements"><a href="#Creating-Elements" class="headerlink" title="Creating Elements"></a><strong>Creating Elements</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newElement = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;p&quot;</span>);</span><br><span class="line">newElement.<span class="property">innerText</span> = <span class="string">&quot;This is a paragraph&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(newElement);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="10-Working-with-Forms"><a href="#10-Working-with-Forms" class="headerlink" title="10. Working with Forms"></a><strong>10. Working with Forms</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">validateForm</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="variable language_">document</span>.<span class="property">forms</span>[<span class="string">&quot;myForm&quot;</span>][<span class="string">&quot;name&quot;</span>].<span class="property">value</span>;</span><br><span class="line">    <span class="keyword">if</span> (name == <span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&quot;Name must be filled out&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="11-Arrays"><a href="#11-Arrays" class="headerlink" title="11. Arrays"></a><strong>11. Arrays</strong></h3><h4 id="Array-Methods"><a href="#Array-Methods" class="headerlink" title="Array Methods"></a><strong>Array Methods</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Banana&quot;</span>, <span class="string">&quot;Cherry&quot;</span>];</span><br><span class="line">arr.<span class="title function_">push</span>(<span class="string">&quot;Orange&quot;</span>);   <span class="comment">// Add to end</span></span><br><span class="line">arr.<span class="title function_">pop</span>();            <span class="comment">// Remove last</span></span><br><span class="line">arr.<span class="title function_">unshift</span>(<span class="string">&quot;Grapes&quot;</span>); <span class="comment">// Add to beginning</span></span><br><span class="line">arr.<span class="title function_">shift</span>();          <span class="comment">// Remove first</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="property">length</span>); <span class="comment">// Array length</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">indexOf</span>(<span class="string">&quot;Banana&quot;</span>)); <span class="comment">// Find index</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="12-Objects"><a href="#12-Objects" class="headerlink" title="12. Objects"></a><strong>12. Objects</strong></h3><h4 id="Object-Declaration"><a href="#Object-Declaration" class="headerlink" title="Object Declaration"></a><strong>Object Declaration</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">firstName</span>: <span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="attr">fullName</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstName</span> + <span class="string">&quot; &quot;</span> + <span class="variable language_">this</span>.<span class="property">lastName</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="title function_">fullName</span>());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="13-JSON-JavaScript-Object-Notation"><a href="#13-JSON-JavaScript-Object-Notation" class="headerlink" title="13. JSON (JavaScript Object Notation)"></a><strong>13. JSON (JavaScript Object Notation)</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jsonString = <span class="string">&#x27;&#123;&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25&#125;&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> jsonObject = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(jsonString); <span class="comment">// Convert JSON to Object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(jsonObject.<span class="property">name</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newJsonString = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(jsonObject); <span class="comment">// Convert Object to JSON</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newJsonString);</span><br></pre></td></tr></table></figure>
+
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Systems and Web Development Workshop</p><p><a href="https://tosakaucw.github.io/lecture-notes-systems-and-web-development-workshop/">https://tosakaucw.github.io/lecture-notes-systems-and-web-development-workshop/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-03-20</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-03-24</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/codeforces-round-1008-div-2/"><span class="level-item">Codeforces Round 1008 (Div. 2)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/lecture-notes-systems-and-web-development-workshop/';
+            this.page.identifier = 'lecture-notes-systems-and-web-development-workshop/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#HTML"><span class="level-left"><span class="level-item">HTML</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Structure-of-an-HTML-Document"><span class="level-left"><span class="level-item">Structure of an HTML Document</span></span></a></li><li><a class="level is-mobile" href="#Common-HTML-Tags"><span class="level-left"><span class="level-item">Common HTML Tags</span></span></a></li><li><a class="level is-mobile" href="#Forms-and-Inputs"><span class="level-left"><span class="level-item">Forms and Inputs</span></span></a></li><li><a class="level is-mobile" href="#Form-Input-Types"><span class="level-left"><span class="level-item">Form Input Types</span></span></a></li></ul></li><li><a class="level is-mobile" href="#CSS"><span class="level-left"><span class="level-item">CSS</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Ways-to-Apply-CSS"><span class="level-left"><span class="level-item">Ways to Apply CSS</span></span></a></li><li><a class="level is-mobile" href="#Selectors"><span class="level-left"><span class="level-item">Selectors</span></span></a></li><li><a class="level is-mobile" href="#Box-Model"><span class="level-left"><span class="level-item">Box Model</span></span></a></li><li><a class="level is-mobile" href="#Text-Styling"><span class="level-left"><span class="level-item">Text Styling</span></span></a></li><li><a class="level is-mobile" href="#Positioning"><span class="level-left"><span class="level-item">Positioning</span></span></a></li><li><a class="level is-mobile" href="#CSS-Flexbox"><span class="level-left"><span class="level-item">CSS Flexbox</span></span></a></li><li><a class="level is-mobile" href="#CSS-Grid"><span class="level-left"><span class="level-item">CSS Grid</span></span></a></li></ul></li><li><a class="level is-mobile" href="#JavaScript"><span class="level-left"><span class="level-item">JavaScript</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Introduction-Basics"><span class="level-left"><span class="level-item">1. Introduction &amp; Basics</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Ways-to-Include-JavaScript"><span class="level-left"><span class="level-item">Ways to Include JavaScript</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-JavaScript-Output-Methods"><span class="level-left"><span class="level-item">2. JavaScript Output Methods</span></span></a></li><li><a class="level is-mobile" href="#3-Variables-Data-Types"><span class="level-left"><span class="level-item">3. Variables &amp; Data Types</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Declaring-Variables"><span class="level-left"><span class="level-item">Declaring Variables</span></span></a></li><li><a class="level is-mobile" href="#Data-Types"><span class="level-left"><span class="level-item">Data Types</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-Operators"><span class="level-left"><span class="level-item">4. Operators</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Arithmetic-Operators"><span class="level-left"><span class="level-item">Arithmetic Operators</span></span></a></li><li><a class="level is-mobile" href="#Comparison-Operators"><span class="level-left"><span class="level-item">Comparison Operators</span></span></a></li><li><a class="level is-mobile" href="#Logical-Operators"><span class="level-left"><span class="level-item">Logical Operators</span></span></a></li></ul></li><li><a class="level is-mobile" href="#5-Conditional-Statements"><span class="level-left"><span class="level-item">5. Conditional Statements</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#If-Else"><span class="level-left"><span class="level-item">If-Else</span></span></a></li><li><a class="level is-mobile" href="#Else-If"><span class="level-left"><span class="level-item">Else-If</span></span></a></li><li><a class="level is-mobile" href="#Switch-Statement"><span class="level-left"><span class="level-item">Switch Statement</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Loops"><span class="level-left"><span class="level-item">6. Loops</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#For-Loop"><span class="level-left"><span class="level-item">For Loop</span></span></a></li><li><a class="level is-mobile" href="#For-In-Loop-Objects"><span class="level-left"><span class="level-item">For-In Loop (Objects)</span></span></a></li><li><a class="level is-mobile" href="#For-Of-Loop-Arrays"><span class="level-left"><span class="level-item">For-Of Loop (Arrays)</span></span></a></li><li><a class="level is-mobile" href="#While-Loop"><span class="level-left"><span class="level-item">While Loop</span></span></a></li><li><a class="level is-mobile" href="#Do-While-Loop"><span class="level-left"><span class="level-item">Do-While Loop</span></span></a></li></ul></li><li><a class="level is-mobile" href="#7-Functions"><span class="level-left"><span class="level-item">7. Functions</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Function-Declaration"><span class="level-left"><span class="level-item">Function Declaration</span></span></a></li><li><a class="level is-mobile" href="#Function-Expression"><span class="level-left"><span class="level-item">Function Expression</span></span></a></li><li><a class="level is-mobile" href="#Arrow-Function-ES6"><span class="level-left"><span class="level-item">Arrow Function (ES6)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#8-Events"><span class="level-left"><span class="level-item">8. Events</span></span></a></li><li><a class="level is-mobile" href="#9-DOM-Manipulation"><span class="level-left"><span class="level-item">9. DOM Manipulation</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Selecting-Elements"><span class="level-left"><span class="level-item">Selecting Elements</span></span></a></li><li><a class="level is-mobile" href="#Changing-Content"><span class="level-left"><span class="level-item">Changing Content</span></span></a></li><li><a class="level is-mobile" href="#Creating-Elements"><span class="level-left"><span class="level-item">Creating Elements</span></span></a></li></ul></li><li><a class="level is-mobile" href="#10-Working-with-Forms"><span class="level-left"><span class="level-item">10. Working with Forms</span></span></a></li><li><a class="level is-mobile" href="#11-Arrays"><span class="level-left"><span class="level-item">11. Arrays</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Array-Methods"><span class="level-left"><span class="level-item">Array Methods</span></span></a></li></ul></li><li><a class="level is-mobile" href="#12-Objects"><span class="level-left"><span class="level-item">12. Objects</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Object-Declaration"><span class="level-left"><span class="level-item">Object Declaration</span></span></a></li></ul></li><li><a class="level is-mobile" href="#13-JSON-JavaScript-Object-Notation"><span class="level-left"><span class="level-item">13. JSON (JavaScript Object Notation)</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
