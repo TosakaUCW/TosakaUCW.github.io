@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Operating Systems - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Operating Systems"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-operating-systems/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"><meta property="article:published_time" content="2025-02-26T02:41:35.000Z"><meta property="article:modified_time" content="2025-03-24T09:11:34.245Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-operating-systems/"},"headline":"Lecture Notes: Operating Systems","image":["https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"],"datePublished":"2025-02-26T02:41:35.000Z","dateModified":"2025-03-24T09:11:34.245Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-operating-systems/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Operating Systems - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Operating Systems"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-operating-systems/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"><meta property="article:published_time" content="2025-02-26T02:41:35.000Z"><meta property="article:modified_time" content="2025-05-23T06:22:53.395Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-operating-systems/"},"headline":"Lecture Notes: Operating Systems","image":["https://tosakaucw.github.io/gallery/illustrations/Lecture%20Notes/3_02_ProcessState.jpg"],"datePublished":"2025-02-26T02:41:35.000Z","dateModified":"2025-05-23T06:22:53.395Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"COMP3033 Operating Systems Dr. Sunny Seon Phil JEONG"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-operating-systems/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-02-26T02:41:35.000Z" title="2025-02-26T02:41:35.000Z">2025-02-26</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-03-24T09:11:34.245Z" title="2025-03-24T09:11:34.245Z">2025-03-24</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Operating Systems</h1><div class="content"><p>COMP3033 Operating Systems</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-02-26T02:41:35.000Z" title="2025-02-26T02:41:35.000Z">2025-02-26</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-05-23T06:22:53.395Z" title="2025-05-23T06:22:53.395Z">2025-05-23</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Operating Systems</h1><div class="content"><p>COMP3033 Operating Systems</p>
 <p>Dr. Sunny Seon Phil JEONG</p>
 <span id="more"></span>
 
@@ -438,13 +438,7 @@
 <li>使用 TCP 或 UDP 进行底层传输。</li>
 </ul>
 </li>
-<li>Example<ul>
-<li><pre><code class="c">// 客户端调用 RPC 函数
-result = rpc_call(&quot;add&quot;, 5, 10);  // 实际上底层是 send()/recv()
-</code></pre>
-</li>
-</ul>
-</li>
+<li><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2>  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 客户端调用 RPC 函数</span></span><br><span class="line">result = rpc_call(<span class="string">&quot;add&quot;</span>, <span class="number">5</span>, <span class="number">10</span>);  <span class="comment">// 实际上底层是 send()/recv()</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h2 id="Chapter-4-Threads-Concurrency"><a href="#Chapter-4-Threads-Concurrency" class="headerlink" title="Chapter 4: Threads &amp; Concurrency"></a>Chapter 4: Threads &amp; Concurrency</h2><h3 id="1-Process-vs-Thread"><a href="#1-Process-vs-Thread" class="headerlink" title="1. Process vs. Thread"></a><strong>1. Process vs. Thread</strong></h3><ul>
@@ -741,7 +735,426 @@ result = rpc_call(&quot;add&quot;, 5, 10);  // 实际上底层是 send()/recv()
 <li>ch4, p26-30 pthreads.h</li>
 </ol>
 <hr>
-</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Operating Systems</p><p><a href="https://tosakaucw.github.io/lecture-notes-operating-systems/">https://tosakaucw.github.io/lecture-notes-operating-systems/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-02-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-03-24</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/codeforces-round-1008-div-2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Codeforces Round 1008 (Div. 2)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/nwerc-2024/"><span class="level-item">NWERC 2024</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+<h2 id="Chapter-6-7-Process-Synchoronization"><a href="#Chapter-6-7-Process-Synchoronization" class="headerlink" title="Chapter 6 &amp; 7: Process Synchoronization"></a>Chapter 6 &amp; 7: Process Synchoronization</h2><h3 id="1-进程同步背景"><a href="#1-进程同步背景" class="headerlink" title="1. 进程同步背景"></a><strong>1. 进程同步背景</strong></h3><ul>
+<li><strong>并发执行</strong>：多个进程可以并发执行，可能会在任何时刻被中断。</li>
+<li><strong>共享数据问题</strong>：并发进程访问共享数据可能导致数据不一致。</li>
+</ul>
+<h4 id="示例：生产者-消费者问题"><a href="#示例：生产者-消费者问题" class="headerlink" title="示例：生产者-消费者问题"></a><strong>示例：生产者-消费者问题</strong></h4><ul>
+<li>生产者和消费者共享一个缓冲区，生产者放入数据，消费者取出数据，若没有同步机制，可能导致数据冲突或丢失。</li>
+</ul>
+<hr>
+<h3 id="2-竞争条件（Race-Condition）"><a href="#2-竞争条件（Race-Condition）" class="headerlink" title="2. 竞争条件（Race Condition）"></a><strong>2. 竞争条件（Race Condition）</strong></h3><ul>
+<li><strong>定义</strong>：多个进程同时访问和操作共享数据，结果依赖于它们的执行顺序。</li>
+<li><strong>例子</strong>：计数器的递增和递减操作，可能会出现竞争条件，导致最终结果不符合预期。</li>
+</ul>
+<hr>
+<h3 id="3-临界区问题（Critical-Section-Problem）"><a href="#3-临界区问题（Critical-Section-Problem）" class="headerlink" title="3. 临界区问题（Critical Section Problem）"></a><strong>3. 临界区问题（Critical Section Problem）</strong></h3><ul>
+<li><strong>临界区</strong>：进程执行需要访问和修改共享资源的代码段。</li>
+<li><strong>问题</strong>：当一个进程在临界区时，其他进程不能进入该临界区，否则会发生数据不一致。</li>
+<li><strong>目标</strong>：设计一个协议，确保多个进程能够同步访问共享资源，避免数据竞争。</li>
+</ul>
+<h4 id="临界区的通用结构："><a href="#临界区的通用结构：" class="headerlink" title="临界区的通用结构："></a><strong>临界区的通用结构</strong>：</h4><ol>
+<li>请求进入临界区。</li>
+<li>执行临界区的操作。</li>
+<li>离开临界区，允许其他进程进入。</li>
+</ol>
+<hr>
+<h3 id="4-临界区问题的解决方案"><a href="#4-临界区问题的解决方案" class="headerlink" title="4. 临界区问题的解决方案"></a><strong>4. 临界区问题的解决方案</strong></h3><p>解决方案必须满足以下三条要求：</p>
+<ol>
+<li><strong>互斥（Mutual Exclusion）</strong>：如果进程 $P_i$ 正在执行临界区，其他进程不能同时执行其临界区。</li>
+<li><strong>进度（Progress）</strong>：如果没有进程在临界区，且有其他进程等待进入临界区，必须选择一个进程进入。</li>
+<li><strong>有界等待（Bounded Waiting）</strong>：如果进程请求进入临界区，必须有一个上限保证其他进程的请求不会被无限制地推迟。</li>
+</ol>
+<hr>
+<h3 id="5-Peterson’s-Solution"><a href="#5-Peterson’s-Solution" class="headerlink" title="5. Peterson’s Solution"></a><strong>5. Peterson’s Solution</strong></h3><ul>
+<li><strong>目的</strong>：为两个进程解决临界区问题。</li>
+<li><strong>变量</strong>：<ul>
+<li><code>turn</code>: 记录哪个进程可以进入临界区。</li>
+<li><code>flag[]</code>: 指示进程是否准备进入临界区。</li>
+</ul>
+</li>
+<li><strong>算法</strong>：<ul>
+<li>当一个进程请求进入临界区时，它会设置自己的标志位，并将 <code>turn</code> 设置为另一个进程，以便对方能进入。</li>
+<li>如果另一个进程不在临界区，它就会等待对方退出。</li>
+</ul>
+</li>
+</ul>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a><strong>代码实现</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 2  <span class="comment">// Number of processes (for Peterson’s solution, N = 2)</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> turn;</span><br><span class="line"><span class="type">bool</span> flag[N];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function for process Pi</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Peterson</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">    <span class="type">int</span> j = <span class="number">1</span> - i;  <span class="comment">// If i = 0, j = 1, and if i = 1, j = 0 (since there are only two processes)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Entry section</span></span><br><span class="line">    flag[i] = <span class="literal">true</span>;   <span class="comment">// Indicate that process i wants to enter its critical section</span></span><br><span class="line">    turn = j;         <span class="comment">// Give turn to the other process</span></span><br><span class="line">    <span class="keyword">while</span> (flag[j] &amp;&amp; turn == j) &#123;</span><br><span class="line">        <span class="comment">// Busy-wait: process i will wait as long as process j wants to enter the critical section</span></span><br><span class="line">        <span class="comment">// or it&#x27;s the turn of process j</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Critical section</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Process %d is in the critical section.\n&quot;</span>, i);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Exit section</span></span><br><span class="line">    flag[i] = <span class="literal">false</span>;  <span class="comment">// Process i exits the critical section, allows other processes to enter</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Remainder section</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Process %d is in the remainder section.\n&quot;</span>, i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// Initializing flag to false</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        flag[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Simulating two processes P0 and P1</span></span><br><span class="line">    <span class="comment">// Process 0 and 1 will be executed concurrently</span></span><br><span class="line">    <span class="comment">// In a real OS, these would be separate processes or threads</span></span><br><span class="line">    Peterson(<span class="number">0</span>);  <span class="comment">// Process 0 tries to enter its critical section</span></span><br><span class="line">    Peterson(<span class="number">1</span>);  <span class="comment">// Process 1 tries to enter its critical section</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码讲解"><a href="#代码讲解" class="headerlink" title="代码讲解"></a><strong>代码讲解</strong></h4><ol>
+<li><p><strong>flag[i] 和 turn 变量</strong>：</p>
+<ul>
+<li><code>flag[i]</code> 是一个布尔数组，用于标记进程 <code>i</code> 是否准备进入临界区。当一个进程想进入临界区时，它将 <code>flag[i]</code> 设置为 <code>true</code>。</li>
+<li><code>turn</code> 变量用于表示哪个进程应该被允许进入临界区。如果 <code>turn</code> 的值为进程 <code>i</code>，那么进程 <code>i</code> 被允许进入。如果 <code>turn</code> 是另一个进程的编号，它将让其他进程优先进入。</li>
+</ul>
+</li>
+<li><p><strong>Entry Section（进入部分）</strong>：</p>
+<ul>
+<li>在进入临界区之前，每个进程都会通过设置 <code>flag[i] = true</code> 来告诉其他进程它希望进入临界区。</li>
+<li>然后，它将 <code>turn</code> 设置为另一个进程 <code>j</code>，这确保了对方进程有机会先执行。</li>
+<li>然后，进程进入一个循环，检查 <code>flag[j]</code> 是否为 <code>true</code> 并且 <code>turn == j</code>。如果这两个条件都成立，表示进程 <code>j</code> 想进入临界区，并且是 <code>j</code> 的回合，所以当前进程就会等待，直到对方进程退出临界区。</li>
+</ul>
+</li>
+<li><p><strong>Critical Section（临界区）</strong>：</p>
+<ul>
+<li>当进程通过 <code>while</code> 循环检查后发现对方进程不再想进入临界区或轮到它自己时，它就可以进入临界区执行任务。在这个区域，访问共享资源时不会被其他进程打断。</li>
+</ul>
+</li>
+<li><p><strong>Exit Section（退出部分）</strong>：</p>
+<ul>
+<li>在完成临界区的任务后，进程将 <code>flag[i] = false</code>，表示它退出了临界区，其他进程可以进入。</li>
+</ul>
+</li>
+<li><p><strong>Remainder Section（剩余部分）</strong>：</p>
+<ul>
+<li>这是进程完成临界区操作后的其他任务区域，它不涉及共享资源。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="6-同步硬件（Synchronization-Hardware）"><a href="#6-同步硬件（Synchronization-Hardware）" class="headerlink" title="6. 同步硬件（Synchronization Hardware）"></a><strong>6. 同步硬件（Synchronization Hardware）</strong></h3><ul>
+<li><p><strong>测试与设置（test_and_set）指令</strong>：检查一个变量并将其设置为 <code>true</code>，用于实现互斥锁。</p>
+<ul>
+<li>如果 <code>lock</code> 是 <code>false</code>，说明锁未被占用，可以将其设置为 <code>true</code>，并进入临界区。</li>
+<li>如果 <code>lock</code> 是 <code>true</code>，则表示锁已经被占用，进程需要等待。</li>
+</ul>
+</li>
+<li><p><strong>比较与交换（compare_and_swap）指令</strong>：将锁的值与预期值进行比较，如果匹配则交换值。</p>
+<ul>
+<li>这种原子操作能有效解决并发进程中的临界区问题。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="7-互斥锁（Mutex-Locks）"><a href="#7-互斥锁（Mutex-Locks）" class="headerlink" title="7. 互斥锁（Mutex Locks）"></a><strong>7. 互斥锁（Mutex Locks）</strong></h3><ul>
+<li><strong>概念</strong>：互斥锁用于保护临界区，保证同一时间只有一个进程能够访问共享资源。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>acquire()</code>: 请求获取锁。</li>
+<li><code>release()</code>: 释放锁。</li>
+</ul>
+</li>
+<li><strong>自旋锁（Spinlock）</strong>：如果锁未被释放，进程会持续检查并等待锁的释放，这会造成忙等待。</li>
+</ul>
+<hr>
+<h3 id="8-信号量（Semaphore）"><a href="#8-信号量（Semaphore）" class="headerlink" title="8. 信号量（Semaphore）"></a><strong>8. 信号量（Semaphore）</strong></h3><ul>
+<li><strong>信号量</strong>：用于控制多个进程对共享资源的访问。<ul>
+<li><strong>类型</strong>：<ul>
+<li><strong>计数信号量</strong>：可以接受任意整数值。</li>
+<li><strong>二进制信号量</strong>：值只能是 0 或 1，类似互斥锁。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="信号量操作："><a href="#信号量操作：" class="headerlink" title="信号量操作："></a><strong>信号量操作</strong>：</h4><ol>
+<li><code>wait(S)</code>：如果 <code>S &gt; 0</code>，将 <code>S</code> 减 1；否则，进程阻塞。</li>
+<li><code>signal(S)</code>：将 <code>S</code> 增 1，如果有进程在等待信号量，唤醒一个进程。</li>
+</ol>
+<hr>
+<h3 id="9-经典同步问题"><a href="#9-经典同步问题" class="headerlink" title="9. 经典同步问题"></a><strong>9. 经典同步问题</strong></h3><h4 id="1-有界缓冲问题（Bounded-Buffer-Problem）"><a href="#1-有界缓冲问题（Bounded-Buffer-Problem）" class="headerlink" title="1. 有界缓冲问题（Bounded-Buffer Problem）"></a><strong>1. 有界缓冲问题（Bounded-Buffer Problem）</strong></h4><ul>
+<li><strong>生产者-消费者问题</strong>：多个生产者和消费者通过缓冲区共享数据，必须保证缓冲区的互斥访问。</li>
+<li><strong>信号量设计</strong>：<ul>
+<li><code>mutex</code>: 用于保护缓冲区。</li>
+<li><code>empty</code>: 表示缓冲区的空槽数量。</li>
+<li><code>full</code>: 表示缓冲区的满槽数量。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-读者-写者问题（Readers-Writers-Problem）"><a href="#2-读者-写者问题（Readers-Writers-Problem）" class="headerlink" title="2. 读者-写者问题（Readers-Writers Problem）"></a><strong>2. 读者-写者问题（Readers-Writers Problem）</strong></h4><ul>
+<li><strong>问题</strong>：多个进程读写共享数据，要求多个读者可以同时读，但写者必须是独占访问。</li>
+<li><strong>解决方案</strong>：<ul>
+<li>使用信号量和读者计数来控制读者和写者的访问。</li>
+<li><strong>读者优先</strong>或<strong>写者优先</strong>的策略可以避免死锁和饿死现象。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-哲学家进餐问题（Dining-Philosophers-Problem）"><a href="#3-哲学家进餐问题（Dining-Philosophers-Problem）" class="headerlink" title="3. 哲学家进餐问题（Dining-Philosophers Problem）"></a><strong>3. 哲学家进餐问题（Dining-Philosophers Problem）</strong></h4><ul>
+<li><strong>问题</strong>：哲学家交替进行思考和进食，使用两个筷子来吃饭，避免死锁和饿死现象。</li>
+<li><strong>解决方案</strong>：<ul>
+<li><strong>死锁避免</strong>：最多允许四个哲学家同时坐下。</li>
+<li><strong>非对称解决方案</strong>：奇数哲学家先拿左边筷子，再拿右边筷子，偶数哲学家则相反。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="10-Pthreads-同步"><a href="#10-Pthreads-同步" class="headerlink" title="10. Pthreads 同步"></a><strong>10. Pthreads 同步</strong></h3><ul>
+<li><strong>Pthreads API</strong>：为线程同步提供的跨平台接口，支持互斥锁、条件变量和信号量。<ul>
+<li><strong>互斥锁</strong>：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_mutex_t</span> mutex;</span><br><span class="line">pthread_mutex_init(&amp;mutex, <span class="literal">NULL</span>);</span><br><span class="line">pthread_mutex_lock(&amp;mutex);</span><br><span class="line">pthread_mutex_unlock(&amp;mutex);</span><br></pre></td></tr></table></figure></li>
+<li><strong>条件变量</strong>：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_cond_t</span> cond;</span><br><span class="line">pthread_cond_wait(&amp;cond, &amp;mutex);</span><br><span class="line">pthread_cond_signal(&amp;cond);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="11-POSIX-信号量"><a href="#11-POSIX-信号量" class="headerlink" title="11. POSIX 信号量"></a><strong>11. POSIX 信号量</strong></h3><ul>
+<li><strong>POSIX 信号量</strong>用于线程和进程同步：<ul>
+<li><strong>初始化</strong>：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">sem_t</span> sem;</span><br><span class="line">sem_init(&amp;sem, <span class="number">0</span>, <span class="number">1</span>); <span class="comment">// 信号量初始化</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>操作</strong>：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sem_wait(&amp;sem); <span class="comment">// 等待信号量</span></span><br><span class="line">sem_post(&amp;sem); <span class="comment">// 发出信号量</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><ul>
+<li><strong>进程同步</strong>涉及到多个进程或线程对共享资源的有序访问，避免竞争条件和数据不一致。</li>
+<li>主要工具：<strong>互斥锁、信号量、条件变量</strong>等。</li>
+<li>常见问题包括：<strong>生产者-消费者问题、读者-写者问题、哲学家进餐问题</strong>。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>原理</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Peterson’s Solution</strong></td>
+<td>软件方法</td>
+<td>用两个变量 <code>flag</code> 和 <code>turn</code> 实现互斥</td>
+<td>简单、无需硬件支持</td>
+<td>仅适用于两个线程，现代 CPU 指令重排可能破坏其正确性</td>
+</tr>
+<tr>
+<td><strong>Semaphore（信号量）</strong></td>
+<td>操作系统原语</td>
+<td>用整数变量 <code>S</code> 控制资源访问，<code>wait()</code>&#x2F;<code>signal()</code> 操作</td>
+<td>强大灵活，能实现互斥和同步</td>
+<td>易写错，可能导致死锁、饿死等</td>
+</tr>
+<tr>
+<td><strong>Mutex（互斥锁）</strong></td>
+<td>低级同步机制</td>
+<td>类似信号量，但专用于互斥访问资源</td>
+<td>简单直接，适用于临界区保护</td>
+<td>只能用于互斥，不能用于复杂同步</td>
+</tr>
+<tr>
+<td><strong>Monitor（监视器）</strong></td>
+<td>高级同步抽象</td>
+<td>将数据和方法封装，自动控制互斥，配合条件变量</td>
+<td>安全抽象、结构清晰，自动管理临界区</td>
+<td>实现较复杂、灵活性不如信号量</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Peterson’s Solution</strong>：教材经典算法，理论上能保证互斥，但实际中不常用。</li>
+<li><strong>Semaphore</strong>：底层通用工具，强大但容易误用。</li>
+<li><strong>Mutex</strong>：专门用于实现互斥的信号量，是信号量的简化版。</li>
+<li><strong>Monitor</strong>：面向对象风格的同步工具，更现代、结构化，常见于 Java <code>synchronized</code>、Python <code>with threading.Lock()</code>。</li>
+</ul>
+<hr>
+<h2 id="Chapter-9-Main-Memory"><a href="#Chapter-9-Main-Memory" class="headerlink" title="Chapter 9: Main Memory"></a>Chapter 9: Main Memory</h2><h3 id="1-存储系统基础"><a href="#1-存储系统基础" class="headerlink" title="1. 存储系统基础"></a><strong>1. 存储系统基础</strong></h3><h4 id="存储层级（Storage-Hierarchy）【见第3页图示】"><a href="#存储层级（Storage-Hierarchy）【见第3页图示】" class="headerlink" title="存储层级（Storage Hierarchy）【见第3页图示】"></a><strong>存储层级（Storage Hierarchy）</strong>【见第3页图示】</h4><ul>
+<li><strong>寄存器（Registers）</strong>：最快速、最小容量。</li>
+<li><strong>高速缓存（Cache）</strong></li>
+<li><strong>主存（Main Memory）</strong></li>
+<li><strong>非易失存储（硬盘、SSD）</strong></li>
+<li><strong>磁带（最慢，最大容量）</strong></li>
+<li>CPU 只能直接访问<strong>寄存器</strong>和<strong>主存</strong>。</li>
+</ul>
+<hr>
+<h3 id="2-地址绑定（Address-Binding）"><a href="#2-地址绑定（Address-Binding）" class="headerlink" title="2. 地址绑定（Address Binding）"></a><strong>2. 地址绑定（Address Binding）</strong></h3><h4 id="三种绑定时机【第7页】"><a href="#三种绑定时机【第7页】" class="headerlink" title="三种绑定时机【第7页】"></a><strong>三种绑定时机</strong>【第7页】</h4><table>
+<thead>
+<tr>
+<th>绑定时间</th>
+<th>特点</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>编译时（Compile time）</td>
+<td>地址写死</td>
+<td>嵌入式系统</td>
+</tr>
+<tr>
+<td>装载时（Load time）</td>
+<td>相对地址→绝对地址</td>
+<td>老式多道程序系统</td>
+</tr>
+<tr>
+<td>运行时（Execution time）</td>
+<td>逻辑地址→物理地址</td>
+<td><strong>现代系统，需硬件支持（如MMU）</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="3-地址类型与映射"><a href="#3-地址类型与映射" class="headerlink" title="3. 地址类型与映射"></a><strong>3. 地址类型与映射</strong></h3><ul>
+<li><strong>逻辑地址（Logical Address）</strong>：CPU生成，又称虚拟地址。</li>
+<li><strong>物理地址（Physical Address）</strong>：内存单元地址。</li>
+<li><strong>地址空间映射由内存管理单元（MMU）完成</strong>【第13页图示】</li>
+</ul>
+<hr>
+<h3 id="4-动态加载与链接"><a href="#4-动态加载与链接" class="headerlink" title="4. 动态加载与链接"></a><strong>4. 动态加载与链接</strong></h3><ul>
+<li><strong>动态加载 Dynamic Loading</strong>：只有在需要时加载某段代码（节省内存）。</li>
+<li><strong>动态链接 Dynamic Linking</strong>：程序运行时将库函数加载进内存（如 DLL&#x2F;so）。</li>
+</ul>
+<hr>
+<h3 id="5-连续内存分配（Contiguous-Allocation）"><a href="#5-连续内存分配（Contiguous-Allocation）" class="headerlink" title="5. 连续内存分配（Contiguous Allocation）"></a><strong>5. 连续内存分配（Contiguous Allocation）</strong></h3><h4 id="方式："><a href="#方式：" class="headerlink" title="方式："></a><strong>方式：</strong></h4><ol>
+<li><strong>固定分区（Fixed Partition）</strong><ul>
+<li>多个等大小分区，容易产生<strong>内外部碎片</strong>。</li>
+</ul>
+</li>
+<li><strong>可变分区（Variable Partition）</strong><ul>
+<li>根据进程大小动态分配内存，使用空洞（hole）管理。</li>
+</ul>
+</li>
+</ol>
+<h4 id="分配策略【第19页】"><a href="#分配策略【第19页】" class="headerlink" title="分配策略【第19页】"></a><strong>分配策略</strong>【第19页】</h4><ul>
+<li><strong>First Fit</strong>：第一个足够大的空洞。<ul>
+<li>简单、速度快，但可能在低地址区留下许多小碎片。</li>
+</ul>
+</li>
+<li><strong>Best Fit</strong>：最小满足的空洞（易产生小碎片）。<ul>
+<li>理论上最佳利用空间，但需要扫描所有 hole，并容易留下过小碎片。</li>
+</ul>
+</li>
+<li><strong>Worst Fit</strong>：最大空洞。<ul>
+<li>留给后续分配最大的空洞，反而更易产生中等尺寸碎片，利用率最差。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-碎片问题（Fragmentation）"><a href="#6-碎片问题（Fragmentation）" class="headerlink" title="6. 碎片问题（Fragmentation）"></a><strong>6. 碎片问题（<code>Fragmentation</code>）</strong></h3><h4 id="外部碎片（External）"><a href="#外部碎片（External）" class="headerlink" title="外部碎片（External）"></a><strong>外部碎片（External）</strong></h4><ul>
+<li>空间足够但不连续。</li>
+<li>解决：<strong>压缩（Compaction）或分页</strong>。<ul>
+<li><strong>压缩（<code>Compaction</code>）</strong>：把所有占用的内存挪拢到一端，使空闲空间连成一个大块（仅在执行时动态重定位时可行）。</li>
+<li><strong>使用非连续分配</strong>：例如分页或分段技术，直接消除外部碎片。</li>
+</ul>
+</li>
+</ul>
+<h4 id="内部碎片（Internal）"><a href="#内部碎片（Internal）" class="headerlink" title="内部碎片（Internal）"></a><strong>内部碎片（Internal）</strong></h4><ul>
+<li>分配空间 &gt; 实际使用，造成空间浪费。</li>
+</ul>
+<hr>
+<h3 id="7-非连续内存分配：分页（Paging）"><a href="#7-非连续内存分配：分页（Paging）" class="headerlink" title="7. 非连续内存分配：分页（Paging）"></a><strong>7. 非连续内存分配：分页（Paging）</strong></h3><ul>
+<li>进程的物理地址空间可以是不连续的，只要所有空闲内存块之和足够，就可以为进程分配内存，从而避免外部碎片。</li>
+<li><strong>将内存划分为固定大小的块：页框（<code>Frame</code>）</strong><ul>
+<li>每个 <code>Frame</code> 的大小是 2 的幂次，通常在 512 字节到 16 MB 之间。</li>
+</ul>
+</li>
+<li><strong>将逻辑内存划分为页（Page）, 其大小等于 Frame 大小。</strong></li>
+<li>每个进程维护自己的<strong>页表（Page Table）</strong>，用于将<strong>页号 → 页框号</strong>【第27页图】</li>
+</ul>
+<h4 id="页与页框的映射"><a href="#页与页框的映射" class="headerlink" title="页与页框的映射"></a>页与页框的映射</h4><ul>
+<li>将逻辑内存也划分为大小相同的<strong>页（page）</strong>，其大小等于页框大小。</li>
+<li>要运行一个 $N$ 页的程序，需要找 $N$ 个空闲的页框，把各页加载进去；各页框在物理内存中可以任意分散（非连续）。</li>
+<li>需要<strong>页表（page table）</strong>来完成逻辑地址到物理地址的转换。</li>
+</ul>
+<h4 id="地址结构【第28页图】"><a href="#地址结构【第28页图】" class="headerlink" title="地址结构【第28页图】"></a><strong>地址结构</strong>【第28页图】</h4><ul>
+<li>假设逻辑地址是 m 位，页面大小 2ⁿ，则：<ul>
+<li>页号（Page Number）&#x3D; 高 $m-n$ 位</li>
+<li>页内偏移（Offset）&#x3D; 低 n 位</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-内部碎片与页大小"><a href="#8-内部碎片与页大小" class="headerlink" title="8. 内部碎片与页大小"></a><strong>8. 内部碎片与页大小</strong></h3><ul>
+<li>若页太大，内存浪费多；太小，则页表变大，效率下降。</li>
+<li>页大小通常为 4K、2MB、1GB（现代系统支持多种）。</li>
+</ul>
+<hr>
+<h3 id="9-页表管理优化"><a href="#9-页表管理优化" class="headerlink" title="9. 页表管理优化"></a><strong>9. 页表管理优化</strong></h3><h4 id="问题：页表大（如-32位地址-4KB页-→-页表大小-4MB）"><a href="#问题：页表大（如-32位地址-4KB页-→-页表大小-4MB）" class="headerlink" title="问题：页表大（如 32位地址+4KB页 → 页表大小&#x3D;4MB）"></a><strong>问题</strong>：页表大（如 32位地址+4KB页 → 页表大小&#x3D;4MB）</h4><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a><strong>解决方法</strong>：</h4><ol>
+<li><p><strong>多级页表（Hierarchical Page Table）</strong>【第42页】</p>
+<ul>
+<li>将页表划分为两级甚至多级结构，节省内存。</li>
+</ul>
+</li>
+<li><p><strong>哈希页表（Hashed Page Table）</strong>【第45页】</p>
+<ul>
+<li>针对地址空间很大的系统，使用哈希查找页。</li>
+</ul>
+</li>
+<li><p><strong>反向页表（Inverted Page Table）</strong>【第47页】</p>
+<ul>
+<li>每个帧对应一个条目（包括进程ID + 虚拟页号）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="10-TLB（Translation-Lookaside-Buffer）缓存机制"><a href="#10-TLB（Translation-Lookaside-Buffer）缓存机制" class="headerlink" title="10. TLB（Translation Lookaside Buffer）缓存机制"></a><strong>10. TLB（Translation Lookaside Buffer）缓存机制</strong></h3><ul>
+<li><strong>TLB 是快速缓存页表映射的小型内存</strong>（64~1024 项）【第36页】</li>
+<li><strong>TLB命中率（Hit Ratio）</strong> 越高越好</li>
+<li>命中：直接从TLB获取帧号</li>
+<li>未命中：访问页表，并更新TLB</li>
+</ul>
+<h4 id="访问效率计算（EAT）【第39页】"><a href="#访问效率计算（EAT）【第39页】" class="headerlink" title="访问效率计算（EAT）【第39页】"></a><strong>访问效率计算（EAT）</strong>【第39页】</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">EAT = α × (c + m) + (1 - α) × (c + 2m)</span><br><span class="line">α: TLB命中率</span><br><span class="line">c: TLB访问时间</span><br><span class="line">m: 内存访问时间</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="11-共享内存页（Shared-Pages）"><a href="#11-共享内存页（Shared-Pages）" class="headerlink" title="11. 共享内存页（Shared Pages）"></a><strong>11. 共享内存页（Shared Pages）</strong></h3><ul>
+<li>多个进程共享只读的库函数代码（如 printf）【第40页】</li>
+<li>只保留一份物理副本，节省内存。</li>
+</ul>
+<hr>
+<h3 id="12-分段与分页结合（Intel-IA-32-示例）"><a href="#12-分段与分页结合（Intel-IA-32-示例）" class="headerlink" title="12. 分段与分页结合（Intel IA-32 示例）"></a><strong>12. 分段与分页结合（Intel IA-32 示例）</strong></h3><ul>
+<li>支持<strong>段（Segment）+分页（Paging）双重机制</strong>【第51页图】</li>
+<li>每个进程最多有 16K 段。</li>
+<li>段由 <strong>段选择子（Selector）</strong> 管理，分页负责页内管理。</li>
+</ul>
+<hr>
+<h3 id="13-现代架构支持"><a href="#13-现代架构支持" class="headerlink" title="13. 现代架构支持"></a><strong>13. 现代架构支持</strong></h3><h4 id="x86-64（Intel）【第52页】"><a href="#x86-64（Intel）【第52页】" class="headerlink" title="x86-64（Intel）【第52页】"></a><strong>x86-64（Intel）</strong>【第52页】</h4><ul>
+<li>虚拟地址：48 位（可扩展至 64 位）</li>
+<li>实际支持 4K、2MB、1GB 页大小</li>
+<li>使用 4 级页表结构</li>
+</ul>
+<h4 id="ARM-架构【第53页】"><a href="#ARM-架构【第53页】" class="headerlink" title="ARM 架构【第53页】"></a><strong>ARM 架构</strong>【第53页】</h4><ul>
+<li>支持多级 TLB、可变页大小（4KB、16KB、1MB、16MB）</li>
+<li>广泛应用于移动设备</li>
+</ul>
+<hr>
+<h3 id="总结表"><a href="#总结表" class="headerlink" title="总结表"></a><strong>总结表</strong></h3><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>特点</th>
+<th>优势</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>连续分配</td>
+<td>固定或可变分区</td>
+<td>实现简单</td>
+<td>容易产生碎片</td>
+</tr>
+<tr>
+<td>分页</td>
+<td>页 + 帧映射</td>
+<td>避免外部碎片</td>
+<td>内部碎片 + 页表管理开销</td>
+</tr>
+<tr>
+<td>TLB</td>
+<td>页表缓存</td>
+<td>提高地址转换速度</td>
+<td>命中率低时效率下降</td>
+</tr>
+<tr>
+<td>多级页表</td>
+<td>节省页表空间</td>
+<td>动态加载页表</td>
+<td>增加地址访问次数</td>
+</tr>
+<tr>
+<td>哈希页表</td>
+<td>快速定位页</td>
+<td>适用于大地址空间</td>
+<td>冲突处理复杂</td>
+</tr>
+<tr>
+<td>反向页表</td>
+<td>每帧一个映射</td>
+<td>节省空间</td>
+<td>查找慢，需全表遍历</td>
+</tr>
+<tr>
+<td>ARM&#x2F;Intel 分页</td>
+<td>支持多种页大小</td>
+<td>灵活性高</td>
+<td>实现复杂</td>
+</tr>
+</tbody></table>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Operating Systems</p><p><a href="https://tosakaucw.github.io/lecture-notes-operating-systems/">https://tosakaucw.github.io/lecture-notes-operating-systems/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-02-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-05-23</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/codeforces-round-1008-div-2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Codeforces Round 1008 (Div. 2)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/nwerc-2024/"><span class="level-item">NWERC 2024</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
             this.page.url = 'https://tosakaucw.github.io/lecture-notes-operating-systems/';
             this.page.identifier = 'lecture-notes-operating-systems/';
         };
@@ -750,7 +1163,7 @@ result = rpc_call(&quot;add&quot;, 5, 10);  // 实际上底层是 send()/recv()
             s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
-        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Chapter-2-Operating-System-Structures"><span class="level-left"><span class="level-item">Chapter 2: Operating-System Structures</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Operating-System-Services"><span class="level-left"><span class="level-item">1. Operating System Services</span></span></a></li><li><a class="level is-mobile" href="#2-Operating-System-Interface"><span class="level-left"><span class="level-item">2. Operating System Interface</span></span></a></li><li><a class="level is-mobile" href="#3-System-Calls，-API，C-Libraries"><span class="level-left"><span class="level-item">3. System Calls， API，C Libraries</span></span></a></li><li><a class="level is-mobile" href="#4-Operating-System-Structure"><span class="level-left"><span class="level-item">4. Operating System Structure</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#4-1-OS-Architectures"><span class="level-left"><span class="level-item">4.1 OS Architectures</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Chapter-3-Process"><span class="level-left"><span class="level-item">Chapter 3: Process</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Process-Concept"><span class="level-left"><span class="level-item">1. Process Concept</span></span></a></li><li><a class="level is-mobile" href="#2-Process-Scheduling"><span class="level-left"><span class="level-item">2. Process Scheduling</span></span></a></li><li><a class="level is-mobile" href="#3-Operations-on-Processes"><span class="level-left"><span class="level-item">3. Operations on Processes</span></span></a></li><li><a class="level is-mobile" href="#4-Inter-process-Communication-IPC"><span class="level-left"><span class="level-item">4. Inter-process Communication (IPC)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Shared-Memory"><span class="level-left"><span class="level-item">Shared Memory</span></span></a></li><li><a class="level is-mobile" href="#Message-Passing"><span class="level-left"><span class="level-item">Message Passing</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Pipe"><span class="level-left"><span class="level-item">Pipe</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#5-Communication-in-Client-Server-Systems"><span class="level-left"><span class="level-item">5. Communication in Client-Server Systems</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Sockets"><span class="level-left"><span class="level-item">Sockets</span></span></a></li><li><a class="level is-mobile" href="#Remote-Procedure-Calls"><span class="level-left"><span class="level-item">Remote Procedure Calls</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Chapter-4-Threads-Concurrency"><span class="level-left"><span class="level-item">Chapter 4: Threads &amp; Concurrency</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Process-vs-Thread"><span class="level-left"><span class="level-item">1. Process vs. Thread</span></span></a></li><li><a class="level is-mobile" href="#2-Concurrency-vs-Parallelism"><span class="level-left"><span class="level-item">2. Concurrency vs. Parallelism</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#多核编程（Multicore-Programming）"><span class="level-left"><span class="level-item">多核编程（Multicore Programming）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#数据并行（Data-Parallelism）："><span class="level-left"><span class="level-item">数据并行（Data Parallelism）：</span></span></a></li><li><a class="level is-mobile" href="#任务并行（Task-Parallelism）："><span class="level-left"><span class="level-item">任务并行（Task Parallelism）：</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#3-Thread-Libraries"><span class="level-left"><span class="level-item">3. Thread Libraries</span></span></a></li><li><a class="level is-mobile" href="#4-Implicit-Threading"><span class="level-left"><span class="level-item">4. Implicit Threading</span></span></a></li><li><a class="level is-mobile" href="#5-Threading-Issues"><span class="level-left"><span class="level-item">5. Threading Issues</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-5-CPU-Scheduling"><span class="level-left"><span class="level-item">Chapter 5: CPU Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Basic-Concepts"><span class="level-left"><span class="level-item">1. Basic Concepts</span></span></a></li><li><a class="level is-mobile" href="#2-Scheduling-Criteria"><span class="level-left"><span class="level-item">2. Scheduling Criteria</span></span></a></li><li><a class="level is-mobile" href="#3-Scheduling-Algorithms"><span class="level-left"><span class="level-item">3. Scheduling Algorithms</span></span></a></li><li><a class="level is-mobile" href="#4-Thread-Scheduling"><span class="level-left"><span class="level-item">4. Thread Scheduling</span></span></a></li><li><a class="level is-mobile" href="#5-Multi-Processor-Scheduling"><span class="level-left"><span class="level-item">5. Multi-Processor Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SMP（对称多处理）-调度策略："><span class="level-left"><span class="level-item">SMP（对称多处理） 调度策略：</span></span></a></li><li><a class="level is-mobile" href="#负载均衡（Load-Balancing）："><span class="level-left"><span class="level-item">负载均衡（Load Balancing）：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Real-Time-CPU-Scheduling"><span class="level-left"><span class="level-item">6. Real-Time CPU Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#实时系统调度："><span class="level-left"><span class="level-item">实时系统调度：</span></span></a></li><li><a class="level is-mobile" href="#实时调度标准："><span class="level-left"><span class="level-item">实时调度标准：</span></span></a></li><li><a class="level is-mobile" href="#实时调度算法："><span class="level-left"><span class="level-item">实时调度算法：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#7-Operating-Systems-Examples"><span class="level-left"><span class="level-item">7. Operating Systems Examples</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Midterm-Hints"><span class="level-left"><span class="level-item">Midterm Hints</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Chapter-2-Operating-System-Structures"><span class="level-left"><span class="level-item">Chapter 2: Operating-System Structures</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Operating-System-Services"><span class="level-left"><span class="level-item">1. Operating System Services</span></span></a></li><li><a class="level is-mobile" href="#2-Operating-System-Interface"><span class="level-left"><span class="level-item">2. Operating System Interface</span></span></a></li><li><a class="level is-mobile" href="#3-System-Calls，-API，C-Libraries"><span class="level-left"><span class="level-item">3. System Calls， API，C Libraries</span></span></a></li><li><a class="level is-mobile" href="#4-Operating-System-Structure"><span class="level-left"><span class="level-item">4. Operating System Structure</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#4-1-OS-Architectures"><span class="level-left"><span class="level-item">4.1 OS Architectures</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Chapter-3-Process"><span class="level-left"><span class="level-item">Chapter 3: Process</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Process-Concept"><span class="level-left"><span class="level-item">1. Process Concept</span></span></a></li><li><a class="level is-mobile" href="#2-Process-Scheduling"><span class="level-left"><span class="level-item">2. Process Scheduling</span></span></a></li><li><a class="level is-mobile" href="#3-Operations-on-Processes"><span class="level-left"><span class="level-item">3. Operations on Processes</span></span></a></li><li><a class="level is-mobile" href="#4-Inter-process-Communication-IPC"><span class="level-left"><span class="level-item">4. Inter-process Communication (IPC)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Shared-Memory"><span class="level-left"><span class="level-item">Shared Memory</span></span></a></li><li><a class="level is-mobile" href="#Message-Passing"><span class="level-left"><span class="level-item">Message Passing</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Pipe"><span class="level-left"><span class="level-item">Pipe</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#5-Communication-in-Client-Server-Systems"><span class="level-left"><span class="level-item">5. Communication in Client-Server Systems</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Sockets"><span class="level-left"><span class="level-item">Sockets</span></span></a></li><li><a class="level is-mobile" href="#Remote-Procedure-Calls"><span class="level-left"><span class="level-item">Remote Procedure Calls</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Example"><span class="level-left"><span class="level-item">Example</span></span></a></li><li><a class="level is-mobile" href="#Chapter-4-Threads-Concurrency"><span class="level-left"><span class="level-item">Chapter 4: Threads &amp; Concurrency</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Process-vs-Thread"><span class="level-left"><span class="level-item">1. Process vs. Thread</span></span></a></li><li><a class="level is-mobile" href="#2-Concurrency-vs-Parallelism"><span class="level-left"><span class="level-item">2. Concurrency vs. Parallelism</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#多核编程（Multicore-Programming）"><span class="level-left"><span class="level-item">多核编程（Multicore Programming）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#数据并行（Data-Parallelism）："><span class="level-left"><span class="level-item">数据并行（Data Parallelism）：</span></span></a></li><li><a class="level is-mobile" href="#任务并行（Task-Parallelism）："><span class="level-left"><span class="level-item">任务并行（Task Parallelism）：</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#3-Thread-Libraries"><span class="level-left"><span class="level-item">3. Thread Libraries</span></span></a></li><li><a class="level is-mobile" href="#4-Implicit-Threading"><span class="level-left"><span class="level-item">4. Implicit Threading</span></span></a></li><li><a class="level is-mobile" href="#5-Threading-Issues"><span class="level-left"><span class="level-item">5. Threading Issues</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-5-CPU-Scheduling"><span class="level-left"><span class="level-item">Chapter 5: CPU Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Basic-Concepts"><span class="level-left"><span class="level-item">1. Basic Concepts</span></span></a></li><li><a class="level is-mobile" href="#2-Scheduling-Criteria"><span class="level-left"><span class="level-item">2. Scheduling Criteria</span></span></a></li><li><a class="level is-mobile" href="#3-Scheduling-Algorithms"><span class="level-left"><span class="level-item">3. Scheduling Algorithms</span></span></a></li><li><a class="level is-mobile" href="#4-Thread-Scheduling"><span class="level-left"><span class="level-item">4. Thread Scheduling</span></span></a></li><li><a class="level is-mobile" href="#5-Multi-Processor-Scheduling"><span class="level-left"><span class="level-item">5. Multi-Processor Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SMP（对称多处理）-调度策略："><span class="level-left"><span class="level-item">SMP（对称多处理） 调度策略：</span></span></a></li><li><a class="level is-mobile" href="#负载均衡（Load-Balancing）："><span class="level-left"><span class="level-item">负载均衡（Load Balancing）：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Real-Time-CPU-Scheduling"><span class="level-left"><span class="level-item">6. Real-Time CPU Scheduling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#实时系统调度："><span class="level-left"><span class="level-item">实时系统调度：</span></span></a></li><li><a class="level is-mobile" href="#实时调度标准："><span class="level-left"><span class="level-item">实时调度标准：</span></span></a></li><li><a class="level is-mobile" href="#实时调度算法："><span class="level-left"><span class="level-item">实时调度算法：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#7-Operating-Systems-Examples"><span class="level-left"><span class="level-item">7. Operating Systems Examples</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Midterm-Hints"><span class="level-left"><span class="level-item">Midterm Hints</span></span></a></li><li><a class="level is-mobile" href="#Chapter-6-7-Process-Synchoronization"><span class="level-left"><span class="level-item">Chapter 6 &amp; 7: Process Synchoronization</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-进程同步背景"><span class="level-left"><span class="level-item">1. 进程同步背景</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#示例：生产者-消费者问题"><span class="level-left"><span class="level-item">示例：生产者-消费者问题</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-竞争条件（Race-Condition）"><span class="level-left"><span class="level-item">2. 竞争条件（Race Condition）</span></span></a></li><li><a class="level is-mobile" href="#3-临界区问题（Critical-Section-Problem）"><span class="level-left"><span class="level-item">3. 临界区问题（Critical Section Problem）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#临界区的通用结构："><span class="level-left"><span class="level-item">临界区的通用结构：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-临界区问题的解决方案"><span class="level-left"><span class="level-item">4. 临界区问题的解决方案</span></span></a></li><li><a class="level is-mobile" href="#5-Peterson’s-Solution"><span class="level-left"><span class="level-item">5. Peterson’s Solution</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#代码实现"><span class="level-left"><span class="level-item">代码实现</span></span></a></li><li><a class="level is-mobile" href="#代码讲解"><span class="level-left"><span class="level-item">代码讲解</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-同步硬件（Synchronization-Hardware）"><span class="level-left"><span class="level-item">6. 同步硬件（Synchronization Hardware）</span></span></a></li><li><a class="level is-mobile" href="#7-互斥锁（Mutex-Locks）"><span class="level-left"><span class="level-item">7. 互斥锁（Mutex Locks）</span></span></a></li><li><a class="level is-mobile" href="#8-信号量（Semaphore）"><span class="level-left"><span class="level-item">8. 信号量（Semaphore）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#信号量操作："><span class="level-left"><span class="level-item">信号量操作：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#9-经典同步问题"><span class="level-left"><span class="level-item">9. 经典同步问题</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-有界缓冲问题（Bounded-Buffer-Problem）"><span class="level-left"><span class="level-item">1. 有界缓冲问题（Bounded-Buffer Problem）</span></span></a></li><li><a class="level is-mobile" href="#2-读者-写者问题（Readers-Writers-Problem）"><span class="level-left"><span class="level-item">2. 读者-写者问题（Readers-Writers Problem）</span></span></a></li><li><a class="level is-mobile" href="#3-哲学家进餐问题（Dining-Philosophers-Problem）"><span class="level-left"><span class="level-item">3. 哲学家进餐问题（Dining-Philosophers Problem）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#10-Pthreads-同步"><span class="level-left"><span class="level-item">10. Pthreads 同步</span></span></a></li><li><a class="level is-mobile" href="#11-POSIX-信号量"><span class="level-left"><span class="level-item">11. POSIX 信号量</span></span></a></li><li><a class="level is-mobile" href="#总结"><span class="level-left"><span class="level-item">总结</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-9-Main-Memory"><span class="level-left"><span class="level-item">Chapter 9: Main Memory</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-存储系统基础"><span class="level-left"><span class="level-item">1. 存储系统基础</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#存储层级（Storage-Hierarchy）【见第3页图示】"><span class="level-left"><span class="level-item">存储层级（Storage Hierarchy）【见第3页图示】</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-地址绑定（Address-Binding）"><span class="level-left"><span class="level-item">2. 地址绑定（Address Binding）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#三种绑定时机【第7页】"><span class="level-left"><span class="level-item">三种绑定时机【第7页】</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-地址类型与映射"><span class="level-left"><span class="level-item">3. 地址类型与映射</span></span></a></li><li><a class="level is-mobile" href="#4-动态加载与链接"><span class="level-left"><span class="level-item">4. 动态加载与链接</span></span></a></li><li><a class="level is-mobile" href="#5-连续内存分配（Contiguous-Allocation）"><span class="level-left"><span class="level-item">5. 连续内存分配（Contiguous Allocation）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#方式："><span class="level-left"><span class="level-item">方式：</span></span></a></li><li><a class="level is-mobile" href="#分配策略【第19页】"><span class="level-left"><span class="level-item">分配策略【第19页】</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-碎片问题（Fragmentation）"><span class="level-left"><span class="level-item">6. 碎片问题（Fragmentation）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#外部碎片（External）"><span class="level-left"><span class="level-item">外部碎片（External）</span></span></a></li><li><a class="level is-mobile" href="#内部碎片（Internal）"><span class="level-left"><span class="level-item">内部碎片（Internal）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#7-非连续内存分配：分页（Paging）"><span class="level-left"><span class="level-item">7. 非连续内存分配：分页（Paging）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#页与页框的映射"><span class="level-left"><span class="level-item">页与页框的映射</span></span></a></li><li><a class="level is-mobile" href="#地址结构【第28页图】"><span class="level-left"><span class="level-item">地址结构【第28页图】</span></span></a></li></ul></li><li><a class="level is-mobile" href="#8-内部碎片与页大小"><span class="level-left"><span class="level-item">8. 内部碎片与页大小</span></span></a></li><li><a class="level is-mobile" href="#9-页表管理优化"><span class="level-left"><span class="level-item">9. 页表管理优化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#问题：页表大（如-32位地址-4KB页-→-页表大小-4MB）"><span class="level-left"><span class="level-item">问题：页表大（如 32位地址+4KB页 → 页表大小=4MB）</span></span></a></li><li><a class="level is-mobile" href="#解决方法："><span class="level-left"><span class="level-item">解决方法：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#10-TLB（Translation-Lookaside-Buffer）缓存机制"><span class="level-left"><span class="level-item">10. TLB（Translation Lookaside Buffer）缓存机制</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#访问效率计算（EAT）【第39页】"><span class="level-left"><span class="level-item">访问效率计算（EAT）【第39页】</span></span></a></li></ul></li><li><a class="level is-mobile" href="#11-共享内存页（Shared-Pages）"><span class="level-left"><span class="level-item">11. 共享内存页（Shared Pages）</span></span></a></li><li><a class="level is-mobile" href="#12-分段与分页结合（Intel-IA-32-示例）"><span class="level-left"><span class="level-item">12. 分段与分页结合（Intel IA-32 示例）</span></span></a></li><li><a class="level is-mobile" href="#13-现代架构支持"><span class="level-left"><span class="level-item">13. 现代架构支持</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#x86-64（Intel）【第52页】"><span class="level-left"><span class="level-item">x86-64（Intel）【第52页】</span></span></a></li><li><a class="level is-mobile" href="#ARM-架构【第53页】"><span class="level-left"><span class="level-item">ARM 架构【第53页】</span></span></a></li></ul></li><li><a class="level is-mobile" href="#总结表"><span class="level-left"><span class="level-item">总结表</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

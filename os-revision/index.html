@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>OS Revision - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Exam The final exam takes 2 hours Covers Ch5 CPU Scheduling Ch6, 7 Process Synchronization ch9 Main Memory ch10 Virtual Memory ch13 File System Interface ch14 File System Implementation      Ch5 CPU"><meta property="og:type" content="blog"><meta property="og:title" content="OS Revision"><meta property="og:url" content="https://tosakaucw.github.io/os-revision/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="Exam The final exam takes 2 hours Covers Ch5 CPU Scheduling Ch6, 7 Process Synchronization ch9 Main Memory ch10 Virtual Memory ch13 File System Interface ch14 File System Implementation      Ch5 CPU"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2025-05-21T05:31:17.000Z"><meta property="article:modified_time" content="2025-05-21T05:57:23.113Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/os-revision/"},"headline":"OS Revision","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2025-05-21T05:31:17.000Z","dateModified":"2025-05-21T05:57:23.113Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"Exam The final exam takes 2 hours Covers Ch5 CPU Scheduling Ch6, 7 Process Synchronization ch9 Main Memory ch10 Virtual Memory ch13 File System Interface ch14 File System Implementation      Ch5 CPU"}</script><link rel="canonical" href="https://tosakaucw.github.io/os-revision/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-05-21T05:31:17.000Z" title="2025-05-21T05:31:17.000Z">2025-05-21</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-05-21T05:57:23.113Z" title="2025-05-21T05:57:23.113Z">2025-05-21</time></span></div></div><h1 class="title is-3 is-size-4-mobile">OS Revision</h1><div class="content"><span id="more"></span>
+
+<h2 id="Exam"><a href="#Exam" class="headerlink" title="Exam"></a>Exam</h2><ul>
+<li>The final exam takes 2 hours<ul>
+<li>Covers<ul>
+<li>Ch5 CPU Scheduling</li>
+<li>Ch6, 7 Process Synchronization</li>
+<li>ch9 Main Memory</li>
+<li>ch10 Virtual Memory</li>
+<li>ch13 File System Interface</li>
+<li>ch14 File System Implementation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Ch5-CPU-Scheduling"><a href="#Ch5-CPU-Scheduling" class="headerlink" title="Ch5 CPU Scheduling"></a>Ch5 CPU Scheduling</h2><ul>
+<li>What is CPU Scheduler?<ul>
+<li>A CPU scheduler selects one of the processes in the ready queue to be executed by the CPU.</li>
+</ul>
+</li>
+<li>What is multilevel Queue?<ul>
+<li>A multilevel queue is a scheduling strategy that partitions the ready queue into several separate queues, each with its own scheduling algorithm.</li>
+</ul>
+</li>
+<li>Real-Time CPU Scheduler, Priority-Based, Rate Monotonic Scheduling<ul>
+<li>These are specialized scheduling algorithms: Priority-Based assigns processes based on priority; Rate Monotonic is for real-time systems where shorter periods get higher priority.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Ch6-7-Process-Synchronization"><a href="#Ch6-7-Process-Synchronization" class="headerlink" title="Ch6, 7 Process Synchronization"></a>Ch6, 7 Process Synchronization</h2><ul>
+<li>What is race condition?<ul>
+<li>A race condition occurs when multiple processes access and manipulate shared data concurrently, and the outcome depends on the timing of their execution.</li>
+</ul>
+</li>
+<li>What is critical section problem?<ul>
+<li>It is a problem where multiple processes access a shared resource and the outcome depends on the order of execution.</li>
+</ul>
+</li>
+<li>What are three requirements for a solution to solve the critical problem?<ul>
+<li>“Mutual exclusion, progress, and bounded waiting.”</li>
+</ul>
+</li>
+<li>What methods can be used to solve the critical section problems?<ul>
+<li>“Algorithms like Peterson’s solution, semaphores, mutexes, and monitors.”</li>
+</ul>
+</li>
+<li>What are the problems if we incorrectly use the semaphore?<ul>
+<li>“Incorrect semaphore use can cause deadlocks, starvation, or incorrect execution sequences.”</li>
+</ul>
+</li>
+<li>What can semaphore help in process synchronization?<ul>
+<li>“Semaphores help coordinate processes by signaling and waiting, ensuring mutually exclusive access to resources.”</li>
+</ul>
+</li>
+<li>What is Monitor?<ul>
+<li>A monitor is a high-level synchronization construct that allows safe access to shared variables through condition variables and procedures.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Ch9-Main-Memory"><a href="#Ch9-Main-Memory" class="headerlink" title="Ch9 Main Memory"></a>Ch9 Main Memory</h2><ul>
+<li>What is memory management?<ul>
+<li>Memory management handles the allocation and deallocation of memory to processes efficiently.</li>
+</ul>
+</li>
+<li>When does the address binding happen?<ul>
+<li>“Address binding happens at compile time, load time, or execution time.”</li>
+</ul>
+</li>
+<li>What is physical memory address?<ul>
+<li>It is the actual address in memory hardware.</li>
+</ul>
+</li>
+<li>What is logical memory address?<ul>
+<li>It is the address generated by the CPU.</li>
+</ul>
+</li>
+<li>In which situation, the above two addresses are same? In which situation, the above two addresses are different?<ul>
+<li>“They are the same in compile-time and load-time binding, different in execution-time binding.”</li>
+</ul>
+</li>
+<li>What memory allocation methods are there? Advantages? Disadvantages?<ul>
+<li>“Contiguous allocation, paging, and segmentation. Each has trade-offs in speed, flexibility, and fragmentation.”</li>
+</ul>
+</li>
+<li>How to map the logical address to physical address?<ul>
+<li>Using a memory management unit (MMU) that translates logical addresses to physical addresses using tables.</li>
+</ul>
+</li>
+<li>How to reduce time to find physical address?<ul>
+<li>Using translation lookaside buffer (TLB) or cache mechanisms.</li>
+</ul>
+</li>
+<li>What methods are used to solve the big page table problem?<ul>
+<li>“Hierarchical page tables, hashed page tables, or inverted page tables.”</li>
+</ul>
+</li>
+</ul>
+<p>Example: The Intel 32 and 64-bit Architectures is not included in exam</p>
+<h2 id="Ch10-Virtual-Memory"><a href="#Ch10-Virtual-Memory" class="headerlink" title="Ch10 Virtual Memory"></a>Ch10 Virtual Memory</h2><ul>
+<li>What is swapping?<ul>
+<li>Swapping is moving processes between main memory and disk to free up memory.</li>
+</ul>
+</li>
+<li>What is backing store?<ul>
+<li>Backing store is the disk space used to hold swapped-out processes.</li>
+</ul>
+</li>
+<li>What is page demanding?<ul>
+<li>Demand paging loads pages into memory only when they are needed.</li>
+</ul>
+</li>
+<li>What is page fault?<ul>
+<li>A page fault occurs when a page is referenced that is not in memory.</li>
+</ul>
+</li>
+<li>What is effective access time?<ul>
+<li>“It is the average time the system takes to access memory, considering page faults.”</li>
+</ul>
+</li>
+<li>What is locality reference?<ul>
+<li>It refers to the tendency of programs to access a set of memory locations frequently.</li>
+</ul>
+</li>
+<li>How to manage the free frames?<ul>
+<li>Using free-frame lists or bitmap to track available memory blocks.</li>
+</ul>
+</li>
+<li>How to determine the pages to be replaced?<ul>
+<li>“Using algorithms like FIFO, LRU, or Optimal to select a page to replace.”</li>
+</ul>
+</li>
+<li>How can the thrashing happen?<ul>
+<li>Thrashing happens when excessive paging causes the system to spend more time swapping than executing.</li>
+</ul>
+</li>
+<li>How to allocate frames?<ul>
+<li>Fixed allocation or priority-based dynamic allocation methods.</li>
+</ul>
+</li>
+<li>How to allocate kernel memory<ul>
+<li>“Buddy system, slab allocation, and other specialized kernel memory allocation strategies.”</li>
+</ul>
+</li>
+</ul>
+<h2 id="Ch13-File-System-Interface"><a href="#Ch13-File-System-Interface" class="headerlink" title="Ch13 File System Interface"></a>Ch13 File System Interface</h2><ul>
+<li>What is file?<ul>
+<li>A file is a named collection of related data stored on secondary storage.</li>
+</ul>
+</li>
+<li>What is file system?<ul>
+<li>A file system manages files and directories and controls how data is stored and retrieved.</li>
+</ul>
+</li>
+<li>What basic operations can be performed on a file?<ul>
+<li>“Create, delete, read, write, open, close.”</li>
+</ul>
+</li>
+<li>What basic operations can be performed in a directory?<ul>
+<li>“Create, delete, list, rename, traverse.”</li>
+</ul>
+</li>
+<li>What structures can be used to organize directories?<ul>
+<li>“Single-level, two-level, tree-structured, acyclic-graph, and general graph directories.”</li>
+</ul>
+</li>
+<li>How can a file system be mounted?<ul>
+<li>Mounting is attaching a file system to a directory structure so it can be accessed.</li>
+</ul>
+</li>
+<li>How can the access to a file be controlled?<ul>
+<li>“By using permissions, user IDs, access control lists, etc.”</li>
+</ul>
+</li>
+</ul>
+<p>File locking is not included in the exam.</p>
+<h2 id="Ch14-File-System-Implementation"><a href="#Ch14-File-System-Implementation" class="headerlink" title="Ch14 File System Implementation"></a>Ch14 File System Implementation</h2><ul>
+<li>Why a file system is organized in layers?<ul>
+<li>“Layering separates concerns like application interface, logical file system, and physical file system for modular design.”</li>
+</ul>
+</li>
+<li>What are two categories of structures used in file system implementation?<ul>
+<li>Metadata structures and data blocks are two structure categories.</li>
+</ul>
+</li>
+<li>What is File Control Block or inode?<ul>
+<li>“A file control block or inode stores metadata about a file like size, location, ownership, etc.”</li>
+</ul>
+</li>
+<li>What open file tables are there in an operating system? What are they used for?<ul>
+<li>System-wide and per-process open file tables keep track of open files and their properties.</li>
+</ul>
+</li>
+<li>What methods are used to allocate disk blocks to files？<ul>
+<li>“Contiguous, linked, and indexed allocation methods.”</li>
+</ul>
+</li>
+<li>What are main methods used to manage free space on disk?<ul>
+<li>“Bitmaps, free lists, and grouping techniques.”</li>
+</ul>
+</li>
+</ul>
+<p>Virtual File System, Schemes in handling large files, Performance are not included in the exam</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>OS Revision</p><p><a href="https://tosakaucw.github.io/os-revision/">https://tosakaucw.github.io/os-revision/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-05-21</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-05-21</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/vp-2025-icpc-%E6%AD%A6%E6%B1%89%E9%82%80%E8%AF%B7%E8%B5%9B/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">VP 2025 ICPC 武汉邀请赛</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2025-icpc-%E5%8D%97%E6%98%8C%E9%82%80%E8%AF%B7%E8%B5%9B-%E6%B8%B8%E8%AE%B0/"><span class="level-item">2025 ICPC 南昌邀请赛 游记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/os-revision/';
+            this.page.identifier = 'os-revision/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Exam"><span class="level-left"><span class="level-item">Exam</span></span></a></li><li><a class="level is-mobile" href="#Ch5-CPU-Scheduling"><span class="level-left"><span class="level-item">Ch5 CPU Scheduling</span></span></a></li><li><a class="level is-mobile" href="#Ch6-7-Process-Synchronization"><span class="level-left"><span class="level-item">Ch6, 7 Process Synchronization</span></span></a></li><li><a class="level is-mobile" href="#Ch9-Main-Memory"><span class="level-left"><span class="level-item">Ch9 Main Memory</span></span></a></li><li><a class="level is-mobile" href="#Ch10-Virtual-Memory"><span class="level-left"><span class="level-item">Ch10 Virtual Memory</span></span></a></li><li><a class="level is-mobile" href="#Ch13-File-System-Interface"><span class="level-left"><span class="level-item">Ch13 File System Interface</span></span></a></li><li><a class="level is-mobile" href="#Ch14-File-System-Implementation"><span class="level-left"><span class="level-item">Ch14 File System Implementation</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Data Communications and Networking - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="COMP3003 Data Communications and Networking Dr. Ricky Yuen-Tan HOU"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Data Communications and Networking"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-data-communications-and-networking/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="COMP3003 Data Communications and Networking Dr. Ricky Yuen-Tan HOU"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2025-03-25T02:13:49.000Z"><meta property="article:modified_time" content="2025-05-08T03:33:57.484Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-data-communications-and-networking/"},"headline":"Lecture Notes: Data Communications and Networking","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2025-03-25T02:13:49.000Z","dateModified":"2025-05-08T03:33:57.484Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"COMP3003 Data Communications and Networking Dr. Ricky Yuen-Tan HOU"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-data-communications-and-networking/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-03-25T02:13:49.000Z" title="2025-03-25T02:13:49.000Z">2025-03-25</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-05-08T03:33:57.484Z" title="2025-05-08T03:33:57.484Z">2025-05-08</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Data Communications and Networking</h1><div class="content"><p>COMP3003 Data Communications and Networking</p>
+<p>Dr. Ricky Yuen-Tan HOU</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="Chapter-3-Data-Link-Layer"><a href="#Chapter-3-Data-Link-Layer" class="headerlink" title="Chapter 3: Data Link Layer"></a><strong>Chapter 3: Data Link Layer</strong></h2><h3 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a><strong>1. Overview</strong></h3><p>数据链路层是 OSI 模型中的第二层，位于物理层之上，主要负责在相邻节点之间实现可靠的数据传输。<br>数据链路层的三个核心功能是：</p>
+<ul>
+<li><strong>帧封装（Framing）</strong>：将比特流划分为帧，使得每个帧在传输过程中可以被区分和识别。</li>
+<li><strong>错误控制（Error Control）</strong>：检测并纠正数据传输中的错误，确保数据完整性。</li>
+<li><strong>流量控制（Flow Control）</strong>：管理发送和接收端的速度，避免接收端被发送端的数据压垮。</li>
+</ul>
+<hr>
+<h3 id="2-Framing"><a href="#2-Framing" class="headerlink" title="2. Framing"></a><strong>2. Framing</strong></h3><ul>
+<li><strong>Definition</strong>: Dividing a bit stream into discrete frames for transmission.</li>
+<li><strong>Methods</strong>:<ol>
+<li><strong>Character Count</strong>:<ul>
+<li>A header field specifies the number of characters in the frame.</li>
+<li><strong>Pros</strong>: Simple.</li>
+<li><strong>Cons</strong>: Vulnerable to errors in the count field.</li>
+</ul>
+</li>
+<li><strong>Flag Bytes with Byte Stuffing</strong>:<ul>
+<li>Frames start&#x2F;end with special flag bytes (e.g., unique patterns).</li>
+<li>If flag byte appears in data, an escape byte (ESC) is inserted before it.</li>
+<li><strong>Example</strong>: Data “FLAG” → “ESC FLAG”.</li>
+</ul>
+</li>
+<li><strong>Starting&#x2F;Ending Flags with Bit Stuffing</strong>:<ul>
+<li>Uses a special bit pattern (e.g., 01111110) to mark frame boundaries.</li>
+<li>Inserts a 0 after five consecutive 1s in data to avoid mimicking the flag.</li>
+<li><strong>Example</strong>: Data “011111” → “0111110”.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="3-Error-Control"><a href="#3-Error-Control" class="headerlink" title="3. Error Control"></a><strong>3. Error Control</strong></h3><p>错误控制机制的目的是检测和纠正传输中的错误，确保数据的准确性。</p>
+<h4 id="Error-Detection"><a href="#Error-Detection" class="headerlink" title="Error Detection"></a><strong>Error Detection</strong></h4><ol>
+<li><strong>Parity Check</strong>:<ul>
+<li><strong>Single-Bit Parity</strong>:<ul>
+<li>Adds a parity bit to make the total number of 1s even (even parity) or odd (odd parity).</li>
+<li><strong>Limitation</strong>: Detects only single-bit errors.</li>
+</ul>
+</li>
+<li><strong>Two-Dimensional Parity</strong>:<ul>
+<li>Data arranged in a matrix; parity computed for each row and column.</li>
+<li><strong>Advantages</strong>: Detects and corrects single-bit errors using row&#x2F;column indices.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Cyclic Redundancy Check (CRC)</strong>:<ul>
+<li>Treats bit streams as polynomials (e.g., $101 &#x3D; x^2 + 1$).</li>
+<li>Uses modulo-2 arithmetic (no carry&#x2F;borrow).</li>
+<li><strong>Steps</strong>:<ol>
+<li>Sender and receiver agree on a generator polynomial $G(x)$.</li>
+<li>Append $r$ zero bits (where $r &#x3D;$ degree of $G(x)$) to the frame.</li>
+<li>Divide frame by $G(x)$ using modulo-2 division; append remainder as checksum.</li>
+<li>Receiver divides received frame by $G(x)$; non-zero remainder &#x3D; error.</li>
+</ol>
+</li>
+<li><strong>Strength</strong>: Detects burst errors effectively.</li>
+</ul>
+</li>
+</ol>
+<h4 id="Error-Correction"><a href="#Error-Correction" class="headerlink" title="Error Correction"></a><strong>Error Correction</strong></h4><p>错误纠正是通过冗余位让接收方在发生错误时进行纠正。常用的错误纠正方法包括：</p>
+<ol>
+<li><strong>Forward Error Correction (FEC)</strong></li>
+</ol>
+<ul>
+<li><strong>原理</strong>：发送方在数据中添加冗余位，接收方可以在没有请求重传的情况下，依据冗余位来纠正错误。</li>
+<li>Maps m-bit data into n-bit codewords ($n &#x3D; m + r$, where r &#x3D; redundant bits).</li>
+<li><strong>Hamming Distance</strong>: Number of bit differences between two codewords (e.g., 00000 vs. 00111 &#x3D; 3).</li>
+<li>Receiver corrects errors by selecting the nearest valid codeword.</li>
+</ul>
+<ol start="2">
+<li><strong>Hamming Code</strong></li>
+</ol>
+<ul>
+<li>Corrects single-bit errors.</li>
+<li><strong>Structure</strong>:<ul>
+<li>Check bits at positions 1, 2, 4, 8, etc. (powers of 2).</li>
+<li>Data bits in remaining positions.</li>
+</ul>
+</li>
+<li><strong>Computation</strong>:<ul>
+<li>Number of check bits ($r$) satisfies: $2^r \ge m + r + 1$ ($m$ &#x3D; data bits).</li>
+<li>Each check bit ensures parity for a specific bit combination.</li>
+</ul>
+</li>
+<li><strong>Example</strong>: For 7 data bits “1001000”:<ul>
+<li>Check bits at 1, 2, 4; compute parity; detect&#x2F;correct errors via counter.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-Flow-Control"><a href="#4-Flow-Control" class="headerlink" title="4. Flow Control"></a><strong>4. Flow Control</strong></h3><ul>
+<li><strong>Purpose</strong>: Prevents sender from overwhelming receiver.</li>
+<li><strong>Approaches</strong>:<ol>
+<li><strong>Feedback-Based</strong>: Receiver sends status updates to sender.</li>
+<li><strong>Rate-Based</strong>: Built-in mechanism limits transmission rate.</li>
+</ol>
+</li>
+<li><strong>Protocols</strong>:<ol>
+<li><strong>Stop-and-Wait Protocol</strong>:<ul>
+<li>Sender transmits one frame, waits for acknowledgment (ACK).</li>
+<li>Part of Automatic Repeat reQuest (ARQ).</li>
+<li><strong>Disadvantage</strong>: Inefficient for high bandwidth&#x2F;delay networks.</li>
+</ul>
+</li>
+<li><strong>Sliding Window Protocols</strong>:<ul>
+<li><strong>One-Bit Sliding Window</strong>: Stop-and-Wait with window size 1.</li>
+<li><strong>Go-Back-N</strong>:<ul>
+<li>Window size &gt; 1; sender retransmits all frames after an error.</li>
+<li>Useful for high bandwidth-delay products.</li>
+</ul>
+</li>
+<li><strong>Selective Repeat</strong>: Retransmits only erroneous frames (more efficient).</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="5-多重访问协议（Multiple-Access-Protocols）"><a href="#5-多重访问协议（Multiple-Access-Protocols）" class="headerlink" title="5. 多重访问协议（Multiple-Access Protocols）"></a><strong>5. 多重访问协议（Multiple-Access Protocols）</strong></h3><p>多个设备共享同一通信信道时，需要使用多重访问协议来调度信道的使用：</p>
+<ul>
+<li><strong>Purpose</strong>: Manage access to a shared communication channel.</li>
+<li><strong>Categories</strong>:<ol>
+<li><strong>Channelization</strong>:<ul>
+<li><strong>FDMA (Frequency-Division Multiple Access)</strong>: Divides bandwidth by frequency.</li>
+<li><strong>TDMA (Time-Division Multiple Access)</strong>: Divides bandwidth by time slots.</li>
+<li><strong>CDMA (Code-Division Multiple Access)</strong>: Uses unique codes for each station.</li>
+</ul>
+</li>
+<li><strong>Random Access (Contention-Based)</strong>:<ul>
+<li><strong>Aloha</strong>: Transmit anytime; retransmit on collision.</li>
+<li><strong>Slotted Aloha</strong>: Transmit only at slot start; reduces collision probability.</li>
+<li><strong>CSMA (Carrier Sense Multiple Access)</strong>:<ul>
+<li><strong>Persistent</strong>: Sense channel; transmit when idle.</li>
+<li><strong>Non-Persistent</strong>: Wait random time if busy, then retry.</li>
+</ul>
+</li>
+<li><strong>CSMA&#x2F;CD</strong>: Detects collisions during transmission; aborts and retries.</li>
+</ul>
+</li>
+<li><strong>Controlled Access (Collision-Free)</strong>:<!-- - **Bit-Map Protocol**: Stations signal intent in assigned slots. -->
+<!-- - **Binary Countdown**: Higher-priority address wins via bit comparison. -->
+<ul>
+<li><strong>Polling</strong>: Master node controls transmission order.</li>
+<li><strong>Token-Passing</strong>: Token holder transmits; passes token when done.</li>
+<li><strong>Reservation</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="6-扩频技术（Spread-Spectrum）"><a href="#6-扩频技术（Spread-Spectrum）" class="headerlink" title="6. 扩频技术（Spread Spectrum）"></a><strong>6. 扩频技术（Spread Spectrum）</strong></h3><p>扩频技术用于减少干扰并提高通信安全性，常见的扩频方式有：</p>
+<h4 id="6-1-跳频扩频-Frequency-Hopping-Spread-Spectrum-FHSS"><a href="#6-1-跳频扩频-Frequency-Hopping-Spread-Spectrum-FHSS" class="headerlink" title="6.1 跳频扩频 Frequency-Hopping Spread Spectrum (FHSS)"></a><strong>6.1 跳频扩频 Frequency-Hopping Spread Spectrum (FHSS)</strong></h4><ul>
+<li><strong>原理</strong>：信号在多个频率之间跳跃，避免干扰和窃听。<ul>
+<li>Hops between frequencies using a spreading code.</li>
+<li>Receiver syncs with transmitter to recover data.</li>
+</ul>
+</li>
+<li><strong>优点</strong>：提高抗干扰能力和安全性。</li>
+</ul>
+<h4 id="6-2-直接序列扩频-Direct-Sequence-Spread-Spectrum-DSSS"><a href="#6-2-直接序列扩频-Direct-Sequence-Spread-Spectrum-DSSS" class="headerlink" title="6.2 直接序列扩频 Direct Sequence Spread Spectrum (DSSS)"></a><strong>6.2 直接序列扩频 Direct Sequence Spread Spectrum (DSSS)</strong></h4><ul>
+<li><strong>原理</strong>：通过使用扩频码将信号扩展到更宽的频带，提高抗干扰能力。<ul>
+<li>Spreads signal across a wider band using a spreading code.</li>
+<li>XORs data with code for transmission; reverses for reception.</li>
+</ul>
+</li>
+<li><strong>优点</strong>：减少信号衰减和干扰。</li>
+</ul>
+<hr>
+<h3 id="Quick-Reference-Table"><a href="#Quick-Reference-Table" class="headerlink" title="Quick Reference Table"></a><strong>Quick Reference Table</strong></h3><table>
+<thead>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Feature</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Framing (Bit Stuffing)</td>
+<td>Frame delineation</td>
+<td>Inserts 0 after five 1s</td>
+<td>Reliable boundary</td>
+<td>Overhead</td>
+</tr>
+<tr>
+<td>CRC</td>
+<td>Error detection</td>
+<td>Polynomial division</td>
+<td>Detects burst errors</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>Hamming Code</td>
+<td>Error correction</td>
+<td>Check bits at 2^n positions</td>
+<td>Corrects single errors</td>
+<td>Limited to single bits</td>
+</tr>
+<tr>
+<td>Stop-and-Wait</td>
+<td>Flow control</td>
+<td>Waits for ACK</td>
+<td>Simple</td>
+<td>Low efficiency</td>
+</tr>
+<tr>
+<td>Go-Back-N</td>
+<td>Flow control</td>
+<td>Retransmits all after error</td>
+<td>Handles high bandwidth</td>
+<td>Wasteful retransmission</td>
+</tr>
+<tr>
+<td>CSMA&#x2F;CD</td>
+<td>Channel access</td>
+<td>Collision detection</td>
+<td>Reduces collision time</td>
+<td>Requires hardware</td>
+</tr>
+<tr>
+<td>Token-Passing</td>
+<td>Collision-free access</td>
+<td>Token controls transmission</td>
+<td>No collisions</td>
+<td>Token overhead</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Chapter-4-Network-and-Transport-Layers"><a href="#Chapter-4-Network-and-Transport-Layers" class="headerlink" title="Chapter 4: Network and Transport Layers"></a><strong>Chapter 4: Network and Transport Layers</strong></h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a><strong>Overview</strong></h3><ul>
+<li><strong>Purpose</strong>: The Network Layer handles logical addressing and routing of packets across networks, while the Transport Layer ensures end-to-end communication, reliability, and flow control.</li>
+<li><strong>Key Topics</strong>:<ol>
+<li>IP Addressing (IPv4 and IPv6)</li>
+<li>Network Routing</li>
+<li>Transport Protocols (TCP and UDP)</li>
+<li>Congestion Control</li>
+<li>Quality of Service (QoS)</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="1-IP-Addressing"><a href="#1-IP-Addressing" class="headerlink" title="1. IP Addressing"></a><strong>1. IP Addressing</strong></h3><h4 id="IPv4"><a href="#IPv4" class="headerlink" title="IPv4"></a><strong>IPv4</strong></h4><ul>
+<li><strong>Structure</strong>: 32-bit address, written in dotted decimal (e.g., 158.182.7.1).</li>
+<li><strong>Header</strong>: 20-byte fixed part + optional variable part.<ul>
+<li><strong>Fields</strong>: Version (4), IHL (header length), Type of Service (ToS), Total Length, Identification, Flags (DF, MF), Fragment Offset, Time-to-Live (TTL), Protocol, Header Checksum, Source&#x2F;Destination Addresses.</li>
+</ul>
+</li>
+<li><strong>Classful Addressing</strong>: Divided into five classes (A-E).</li>
+<li><strong>Subnetting</strong>: Splits networks using subnet masks.</li>
+<li><strong>Private Addresses</strong>: Uses NAT (Network Address Translation) to map private IPs (e.g., 10.0.0.0) to public IPs.</li>
+</ul>
+<h4 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a><strong>IPv6</strong></h4><ul>
+<li><strong>Structure</strong>: 128-bit address, written as eight groups of four hexadecimal digits (e.g., 8000:0000:89AB:CDEF:8000:0000:89AB:CDEF).</li>
+<li><strong>Header</strong>: 40-byte fixed header.<ul>
+<li><strong>Fields</strong>: Version (6), Traffic Class, Flow Label, Payload Length, Next Header, Hop Limit, Source&#x2F;Destination Addresses.</li>
+</ul>
+</li>
+<li><strong>Advantages</strong>: Larger address space, better QoS, no fragmentation by routers.</li>
+<li><strong>Transition from IPv4</strong>:<ul>
+<li><strong>Dual Stack</strong>: Supports both IPv4 and IPv6.</li>
+<li><strong>Tunneling</strong>: Encapsulates IPv6 packets in IPv4.</li>
+<li><strong>Header Translation</strong>: Converts between formats.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-Network-Routing"><a href="#2-Network-Routing" class="headerlink" title="2. Network Routing"></a><strong>2. Network Routing</strong></h3><h4 id="Delivery"><a href="#Delivery" class="headerlink" title="Delivery"></a><strong>Delivery</strong></h4><ul>
+<li><strong>Direct Delivery</strong>: Packet sent within the same network.</li>
+<li><strong>Indirect Delivery</strong>: Packet routed through multiple networks.</li>
+<li><strong>Forwarding</strong>: Uses routing tables to determine the next hop.</li>
+</ul>
+<h4 id="Routing-Algorithms"><a href="#Routing-Algorithms" class="headerlink" title="Routing Algorithms"></a><strong>Routing Algorithms</strong></h4><ol>
+<li><strong>Shortest Path Routing (Dijkstra Algorithm)</strong>:<ul>
+<li>Finds the shortest path using a graph (nodes &#x3D; routers, edges &#x3D; links).</li>
+<li>Steps: Set initial node to 0, others to infinity; update tentative distances; mark nodes as visited; repeat until done.</li>
+</ul>
+</li>
+<li><strong>Flooding</strong>:<ul>
+<li>Sends packets on all outgoing lines except the incoming one.</li>
+<li>Uses hop counter to limit duplicates.</li>
+</ul>
+</li>
+<li><strong>Distance Vector Routing</strong>:<ul>
+<li>Each router maintains a table of distances to destinations, updated via neighbor exchanges.</li>
+<li><strong>Issue</strong>: Count-to-Infinity problem (slow to adapt to bad news).</li>
+</ul>
+</li>
+<li><strong>Link State Routing</strong>:<ul>
+<li>Routers flood link state packets (neighbors, costs); each builds a subnet graph to compute routes.</li>
+<li>Steps: Learn neighbors, measure line costs, build&#x2F;distribute packets, compute routes.</li>
+</ul>
+</li>
+</ol>
+<h4 id="Special-Routing"><a href="#Special-Routing" class="headerlink" title="Special Routing"></a><strong>Special Routing</strong></h4><ul>
+<li><strong>Broadcast</strong>: Sends to all destinations (e.g., flooding).</li>
+<li><strong>Multicast</strong>: Sends to a group (via unicast emulation or router destination lists).</li>
+<li><strong>Hierarchical Routing</strong>: Divides routers into regions for scalability.</li>
+</ul>
+<hr>
+<h3 id="3-Transport-Layer"><a href="#3-Transport-Layer" class="headerlink" title="3. Transport Layer"></a><strong>3. Transport Layer</strong></h3><h4 id="TCP-Transport-Control-Protocol"><a href="#TCP-Transport-Control-Protocol" class="headerlink" title="TCP (Transport Control Protocol)"></a><strong>TCP (Transport Control Protocol)</strong></h4><ul>
+<li><strong>Type</strong>: Connection-oriented, reliable.</li>
+<li><strong>Operation</strong>:<ul>
+<li>Sender starts a timer with each segment; retransmits if timeout occurs.</li>
+<li>Receiver acknowledges the next expected sequence number.</li>
+</ul>
+</li>
+<li><strong>Segment Header</strong>: Source&#x2F;Destination Ports, Sequence&#x2F;Acknowledgment Numbers, Header Length, Flags (e.g., FIN), Window Size, Checksum, Options.</li>
+<li><strong>Connection</strong>:<ul>
+<li><strong>Establishment</strong>: Three-way handshake.</li>
+<li><strong>Release</strong>: FIN bit set by either party.</li>
+</ul>
+</li>
+<li><strong>Timer Management</strong>: Timeout &#x3D; Mean RTT + Standard Deviation (adjusted dynamically).</li>
+</ul>
+<h4 id="UDP-User-Datagram-Protocol"><a href="#UDP-User-Datagram-Protocol" class="headerlink" title="UDP (User Datagram Protocol)"></a><strong>UDP (User Datagram Protocol)</strong></h4><ul>
+<li><strong>Type</strong>: Connectionless, unreliable.</li>
+<li><strong>Header</strong>: 8 bytes (Source&#x2F;Destination Ports, Length, Checksum).</li>
+<li><strong>Use</strong>: Simple, low-overhead applications (e.g., DNS, streaming).</li>
+</ul>
+<hr>
+<h3 id="4-Congestion-Control"><a href="#4-Congestion-Control" class="headerlink" title="4. Congestion Control"></a><strong>4. Congestion Control</strong></h3><h4 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a><strong>Basics</strong></h4><ul>
+<li><strong>Definition</strong>: Techniques to prevent or remove network congestion when load exceeds capacity.</li>
+<li><strong>Categories</strong>:<ul>
+<li><strong>Open-Loop</strong>: Preventive (e.g., traffic shaping).</li>
+<li><strong>Closed-Loop</strong>: Reactive (e.g., backpressure, choke packets).</li>
+</ul>
+</li>
+</ul>
+<h4 id="Mechanisms"><a href="#Mechanisms" class="headerlink" title="Mechanisms"></a><strong>Mechanisms</strong></h4><ol>
+<li><strong>TCP Congestion Control</strong>:<ul>
+<li>Window size grows exponentially until a threshold (initially 64 KB), then linearly.</li>
+<li>On timeout, threshold halves, and window resets to one.</li>
+</ul>
+</li>
+<li><strong>Load Shedding</strong>:<ul>
+<li>Routers discard packets when overloaded (randomly or via RED algorithm).</li>
+<li><strong>RED (Random Early Detection)</strong>: Drops packets before severe congestion based on queue length.</li>
+</ul>
+</li>
+<li><strong>Metrics</strong>: Packet loss, queue lengths, retransmissions, delay, jitter.</li>
+</ol>
+<h4 id="Data-Traffic"><a href="#Data-Traffic" class="headerlink" title="Data Traffic"></a><strong>Data Traffic</strong></h4><ul>
+<li><strong>Focus</strong>: Congestion control avoids traffic jams; QoS ensures suitable conditions.</li>
+<li><strong>Profiles</strong>: Bursty, steady, or variable traffic.</li>
+</ul>
+<hr>
+<h3 id="5-Quality-of-Service-QoS"><a href="#5-Quality-of-Service-QoS" class="headerlink" title="5. Quality of Service (QoS)"></a><strong>5. Quality of Service (QoS)</strong></h3><h4 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a><strong>Requirements</strong></h4><ul>
+<li>Varies by application:<ul>
+<li><strong>E-mail</strong>: High reliability, low delay&#x2F;bandwidth.</li>
+<li><strong>Video on Demand</strong>: Low reliability, high jitter&#x2F;bandwidth.</li>
+<li><strong>Telephony</strong>: Low reliability, high delay&#x2F;jitter.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Techniques"><a href="#Techniques" class="headerlink" title="Techniques"></a><strong>Techniques</strong></h4><ul>
+<li><strong>Buffering</strong>: Reduces jitter (non-real-time only).</li>
+<li><strong>Traffic Shaping</strong>: Smooths traffic flow.</li>
+<li><strong>Resource Reservation</strong>: Allocates bandwidth.</li>
+<li><strong>Admission Control</strong>: Limits new connections.</li>
+</ul>
+<h4 id="Jitter-Control"><a href="#Jitter-Control" class="headerlink" title="Jitter Control"></a><strong>Jitter Control</strong></h4><ul>
+<li><strong>Definition</strong>: Variation in packet arrival times.</li>
+<li><strong>Solution</strong>: Buffering for non-real-time apps (e.g., video-on-demand).</li>
+</ul>
+<hr>
+<h3 id="Key-Concepts"><a href="#Key-Concepts" class="headerlink" title="Key Concepts"></a><strong>Key Concepts</strong></h3><ul>
+<li><strong>Packet Encapsulation</strong>: Layers add headers (e.g., Ethernet, IP, UDP, RTP for multimedia).</li>
+<li><strong>Network Layer</strong>: Logical addressing, routing.</li>
+<li><strong>Transport Layer</strong>: End-to-end delivery, reliability.</li>
+</ul>
+<hr>
+<h3 id="Quick-Reference-Table-1"><a href="#Quick-Reference-Table-1" class="headerlink" title="Quick Reference Table"></a><strong>Quick Reference Table</strong></h3><table>
+<thead>
+<tr>
+<th><strong>Topic</strong></th>
+<th><strong>Key Feature</strong></th>
+<th><strong>Examples&#x2F;Uses</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IPv4</td>
+<td>32-bit, 20-byte header</td>
+<td>Internet, LANs</td>
+<td>Widely used</td>
+<td>Limited address space</td>
+</tr>
+<tr>
+<td>IPv6</td>
+<td>128-bit, 40-byte header</td>
+<td>Next-gen Internet</td>
+<td>Vast address space, QoS</td>
+<td>Transition complexity</td>
+</tr>
+<tr>
+<td>Dijkstra Algorithm</td>
+<td>Shortest path via graph</td>
+<td>Routing</td>
+<td>Optimal paths</td>
+<td>Computationally intensive</td>
+</tr>
+<tr>
+<td>Distance Vector</td>
+<td>Distance tables, neighbor updates</td>
+<td>RIP protocol</td>
+<td>Simple</td>
+<td>Slow to bad news</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>Reliable, connection-oriented</td>
+<td>HTTP, FTP</td>
+<td>Ensures delivery</td>
+<td>High overhead</td>
+</tr>
+<tr>
+<td>UDP</td>
+<td>Connectionless, 8-byte header</td>
+<td>DNS, streaming</td>
+<td>Fast, low overhead</td>
+<td>No reliability</td>
+</tr>
+<tr>
+<td>Congestion Control</td>
+<td>Manages network load</td>
+<td>TCP, RED</td>
+<td>Prevents collapse</td>
+<td>May drop packets</td>
+</tr>
+<tr>
+<td>QoS</td>
+<td>Ensures service levels</td>
+<td>Video, telephony</td>
+<td>Meets app needs</td>
+<td>Resource-intensive</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Chapter-6-Ethernet-and-Wireless-LANs"><a href="#Chapter-6-Ethernet-and-Wireless-LANs" class="headerlink" title="Chapter 6: Ethernet and Wireless LANs"></a><strong>Chapter 6: Ethernet and Wireless LANs</strong></h2><hr>
+<h3 id="1-Standardization-of-LANs-IEEE-Project-802"><a href="#1-Standardization-of-LANs-IEEE-Project-802" class="headerlink" title="1. Standardization of LANs (IEEE Project 802)"></a>1. Standardization of LANs (IEEE Project 802)</h3><ul>
+<li><strong>IEEE Project 802</strong>  <ul>
+<li>Initiated in 1985 by the IEEE Computer Society to develop <strong>interoperable LAN standards</strong> covering the Physical and Data Link layers.  </li>
+<li>Defines sub-standards 802.x for different media and technologies (e.g., 802.3 for Ethernet, 802.11 for Wi-Fi).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-Ethernet-IEEE-802-3"><a href="#2-Ethernet-IEEE-802-3" class="headerlink" title="2. Ethernet (IEEE 802.3)"></a>2. Ethernet (IEEE 802.3)</h3><h4 id="2-1-History-and-Evolution"><a href="#2-1-History-and-Evolution" class="headerlink" title="2.1 History and Evolution"></a>2.1 History and Evolution</h4><ul>
+<li><strong>Origin (1976)</strong> at Xerox PARC; commercialized as “Standard Ethernet” at 10 Mbps.  </li>
+<li>Successive enhancements to higher speeds:  <ul>
+<li><strong>Fast Ethernet (802.3u)</strong> – 100 Mbps  </li>
+<li><strong>Gigabit Ethernet (802.3z)</strong> – 1 Gbps  </li>
+<li><strong>10&#x2F;40&#x2F;100 GbE (802.3ba)</strong> – 10–100 Gbps</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-Ethernet-Frame-Format"><a href="#2-2-Ethernet-Frame-Format" class="headerlink" title="2.2 Ethernet Frame Format"></a>2.2 Ethernet Frame Format</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">| Preamble (7B) | SFD (1B) | Dest Addr (6B) | Src Addr (6B) |</span><br><span class="line">| Type (2B) | Data (46–1500B) | Pad (0–46B) | FCS (4B) |</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Preamble&#x2F;SFD</strong>: 101010…1011 for bit-level sync.  </li>
+<li><strong>Addresses</strong>: 6-byte MAC addresses for source and destination.  </li>
+<li><strong>Type</strong>: EtherType field indicates upper-layer protocol (e.g., IPv4&#x3D;0x0800).  </li>
+<li><strong>Data &amp; Pad</strong>: Minimum frame length 64 bytes; pad fills if Data &lt; 46 bytes.  </li>
+<li><strong>FCS</strong>: 32-bit CRC for error detection.</li>
+</ul>
+<h4 id="2-3-MAC-Addressing"><a href="#2-3-MAC-Addressing" class="headerlink" title="2.3 MAC Addressing"></a>2.3 MAC Addressing</h4><ul>
+<li><strong>Notation</strong>: E.g., <code>08-00-20-0A-8C-2B</code> in hexadecimal.  </li>
+<li><strong>Unicast vs. Multicast</strong>:  <ul>
+<li>LSB of first byte &#x3D; 0 → unicast; &#x3D; 1 → multicast.  </li>
+<li><strong>Broadcast</strong>: Multicast address with all bits &#x3D; 1 (<code>FF:FF:FF:FF:FF:FF</code>).</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-Physical-Encoding"><a href="#2-4-Physical-Encoding" class="headerlink" title="2.4 Physical Encoding"></a>2.4 Physical Encoding</h4><ul>
+<li><strong>Manchester Encoding</strong> (10 Mbps): each bit has a mid-bit transition—logical ‘1’ → high→low; ‘0’ → low→high.  </li>
+<li><strong>Fast Ethernet</strong>: 4B&#x2F;5B + MLT-3 (100 Mbps over twisted pair).  </li>
+<li><strong>Gigabit Ethernet</strong>: 8B&#x2F;10B or PAM-5 depending on medium.</li>
+</ul>
+<h4 id="2-5-Media-Access-Control-CSMA-CD"><a href="#2-5-Media-Access-Control-CSMA-CD" class="headerlink" title="2.5 Media-Access Control: CSMA&#x2F;CD"></a>2.5 Media-Access Control: CSMA&#x2F;CD</h4><ol>
+<li><strong>Carrier Sense</strong>: Listen before transmitting.  </li>
+<li><strong>Multiple Access</strong>: All stations share the medium.  </li>
+<li><strong>Collision Detection (CD)</strong>: While sending, monitor for other signals; if collision, abort and send 48-bit jam.  </li>
+<li><strong>Binary Exponential Back-off</strong>: After <em>i</em> collisions, wait _k_·slot_time, where <em>k</em> is uniform in [0, 2ᶦ–1], capped at <em>i</em> &#x3D; 10; give up after 16 tries.</li>
+</ol>
+<hr>
+<h3 id="3-Token-Ring-IEEE-802-5"><a href="#3-Token-Ring-IEEE-802-5" class="headerlink" title="3. Token Ring (IEEE 802.5)"></a>3. Token Ring (IEEE 802.5)</h3><ul>
+<li><strong>Token-Passing</strong>: A special 3-byte “token” circulates; possession grants transmission right.  </li>
+<li><strong>Frame Types</strong>:  <ul>
+<li><strong>Token frames</strong>: idle, circulating.  </li>
+<li><strong>Data&#x2F;Command frames</strong>: start-of-frame indicated by toggling one bit.</li>
+</ul>
+</li>
+<li><strong>Priority &amp; Reservation</strong>:  <ul>
+<li>Frames&#x2F;tokens carry priority levels; only stations with ≥ token priority can seize it.  </li>
+<li>Higher-priority stations can reserve the next token.</li>
+</ul>
+</li>
+<li><strong>Fault Management</strong>: Active monitor station on ring provides timing, ring-maintenance.</li>
+</ul>
+<hr>
+<h3 id="4-Network-Devices"><a href="#4-Network-Devices" class="headerlink" title="4. Network Devices"></a>4. Network Devices</h3><table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Layer</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Hub</strong></td>
+<td>1</td>
+<td>Physical repeater; regenerates signals to all ports.</td>
+</tr>
+<tr>
+<td><strong>Bridge</strong></td>
+<td>2</td>
+<td>Forwards&#x2F;filter frames based on MAC; usually 2–4 ports.</td>
+</tr>
+<tr>
+<td><strong>Switch</strong></td>
+<td>2</td>
+<td>Multi-port bridge; MAC learning; full-duplex per port.</td>
+</tr>
+<tr>
+<td><strong>Router</strong></td>
+<td>3</td>
+<td>Forwards packets based on network-layer (IP) addresses.</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Bridge vs. Router</strong>: Routers separate broadcast domains; bridges extend LANs.</li>
+</ul>
+<hr>
+<h3 id="5-Wireless-LANs-IEEE-802-11"><a href="#5-Wireless-LANs-IEEE-802-11" class="headerlink" title="5. Wireless LANs (IEEE 802.11)"></a>5. Wireless LANs (IEEE 802.11)</h3><h4 id="5-1-Frequency-Bands-Channels"><a href="#5-1-Frequency-Bands-Channels" class="headerlink" title="5.1 Frequency Bands &amp; Channels"></a>5.1 Frequency Bands &amp; Channels</h4><ul>
+<li>Operates in the <strong>2.4 GHz ISM band</strong> (and 5 GHz for newer amendments).  </li>
+<li><strong>Channels 1–11</strong> in North America; 1–13 in most of world; 1–14 in Japan (14 only for 802.11b).</li>
+</ul>
+<h4 id="5-2-Network-Architecture"><a href="#5-2-Network-Architecture" class="headerlink" title="5.2 Network Architecture"></a>5.2 Network Architecture</h4><ul>
+<li><strong>Basic Service Set (BSS)</strong>:  <ul>
+<li><strong>Ad hoc (IBSS)</strong>: Peer-to-peer, no AP.  </li>
+<li><strong>Infrastructure</strong>: Stations connect via Access Point (AP).</li>
+</ul>
+</li>
+<li><strong>Extended Service Set (ESS)</strong>: Multiple BSSs interconnected by distribution system (DS) for roaming.</li>
+</ul>
+<h4 id="5-3-MAC-Layer-Challenges"><a href="#5-3-MAC-Layer-Challenges" class="headerlink" title="5.3 MAC Layer Challenges"></a>5.3 MAC Layer Challenges</h4><ul>
+<li><strong>Hidden Node</strong>: Two stations outside each other’s range both try to send to AP → collision.  </li>
+<li><strong>Exposed Node</strong>: Station defers transmission unnecessarily due to hearing unrelated nearby traffic.</li>
+</ul>
+<h4 id="5-4-CSMA-CA-with-RTS-CTS"><a href="#5-4-CSMA-CA-with-RTS-CTS" class="headerlink" title="5.4 CSMA&#x2F;CA with RTS&#x2F;CTS"></a>5.4 CSMA&#x2F;CA with RTS&#x2F;CTS</h4><ol>
+<li><strong>RTS</strong> (Request to Send): Sender → AP&#x2F;receiver.  </li>
+<li><strong>CTS</strong> (Clear to Send): AP&#x2F;receiver → Sender (and overheard by others).  </li>
+<li><strong>Data</strong>: Sender transmits frame.  </li>
+<li><strong>ACK</strong>: Receiver acknowledges.</li>
+</ol>
+<ul>
+<li><strong>Network Allocation Vector (NAV)</strong>: Virtual carrier-sense timer set by RTS&#x2F;CTS overhearing to avoid transmission.</li>
+</ul>
+<h4 id="5-5-Point-Coordination-Function-PCF"><a href="#5-5-Point-Coordination-Function-PCF" class="headerlink" title="5.5 Point Coordination Function (PCF)"></a>5.5 Point Coordination Function (PCF)</h4><ul>
+<li><strong>Polling</strong> by AP (Point Coordinator): AP periodically sends <strong>beacons</strong> and polls stations in contention-free period.  </li>
+<li><strong>Guaranteed transmission</strong> slots; no collisions.</li>
+</ul>
+<hr>
+<h3 id="6-Bluetooth-IEEE-802-15-1"><a href="#6-Bluetooth-IEEE-802-15-1" class="headerlink" title="6. Bluetooth (IEEE 802.15.1)"></a>6. Bluetooth (IEEE 802.15.1)</h3><ul>
+<li><strong>Ad hoc WPAN</strong> in 2.4 GHz band; low-power, short-range (≈10 m).  </li>
+<li><strong>Piconet</strong>: One master + up to 7 active slaves (up to 255 parked).  </li>
+<li><strong>Scatternet</strong>: Multiple piconets bridged by shared devices.  </li>
+<li><strong>Data rates</strong>: 1–24 Mbps (depending on version); built-in encryption.</li>
+</ul>
+<hr>
+<h4 id="Key-Takeaways"><a href="#Key-Takeaways" class="headerlink" title="Key Takeaways"></a>Key Takeaways</h4><ul>
+<li><strong>IEEE 802</strong> sub-standards ensure LAN interoperability.  </li>
+<li><strong>Ethernet</strong> remains dominant, evolving from 10 Mbps to 100 Gbps+.  </li>
+<li><strong>CSMA&#x2F;CD</strong> underpins Ethernet’s access control; <strong>CSMA&#x2F;CA</strong> (with RTS&#x2F;CTS) addresses wireless challenges.  </li>
+<li><strong>Token Ring</strong> employs deterministic token-passing, with built-in priority and fault-management.  </li>
+<li><strong>Wireless LANs</strong> and <strong>Bluetooth</strong> extend connectivity untethered, each with tailored MAC protocols and topologies.</li>
+</ul>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Data Communications and Networking</p><p><a href="https://tosakaucw.github.io/lecture-notes-data-communications-and-networking/">https://tosakaucw.github.io/lecture-notes-data-communications-and-networking/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-03-25</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-05-08</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/vp-2024-ccpc-%E9%83%91%E5%B7%9E/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">VP 2024 CCPC 郑州</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/codeforces-round-1008-div-2/"><span class="level-item">Codeforces Round 1008 (Div. 2)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/lecture-notes-data-communications-and-networking/';
+            this.page.identifier = 'lecture-notes-data-communications-and-networking/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Chapter-3-Data-Link-Layer"><span class="level-left"><span class="level-item">Chapter 3: Data Link Layer</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Overview"><span class="level-left"><span class="level-item">1. Overview</span></span></a></li><li><a class="level is-mobile" href="#2-Framing"><span class="level-left"><span class="level-item">2. Framing</span></span></a></li><li><a class="level is-mobile" href="#3-Error-Control"><span class="level-left"><span class="level-item">3. Error Control</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Error-Detection"><span class="level-left"><span class="level-item">Error Detection</span></span></a></li><li><a class="level is-mobile" href="#Error-Correction"><span class="level-left"><span class="level-item">Error Correction</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-Flow-Control"><span class="level-left"><span class="level-item">4. Flow Control</span></span></a></li><li><a class="level is-mobile" href="#5-多重访问协议（Multiple-Access-Protocols）"><span class="level-left"><span class="level-item">5. 多重访问协议（Multiple-Access Protocols）</span></span></a></li><li><a class="level is-mobile" href="#6-扩频技术（Spread-Spectrum）"><span class="level-left"><span class="level-item">6. 扩频技术（Spread Spectrum）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-1-跳频扩频-Frequency-Hopping-Spread-Spectrum-FHSS"><span class="level-left"><span class="level-item">6.1 跳频扩频 Frequency-Hopping Spread Spectrum (FHSS)</span></span></a></li><li><a class="level is-mobile" href="#6-2-直接序列扩频-Direct-Sequence-Spread-Spectrum-DSSS"><span class="level-left"><span class="level-item">6.2 直接序列扩频 Direct Sequence Spread Spectrum (DSSS)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Quick-Reference-Table"><span class="level-left"><span class="level-item">Quick Reference Table</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-4-Network-and-Transport-Layers"><span class="level-left"><span class="level-item">Chapter 4: Network and Transport Layers</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Overview"><span class="level-left"><span class="level-item">Overview</span></span></a></li><li><a class="level is-mobile" href="#1-IP-Addressing"><span class="level-left"><span class="level-item">1. IP Addressing</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#IPv4"><span class="level-left"><span class="level-item">IPv4</span></span></a></li><li><a class="level is-mobile" href="#IPv6"><span class="level-left"><span class="level-item">IPv6</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-Network-Routing"><span class="level-left"><span class="level-item">2. Network Routing</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Delivery"><span class="level-left"><span class="level-item">Delivery</span></span></a></li><li><a class="level is-mobile" href="#Routing-Algorithms"><span class="level-left"><span class="level-item">Routing Algorithms</span></span></a></li><li><a class="level is-mobile" href="#Special-Routing"><span class="level-left"><span class="level-item">Special Routing</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-Transport-Layer"><span class="level-left"><span class="level-item">3. Transport Layer</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#TCP-Transport-Control-Protocol"><span class="level-left"><span class="level-item">TCP (Transport Control Protocol)</span></span></a></li><li><a class="level is-mobile" href="#UDP-User-Datagram-Protocol"><span class="level-left"><span class="level-item">UDP (User Datagram Protocol)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-Congestion-Control"><span class="level-left"><span class="level-item">4. Congestion Control</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Basics"><span class="level-left"><span class="level-item">Basics</span></span></a></li><li><a class="level is-mobile" href="#Mechanisms"><span class="level-left"><span class="level-item">Mechanisms</span></span></a></li><li><a class="level is-mobile" href="#Data-Traffic"><span class="level-left"><span class="level-item">Data Traffic</span></span></a></li></ul></li><li><a class="level is-mobile" href="#5-Quality-of-Service-QoS"><span class="level-left"><span class="level-item">5. Quality of Service (QoS)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Requirements"><span class="level-left"><span class="level-item">Requirements</span></span></a></li><li><a class="level is-mobile" href="#Techniques"><span class="level-left"><span class="level-item">Techniques</span></span></a></li><li><a class="level is-mobile" href="#Jitter-Control"><span class="level-left"><span class="level-item">Jitter Control</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Key-Concepts"><span class="level-left"><span class="level-item">Key Concepts</span></span></a></li><li><a class="level is-mobile" href="#Quick-Reference-Table-1"><span class="level-left"><span class="level-item">Quick Reference Table</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-6-Ethernet-and-Wireless-LANs"><span class="level-left"><span class="level-item">Chapter 6: Ethernet and Wireless LANs</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Standardization-of-LANs-IEEE-Project-802"><span class="level-left"><span class="level-item">1. Standardization of LANs (IEEE Project 802)</span></span></a></li><li><a class="level is-mobile" href="#2-Ethernet-IEEE-802-3"><span class="level-left"><span class="level-item">2. Ethernet (IEEE 802.3)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-1-History-and-Evolution"><span class="level-left"><span class="level-item">2.1 History and Evolution</span></span></a></li><li><a class="level is-mobile" href="#2-2-Ethernet-Frame-Format"><span class="level-left"><span class="level-item">2.2 Ethernet Frame Format</span></span></a></li><li><a class="level is-mobile" href="#2-3-MAC-Addressing"><span class="level-left"><span class="level-item">2.3 MAC Addressing</span></span></a></li><li><a class="level is-mobile" href="#2-4-Physical-Encoding"><span class="level-left"><span class="level-item">2.4 Physical Encoding</span></span></a></li><li><a class="level is-mobile" href="#2-5-Media-Access-Control-CSMA-CD"><span class="level-left"><span class="level-item">2.5 Media-Access Control: CSMA/CD</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-Token-Ring-IEEE-802-5"><span class="level-left"><span class="level-item">3. Token Ring (IEEE 802.5)</span></span></a></li><li><a class="level is-mobile" href="#4-Network-Devices"><span class="level-left"><span class="level-item">4. Network Devices</span></span></a></li><li><a class="level is-mobile" href="#5-Wireless-LANs-IEEE-802-11"><span class="level-left"><span class="level-item">5. Wireless LANs (IEEE 802.11)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#5-1-Frequency-Bands-Channels"><span class="level-left"><span class="level-item">5.1 Frequency Bands &amp; Channels</span></span></a></li><li><a class="level is-mobile" href="#5-2-Network-Architecture"><span class="level-left"><span class="level-item">5.2 Network Architecture</span></span></a></li><li><a class="level is-mobile" href="#5-3-MAC-Layer-Challenges"><span class="level-left"><span class="level-item">5.3 MAC Layer Challenges</span></span></a></li><li><a class="level is-mobile" href="#5-4-CSMA-CA-with-RTS-CTS"><span class="level-left"><span class="level-item">5.4 CSMA/CA with RTS/CTS</span></span></a></li><li><a class="level is-mobile" href="#5-5-Point-Coordination-Function-PCF"><span class="level-left"><span class="level-item">5.5 Point Coordination Function (PCF)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Bluetooth-IEEE-802-15-1"><span class="level-left"><span class="level-item">6. Bluetooth (IEEE 802.15.1)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Key-Takeaways"><span class="level-left"><span class="level-item">Key Takeaways</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
