@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Theory of Computation - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="COMP4003 Theory of Computation Dr. Goliath Zhiyuan Li"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Theory of Computation"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-theory-of-computation/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="COMP4003 Theory of Computation Dr. Goliath Zhiyuan Li"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2025-09-28T10:16:41.000Z"><meta property="article:modified_time" content="2025-10-04T07:07:45.389Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-theory-of-computation/"},"headline":"Lecture Notes: Theory of Computation","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2025-09-28T10:16:41.000Z","dateModified":"2025-10-04T07:07:45.389Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"COMP4003 Theory of Computation Dr. Goliath Zhiyuan Li"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-theory-of-computation/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-09-28T10:16:41.000Z" title="2025-09-28T10:16:41.000Z">2025-09-28</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-10-04T07:07:45.389Z" title="2025-10-04T07:07:45.389Z">2025-10-04</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Theory of Computation</h1><div class="content"><p>COMP4003 Theory of Computation</p>
+<p>Dr. Goliath Zhiyuan Li</p>
+<span id="more"></span>
+
+<hr>
+<h3 id="Lec-2-Math-Preliminaries"><a href="#Lec-2-Math-Preliminaries" class="headerlink" title="Lec 2: Math Preliminaries"></a><strong>Lec 2: Math Preliminaries</strong></h3><h4 id="引言-Preface"><a href="#引言-Preface" class="headerlink" title="引言 (Preface)"></a><strong>引言 (Preface)</strong></h4><p>本讲旨在复习计算理论所需的基础数学知识，其中大部分概念源于<strong>离散结构 (Discrete Structures)<strong>。理解这些概念并掌握其</strong>规范的表述方式</strong>至关重要。</p>
+<hr>
+<h4 id="常用数学短语-Common-Phrases"><a href="#常用数学短语-Common-Phrases" class="headerlink" title="常用数学短语 (Common Phrases)"></a><strong>常用数学短语 (Common Phrases)</strong></h4><ul>
+<li><strong>s.t.</strong>: “such that” 的缩写，意为“使得…满足…”。</li>
+<li><strong>w.l.o.g</strong>: “without loss of generality” 的缩写，意为“不失一般性”。</li>
+<li><strong>Q.E.D</strong>: “quod erat demonstrandum” 的缩写，意为“证毕”，通常在证明结尾用方框 <code>□</code> 表示。</li>
+<li><strong>LHS &#x2F; RHS</strong>: 分别指 “left-hand side” 和 “right-hand side”，即等式的左边和右边。</li>
+</ul>
+<hr>
+<h4 id="1-集合-Sets"><a href="#1-集合-Sets" class="headerlink" title="1. 集合 (Sets)"></a><strong>1. 集合 (Sets)</strong></h4><ul>
+<li><strong>定义</strong>: 集合是对象的集合，具有<strong>无序性</strong>和<strong>互异性</strong>。</li>
+<li><strong>表示法</strong>:<ul>
+<li><strong>枚举法</strong>: $\lbrace 0, 1, 2, … \rbrace$</li>
+<li><strong>描述法</strong>: $\lbrace x \mid P(x) \rbrace$ (满足性质 $P(x)$ 的所有 $x$ 的集合)</li>
+</ul>
+</li>
+<li><strong>空集 (Empty Set)</strong>: 不包含任何元素的集合，记为 $\emptyset$ 或 ${}$。</li>
+<li><strong>全集 (Universal Set)</strong>: 在特定上下文中包含所有元素的集合，例如：<ul>
+<li>$\mathbb{N}$: 自然数集</li>
+<li>$\mathbb{Z}$: 整数集</li>
+<li>$\mathbb{Q}$: 有理数集</li>
+</ul>
+</li>
+<li><strong>子集 (Subset)</strong>: 如果集合 $A$ 中所有元素都在集合 $B$ 中，则 $A$ 是 $B$ 的子集，记为 $A \subseteq B$。</li>
+<li><strong>幂集 (Power Set)</strong>: 集合 $A$ 的所有子集构成的集合，记为 $P(A)$。<ul>
+<li>示例: 若 $A &#x3D; \lbrace 1, 2 \rbrace$，则 $P(A) &#x3D; \lbrace \emptyset, \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 1, 2 \rbrace \rbrace$。</li>
+</ul>
+</li>
+<li><strong>集合运算 (Set Operators)</strong>:<ul>
+<li><strong>补集 (Complement)</strong>: $\bar{A} &#x3D; \lbrace x \mid x \notin A \rbrace $</li>
+<li><strong>交集 (Intersection)</strong>: $A \cap B &#x3D; \lbrace x \mid x \in A \text{ and } x \in B \rbrace $</li>
+<li><strong>并集 (Union)</strong>: $A \cup B &#x3D; \lbrace x \mid x \in A \text{ or } x \in B \rbrace $</li>
+<li><strong>差集 (Set Minus)</strong>: $A \setminus B &#x3D; \lbrace x \mid x \in A \text{ and } x \notin B \rbrace $</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="2-关系-Relation"><a href="#2-关系-Relation" class="headerlink" title="2. 关系 (Relation)"></a><strong>2. 关系 (Relation)</strong></h4><ul>
+<li><strong>笛卡尔积 (Cartesian Product)</strong>: $A \times B &#x3D; \lbrace (x, y) \mid x \in A \text{ and } y \in B \rbrace$。</li>
+<li><strong>关系 (Relation)</strong>: 笛卡尔积 $A \times B$ 的一个子集 $R$。若 $(x, y) \in R$，则称 $x$ 与 $y$ 有关系 $R$，记为 $xRy$。</li>
+<li><strong>关系性质 (Properties on a set A)</strong>:<ul>
+<li><strong>自反性 (Reflexive)</strong>: $\forall x \in A, xRx$。</li>
+<li><strong>对称性 (Symmetric)</strong>: $\forall x, y \in A, xRy \to yRx$。</li>
+<li><strong>反对称性 (Anti-symmetric)</strong>: $\forall x, y \in A, (xRy \land yRx) \to x &#x3D; y$。</li>
+<li><strong>传递性 (Transitive)</strong>: $\forall x, y, z \in A, (xRy \land yRz) \to xRz$。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="3-函数-Function"><a href="#3-函数-Function" class="headerlink" title="3. 函数 (Function)"></a><strong>3. 函数 (Function)</strong></h4><ul>
+<li><strong>定义</strong>: 函数是一种特殊的关系，对于定义域 (Domain) $A$ 中的每一个元素 $x$，在陪域 (Co-domain) $B$ 中都<strong>有且仅有 (uniquely exist)</strong> 一个元素 $y$ 与之对应。记为 $f: A \to B$。</li>
+<li><strong>术语</strong>:<ul>
+<li><strong>像 (Image)</strong>: $y &#x3D; f(x)$。</li>
+<li><strong>原像 (Pre-image)</strong>: $x$ 是 $y$ 的原像。</li>
+</ul>
+</li>
+<li><strong>函数类型</strong>:<ul>
+<li><strong>单射 (Injection)</strong>: $\forall x, y \in A, x \neq y \to f(x) \neq f(y)$ (不同的输入对应不同的输出)。</li>
+<li><strong>满射 (Surjection)</strong>: $\forall y \in B, \exists x \in A, f(x) &#x3D; y$ (陪域中所有元素都有原像)。</li>
+<li><strong>双射 (Bijection)</strong>: 既是单射又是满射。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="4-形式语言-Formal-Language"><a href="#4-形式语言-Formal-Language" class="headerlink" title="4. 形式语言 (Formal Language)"></a><strong>4. 形式语言 (Formal Language)</strong></h4><ul>
+<li><strong>字母表 (Alphabet, $\Sigma$)</strong>: 一个<strong>非空有限</strong>的符号集合。</li>
+<li><strong>字符串 (String)</strong>: 由字母表中符号组成的<strong>有限序列</strong>。<ul>
+<li><strong>长度 (Length)</strong>: $|w|$，字符串 $w$ 中符号的个数。</li>
+<li><strong>空串 (Empty String, $\epsilon$)</strong>: 长度为 0 的字符串。</li>
+</ul>
+</li>
+<li><strong>字符串操作</strong>:<ul>
+<li><strong>逆序 (Reverse)</strong>: $w^R$。例：$(abc)^R &#x3D; cba$。</li>
+<li><strong>子串 (Substring)</strong>: 在 $w$ 中连续出现的字符串。</li>
+<li><strong>连接 (Concatenation)</strong>: $wz$。例：<code>abc</code> 和 <code>xyz</code> 连接后是 <code>abcxyz</code>。</li>
+</ul>
+</li>
+<li><strong>语言 (Language)</strong>: 在特定字母表上，所有字符串的一个集合。</li>
+</ul>
+<hr>
+<h4 id="5-证明技巧-Proof-Techniques"><a href="#5-证明技巧-Proof-Techniques" class="headerlink" title="5. 证明技巧 (Proof Techniques)"></a><strong>5. 证明技巧 (Proof Techniques)</strong></h4><ul>
+<li><strong>构造性证明 (Constructive Proof)</strong>:<ul>
+<li><strong>用途</strong>: 证明存在性命题，如 $\exists x, P(x)$。</li>
+<li><strong>方法</strong>: 直接构造一个满足条件的 $x$，并证明其满足性质 $P(x)$。</li>
+</ul>
+</li>
+<li><strong>反证法 (Proof by Contradiction)</strong>:<ul>
+<li><strong>用途</strong>: 证明命题 $p$。</li>
+<li><strong>方法</strong>: 假设 $p$ 为假 (即 $\neg p$ 为真)，然后从此假设出发，推导出一个矛盾。因此，原假设 $\neg p$ 错误，故 $p$ 必为真。</li>
+</ul>
+</li>
+<li><strong>数学归纳法 (Induction)</strong>:<ul>
+<li><strong>用途</strong>: 证明关于自然数的全称量词命题，如 $\forall n \in \mathbb{N}, P(n)$。</li>
+<li><strong>简单归纳法 (Simple Induction)</strong>:<ol>
+<li><strong>基础步骤 (Base Case)</strong>: 证明 $P(0)$ 成立。</li>
+<li><strong>归纳步骤 (Inductive Step)</strong>: 假设 $P(k)$ 成立 (归纳假设)，证明 $P(k+1)$ 也成立。</li>
+</ol>
+</li>
+<li><strong>强归纳法 (Strong Induction)</strong>:<ol>
+<li><strong>基础步骤 (Base Case)</strong>: 证明 $P(0)$ 成立。</li>
+<li><strong>归纳步骤 (Inductive Step)</strong>: 假设 $P(0), P(1), …, P(k)$ 全部成立，证明 $P(k+1)$ 也成立。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>对角线法 (Diagonal Argument)</strong>:<ul>
+<li>由康托尔 (Georg Cantor) 提出，是一种强大的反证法。</li>
+<li><strong>用途</strong>: 常用于证明某个无限集合是<strong>不可数 (uncountable)</strong> 的。</li>
+<li><strong>核心思想</strong>: 假设该集合是可数的，从而可以将其所有元素一一列出。然后，通过构造一个新元素，该元素与列表中的第 $n$ 个元素在第 $n$ 个位置上均不相同。这个新元素必然存在于集合中，但又不在我们列出的“完整”列表中，从而产生矛盾。</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E8%A7%92%E8%AB%96%E8%AD%89%E6%B3%95">对角论证法 - 维基百科</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="6-集合的基数-Cardinality-of-Sets"><a href="#6-集合的基数-Cardinality-of-Sets" class="headerlink" title="6. 集合的基数 (Cardinality of Sets)"></a><strong>6. 集合的基数 (Cardinality of Sets)</strong></h4><ul>
+<li><strong>基数 (Cardinality)</strong>: 集合中元素的数量，记为 $|A|$。</li>
+<li><strong>等势</strong>: 如果两个集合 $A$ 和 $B$ 之间存在一个<strong>双射 (bijection)</strong> 函数，则称它们基数相同，或等势。</li>
+<li><strong>可数集 (Countable Set)</strong>: 有限集，或基数与自然数集 $\mathbb{N}$ 相同的集合。$|\mathbb{N}|$ 的基数记为 <strong>$\aleph_0$</strong> (aleph-zero)。</li>
+<li><strong>不可数集 (Uncountable Set)</strong>: 基数比 $\aleph_0$ 更大的无限集。例如，$(0, 1)$ 区间内的实数集是不可数的，其基数为 $\aleph_1$。</li>
+<li><strong>连续统假设 (Continuum Hypothesis, CH)</strong>: 不存在基数严格介于 $\aleph_0$ 和 $\aleph_1$ ($|\mathbb{R}|$) 之间的集合。该假设在 ZFC 公理体系下是<strong>不可证明</strong>的。</li>
+</ul>
+<hr>
+<h3 id="Lec-3-Finite-Automata"><a href="#Lec-3-Finite-Automata" class="headerlink" title="Lec 3: Finite Automata"></a><strong>Lec 3: Finite Automata</strong></h3><hr>
+<h4 id="1-有限自动机简介-A-Simple-Model"><a href="#1-有限自动机简介-A-Simple-Model" class="headerlink" title="1. 有限自动机简介 (A Simple Model)"></a><strong>1. 有限自动机简介 (A Simple Model)</strong></h4><p>本课程从最简单的计算模型——<strong>有限自动机 (Finite Automata)</strong> 开始。</p>
+<ul>
+<li><strong>特点</strong>:<ul>
+<li>计算能力相对较弱。</li>
+<li>核心限制是它只能使用<strong>有限的 (finite) 内存</strong>。</li>
+</ul>
+</li>
+<li><strong>应用</strong>: 尽管简单，但在某些领域非常有用。</li>
+</ul>
+<h5 id="示例：Goliath-批改试卷"><a href="#示例：Goliath-批改试卷" class="headerlink" title="示例：Goliath 批改试卷"></a><strong>示例：Goliath 批改试卷</strong></h5><ul>
+<li><strong>状态 (States)</strong>: Goliath 的心情有三种：开心 🙂, 平静 😐, 不开心 😠。</li>
+<li><strong>输入 (Inputs)</strong>: 试卷的等级有三种：A, B, C。</li>
+<li><strong>转移规则 (Transitions)</strong>: 无论当前心情如何：<ul>
+<li>看到 ‘A’，心情变为 🙂。</li>
+<li>看到 ‘B’，心情变为 😐。</li>
+<li>看到 ‘C’，心情变为 😠。</li>
+</ul>
+</li>
+</ul>
+<p>这个过程可以用一个<strong>状态转移图</strong>来表示。</p>
+<h5 id="示例：游戏角色动画"><a href="#示例：游戏角色动画" class="headerlink" title="示例：游戏角色动画"></a><strong>示例：游戏角色动画</strong></h5><ul>
+<li><strong>状态 (States)</strong>: 待机 (idle), 准备 (standing by), 攻击 (attacks), 胜利 (winning)。</li>
+<li><strong>输入 (Inputs)</strong>: 玩家的键盘操作（如无输入, 按住 “E”, 按 “A” 等）。</li>
+<li><strong>转移规则</strong>: 角色根据玩家的输入在不同动画状态之间切换。</li>
+</ul>
+<hr>
+<h4 id="2-形式化定义-Formalization"><a href="#2-形式化定义-Formalization" class="headerlink" title="2. 形式化定义 (Formalization)"></a><strong>2. 形式化定义 (Formalization)</strong></h4><p>一个<strong>确定性有限自动机 (Deterministic Finite Automaton, DFA)</strong> 由以下五个部分组成。</p>
+<ul>
+<li><p><strong>定义</strong>: 一个 DFA 是一个五元组 $(Q, \Sigma, \delta, q_0, F)$，其中：</p>
+<ol>
+<li>$Q$: 一个<strong>有限的</strong>状态集合 (a finite set of states)。</li>
+<li>$\Sigma$: 一个<strong>有限的</strong>字母表，包含所有可能的输入符号 (a finite set, called the alphabet)。</li>
+<li>$\delta$: **转移函数 (transition function)**，其定义为 $\delta: Q \times \Sigma \to Q$。它接收当前状态和当前输入符号，并输出下一个状态。</li>
+<li>$q_0 \in Q$: **起始状态 (start state)**，机器从这个状态开始运行。</li>
+<li>$F \subseteq Q$: <strong>接受状态 (accept states)</strong> 或 <strong>终结状态 (final states)</strong> 的集合。</li>
+</ol>
+</li>
+<li><p><strong>转移函数的表示</strong>:</p>
+<ul>
+<li><strong>转移表 (Transition Table)</strong>: 一个 $|Q| \times |\Sigma|$ 的表格，每个单元格内容是下一个状态。</li>
+<li><strong>状态图 (State Graph)</strong>:<ul>
+<li>每个<strong>状态</strong>是一个<strong>圆圈</strong>。</li>
+<li>每个<strong>转移</strong>是一条从当前状态指向下一个状态的<strong>有向边</strong>，边的<strong>标签</strong>是触发该转移的输入符号。</li>
+<li><strong>起始状态</strong>有一个指向它的<strong>箭头</strong>。</li>
+<li><strong>接受状态</strong>是<strong>双层圆圈</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="示例：一个抽象的-DFA"><a href="#示例：一个抽象的-DFA" class="headerlink" title="示例：一个抽象的 DFA"></a><strong>示例：一个抽象的 DFA</strong></h5><ul>
+<li>$M_1 &#x3D; (\lbrace q_0, q_1 \rbrace, \lbrace 0, 1 \rbrace, \delta, q_0, \lbrace q_1 \rbrace)$</li>
+<li>转移函数 $\delta$ 如下：<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">0</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>$q_0$</strong></td>
+<td align="center">$q_0$</td>
+<td align="center">$q_1$</td>
+</tr>
+<tr>
+<td align="center"><strong>$q_1$</strong></td>
+<td align="center">$q_0$</td>
+<td align="center">$q_1$</td>
+</tr>
+</tbody></table>
+</li>
+<li>状态图：</li>
+</ul>
+<hr>
+<h4 id="3-DFA-的计算过程-Computation"><a href="#3-DFA-的计算过程-Computation" class="headerlink" title="3. DFA 的计算过程 (Computation)"></a><strong>3. DFA 的计算过程 (Computation)</strong></h4><ul>
+<li><strong>输入</strong>: DFA 的输入是一个定义在字母表 $\Sigma$ 上的字符串 $w &#x3D; w_1w_2\dots w_n$。</li>
+<li><strong>输出</strong>: <strong>接受 (accept)</strong> 或 **拒绝 (reject)**。</li>
+<li><strong>过程</strong>:<ol>
+<li>从起始状态 $q_0$ 开始。</li>
+<li>依次读取字符串 $w$ 中的每一个符号 $w_i$。</li>
+<li>每读取一个符号，就根据转移函数 $\delta$ 从当前状态转移到下一个状态。</li>
+</ol>
+</li>
+<li><strong>接受条件</strong>: 如果读取完整个字符串后，机器<strong>停在了一个接受状态</strong> (即最终状态 $\in F$)，那么该字符串被 <strong>接受</strong>。否则，被 <strong>拒绝</strong>。<ul>
+<li>形式化地，一个字符串 $w&#x3D;w_1w_2\dots w_n$ 被接受，当且仅当 $\delta(\dots\delta(\delta(q_0, w_1), w_2)\dots, w_n) \in F$。</li>
+</ul>
+</li>
+</ul>
+<h5 id="核心定义"><a href="#核心定义" class="headerlink" title="核心定义"></a><strong>核心定义</strong></h5><ul>
+<li><strong>机器的语言 (Language of a Machine)</strong>:<ul>
+<li>一个机器 $M$ 所能接受的所有字符串的集合，称为机器 $M$ 的语言，记为 $L(M)$。</li>
+<li>$L(M) &#x3D; \lbrace w \mid M \text{ accepts } w \rbrace$</li>
+</ul>
+</li>
+<li><strong>识别 (Recognize)</strong>:<ul>
+<li>我们称机器 $M$ <strong>识别</strong>语言 $A$，如果 $A &#x3D; L(M)$。</li>
+</ul>
+</li>
+<li><strong>正则语言 (Regular Language)</strong>:<ul>
+<li>如果一个语言可以被某个 DFA 识别，那么这个语言就是<strong>正则语言</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="4-DFA-设计-DFA-Design"><a href="#4-DFA-设计-DFA-Design" class="headerlink" title="4. DFA 设计 (DFA Design)"></a><strong>4. DFA 设计 (DFA Design)</strong></h4><p>设计 DFA 类似于设计算法，关键在于想清楚在处理输入字符串时，<strong>需要“记住”哪些信息</strong>。这些需要记忆的信息就构成了自动机的<strong>状态</strong>。</p>
+<h5 id="设计示例"><a href="#设计示例" class="headerlink" title="设计示例"></a><strong>设计示例</strong></h5><ul>
+<li><strong>语言</strong>: $A &#x3D; \lbrace w \mid w \text{ 包含偶数个 1} \rbrace$，其中 $\Sigma &#x3D; \brace 0, 1 \rbrace$。</li>
+<li><strong>设计思路</strong>:<ul>
+<li>在从左到右读取字符串时，我们唯一需要记住的信息是：到目前为止，我们已经看到的 ‘1’ 的数量是奇数还是偶数。</li>
+<li>这提示我们需要两个状态：<ul>
+<li>$q_{even}$: 已看到偶数个 ‘1’。</li>
+<li>$q_{odd}$: 已看到奇数个 ‘1’。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>具体设计</strong>:<ul>
+<li><strong>状态集 $Q$</strong>: ${q_{even}, q_{odd}}$</li>
+<li><strong>字母表 $\Sigma$</strong>: ${0, 1}$</li>
+<li><strong>起始状态 $q_0$</strong>: $q_{even}$ (因为在开始时，’1’ 的数量为 0，是偶数)。</li>
+<li><strong>接受状态 $F$</strong>: ${q_{even}}$ (因为语言要求 ‘1’ 的总数是偶数)。</li>
+<li><strong>转移函数 $\delta$</strong>:<ul>
+<li>$\delta(q_{even}, 0) &#x3D; q_{even}$ (读 ‘0’ 不改变 ‘1’ 的奇偶性)</li>
+<li>$\delta(q_{even}, 1) &#x3D; q_{odd}$ (读 ‘1’ 后，偶数变为奇数)</li>
+<li>$\delta(q_{odd}, 0) &#x3D; q_{odd}$ (读 ‘0’ 不改变 ‘1’ 的奇偶性)</li>
+<li>$\delta(q_{odd}, 1) &#x3D; q_{even}$ (读 ‘1’ 后，奇数变为偶数)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Lec-4-NFA"><a href="#Lec-4-NFA" class="headerlink" title="Lec 4: NFA"></a><strong>Lec 4: NFA</strong></h3><hr>
+<h4 id="1-动机-Motivation"><a href="#1-动机-Motivation" class="headerlink" title="1. 动机 (Motivation)"></a><strong>1. 动机 (Motivation)</strong></h4><p>在设计自动机时，我们有时会遇到用 DFA 难以直观表达，但用一种更灵活的模型却很简单的情况。</p>
+<ul>
+<li><strong>示例语言</strong>: $A &#x3D; \lbrace w \mid w \text{ 的1的个数是奇数，或者 w 以1结尾} \rbrace$</li>
+<li>这个语言可以被下面这个机器识别，其设计思路非常清晰：<ul>
+<li>一条路径（$q_0 \to q_1$）负责检查“1的个数是奇数”。</li>
+<li>另一条路径（$q_0 \to q_2$）负责检查“以1结尾”。</li>
+</ul>
+</li>
+<li><strong>问题</strong>: 上图所示的机器<strong>不是一个 DFA</strong>。因为它在状态 $q_0$ 接收到输入 <code>1</code> 时，下一个状态可以是 $q_1$，也可以是 $q_2$。这种<strong>不确定性</strong>就是 NFA 的核心特征。</li>
+</ul>
+<hr>
+<h4 id="2-NFA-的形式化定义-NFA-Definition"><a href="#2-NFA-的形式化定义-NFA-Definition" class="headerlink" title="2. NFA 的形式化定义 (NFA Definition)"></a><strong>2. NFA 的形式化定义 (NFA Definition)</strong></h4><p>为了描述这种具有不确定性的计算模型，我们引入**非确定性有限自动机 (Nondeterministic Finite Automaton, NFA)**。</p>
+<ul>
+<li><p><strong>定义</strong>: 一个 NFA 是一个五元组 $(Q, \Sigma, \delta, q_0, F)$，其中：</p>
+<ol>
+<li>$Q$: 有限的状态集合。</li>
+<li>$\Sigma$: 有限的字母表。</li>
+<li>$\delta$: **转移函数 (transition function)**，其定义为 $\delta: Q \times \Sigma \to P(Q)$。</li>
+<li>$q_0 \in Q$: 起始状态。</li>
+<li>$F \subseteq Q$: 接受状态集合。</li>
+</ol>
+</li>
+<li><p><strong>NFA 与 DFA 的核心区别</strong>:</p>
+<ul>
+<li><strong>DFA</strong> 的转移函数 $\delta: Q \times \Sigma \to Q$，对于一个给定的当前状态和输入，其下一个状态是<strong>唯一确定</strong>的。</li>
+<li><strong>NFA</strong> 的转移函数 $\delta: Q \times \Sigma \to P(Q)$，其返回的是一个状态的<strong>集合</strong>（$P(Q)$ 是 $Q$ 的幂集）。这意味着，对于一个给定的当前状态和输入，下一个状态可能是<strong>零个、一个或多个</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="3-NFA-的计算与-epsilon-转移"><a href="#3-NFA-的计算与-epsilon-转移" class="headerlink" title="3. NFA 的计算与 $\epsilon$-转移"></a><strong>3. NFA 的计算与 $\epsilon$-转移</strong></h4><ul>
+<li><strong>NFA 的接受条件</strong>:<ul>
+<li>一个字符串 $w$ 被 NFA 接受，当且仅当在读取完整个字符串后，<strong>存在至少一条</strong>计算路径，能够使得机器最终停在一个接受状态。</li>
+<li>即使某些路径会失败（停在非接受状态），只要有一条路径成功，该字符串就被接受。</li>
+</ul>
+</li>
+<li><strong>$\epsilon$-转移 ($\epsilon$-Move)</strong>:<ul>
+<li>我们可以进一步扩展 NFA，允许它在<strong>不消耗任何输入符号</strong>的情况下进行状态转移，这种特殊的转移称为 <strong>$\epsilon$-转移</strong>。</li>
+<li>对于带有 $\epsilon$-转移的 NFA，其转移函数定义变为：<br>$\delta: Q \times (\Sigma \cup {\epsilon}) \to P(Q)$</li>
+<li>$\epsilon$-转移使得 NFA 的构造（尤其是在进行语言的运算时）变得更加优雅和方便。</li>
+</ul>
+</li>
+</ul>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a><strong>示例</strong></h5><ul>
+<li>考虑以下带有 $\epsilon$-转移的 NFA，它识别的语言是什么？</li>
+<li><strong>分析</strong>:<ul>
+<li>机器可以从 $q_0$ 不消耗任何输入（通过 $\epsilon$ 边）直接跳转到 $q_2$。</li>
+<li>要被接受，机器必须停在 $q_1$。</li>
+<li>为了到达 $q_1$，必须从 $q_0$ 接收一个输入 <code>1</code>。</li>
+<li>因此，任何被接受的字符串都必须包含至少一个 <code>1</code>。在接收到第一个 <code>1</code> 并到达 $q_1$ 后，可以再接收任意数量的 <code>0</code>。在此之前，机器可以在 $q_0$ 和 $q_2$ 之间任意转移。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="4-等价性-Equivalence"><a href="#4-等价性-Equivalence" class="headerlink" title="4. 等价性 (Equivalence)"></a><strong>4. 等价性 (Equivalence)</strong></h4><p>我们现在有三种计算模型：DFA, NFA, NFA with $\epsilon$-moves (NFA-$\epsilon$) 。一个自然的问题是：它们中哪一个的计算能力更强？</p>
+<ul>
+<li><strong>计算能力 (Power)</strong>:<ul>
+<li>如果两个计算模型能够识别的<strong>语言集合</strong>完全相同，则称它们<strong>计算能力等价</strong>。</li>
+<li>如果模型 M1 能识别一个语言，而模型 M2 不能，则 M1 比 M2 更强大。</li>
+</ul>
+</li>
+<li><strong>核心定理</strong>: <strong>DFA, NFA, 和 NFA-$\epsilon$ 的计算能力是等价的。</strong><ul>
+<li>这意味着，任何一个 NFA（或 NFA-$\epsilon$）能够识别的语言，都存在一个 DFA 也能识别它。它们都识别同一类语言，即<strong>正则语言</strong>。</li>
+</ul>
+</li>
+<li><strong>证明思路</strong>:<ul>
+<li>显然，DFA 是 NFA 的一个特例，NFA 是 NFA-$\epsilon$ 的一个特例。所以 DFA $\le_{pow}$ NFA $\le_{pow}$ NFA-$\epsilon$。</li>
+<li>证明的关键在于证明 NFA-$\epsilon$ $\le_{pow}$ DFA，即证明<strong>对于任意给定的 NFA-$\epsilon$，我们都可以构造出一个与之等价的 DFA</strong>。</li>
+</ul>
+</li>
+<li><strong>从 NFA 到 DFA 的转换算法 (子集构造法 Subset Construction)</strong>:<ul>
+<li><strong>核心思想</strong>: DFA 的每一个状态对应 NFA 的一个<strong>状态集合</strong>。</li>
+<li><strong>$\epsilon$-闭包 (ε-closure)</strong>: 对于一个状态 $q$，其 $\epsilon$-闭包 $E(q)$ 是指从 $q$ 开始，仅通过 $\epsilon$-转移所能到达的所有状态的集合（包括 $q$ 自身）。</li>
+<li><strong>构造步骤</strong>:<ol>
+<li><strong>DFA 的起始状态</strong>: NFA 起始状态的 $\epsilon$-闭包，即 $q’_0 &#x3D; E(q_0)$。</li>
+<li><strong>DFA 的状态转移</strong>: 对于 DFA 的一个状态 $R$ (它是一个 NFA 的状态集) 和一个输入符号 $a \in \Sigma$，其下一个状态 $\delta’(R, a)$ 是这样计算的：<br>a. 找到从 $R$ 中的任意状态出发，经过一条 $a$ 边能到达的所有 NFA 状态的集合。<br>b. 计算这个新集合的 $\epsilon$-闭包。</li>
+<li>重复步骤2，直到没有新的 DFA 状态产生。</li>
+<li><strong>DFA 的接受状态</strong>: DFA 的任何一个状态 $R$，如果它<strong>包含了至少一个</strong> NFA 的接受状态 ($R \cap F \neq \emptyset$)，那么 $R$ 就是一个 DFA 的接受状态。</li>
+</ol>
+</li>
+<li>这个算法保证了我们可以为任何 NFA 找到一个等价的 DFA，从而证明了它们计算能力的等价性。</li>
+</ul>
+</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Theory of Computation</p><p><a href="https://tosakaucw.github.io/lecture-notes-theory-of-computation/">https://tosakaucw.github.io/lecture-notes-theory-of-computation/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-09-28</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-10-04</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/vp-2023-icpc-%E8%A5%BF%E5%AE%89/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">VP 2023 ICPC 西安</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/codeforces-round-1053-div-1/"><span class="level-item">Codeforces Round 1053 (Div. 1)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://tosakaucw.github.io/lecture-notes-theory-of-computation/';
+            this.page.identifier = 'lecture-notes-theory-of-computation/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Lec-2-Math-Preliminaries"><span class="level-left"><span class="level-item">Lec 2: Math Preliminaries</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#引言-Preface"><span class="level-left"><span class="level-item">引言 (Preface)</span></span></a></li><li><a class="level is-mobile" href="#常用数学短语-Common-Phrases"><span class="level-left"><span class="level-item">常用数学短语 (Common Phrases)</span></span></a></li><li><a class="level is-mobile" href="#1-集合-Sets"><span class="level-left"><span class="level-item">1. 集合 (Sets)</span></span></a></li><li><a class="level is-mobile" href="#2-关系-Relation"><span class="level-left"><span class="level-item">2. 关系 (Relation)</span></span></a></li><li><a class="level is-mobile" href="#3-函数-Function"><span class="level-left"><span class="level-item">3. 函数 (Function)</span></span></a></li><li><a class="level is-mobile" href="#4-形式语言-Formal-Language"><span class="level-left"><span class="level-item">4. 形式语言 (Formal Language)</span></span></a></li><li><a class="level is-mobile" href="#5-证明技巧-Proof-Techniques"><span class="level-left"><span class="level-item">5. 证明技巧 (Proof Techniques)</span></span></a></li><li><a class="level is-mobile" href="#6-集合的基数-Cardinality-of-Sets"><span class="level-left"><span class="level-item">6. 集合的基数 (Cardinality of Sets)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Lec-3-Finite-Automata"><span class="level-left"><span class="level-item">Lec 3: Finite Automata</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-有限自动机简介-A-Simple-Model"><span class="level-left"><span class="level-item">1. 有限自动机简介 (A Simple Model)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#示例：Goliath-批改试卷"><span class="level-left"><span class="level-item">示例：Goliath 批改试卷</span></span></a></li><li><a class="level is-mobile" href="#示例：游戏角色动画"><span class="level-left"><span class="level-item">示例：游戏角色动画</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-形式化定义-Formalization"><span class="level-left"><span class="level-item">2. 形式化定义 (Formalization)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#示例：一个抽象的-DFA"><span class="level-left"><span class="level-item">示例：一个抽象的 DFA</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-DFA-的计算过程-Computation"><span class="level-left"><span class="level-item">3. DFA 的计算过程 (Computation)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#核心定义"><span class="level-left"><span class="level-item">核心定义</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-DFA-设计-DFA-Design"><span class="level-left"><span class="level-item">4. DFA 设计 (DFA Design)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#设计示例"><span class="level-left"><span class="level-item">设计示例</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Lec-4-NFA"><span class="level-left"><span class="level-item">Lec 4: NFA</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-动机-Motivation"><span class="level-left"><span class="level-item">1. 动机 (Motivation)</span></span></a></li><li><a class="level is-mobile" href="#2-NFA-的形式化定义-NFA-Definition"><span class="level-left"><span class="level-item">2. NFA 的形式化定义 (NFA Definition)</span></span></a></li><li><a class="level is-mobile" href="#3-NFA-的计算与-epsilon-转移"><span class="level-left"><span class="level-item">3. NFA 的计算与 $\epsilon$-转移</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#示例"><span class="level-left"><span class="level-item">示例</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-等价性-Equivalence"><span class="level-left"><span class="level-item">4. 等价性 (Equivalence)</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
