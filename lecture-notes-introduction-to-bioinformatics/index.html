@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Introduction to Bioinformatics - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="AI3073 Introduction to Bioinformatics Dr. Jiaxing CHEN"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Introduction to Bioinformatics"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="AI3073 Introduction to Bioinformatics Dr. Jiaxing CHEN"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2025-09-12T07:22:55.000Z"><meta property="article:modified_time" content="2025-10-04T07:07:39.472Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/"},"headline":"Lecture Notes: Introduction to Bioinformatics","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2025-09-12T07:22:55.000Z","dateModified":"2025-10-04T07:07:39.472Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"AI3073 Introduction to Bioinformatics Dr. Jiaxing CHEN"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Lecture Notes: Introduction to Bioinformatics - TosakaUCW</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="TosakaUCW"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TosakaUCW"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="AI3073 Introduction to Bioinformatics Dr. Jiaxing CHEN"><meta property="og:type" content="blog"><meta property="og:title" content="Lecture Notes: Introduction to Bioinformatics"><meta property="og:url" content="https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/"><meta property="og:site_name" content="TosakaUCW"><meta property="og:description" content="AI3073 Introduction to Bioinformatics Dr. Jiaxing CHEN"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://tosakaucw.github.io/img/og_image.png"><meta property="article:published_time" content="2025-09-12T07:22:55.000Z"><meta property="article:modified_time" content="2025-10-16T10:08:40.204Z"><meta property="article:author" content="TosakaUCW"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tosakaucw.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/"},"headline":"Lecture Notes: Introduction to Bioinformatics","image":["https://tosakaucw.github.io/img/og_image.png"],"datePublished":"2025-09-12T07:22:55.000Z","dateModified":"2025-10-16T10:08:40.204Z","author":{"@type":"Person","name":"TosakaUCW"},"publisher":{"@type":"Organization","name":"TosakaUCW","logo":{"@type":"ImageObject","url":"https://tosakaucw.github.io/img/logo.svg"}},"description":"AI3073 Introduction to Bioinformatics Dr. Jiaxing CHEN"}</script><link rel="canonical" href="https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Microsoft+Yahei:wght@400;700"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-09-12T07:22:55.000Z" title="2025-09-12T07:22:55.000Z">2025-09-12</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-10-04T07:07:39.472Z" title="2025-10-04T07:07:39.472Z">2025-10-04</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Introduction to Bioinformatics</h1><div class="content"><p>AI3073 Introduction to Bioinformatics</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/links">Links</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2025-09-12T07:22:55.000Z" title="2025-09-12T07:22:55.000Z">2025-09-12</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2025-10-16T10:08:40.204Z" title="2025-10-16T10:08:40.204Z">2025-10-16</time></span><span class="level-item"><a class="link-muted" href="/categories/Lecture-Notes/">Lecture Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Lecture Notes: Introduction to Bioinformatics</h1><div class="content"><p>AI3073 Introduction to Bioinformatics</p>
 <p>Dr. Jiaxing CHEN</p>
 <span id="more"></span>
 
@@ -113,7 +113,520 @@
 <li><strong>RNA structure</strong>: 从一级到三级，预测依赖计算方法</li>
 </ul>
 <hr>
-</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Introduction to Bioinformatics</p><p><a href="https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/">https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-09-12</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-10-04</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2025-icpc-%E7%BD%91%E7%BB%9C%E8%B5%9B-%E7%AC%AC%E4%B8%80%E5%9C%BA/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">2025 ICPC 网络赛 第一场</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/lecture-notes-compiler-construction/"><span class="level-item">Lecture Notes: Compiler Construction</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+<h2 id="Chapter-2-Part-2-Genome-NGS-Transcriptome-and-Assembly"><a href="#Chapter-2-Part-2-Genome-NGS-Transcriptome-and-Assembly" class="headerlink" title="Chapter 2 Part 2: Genome, NGS, Transcriptome and Assembly"></a>Chapter 2 Part 2: Genome, NGS, Transcriptome and Assembly</h2><h3 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h3><p>本章主要涵盖四个主题：</p>
+<ol>
+<li><strong>Genome (基因组)</strong></li>
+<li><strong>DNA Sequencing (DNA 测序)</strong></li>
+<li><strong>Transcriptome (转录组)</strong></li>
+<li><strong>Genome Assembly (基因组组装)</strong></li>
+</ol>
+<hr>
+<h3 id="2-Genome-基因组"><a href="#2-Genome-基因组" class="headerlink" title="2. Genome 基因组"></a>2. Genome 基因组</h3><ul>
+<li><p><strong>Definition (定义)</strong>:<br>A <em>genome</em> is the complete set of DNA (包括所有基因和非编码区) in an organism.<br>→ 它包含所有遗传信息，用于指导细胞功能和发育。</p>
+</li>
+<li><p><strong>Genetic Variation (遗传变异)</strong>:</p>
+<ul>
+<li><strong>SNP (Single Nucleotide Polymorphism)</strong>: 单个碱基变化</li>
+<li><strong>Indel (Insertion&#x2F;Deletion)</strong>: 小片段插入或缺失</li>
+<li><strong>CNV (Copy Number Variation)</strong>: 拷贝数变化</li>
+<li><strong>SV (Structural Variation)</strong>: 大规模结构变异（如倒位、易位等）<br>⭐ <em>Calling genetic variation</em> &#x3D; 检测这些变异的过程。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-DNA-Sequencing-DNA测序"><a href="#3-DNA-Sequencing-DNA测序" class="headerlink" title="3. DNA Sequencing (DNA测序)"></a>3. DNA Sequencing (DNA测序)</h3><h4 id="From-Sanger-to-NGS"><a href="#From-Sanger-to-NGS" class="headerlink" title="From Sanger to NGS"></a>From Sanger to NGS</h4><ul>
+<li><p><strong>Sanger Sequencing</strong>: 第一代测序，基于链终止法（Dideoxy method）。</p>
+</li>
+<li><p><strong>Next Generation Sequencing (NGS, 下一代测序)</strong>:</p>
+<ul>
+<li>高通量（High-throughput）</li>
+<li>低成本（Low cost per base）</li>
+<li>可同时读取数百万条 DNA 片段。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Sequencing-Output-Formats"><a href="#Sequencing-Output-Formats" class="headerlink" title="Sequencing Output Formats"></a>Sequencing Output Formats</h4><ul>
+<li><p><strong>FASTA format</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;sequence_name</span><br><span class="line">ATCGTAGCTA...</span><br></pre></td></tr></table></figure>
+
+<p>➜ 只包含序列。</p>
+</li>
+<li><p><strong>FASTQ format</strong>:<br>包含序列 + 每个碱基的质量分值 (Phred score)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@sequence_name</span><br><span class="line">ATCGTAGCTA</span><br><span class="line">+</span><br><span class="line">FJJJJJJGJH</span><br></pre></td></tr></table></figure>
+
+<p>➜ 常用于 NGS 原始数据。</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-Transcriptome-转录组"><a href="#4-Transcriptome-转录组" class="headerlink" title="4. Transcriptome 转录组"></a>4. Transcriptome 转录组</h3><ul>
+<li><p><strong>Definition (定义)</strong>:<br>所有转录出来的 RNA 分子的总和 (包括 mRNA + 非编码RNA)。</p>
+</li>
+<li><p><strong>RNA-seq (转录组测序)</strong>:</p>
+<ul>
+<li>定量测量基因表达水平 (quantify transcript abundance)</li>
+<li>可发现新转录本和可变剪接事件。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Special-Types"><a href="#Special-Types" class="headerlink" title="Special Types"></a>Special Types</h4><ul>
+<li><strong>Single-cell RNA sequencing (scRNA-seq)</strong><br>单细胞水平研究基因表达差异，揭示细胞异质性 (heterogeneity)。</li>
+<li><strong>Spatial Transcriptomics (空间转录组学)</strong><br>同时保留 RNA 表达与空间位置信息，理解组织结构中的基因表达格局。</li>
+</ul>
+<hr>
+<h3 id="5-Genome-Assembly-基因组组装"><a href="#5-Genome-Assembly-基因组组装" class="headerlink" title="5. Genome Assembly 基因组组装"></a>5. Genome Assembly 基因组组装</h3><h4 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h4><p>将短测序片段 (short reads) 拼接成完整的基因组序列。</p>
+<h4 id="Types-of-Assembly"><a href="#Types-of-Assembly" class="headerlink" title="Types of Assembly"></a>Types of Assembly</h4><ol>
+<li><strong>De novo assembly (从头组装)</strong>:<br>无参考基因组的情况下，通过片段重叠关系拼接。</li>
+<li><strong>Reference-based assembly (参考组装)</strong>:<br>将 reads 对齐到已有参考基因组。</li>
+</ol>
+<h4 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h4><ol>
+<li><strong>Pre-processing</strong>: 过滤低质量 reads</li>
+<li><strong>Overlap &#x2F; de Bruijn Graph Construction</strong>: 构建序列关系</li>
+<li><strong>Contig Assembly</strong>: 拼接连续序列片段 (contigs)</li>
+<li><strong>Scaffolding</strong>: 将 contigs 排列到染色体水平</li>
+<li><strong>Error Correction &#x2F; Polishing</strong>: 提高准确度</li>
+</ol>
+<hr>
+<h3 id="6-Summary-核心总结"><a href="#6-Summary-核心总结" class="headerlink" title="6. Summary 核心总结"></a>6. Summary 核心总结</h3><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Key Concept</th>
+<th>中文要点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Genome</td>
+<td>Complete DNA content</td>
+<td>生物的全部遗传信息</td>
+</tr>
+<tr>
+<td>Variation Calling</td>
+<td>SNP, CNV, SV</td>
+<td>发现基因变异</td>
+</tr>
+<tr>
+<td>NGS</td>
+<td>High-throughput sequencing</td>
+<td>高通量、低成本测序</td>
+</tr>
+<tr>
+<td>Transcriptome</td>
+<td>All RNA transcripts</td>
+<td>表达调控研究核心</td>
+</tr>
+<tr>
+<td>Assembly</td>
+<td>Reconstruct genome</td>
+<td>从 reads 拼出完整基因组</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Chapter-2-Part-3-Alignment-and-NGS-Reads-Mapping-BLAST"><a href="#Chapter-2-Part-3-Alignment-and-NGS-Reads-Mapping-BLAST" class="headerlink" title="Chapter 2 Part 3: Alignment and NGS Reads Mapping - BLAST"></a>Chapter 2 Part 3: Alignment and NGS Reads Mapping - BLAST</h2><h3 id="Part-1-Biological-Motivation-Sequence-Alignment-Fundamentals"><a href="#Part-1-Biological-Motivation-Sequence-Alignment-Fundamentals" class="headerlink" title="Part 1. Biological Motivation &amp; Sequence Alignment Fundamentals"></a>Part 1. Biological Motivation &amp; Sequence Alignment Fundamentals</h3><p>（生物动机与序列比对基础）</p>
+<h4 id="1-The-Biological-Question"><a href="#1-The-Biological-Question" class="headerlink" title="1. The Biological Question"></a>1. The Biological Question</h4><p><strong>Question:</strong> How can we determine the similarity between two sequences?<br>我们想知道两个生物序列（如 DNA、RNA 或蛋白质）是否相似。</p>
+<p>为什么重要？</p>
+<ul>
+<li>相似序列 → 相似结构 → 相似功能 （Sequence → Structure → Function Paradigm）</li>
+<li>相似序列 → 共同祖先（Common ancestor, Homology）</li>
+</ul>
+<p>所以，“序列相似性”是研究基因功能与进化关系的出发点。</p>
+<hr>
+<h4 id="2-What-is-Sequence-Alignment"><a href="#2-What-is-Sequence-Alignment" class="headerlink" title="2. What is Sequence Alignment?"></a>2. What is Sequence Alignment?</h4><p><strong>Definition:</strong> Sequence alignment 是一种计算方法，用于<strong>排列序列中对应的字符（碱基或氨基酸）</strong>，以最大化它们的相似性。</p>
+<p>目的：</p>
+<blockquote>
+<p>将输入序列（inputted sequences）中的所有残基对齐，使得比对结果在<strong>功能或进化关系</strong>上达到最大相似度。</p>
+</blockquote>
+<p>如 slide 中的例子（page 5），我们对齐两个序列 A 和 B，使得保守区域被正确地对应起来。</p>
+<hr>
+<h4 id="3-Types-of-Sequence-Alignment"><a href="#3-Types-of-Sequence-Alignment" class="headerlink" title="3. Types of Sequence Alignment"></a>3. Types of Sequence Alignment</h4><p>在生物信息学中常见两种主要类型的比对：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>特点</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Global Alignment</td>
+<td>全局比对</td>
+<td>比对整个序列（end-to-end）</td>
+<td>序列长度相似，整体比较</td>
+</tr>
+<tr>
+<td>Local Alignment</td>
+<td>局部比对</td>
+<td>只比对局部最相似的部分</td>
+<td>序列差异较大，仅部分保守</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="4-The-Scoring-System-评分系统"><a href="#4-The-Scoring-System-评分系统" class="headerlink" title="4. The Scoring System 评分系统"></a>4. The Scoring System 评分系统</h4><p>为了评估一个比对的好坏，需要定义一个 <strong>scoring function（评分函数）</strong>。<br>它由两部分组成：</p>
+<ol>
+<li><p><strong>Substitution Score（替换得分）</strong><br>当两个字符相同 → 得分高；不同 → 扣分。<br>在蛋白质比对中，常用：</p>
+<ul>
+<li>PAM 矩阵</li>
+<li>BLOSUM 矩阵</li>
+</ul>
+<p>对 DNA 序列，可使用如下简单矩阵（slide 19）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    A   C   G   T</span><br><span class="line">A   2  -7  -5  -7</span><br><span class="line">C  -7   2  -7  -5</span><br><span class="line">G  -5  -7   2  -7</span><br><span class="line">T  -7  -5  -7   2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Gap Penalty（缺口惩罚）</strong><br>插入（insertion）或缺失（deletion）称为 <strong>indel</strong>，每出现一次 gap，要扣分。</p>
+<p>常用模型：<strong>Affine Gap Penalty</strong></p>
+<p>$$<br>Penalty &#x3D; d + (n-1)×ε<br>$$</p>
+<ul>
+<li>$d$：gap opening penalty（开缺口惩罚）</li>
+<li>$ε$：gap extension penalty（延伸惩罚）</li>
+</ul>
+<p>这样可以鼓励连续的缺口，而不是分散多个小缺口。</p>
+</li>
+</ol>
+<p>最终总得分为：</p>
+<p>$$<br>Final\ Score &#x3D; Σ(substitution\ scores) - Σ(gap\ penalties)<br>$$</p>
+<hr>
+<h3 id="Part-2-Global-Local-Alignment-—-Dynamic-Programming"><a href="#Part-2-Global-Local-Alignment-—-Dynamic-Programming" class="headerlink" title="Part 2. Global &amp; Local Alignment — Dynamic Programming"></a>Part 2. Global &amp; Local Alignment — Dynamic Programming</h3><h4 id="1-Pairwise-Sequence-Alignment-Mathematical-Formulation"><a href="#1-Pairwise-Sequence-Alignment-Mathematical-Formulation" class="headerlink" title="1. Pairwise Sequence Alignment: Mathematical Formulation"></a>1. Pairwise Sequence Alignment: Mathematical Formulation</h4><p><strong>Input:</strong> Two sequences S₁ and S₂<br><strong>Parameter:</strong> Scoring function f for substitution &amp; gaps<br><strong>Output:</strong> The alignment ali(S₁, S₂) that gives maximal score</p>
+<p>$$<br>\max_{ali} f(ali(S_1, S_2))<br>$$</p>
+<p>但暴力穷举是不可能的。<br>因为两条长度为 n 的序列，其所有可能排列方式为：</p>
+<p>$$<br>\binom{2n}{n} &#x3D; \frac{(2n)!}{(n!)^2}<br>$$</p>
+<p>当 n &#x3D; 300 时，这个数约为 $7×10^{88}$，远超可计算范围。<br>因此我们需要一种高效算法——<strong>Dynamic Programming（动态规划）</strong>。</p>
+<hr>
+<h4 id="2-DP-Recurrence-Formula-for-Global-Alignment"><a href="#2-DP-Recurrence-Formula-for-Global-Alignment" class="headerlink" title="2. DP Recurrence Formula (for Global Alignment)"></a>2. DP Recurrence Formula (for Global Alignment)</h4><p>假设我们要对齐两个序列：</p>
+<ul>
+<li>x &#x3D; x₁x₂…xₘ</li>
+<li>y &#x3D; y₁y₂…yₙ</li>
+</ul>
+<p>定义：</p>
+<ul>
+<li>$F(i,j)$：前 i 个字符的 x 与前 j 个字符的 y 的最佳得分。</li>
+<li>$s(x_i,y_j)$：匹配得分函数。</li>
+<li>$d$：线性 gap penalty。</li>
+</ul>
+<p>公式为：</p>
+<p>$$<br>F(i,j) &#x3D; \max<br>\begin{cases}<br>F(i-1,j-1) + s(x_i, y_j) &amp; (x_i \leftrightarrow y_j) \<br>F(i-1,j) + d &amp; (x_i \leftrightarrow gap) \<br>F(i,j-1) + d &amp; (y_j \leftrightarrow gap)<br>\end{cases}<br>$$</p>
+<p>初始条件：$F(0,0)&#x3D;0$</p>
+<p>这个公式在 slide 17–18 展示了详细图示：<br>箭头表示三种可能的转移方向。</p>
+<hr>
+<h4 id="3-Example-Global-Alignment-of-AAG-vs-AGC"><a href="#3-Example-Global-Alignment-of-AAG-vs-AGC" class="headerlink" title="3. Example: Global Alignment of AAG vs AGC"></a>3. Example: Global Alignment of AAG vs AGC</h4><p>（slide 20–25）</p>
+<ol>
+<li><p>Substitution matrix:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    A   C   G   T</span><br><span class="line">A   2  -7  -5  -7</span><br><span class="line">C  -7   2  -7  -5</span><br><span class="line">G  -5  -7   2  -7</span><br><span class="line">T  -7  -5  -7   2</span><br></pre></td></tr></table></figure></li>
+<li><p>Gap penalty d &#x3D; -5</p>
+</li>
+</ol>
+<p>逐步计算 $F(i,j)$，得到最终最优得分为 -6，<br>并通过 traceback 得到比对结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A A G -</span><br><span class="line">- A G C</span><br></pre></td></tr></table></figure>
+
+<p>这就是一个典型的 <strong>global alignment</strong>。</p>
+<hr>
+<h4 id="4-From-Global-to-Local-Alignment"><a href="#4-From-Global-to-Local-Alignment" class="headerlink" title="4. From Global to Local Alignment"></a>4. From Global to Local Alignment</h4><p>Global alignment 适合长度相似的序列，但当我们只关心一部分（如基因中的保守片段）时，需要 <strong>local alignment</strong>。</p>
+<p><strong>Smith–Waterman algorithm (1981)</strong><br>修改了上面的 DP 公式：<br>多加一个选项 0，防止负分累积。</p>
+<p>$$<br>F(i,j) &#x3D; \max<br>\begin{cases}<br>F(i-1,j-1)+s(x_i,y_j) \<br>F(i-1,j)+d \<br>F(i,j-1)+d \<br>0<br>\end{cases}<br>$$</p>
+<p>这样，当某个比对片段的分数掉到 0 以下时，就“重新开始”计算。</p>
+<p>Traceback 从<strong>矩阵中得分最高的格子</strong>开始，<br>往回走到第一个为 0 的格子，得到局部相似区。</p>
+<hr>
+<h4 id="5-Global-vs-Local-Comparison"><a href="#5-Global-vs-Local-Comparison" class="headerlink" title="5. Global vs Local Comparison"></a>5. Global vs Local Comparison</h4><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Global Alignment</th>
+<th>Local Alignment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Algorithm</td>
+<td>Needleman–Wunsch</td>
+<td>Smith–Waterman</td>
+</tr>
+<tr>
+<td>Start of Traceback</td>
+<td>Bottom-right corner</td>
+<td>Highest score cell</td>
+</tr>
+<tr>
+<td>End condition</td>
+<td>到达矩阵左上角</td>
+<td>分数降为 0</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Whole sequences</td>
+<td>Local region only</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>Homologous sequences</td>
+<td>Conserved motifs &#x2F; domains</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Part-3-NGS-Reads-Mapping-高通量测序读段比对"><a href="#Part-3-NGS-Reads-Mapping-高通量测序读段比对" class="headerlink" title="Part 3. NGS Reads Mapping 高通量测序读段比对"></a>Part 3. NGS Reads Mapping 高通量测序读段比对</h3><h4 id="1-What-is-NGS-Reads-Mapping"><a href="#1-What-is-NGS-Reads-Mapping" class="headerlink" title="1. What is NGS Reads Mapping?"></a>1. What is NGS Reads Mapping?</h4><p><strong>Definition:</strong><br>NGS (Next-Generation Sequencing) 生成海量短序列（short reads），<br><strong>reads mapping</strong> 是指将这些短序列准确地<strong>定位（map）回参考基因组（reference genome）</strong>的过程。</p>
+<p>典型的输入与输出如下：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Input</td>
+<td>Reference genome (数亿碱基) + Millions of reads (短序列, 36–150 bp)</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>每个 read 在参考基因组中的最佳匹配位置</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="2-Key-Challenges-难点"><a href="#2-Key-Challenges-难点" class="headerlink" title="2. Key Challenges 难点"></a>2. Key Challenges 难点</h4><ol>
+<li><p><strong>数据量极大 (Data volume)</strong><br>人类基因组 ~3×10⁹ bp，而 NGS 输出可达数亿 reads。<br>→ 暴力比对不可行。</p>
+</li>
+<li><p><strong>错误与突变 (Errors &amp; Variations)</strong><br>每个 read 可能含有测序错误、SNP、indel。<br>→ 必须允许部分错配（mismatch allowance）。</p>
+</li>
+<li><p><strong>重复区域 (Repetitive regions)</strong><br>染色体中有大量重复序列，<br>→ 同一个 read 可能匹配多个位置（multi-mapping）。</p>
+</li>
+</ol>
+<p>因此，NGS mapping 的核心任务是：</p>
+<blockquote>
+<p>找到每个 read 在 reference 上最可能的匹配区域，同时保证速度和准确度。</p>
+</blockquote>
+<hr>
+<h4 id="3-From-Alignment-to-Mapping"><a href="#3-From-Alignment-to-Mapping" class="headerlink" title="3. From Alignment to Mapping"></a>3. From Alignment to Mapping</h4><p>在概念上，mapping 是 alignment 的特例。<br>但区别在于：</p>
+<table>
+<thead>
+<tr>
+<th>比较项目</th>
+<th>Alignment</th>
+<th>Mapping</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>输入</td>
+<td>2 条序列</td>
+<td>一个 read 与整个参考基因组</td>
+</tr>
+<tr>
+<td>目标</td>
+<td>计算相似性</td>
+<td>确定 read 的位置</td>
+</tr>
+<tr>
+<td>复杂度</td>
+<td>O(n²)</td>
+<td>必须更快（近似 O(n)）</td>
+</tr>
+<tr>
+<td>典型算法</td>
+<td>Needleman–Wunsch &#x2F; Smith–Waterman</td>
+<td>BLAST &#x2F; BWA &#x2F; Bowtie</td>
+</tr>
+</tbody></table>
+<p>因此 mapping 算法的策略是：</p>
+<blockquote>
+<p>用“快速近似 + 精确局部修正”的方式代替完全动态规划。</p>
+</blockquote>
+<hr>
+<h4 id="4-Strategy-Overview-策略概览"><a href="#4-Strategy-Overview-策略概览" class="headerlink" title="4. Strategy Overview 策略概览"></a>4. Strategy Overview 策略概览</h4><p>在 slide 45–47 中提到 NGS Mapping 的三步法：</p>
+<ol>
+<li><p><strong>Seed searching 种子搜索</strong><br>先找一段短的精确匹配（称为 seed 或 word）。<br>种子长度通常 10–15 bp。</p>
+</li>
+<li><p><strong>Extension 扩展</strong><br>从种子开始向两边延伸（允许错配）。</p>
+</li>
+<li><p><strong>Evaluation 评分</strong><br>计算匹配得分与统计显著性（E-value &#x2F; MAPQ）。</p>
+</li>
+</ol>
+<p>这种方法就是著名的 <strong>BLAST 思想：Seed–Extend–Evaluate</strong>。</p>
+<hr>
+<h4 id="5-Seed-Searching-Strategies"><a href="#5-Seed-Searching-Strategies" class="headerlink" title="5. Seed Searching Strategies"></a>5. Seed Searching Strategies</h4><p>在 slide 50 提到两种主要策略：</p>
+<ol>
+<li><p><strong>Hashing (哈希法)</strong></p>
+<ul>
+<li>建立一个索引表（hash table），<br>把 reference 中所有 k-mer 存进去。</li>
+<li>对 query 的每个 k-mer 查询是否存在相同键。</li>
+<li>可以允许少量错配（通过模糊哈希或扩展种子）。</li>
+</ul>
+<p>优点：实现简单；适合较小数据库。<br>缺点：内存占用大；对大基因组效率低。</p>
+</li>
+<li><p><strong>BWT (Burrows–Wheeler Transform)</strong></p>
+<ul>
+<li>一种基于后缀数组（suffix array）的压缩索引。</li>
+<li>可以快速地在压缩数据中搜索字符串。</li>
+<li>是现代 NGS mapper（如 BWA、Bowtie）的基础。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="Part-4-BLAST-Algorithm-and-Its-Variants"><a href="#Part-4-BLAST-Algorithm-and-Its-Variants" class="headerlink" title="Part 4. BLAST Algorithm and Its Variants"></a>Part 4. BLAST Algorithm and Its Variants</h3><h4 id="1-What-is-BLAST"><a href="#1-What-is-BLAST" class="headerlink" title="1. What is BLAST?"></a>1. What is BLAST?</h4><p><strong>BLAST &#x3D; Basic Local Alignment Search Tool</strong><br>它是目前最广泛使用的序列比对程序。<br>基本思想源自 Smith–Waterman 局部比对，但通过“种子 + 扩展”来大幅加速。</p>
+<p>BLAST 解决的问题：</p>
+<blockquote>
+<p>给定一个 query 序列，快速找出数据库中与它最相似的序列。</p>
+</blockquote>
+<p>常见变种：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>blastn</strong></td>
+<td>核酸序列比对</td>
+</tr>
+<tr>
+<td><strong>blastp</strong></td>
+<td>蛋白质序列比对</td>
+</tr>
+<tr>
+<td><strong>blastx</strong></td>
+<td>将 query 的核酸序列翻译后与蛋白数据库比对</td>
+</tr>
+<tr>
+<td><strong>tblastn</strong></td>
+<td>将蛋白序列与翻译后的核酸数据库比对</td>
+</tr>
+<tr>
+<td><strong>tblastx</strong></td>
+<td>双向翻译比对（最慢）</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="2-BLAST-Workflow"><a href="#2-BLAST-Workflow" class="headerlink" title="2. BLAST Workflow"></a>2. BLAST Workflow</h4><p>（详见 slide 47–50）</p>
+<ol>
+<li><p><strong>Word generation（词表生成）</strong><br>将 query 序列拆分成固定长度的短词（w-mer）。</p>
+<ul>
+<li>核酸：w ≈ 11</li>
+<li>蛋白：w ≈ 3</li>
+</ul>
+</li>
+<li><p><strong>Word list expansion（词表扩展）</strong><br>对每个词，找出得分较高的相似词（以允许错配）。</p>
+</li>
+<li><p><strong>Database scanning（数据库扫描）</strong><br>在数据库中找到完全匹配的词（即 seed）。</p>
+</li>
+<li><p><strong>Ungapped extension（无缺口扩展）</strong><br>从匹配种子向两边延伸，直到得分下降超过阈值。</p>
+</li>
+<li><p><strong>Gapped extension（带缺口扩展）</strong><br>对得分较高的候选区域进行更精细的比对（允许 gap）。</p>
+</li>
+<li><p><strong>Evaluation and Output</strong></p>
+<ul>
+<li>计算每个匹配的得分与统计显著性（E-value）。</li>
+<li>输出最高得分的比对结果。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="3-Statistical-Significance-—-E-value"><a href="#3-Statistical-Significance-—-E-value" class="headerlink" title="3. Statistical Significance — E-value"></a>3. Statistical Significance — E-value</h4><p>E-value 表示“在随机序列中出现该得分或更高得分的预期次数”。</p>
+<p>公式：</p>
+<p>$$<br>E &#x3D; K \times m \times n \times e^{-λS}<br>$$</p>
+<p>其中：</p>
+<ul>
+<li>$S$：alignment score</li>
+<li>$m, n$：序列长度</li>
+<li>$K, λ$：经验常数</li>
+</ul>
+<p>直观理解：</p>
+<ul>
+<li>E 越小 → 匹配越显著</li>
+<li>常用阈值：E &lt; 1e-5 被认为是显著相似</li>
+</ul>
+<hr>
+<h4 id="4-From-BLAST-to-BWA-—-BWT-Indexing"><a href="#4-From-BLAST-to-BWA-—-BWT-Indexing" class="headerlink" title="4. From BLAST to BWA — BWT Indexing"></a>4. From BLAST to BWA — BWT Indexing</h4><p>现代 NGS mapping 工具（如 <strong>BWA</strong>, <strong>Bowtie</strong>）<br>并不使用哈希，而是使用 <strong>BWT (Burrows–Wheeler Transform)</strong> 索引。</p>
+<p>BWT 的核心思想（slide 68–70）：</p>
+<ol>
+<li>把序列的所有后缀（suffixes）生成并排序。</li>
+<li>取每个后缀前一个字符，形成 BWT 字符串。</li>
+<li>这种表示法可以高效压缩，并快速进行子串搜索。</li>
+</ol>
+<p>示例（slide 69–70: sequence &#x3D; “AGGAGC”）：</p>
+<ul>
+<li>构建所有后缀并排序 → 得到 F 列（First）和 L 列（Last）</li>
+<li>通过 “L → F mapping” 可以逆推出原始序列。</li>
+</ul>
+<p>BWA 在此基础上进一步实现：</p>
+<blockquote>
+<p>通过二分查找在压缩索引中定位所有匹配的 reads，再局部比对验证。</p>
+</blockquote>
+<hr>
+<h4 id="5-Mapping-Quality-MAPQ"><a href="#5-Mapping-Quality-MAPQ" class="headerlink" title="5. Mapping Quality (MAPQ)"></a>5. Mapping Quality (MAPQ)</h4><p>每个 read 通常有多个可能比对位置。<br>Mapping quality (MAPQ) 用于衡量当前比对的可信度：</p>
+<p>$$<br>MAPQ &#x3D; -10 \log_{10}(P_{error})<br>$$</p>
+<p>其中 $P_{error}$ 是该 read 被错误比对的概率。</p>
+<p>举例：</p>
+<ul>
+<li>如果正确比对概率 0.99 → MAPQ &#x3D; 20</li>
+<li>如果正确比对概率 0.999 → MAPQ &#x3D; 30</li>
+</ul>
+<p>高 MAPQ 表示该位置更可靠。</p>
+<hr>
+<h4 id="6-Implementations-—-In-R-and-Python"><a href="#6-Implementations-—-In-R-and-Python" class="headerlink" title="6. Implementations — In R and Python"></a>6. Implementations — In R and Python</h4><p>slide 71–72 给出了两个实现示例：</p>
+<h5 id="1-R-Implementation-using-Biostrings"><a href="#1-R-Implementation-using-Biostrings" class="headerlink" title="(1) R Implementation using Biostrings"></a>(1) R Implementation using Biostrings</h5><p>在 R 中，可以用 <code>Biostrings</code> 包进行简化版 BLAST：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>Biostrings<span class="punctuation">)</span></span><br><span class="line">query <span class="operator">&lt;-</span> DNAString<span class="punctuation">(</span><span class="string">&quot;ATCGATCGATCG&quot;</span><span class="punctuation">)</span></span><br><span class="line">db <span class="operator">&lt;-</span> DNAString<span class="punctuation">(</span><span class="string">&quot;CGATCGATCGATC&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">match <span class="operator">&lt;-</span> matchPattern<span class="punctuation">(</span>query<span class="punctuation">,</span> db<span class="punctuation">)</span></span><br><span class="line">score <span class="operator">&lt;-</span> score<span class="punctuation">(</span>match<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>代码中展示了如何：</p>
+<ul>
+<li>分割成 k-mer</li>
+<li>匹配并计算 similarity score</li>
+<li>计算 E-value 并输出排序结果</li>
+</ul>
+<h5 id="2-Python-Implementation-using-Biopython"><a href="#2-Python-Implementation-using-Biopython" class="headerlink" title="(2) Python Implementation using Biopython"></a>(2) Python Implementation using Biopython</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Bio.Blast <span class="keyword">import</span> NCBIWWW, NCBIXML</span><br><span class="line">result_handle = NCBIWWW.qblast(<span class="string">&quot;blastn&quot;</span>, <span class="string">&quot;nt&quot;</span>, <span class="string">&quot;ACGTGAGGCTAGC...&quot;</span>)</span><br><span class="line">blast_record = NCBIXML.read(result_handle)</span><br><span class="line"><span class="keyword">for</span> alignment <span class="keyword">in</span> blast_record.alignments:</span><br><span class="line">    <span class="keyword">for</span> hsp <span class="keyword">in</span> alignment.hsps:</span><br><span class="line">        <span class="built_in">print</span>(alignment.title, hsp.expect)</span><br></pre></td></tr></table></figure>
+
+<p>该脚本演示了如何通过 NCBI 在线数据库运行 BLAST 查询并解析结果。</p>
+<hr>
+<h3 id="Part-5-Summary-总结"><a href="#Part-5-Summary-总结" class="headerlink" title="Part 5. Summary 总结"></a>Part 5. Summary 总结</h3><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>英文术语</th>
+<th>核心思想</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sequence Alignment</td>
+<td>序列比对</td>
+<td>用动态规划计算相似度</td>
+</tr>
+<tr>
+<td>Global Alignment</td>
+<td>全局比对</td>
+<td>对齐整个序列</td>
+</tr>
+<tr>
+<td>Local Alignment</td>
+<td>局部比对</td>
+<td>找最相似片段</td>
+</tr>
+<tr>
+<td>Gap Penalty</td>
+<td>缺口惩罚</td>
+<td>惩罚 indel 事件</td>
+</tr>
+<tr>
+<td>DP Algorithm</td>
+<td>动态规划</td>
+<td>拆分子问题获得最优解</td>
+</tr>
+<tr>
+<td>Seed-Extend</td>
+<td>种子扩展策略</td>
+<td>BLAST 的核心思想</td>
+</tr>
+<tr>
+<td>BWT</td>
+<td>Burrows–Wheeler Transform</td>
+<td>高效索引与压缩算法</td>
+</tr>
+<tr>
+<td>MAPQ</td>
+<td>Mapping Quality</td>
+<td>比对可信度评分</td>
+</tr>
+<tr>
+<td>E-value</td>
+<td>Expectation Value</td>
+<td>随机匹配显著性评估</td>
+</tr>
+</tbody></table>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Lecture Notes: Introduction to Bioinformatics</p><p><a href="https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/">https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>TosakaUCW</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-09-12</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-10-16</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2025-icpc-%E7%BD%91%E7%BB%9C%E8%B5%9B-%E7%AC%AC%E4%B8%80%E5%9C%BA/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">2025 ICPC 网络赛 第一场</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/lecture-notes-compiler-construction/"><span class="level-item">Lecture Notes: Compiler Construction</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
             this.page.url = 'https://tosakaucw.github.io/lecture-notes-introduction-to-bioinformatics/';
             this.page.identifier = 'lecture-notes-introduction-to-bioinformatics/';
         };
@@ -122,7 +635,7 @@
             s.src = '//' + 'tosaka-blog' + '.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
-        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Chapter-2-Part-1-Gene-and-RNA"><span class="level-left"><span class="level-item">Chapter 2 Part 1: Gene and RNA</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-基本概念-Fundamentals"><span class="level-left"><span class="level-item">1. 基本概念 (Fundamentals)</span></span></a></li><li><a class="level is-mobile" href="#2-Genome-基因组特征"><span class="level-left"><span class="level-item">2. Genome &amp; 基因组特征</span></span></a></li><li><a class="level is-mobile" href="#3-Computational-Gene-Prediction-计算基因预测"><span class="level-left"><span class="level-item">3. Computational Gene Prediction (计算基因预测)</span></span></a></li><li><a class="level is-mobile" href="#4-RNA-分类-RNA-Types"><span class="level-left"><span class="level-item">4. RNA 分类 (RNA Types)</span></span></a></li><li><a class="level is-mobile" href="#5-RNA-Secondary-Structure-RNA-二级结构"><span class="level-left"><span class="level-item">5. RNA Secondary Structure (RNA 二级结构)</span></span></a></li><li><a class="level is-mobile" href="#6-核心-takeaway"><span class="level-left"><span class="level-item">6. 核心 takeaway</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Chapter-2-Part-1-Gene-and-RNA"><span class="level-left"><span class="level-item">Chapter 2 Part 1: Gene and RNA</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-基本概念-Fundamentals"><span class="level-left"><span class="level-item">1. 基本概念 (Fundamentals)</span></span></a></li><li><a class="level is-mobile" href="#2-Genome-基因组特征"><span class="level-left"><span class="level-item">2. Genome &amp; 基因组特征</span></span></a></li><li><a class="level is-mobile" href="#3-Computational-Gene-Prediction-计算基因预测"><span class="level-left"><span class="level-item">3. Computational Gene Prediction (计算基因预测)</span></span></a></li><li><a class="level is-mobile" href="#4-RNA-分类-RNA-Types"><span class="level-left"><span class="level-item">4. RNA 分类 (RNA Types)</span></span></a></li><li><a class="level is-mobile" href="#5-RNA-Secondary-Structure-RNA-二级结构"><span class="level-left"><span class="level-item">5. RNA Secondary Structure (RNA 二级结构)</span></span></a></li><li><a class="level is-mobile" href="#6-核心-takeaway"><span class="level-left"><span class="level-item">6. 核心 takeaway</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-2-Part-2-Genome-NGS-Transcriptome-and-Assembly"><span class="level-left"><span class="level-item">Chapter 2 Part 2: Genome, NGS, Transcriptome and Assembly</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Overview"><span class="level-left"><span class="level-item">1. Overview</span></span></a></li><li><a class="level is-mobile" href="#2-Genome-基因组"><span class="level-left"><span class="level-item">2. Genome 基因组</span></span></a></li><li><a class="level is-mobile" href="#3-DNA-Sequencing-DNA测序"><span class="level-left"><span class="level-item">3. DNA Sequencing (DNA测序)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#From-Sanger-to-NGS"><span class="level-left"><span class="level-item">From Sanger to NGS</span></span></a></li><li><a class="level is-mobile" href="#Sequencing-Output-Formats"><span class="level-left"><span class="level-item">Sequencing Output Formats</span></span></a></li></ul></li><li><a class="level is-mobile" href="#4-Transcriptome-转录组"><span class="level-left"><span class="level-item">4. Transcriptome 转录组</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Special-Types"><span class="level-left"><span class="level-item">Special Types</span></span></a></li></ul></li><li><a class="level is-mobile" href="#5-Genome-Assembly-基因组组装"><span class="level-left"><span class="level-item">5. Genome Assembly 基因组组装</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Purpose"><span class="level-left"><span class="level-item">Purpose</span></span></a></li><li><a class="level is-mobile" href="#Types-of-Assembly"><span class="level-left"><span class="level-item">Types of Assembly</span></span></a></li><li><a class="level is-mobile" href="#Steps"><span class="level-left"><span class="level-item">Steps</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Summary-核心总结"><span class="level-left"><span class="level-item">6. Summary 核心总结</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Chapter-2-Part-3-Alignment-and-NGS-Reads-Mapping-BLAST"><span class="level-left"><span class="level-item">Chapter 2 Part 3: Alignment and NGS Reads Mapping - BLAST</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Part-1-Biological-Motivation-Sequence-Alignment-Fundamentals"><span class="level-left"><span class="level-item">Part 1. Biological Motivation &amp; Sequence Alignment Fundamentals</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-The-Biological-Question"><span class="level-left"><span class="level-item">1. The Biological Question</span></span></a></li><li><a class="level is-mobile" href="#2-What-is-Sequence-Alignment"><span class="level-left"><span class="level-item">2. What is Sequence Alignment?</span></span></a></li><li><a class="level is-mobile" href="#3-Types-of-Sequence-Alignment"><span class="level-left"><span class="level-item">3. Types of Sequence Alignment</span></span></a></li><li><a class="level is-mobile" href="#4-The-Scoring-System-评分系统"><span class="level-left"><span class="level-item">4. The Scoring System 评分系统</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Part-2-Global-Local-Alignment-—-Dynamic-Programming"><span class="level-left"><span class="level-item">Part 2. Global &amp; Local Alignment — Dynamic Programming</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-Pairwise-Sequence-Alignment-Mathematical-Formulation"><span class="level-left"><span class="level-item">1. Pairwise Sequence Alignment: Mathematical Formulation</span></span></a></li><li><a class="level is-mobile" href="#2-DP-Recurrence-Formula-for-Global-Alignment"><span class="level-left"><span class="level-item">2. DP Recurrence Formula (for Global Alignment)</span></span></a></li><li><a class="level is-mobile" href="#3-Example-Global-Alignment-of-AAG-vs-AGC"><span class="level-left"><span class="level-item">3. Example: Global Alignment of AAG vs AGC</span></span></a></li><li><a class="level is-mobile" href="#4-From-Global-to-Local-Alignment"><span class="level-left"><span class="level-item">4. From Global to Local Alignment</span></span></a></li><li><a class="level is-mobile" href="#5-Global-vs-Local-Comparison"><span class="level-left"><span class="level-item">5. Global vs Local Comparison</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Part-3-NGS-Reads-Mapping-高通量测序读段比对"><span class="level-left"><span class="level-item">Part 3. NGS Reads Mapping 高通量测序读段比对</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-What-is-NGS-Reads-Mapping"><span class="level-left"><span class="level-item">1. What is NGS Reads Mapping?</span></span></a></li><li><a class="level is-mobile" href="#2-Key-Challenges-难点"><span class="level-left"><span class="level-item">2. Key Challenges 难点</span></span></a></li><li><a class="level is-mobile" href="#3-From-Alignment-to-Mapping"><span class="level-left"><span class="level-item">3. From Alignment to Mapping</span></span></a></li><li><a class="level is-mobile" href="#4-Strategy-Overview-策略概览"><span class="level-left"><span class="level-item">4. Strategy Overview 策略概览</span></span></a></li><li><a class="level is-mobile" href="#5-Seed-Searching-Strategies"><span class="level-left"><span class="level-item">5. Seed Searching Strategies</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Part-4-BLAST-Algorithm-and-Its-Variants"><span class="level-left"><span class="level-item">Part 4. BLAST Algorithm and Its Variants</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-What-is-BLAST"><span class="level-left"><span class="level-item">1. What is BLAST?</span></span></a></li><li><a class="level is-mobile" href="#2-BLAST-Workflow"><span class="level-left"><span class="level-item">2. BLAST Workflow</span></span></a></li><li><a class="level is-mobile" href="#3-Statistical-Significance-—-E-value"><span class="level-left"><span class="level-item">3. Statistical Significance — E-value</span></span></a></li><li><a class="level is-mobile" href="#4-From-BLAST-to-BWA-—-BWT-Indexing"><span class="level-left"><span class="level-item">4. From BLAST to BWA — BWT Indexing</span></span></a></li><li><a class="level is-mobile" href="#5-Mapping-Quality-MAPQ"><span class="level-left"><span class="level-item">5. Mapping Quality (MAPQ)</span></span></a></li><li><a class="level is-mobile" href="#6-Implementations-—-In-R-and-Python"><span class="level-left"><span class="level-item">6. Implementations — In R and Python</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-R-Implementation-using-Biostrings"><span class="level-left"><span class="level-item">(1) R Implementation using Biostrings</span></span></a></li><li><a class="level is-mobile" href="#2-Python-Implementation-using-Biopython"><span class="level-left"><span class="level-item">(2) Python Implementation using Biopython</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Part-5-Summary-总结"><span class="level-left"><span class="level-item">Part 5. Summary 总结</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="TosakaUCW" height="28"></a><p class="is-size-7"><span>&copy; 2025 TosakaUCW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/TosakaUCW"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
